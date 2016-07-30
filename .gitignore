@@ -1,0 +1,21 @@
+*.swp
+*.rdb
+
+# Ignore bundler config.
+/.bundle
+/.vagrant
+/.capistrano
+
+# Ignore all logfiles and tempfiles.
+/log/*.log
+/tmp
+
+# Ignore generated docs
+/doc
+
+# Ignore application configuration
+/config/application.yml
+/public/uploads
+
+# CSV
+/csv
