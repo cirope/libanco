@@ -40,7 +40,7 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
-    if @user.update(user_params)
+    if @user.update user_params
       redirect_to @user
     else
       render 'edit'
@@ -61,6 +61,7 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit :name, :lastname, :role_model, :lock_version
+      params.require(:user).permit :name, :lastname, :email, :password, :password_confirmation,
+        :roles_mask, :lock_version
     end
 end

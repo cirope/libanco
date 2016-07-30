@@ -1,11 +1,15 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+admin:
+  name: Admin
+  lastname: Admin
+  email: admin@libanco.com
+  encrypted_password: <%= BCrypt::Password.create('123456', cost: BCrypt::Engine::MIN_COST) %>
+  roles_mask: 1
+  account: default
 
-one:
-  name: MyString
-  lastname: MyString
-  role_model: MyString
-
-two:
-  name: MyString
-  lastname: MyString
-  role_model: MyString
+cashier:
+  name: Cashier
+  lastname: Cashier
+  email: cashier@libanco.com
+  encrypted_password: <%= BCrypt::Password.create('123456', cost: BCrypt::Engine::MIN_COST) %>
+  roles_mask: 3
+  account: default

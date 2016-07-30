@@ -244,6 +244,7 @@ PLATFORMS
 DEPENDENCIES
   apartment
   authority
+  bcrypt
   bootstrap-sass
   capistrano
   capistrano-bundler

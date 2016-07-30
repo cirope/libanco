@@ -14,7 +14,7 @@
       <nav class="collapse navbar-collapse" role="navigation">
         <ul class="nav navbar-nav">
           <% if admin_subdomain? %>
-            <%= menu_item_for Account, accounts_path %>
+            <%= menu_item_for Account, accounts_path, 'home' %>
           <% else %>
             <%= render 'shared/admin' %>
           <% end %>

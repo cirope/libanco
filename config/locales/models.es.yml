@@ -150,9 +150,10 @@ es:
         name: 'Nombre'
         value: 'Valor'
       user:
-        name: 'Nombre'
-        lastname: 'Apellido'
+        current_password: 'Contraseña actual'
         email: 'Correo'
+        lastname: 'Apellido'
+        name: 'Nombre'
         password: 'Contraseña'
         password_confirmation: 'Confirmación'
         roles_mask: 'Rol'

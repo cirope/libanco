@@ -9,6 +9,8 @@ class Account < ApplicationRecord
   strip_fields :name, :subdomain
   downcase_fields :subdomain
 
+  has_many :users, dependent: :destroy
+
   def to_s
     name
   end
