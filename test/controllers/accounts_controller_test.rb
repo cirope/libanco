@@ -24,12 +24,7 @@ class AccountsControllerTest < ActionDispatch::IntegrationTest
       }
     end
 
-    assert_redirected_to account_url(Account.last)
-  end
-
-  test 'should show account' do
-    get account_url(@account, subdomain: 'www')
-    assert_response :success
+    assert_redirected_to accounts_url
   end
 
   test 'should get edit' do
@@ -39,6 +34,6 @@ class AccountsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should update account' do
     patch account_url(@account, subdomain: 'www'), params: { account: { name: 'Name updated' } }
-    assert_redirected_to account_url(@account)
+    assert_redirected_to accounts_url
   end
 end

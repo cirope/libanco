@@ -11,11 +11,6 @@ class AccountsController < ApplicationController
     @accounts = Account.all
   end
 
-  # GET /accounts/1
-  # GET /accounts/1.json
-  def show
-  end
-
   # GET /accounts/new
   def new
     @account = Account.new
@@ -31,7 +26,7 @@ class AccountsController < ApplicationController
     @account = Account.new account_params
 
     if @account.save
-      redirect_to @account
+      redirect_to accounts_url
     else
       render 'new'
     end
@@ -41,7 +36,7 @@ class AccountsController < ApplicationController
   # PATCH/PUT /accounts/1.json
   def update
     if @account.update account_params
-      redirect_to @account
+      redirect_to accounts_url
     else
       render 'edit'
     end

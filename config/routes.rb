@@ -9,10 +9,11 @@ Rails.application.routes.draw do
   resources :users
 
   constraints AdminSubdomain do
-    resources :accounts
+    resources :accounts, except: [:show]
   end
 
   constraints AccountSubdomain do
+    resources :nacionalities, except: [:show, :destroy]
   end
 
   root to: redirect('/users/sign_in')
