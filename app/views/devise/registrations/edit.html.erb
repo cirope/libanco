@@ -1,0 +1,21 @@
+<%= simple_form_for(resource, as: resource_name, url: account_path, html: { method: :put }) do |f| %>
+  <div class="form-inputs row">
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Mi Cuenta</h3>
+        </div>
+        <div class="panel-body">
+          <%= f.input :email, required: true, autofocus: true %>
+          <%= f.input :password, autocomplete: 'off', hint: 'dejar en blanco si no quieres cambiarla', required: false %>
+          <%= f.input :password_confirmation, required: false %>
+          <%= f.input :current_password, hint: 'necesitamos tu contraseña actual para confirmar los cambios', required: true %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, 'Guardar cambios', class: 'btn btn-primary' %>
+  </div>
+<% end %>

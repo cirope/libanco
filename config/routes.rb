@@ -1,3 +1,19 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  devise_for :users, skip: [:registrations, :passwords]
+
+  as :user do
+    get 'users/edit' => 'devise/registrations#edit', as: 'edit_account'
+    put 'users'  => 'registrations#update', as: 'account'
+  end
+
+  resources :users
+
+  constraints AdminSubdomain do
+    resources :accounts
+  end
+
+  constraints AccountSubdomain do
+  end
+
+  root to: redirect('/users/sign_in')
 end

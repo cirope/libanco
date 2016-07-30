@@ -1,0 +1,158 @@
+es:
+  attributes:
+    created_at: 'Creación'
+    updated_at: 'Actualización'
+
+  activerecord:
+    models:
+      account:
+        one: 'Cuenta'
+        other: 'Cuentas'
+      city:
+        one: 'Ciudad'
+        other: 'Ciudades'
+      company:
+        one: 'Empresa'
+        other: 'Empresas'
+      customer:
+        one: 'Cliente'
+        other: 'Clientes'
+      department:
+        one: 'Repartición'
+        other: 'Reparticiones'
+      job:
+        one: 'Lugar de trabajo'
+        other: 'Lugares de trabajo'
+      loan:
+        one: 'Préstamo'
+        other: 'Préstamos'
+      nacionality:
+        one: 'Nacionalidad'
+        other: 'Nacionalidades'
+      organization:
+        one: 'Ministerio o Secretaría'
+        other: 'Ministerios o Secretarías'
+      payment:
+        one: 'Cuota'
+        other: 'Cuotas'
+      phone:
+        one: 'Teléfono'
+        other: 'Teléfonos'
+      rate:
+        one: 'Tasa'
+        other: 'Tasas'
+      rate_set:
+        one: 'Tasa'
+        other: 'Tasas'
+      reminder:
+        one: 'Recordatorio'
+        other: 'Recordatorios'
+      schedule:
+        one: 'Agenda'
+        other: 'Agenda'
+      state:
+        one: 'Provincia'
+        other: 'Provincias'
+      tax:
+        one: 'Adicional'
+        other: 'Adicionales'
+      tax_setting:
+        one: 'Adicional'
+        other: 'Adicionales'
+      user:
+        one: 'Usuario'
+        other: 'Usuarios'
+
+    attributes:
+      account:
+        name: 'Nombre'
+        subdomain: 'Subdominio'
+      city:
+        name: 'Nombre'
+        zip_code: 'Código postal'
+        state: 'Provincia'
+      company:
+        name: 'Nombre'
+        tax_id: 'CUIT'
+        address: 'Dirección'
+      customer:
+        address: 'Dirección'
+        birthdate: 'Fecha de nacimiento'
+        education_level: 'Nivel de estudio'
+        email: 'Correo electrónico'
+        identification: 'DNI'
+        kind: 'Perfil'
+        lastname: 'Apellido'
+        marital_status: 'Estado civil'
+        member: 'Socio'
+        monthly_income: 'Ingreso mensual aprox.'
+        nacionality: 'Nacionalidad'
+        name: 'Nombre'
+        profession: 'Profesión'
+        spouse_name: 'Nombre del cónyuge'
+        tax_id: 'CUIL/CUIT'
+        city: 'Ciudad'
+        job: 'Lugar de trabajo'
+        work_address: 'Domicilio laboral'
+      department:
+        name: 'Repartición'
+      job:
+        kind: 'Perfil'
+        customer: 'Cliente'
+        joining_at: 'Fecha de ingreso'
+        place: 'Lugar de trabajo'
+      loan:
+        amount: 'Monto'
+        canceled_at: 'Cancelación'
+        created_at: 'Emisión'
+        debt: 'Deuda'
+        delayed_at: 'Atraso'
+        expire_at: 'Vencimiento'
+        job: 'Lugar de trabajo'
+        next_payment_expire_at: 'Próximo vencimiento'
+        payments_count: 'Cuotas'
+        progress: 'Avance'
+        user: 'Asesor'
+        status: 'Estado'
+        rate_set_id: 'Tasa'
+        rate_id: 'Cuotas'
+      nacionality:
+        name: 'Nombre'
+      organization:
+        name: 'Ministerio o Secretaría'
+      payment:
+        number: 'Número'
+        payment: 'Cuota'
+        expire_at: 'Vencimiento'
+        paid_at: 'Fecha de pago'
+      phone:
+        phone: 'Teléfono'
+      rate:
+        payments_count: 'Cuotas'
+        rate: 'Tasa'
+      rate_set:
+        name: 'Nombre'
+      reminder:
+        remind_at: 'Fecha'
+        kind: 'Tipo'
+        notified: 'Notificado'
+      schedule:
+        description: 'Descripción'
+        scheduled_at: 'Fecha del evento'
+        remind_me: 'Recordarme por correo 15 minutos antes'
+      state:
+        name: 'Nombre'
+      tax:
+        value: 'Valor'
+        expire_at: 'Vencimiento'
+        paid_at: 'Fecha de pago'
+      tax_setting:
+        name: 'Nombre'
+        value: 'Valor'
+      user:
+        name: 'Nombre'
+        lastname: 'Apellido'
+        email: 'Correo'
+        password: 'Contraseña'
+        password_confirmation: 'Confirmación'
+        roles_mask: 'Rol'

@@ -11,6 +11,8 @@ module Libanco
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+    config.autoload_paths += %W(#{config.root}/app/subdomains)
+
     config.time_zone = 'Buenos Aires'
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.

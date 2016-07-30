@@ -1,0 +1,273 @@
+es:
+  app_name: 'Libanco'
+
+  menu:
+    admin: 'Administración'
+    loans:
+      title: 'Todos'
+      expired: 'Atrasados'
+      close_to_expire: 'A vencer'
+      not_renewed: 'No renovados'
+    reports:
+      payments: 'Cuotas'
+      social_payments: 'Cuota Social'
+      insurance: 'Seguro'
+
+  messages:
+    confirmation: '¿Está seguro?'
+    not_authorized: 'Debe ingresar para ver el contenido'
+
+  navigation:
+    account: 'Mi cuenta'
+    back: 'Volver'
+    close: 'Cerrar'
+    destroy: 'Eliminar'
+    edit: 'Editar'
+    index: 'Listado'
+    loading: 'Cargando...'
+    logout: 'Salir'
+    show: 'Ver'
+    payments: 'Ver cuotas'
+    processing: 'Procesando...'
+    search: 'Buscar'
+    start_date: 'Desde'
+    end_date: 'Hasta'
+    logout: 'Salir'
+
+  accounts:
+    edit:
+      title: 'Editar cuenta'
+    index:
+      new: 'Nueva cuenta'
+      title: 'Listado de cuentas'
+      empty_html: 'No hay cuentas, puede crear una con el botón <span class="label label-info">Nueva cuenta</span>'
+    new:
+      title: 'Crear cuenta'
+    show:
+      title: 'Ver cuenta'
+
+  cities:
+    edit:
+      title: 'Editar ciudad'
+    index:
+      new: 'Nueva ciudad'
+      title: 'Listado de ciudades'
+      empty_html: 'No hay ciudades, puede crear una con el botón <span class="label label-info">Nueva ciudad</span>'
+    new:
+      title: 'Crear ciudad'
+      state: 'Agregar nueva provincia'
+    show:
+      title: 'Ver ciudad'
+
+  companies:
+    edit:
+      title: 'Editar empresa'
+    index:
+      new: 'Nueva empresa'
+      title: 'Listado de empresas'
+      empty_html: 'No hay empresas, puede crear una con el botón <span class="label label-info">Nueva empresa</span>'
+    new:
+      title: 'Crear empresa'
+    show:
+      title: 'Ver empresa'
+
+  customers:
+    edit:
+      title: 'Editar cliente'
+    index:
+      new: 'Nuevo cliente'
+      title: 'Listado de clientes'
+      empty_html: 'No se encontraron clientes, puede buscar o crear uno con el botón <span class="label label-info">Nuevo cliente</span>'
+    new:
+      title: 'Crear cliente'
+      company: 'Agregar nueva empresa'
+      organization: 'Agregar nuevo ministerio'
+      city: 'Agregar nueva ciudad'
+    jobs:
+      title: 'Lugar de trabajo'
+      private: 'Privado'
+      public: 'Público'
+      retired: 'Jubilado'
+    show:
+      title: 'Ver cliente'
+    member:
+      _yes: 'Sí'
+      _no: 'No'
+      active: 'Socio'
+      inactive: 'Dado de baja'
+    marital_statuses:
+      married: 'Casado'
+      single: 'Soltero'
+      divorced: 'Divorciado'
+      widowed: 'Viudo'
+    education_levels:
+      primary: 'Primario'
+      secondary: 'Secundario'
+      tertiary: 'Terciario'
+      academic: 'Universitario'
+
+  loans:
+    edit:
+      title: 'Editar préstamo'
+    index:
+      new: 'Nuevo préstamo'
+      title: 'Listado de préstamos'
+    empty:
+      index_html: 'No hay préstamos, puede crear uno con el botón <span class="label label-info">Nuevo préstamo</span>'
+      expired_html: 'No hay préstamos atrasados.'
+      close_to_expire_html: 'No hay préstamos a vencer.'
+      not_renewed_html: 'No hay préstamos para renovar.'
+      search_html: 'No se encontraron préstamos.'
+    new:
+      title: 'Crear préstamo'
+      customer: 'Agregar nuevo cliente'
+    show:
+      title: 'Ver préstamo'
+    status:
+      title: 'Estado'
+      current: 'Activo'
+      canceled: 'Cancelado'
+      history: 'Cancelado'
+      expired: 'Atrasado'
+      judicial: 'En acción judicial'
+
+  nacionalities:
+    edit:
+      title: 'Editar nacionalidad'
+    index:
+      new: 'Nueva nacionalidad'
+      title: 'Listado de nacionalidades'
+      empty_html: 'No hay nacionalidades, puede crear una con el botón <span class="label label-info">Nueva nacionalidad</span>'
+    new:
+      title: 'Crear nacionalidad'
+
+  organizations:
+    edit:
+      title: 'Editar ministerio'
+    index:
+      new: 'Nuevo ministerio'
+      title: 'Listado de ministerios'
+      empty_html: 'No hay ministerios, puede crear uno con el botón <span class="label label-info">Nuevo ministerio</span>'
+    new:
+      title: 'Crear ministerio'
+      department: 'Agregar repartición'
+    show:
+      title: 'Ver ministerio'
+
+  payments:
+    edit:
+      title: 'Editar cuota'
+    index:
+      title: 'Listado de cuotas'
+
+  phones:
+    new: 'Agregar teléfono'
+
+  rate_sets:
+    edit:
+      title: 'Editar tasa'
+    index:
+      new: 'Nueva tasa'
+      title: 'Listado de tasas'
+      empty_html: 'No hay tasas, puede crear una con el botón <span class="label label-info">Nueva tasa</span>'
+    new:
+      title: 'Crear tasa'
+      rate: 'Agregar tasa'
+    show:
+      title: 'Ver tasa'
+    simulator: 'Para habilitar el simulador, primero seleccione una tasa.'
+
+  reports:
+    index:
+      title: 'Reportes'
+      empty_html: 'No se encontraron datos en la fecha indicada.'
+    summary:
+      total: 'Total'
+      amount: 'Monto'
+      new_total: 'Nuevos'
+
+  schedules:
+    edit:
+      title: 'Editar evento'
+    index:
+      new: 'Nuevo evento'
+      title: 'Listado de eventos'
+    new:
+      title: 'Crear evento'
+    show:
+      title: 'Ver evento'
+    empty_index:
+      new: 'Nuevo evento'
+      empty_html: 'No hay eventos programados'
+    save: 'Guardar evento'
+
+  sessions:
+    new:
+      title: 'Ingreso'
+      log_in: 'Ingresar'
+      email: 'Correo'
+      password: 'Contraseña'
+      remember_me: 'Recordarme'
+      forgot_password: '¿Olvidaste tu contraseña?'
+
+  states:
+    edit:
+      title: 'Editar provincia'
+    index:
+      new: 'Nueva provincia'
+      title: 'Listado de provincias'
+      empty_html: 'No hay provincias, puede crear una con el botón <span class="label label-info">Nueva provincia</span>'
+    new:
+      title: 'Crear provincia'
+      state: 'Agregar nueva provincia'
+    show:
+      title: 'Ver provincia'
+
+  password_resets:
+    edit:
+      title: 'Cambiar contraseña'
+      update: 'Actualizar contraseña'
+    new:
+      title: 'Restablecer contraseña'
+      email: 'Correo'
+      send_instructions: 'Enviar instrucciones'
+      back: 'Volver'
+
+  profiles:
+    edit:
+      title: 'Mis datos'
+      submit: 'Actualizar mis datos'
+
+  taxes:
+    index:
+      title: 'Listado de adicionales'
+      empty_html: 'No se encontraron adicionales en la fecha indicada.'
+
+  tax_settings:
+    edit:
+      title: 'Editar adicional'
+    index:
+      new: 'Nuevo adicional'
+      title: 'Listado de adicionales'
+      empty_html: 'No hay un adicional, puede crear una con el botón <span class="label label-info">Nuevo adicional</span>'
+    new:
+      title: 'Crear adicional'
+      state: 'Agregar nuevo adicional'
+    show:
+      title: 'Ver adicional'
+
+  users:
+    edit:
+      title: 'Editar usuario'
+    index:
+      new: 'Nuevo usuario'
+      title: 'Listado de usuarios'
+      empty_html: 'No hay usuarios, puede crear uno con el botón <span class="label label-info">Nuevo usuario</span>'
+    new:
+      title: 'Crear usuario'
+    show:
+      title: 'Ver usuario'
+    roles:
+      admin: 'Administrador'
+      adviser: 'Asesor'
+      cashier: 'Cajero'

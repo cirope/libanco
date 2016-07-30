@@ -1,0 +1,29 @@
+<header class="navbar navbar-default navbar-fixed-top" role="banner">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <% if current_user %>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <%= fa_icon 'bars' %>
+        </button>
+      <% end %>
+
+      <%= link_to t('app_name'), root_url, class: 'navbar-brand' %>
+    </div>
+
+    <% if current_user %>
+      <nav class="collapse navbar-collapse" role="navigation">
+        <ul class="nav navbar-nav">
+          <% if admin_subdomain? %>
+            <%= menu_item_for Account, accounts_path %>
+          <% else %>
+            <%= render 'shared/admin' %>
+          <% end %>
+        </ul>
+        <% if @search_path %>
+          <%= render 'shared/menu_search' %>
+        <% end %>
+        <%= render 'shared/user_actions' %>
+      </nav>
+    <% end %>
+  </div>
+</header>
