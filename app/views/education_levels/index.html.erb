@@ -1,0 +1,30 @@
+<% if @education_levels.blank? %>
+  <%= render 'shared/empty_index', message: t('.empty_html') %>
+<% else %>
+  <div class="table-responsive">
+    <table class="table table-striped table-condensed">
+      <thead>
+        <tr>
+          <th><%= EducationLevel.human_attribute_name 'created_at' %></th>
+          <th><%= EducationLevel.human_attribute_name 'name' %></th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @education_levels.each do |education_level| %>
+          <tr>
+            <td class="col-md-2"><%= l education_level.created_at %></td>
+            <td><%= education_level.name %></td>
+            <td><%= link_to_edit [:edit, education_level] %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% end %>
+
+<hr />
+
+<%= paginate @education_levels %>
+<%= link_to_new new_education_level_path, class: 'btn btn-primary' %>

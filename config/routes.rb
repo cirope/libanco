@@ -13,10 +13,11 @@ Rails.application.routes.draw do
   end
 
   constraints AccountSubdomain do
+    resources :cities, except: [:show, :destroy]
+    resources :education_levels, except: [:show, :destroy]
+    resources :marital_statuses, except: [:show, :destroy]
     resources :nacionalities, except: [:show, :destroy]
     resources :states, except: [:show, :destroy]
-    resources :cities, except: [:show, :destroy]
-    resources :marital_statuses, except: [:show, :destroy]
   end
 
   root to: redirect('/users/sign_in')

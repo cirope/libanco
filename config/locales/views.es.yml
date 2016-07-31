@@ -106,6 +106,16 @@ es:
       tertiary: 'Terciario'
       academic: 'Universitario'
 
+  education_levels:
+    edit:
+      title: 'Editar nivel de estudio'
+    index:
+      new: 'Nuevo nivel de estudio'
+      title: 'Listado de niveles de estudio'
+      empty_html: 'No hay niveles de estudio, puede crear uno con el botón <span class="label label-info">Nuevo nivel de estudio</span>'
+    new:
+      title: 'Crear nivel de estudio'
+
   loans:
     edit:
       title: 'Editar préstamo'

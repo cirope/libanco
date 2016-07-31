@@ -20,6 +20,9 @@ es:
       department:
         one: 'Repartición'
         other: 'Reparticiones'
+      education_level:
+        one: 'Nivel de estudio'
+        other: 'Niveles de estudio'
       job:
         one: 'Lugar de trabajo'
         other: 'Lugares de trabajo'
@@ -99,6 +102,8 @@ es:
         work_address: 'Domicilio laboral'
       department:
         name: 'Repartición'
+      education_level:
+        name: 'Nombre'
       job:
         kind: 'Perfil'
         customer: 'Cliente'
