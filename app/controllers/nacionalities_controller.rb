@@ -3,7 +3,7 @@ class NacionalitiesController < ApplicationController
   include Authorization
   include Title
 
-  before_action :set_nacionality, only: [:edit, :update, :destroy]
+  before_action :set_nacionality, only: [:edit, :update]
 
   # GET /nacionalities
   # GET /nacionalities.json
