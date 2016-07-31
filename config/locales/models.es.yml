@@ -1,6 +1,6 @@
 es:
   attributes:
-    created_at: 'Creación'
+    created_at: 'Fecha'
     updated_at: 'Actualización'
 
   activerecord:
@@ -26,6 +26,9 @@ es:
       loan:
         one: 'Préstamo'
         other: 'Préstamos'
+      marital_status:
+        one: 'Estado civil'
+        other: 'Estados civiles'
       nacionality:
         one: 'Nacionalidad'
         other: 'Nacionalidades'
@@ -116,6 +119,8 @@ es:
         status: 'Estado'
         rate_set_id: 'Tasa'
         rate_id: 'Cuotas'
+      marital_status:
+        name: 'Nombre'
       nacionality:
         name: 'Nombre'
       organization:

@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     resources :nacionalities, except: [:show, :destroy]
     resources :states, except: [:show, :destroy]
     resources :cities, except: [:show, :destroy]
+    resources :marital_statuses, except: [:show, :destroy]
   end
 
   root to: redirect('/users/sign_in')
