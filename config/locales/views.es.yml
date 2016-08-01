@@ -116,6 +116,16 @@ es:
     new:
       title: 'Crear nivel de estudio'
 
+  institutions:
+    edit:
+      title: 'Editar institución'
+    index:
+      new: 'Nueva institución'
+      title: 'Listado de instituciones'
+      empty_html: 'No hay instituciones, puede crear una con el botón <span class="label label-info">Nueva institución</span>'
+    new:
+      title: 'Crear institución'
+
   loans:
     edit:
       title: 'Editar préstamo'
