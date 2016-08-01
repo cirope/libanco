@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :neighborhoods
   devise_for :users, skip: [:registrations, :passwords]
 
   as :user do
@@ -18,6 +17,8 @@ Rails.application.routes.draw do
     resources :education_levels, except: [:show, :destroy]
     resources :marital_statuses, except: [:show, :destroy]
     resources :nacionalities, except: [:show, :destroy]
+    resources :neighborhoods, except: [:show, :destroy]
+    resources :occupations, except: [:show, :destroy]
     resources :states, except: [:show, :destroy]
   end
 

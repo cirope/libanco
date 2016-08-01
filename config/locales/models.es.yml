@@ -38,6 +38,9 @@ es:
       neighborhood:
         one: 'Barrio'
         other: 'Barrios'
+      occupation:
+        one: 'Ocupación'
+        other: 'Ocupaciones'
       organization:
         one: 'Ministerio o Secretaría'
         other: 'Ministerios o Secretarías'
@@ -132,6 +135,8 @@ es:
       nacionality:
         name: 'Nombre'
       neighborhood:
+        name: 'Nombre'
+      occupation:
         name: 'Nombre'
       organization:
         name: 'Ministerio o Secretaría'

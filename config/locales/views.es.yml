@@ -171,6 +171,16 @@ es:
     new:
       title: 'Crear barrio'
 
+  occupations:
+    edit:
+      title: 'Editar ocupación'
+    index:
+      new: 'Nueva ocupación'
+      title: 'Listado de ocupaciones'
+      empty_html: 'No hay ocupaciones, puede crear una con el botón <span class="label label-info">Nueva ocupación</span>'
+    new:
+      title: 'Crear ocupación'
+
   organizations:
     edit:
       title: 'Editar ministerio'
