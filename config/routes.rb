@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :neighborhoods
   devise_for :users, skip: [:registrations, :passwords]
 
   as :user do

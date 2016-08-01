@@ -35,6 +35,9 @@ es:
       nacionality:
         one: 'Nacionalidad'
         other: 'Nacionalidades'
+      neighborhood:
+        one: 'Barrio'
+        other: 'Barrios'
       organization:
         one: 'Ministerio o Secretaría'
         other: 'Ministerios o Secretarías'
@@ -127,6 +130,8 @@ es:
       marital_status:
         name: 'Nombre'
       nacionality:
+        name: 'Nombre'
+      neighborhood:
         name: 'Nombre'
       organization:
         name: 'Ministerio o Secretaría'

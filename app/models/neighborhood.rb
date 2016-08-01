@@ -1,14 +1,12 @@
-class City < ApplicationRecord
+class Neighborhood < ApplicationRecord
   include Attributes::Strip
   include Auditable
   include Authority::Abilities
-  include Cities::Validation
+  include Neighborhoods::Validation
 
-  default_scope -> { order 'cities.name ASC' }
+  default_scope -> { order 'neighborhoods.name ASC' }
 
   strip_fields :name
-
-  belongs_to :state
 
   def to_s
     name

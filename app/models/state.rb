@@ -4,6 +4,8 @@ class State < ApplicationRecord
   include Authority::Abilities
   include States::Validation
 
+  default_scope -> { order 'states.name ASC' }
+
   strip_fields :name
 
   def to_s

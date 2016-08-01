@@ -4,6 +4,8 @@ class EducationLevel < ApplicationRecord
   include Authority::Abilities
   include EducationLevels::Validation
 
+  default_scope -> { order 'education_levels.name ASC' }
+
   strip_fields :name
 
   def to_s
