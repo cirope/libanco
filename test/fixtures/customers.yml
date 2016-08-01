@@ -1,0 +1,21 @@
+default:
+  name: Default
+  lastname: Default
+  identification: 27798678
+  identification_type: dni
+  address: Default
+  card: black
+  monthly_income: 10000
+  work_address: Default
+  email: default@gmail.com
+  birthdate: <%= 20.years.ago %>
+  member: false
+  phone: Default
+  occupation: default
+  neighborhood: default
+  nacionality: default
+  marital_status: default
+  education_level: default
+  adviser: default
+  state: default
+  city: default

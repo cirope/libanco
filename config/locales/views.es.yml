@@ -46,6 +46,22 @@ es:
     show:
       title: 'Ver cuenta'
 
+  advisers:
+    edit:
+      title: 'Editar asesor'
+    index:
+      new: 'Nuevo asesor'
+      title: 'Listado de asesores'
+      empty_html: 'No hay asesores, puede crear uno con el botón <span class="label label-info">Nuevo asesor</span>'
+    new:
+      title: 'Crear asesor'
+    show:
+      title: 'Ver asesor'
+    identification_types:
+      dni: 'DNI'
+      cie: 'CI Extranjera'
+      passport: 'Pasaporte'
+
   cities:
     edit:
       title: 'Editar ciudad'
@@ -83,11 +99,6 @@ es:
       company: 'Agregar nueva empresa'
       organization: 'Agregar nuevo ministerio'
       city: 'Agregar nueva ciudad'
-    jobs:
-      title: 'Lugar de trabajo'
-      private: 'Privado'
-      public: 'Público'
-      retired: 'Jubilado'
     show:
       title: 'Ver cliente'
     member:
@@ -105,6 +116,14 @@ es:
       secondary: 'Secundario'
       tertiary: 'Terciario'
       academic: 'Universitario'
+    identification_types:
+      dni: 'DNI'
+      cie: 'CI Extranjera'
+      passport: 'Pasaporte'
+    cards:
+      black: 'Black'
+      gold: 'Gold'
+      classic: 'Classic'
 
   education_levels:
     edit:

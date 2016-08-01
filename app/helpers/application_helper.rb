@@ -18,4 +18,16 @@ module ApplicationHelper
       content_tag(:li, link, (active ? { class: 'active' } : {}))
     end
   end
+
+  def t_boolean field
+    t "navigation.#{field ? '_yes' : '_no'}"
+  end
+
+  def t_field object, field
+    if object
+      model = object.class.model_name.plural
+
+      t object.send(field), scope: [model, field.pluralize] if object.send(field).present?
+    end
+  end
 end

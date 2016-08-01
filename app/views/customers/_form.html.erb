@@ -1,0 +1,102 @@
+<%= simple_form_for @customer do |f| %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        <%= fa_icon 'male', text: Customer.model_name.human(count: 1) %>
+      </h3>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-6">
+              <%= f.input :name, autofocus: true %>
+            </div>
+            <div class="col-md-6">
+              <%= f.input :lastname %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <%= f.input :identification_type, collection: identification_types, prompt: true %>
+            </div>
+            <div class="col-md-6">
+              <%= f.input :identification %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <%= f.input :birthdate, as: :date_picker %>
+            </div>
+            <div class="col-md-6">
+              <%= f.association :nacionality, prompt: true %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <%= f.input :phone %>
+            </div>
+            <div class="col-md-6">
+              <%= f.input :email %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <%= f.input :address %>
+            </div>
+            <div class="col-md-6">
+              <%= f.association :neighborhood, prompt: true %>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-6">
+              <%= f.association :state, prompt: true %>
+            </div>
+            <div class="col-md-6">
+              <%= f.association :city, prompt: true %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <%= f.association :occupation, prompt: true %>
+            </div>
+            <div class="col-md-6">
+              <%= f.input :work_address %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <%= f.association :marital_status, prompt: true %>
+            </div>
+            <div class="col-md-6">
+              <%= f.association :education_level, prompt: true %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <%= f.input :card, collection: customer_cards, prompt: true %>
+            </div>
+            <div class="col-md-6">
+              <%= f.input :monthly_income %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <%= f.association :adviser, prompt: true %>
+            </div>
+            <div class="col-md-6">
+              <%= f.input :member %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= submit_button f %>
+    <div class="pull-right"><%= yield :form_actions %></div>
+  </div>
+<% end %>

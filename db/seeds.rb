@@ -1,14 +1,20 @@
 Apartment::Tenant.switch! 'public'
-account = Account.find_by subdomain: 'admin'
 
-Apartment::Tenant.switch! 'admin'
+Account.create! name: 'Continental', subdomain: 'prestamos'
 
-User.create!(
-  name: 'Admin',
-  lastname: 'Istrator',
-  email: 'admin@libanco.com',
-  password: '123456',
-  password_confirmation: '123456',
-  roles: :admin,
-  account: account
+Apartment::Tenant.switch! 'prestamos'
+
+state = State.create! name: 'Mendoza'
+City.create! name: 'Mendoza', state: state
+Occupation.create! name: 'Abogado'
+Neighborhood.create! name: 'Palermo'
+Nacionality.create! name: 'Argentino'
+MaritalStatus.create! name: 'Soltero'
+EducationLevel.create! name: 'Primario'
+Adviser.create!(
+  name: 'Asesor Nombre',
+  lastname: 'Asesor Apellido',
+  identification_type: 'dni',
+  identification: '27567456',
+  phone: '278778722'
 )

@@ -8,6 +8,9 @@ es:
       account:
         one: 'Cuenta'
         other: 'Cuentas'
+      adviser:
+        one: 'Asesor'
+        other: 'Asesores'
       city:
         one: 'Ciudad'
         other: 'Ciudades'
@@ -23,9 +26,6 @@ es:
       education_level:
         one: 'Nivel de estudio'
         other: 'Niveles de estudio'
-      institution:
-        one: 'Institución'
-        other: 'Instituciones'
       job:
         one: 'Lugar de trabajo'
         other: 'Lugares de trabajo'
@@ -82,6 +82,12 @@ es:
       account:
         name: 'Nombre'
         subdomain: 'Subdominio'
+      adviser:
+        name: 'Nombre'
+        lastname: 'Apellido'
+        identification_type: 'Tipo Doc.'
+        identification: 'Número Doc.'
+        phone: 'Teléfono'
       city:
         name: 'Nombre'
         zip_code: 'Código postal'
@@ -91,24 +97,26 @@ es:
         tax_id: 'CUIT'
         address: 'Dirección'
       customer:
+        adviser: 'Asesor originante'
         address: 'Dirección'
         birthdate: 'Fecha de nacimiento'
         education_level: 'Nivel de estudio'
         email: 'Correo electrónico'
-        identification: 'DNI'
-        kind: 'Perfil'
+        card: 'Tarjeta'
+        identification_type: 'Tipo Doc.'
+        identification: 'Número Doc.'
         lastname: 'Apellido'
         marital_status: 'Estado civil'
         member: 'Socio'
-        monthly_income: 'Ingreso mensual aprox.'
+        monthly_income: 'Ingreso mensual'
         nacionality: 'Nacionalidad'
         name: 'Nombre'
-        profession: 'Profesión'
-        spouse_name: 'Nombre del cónyuge'
-        tax_id: 'CUIL/CUIT'
-        city: 'Ciudad'
-        job: 'Lugar de trabajo'
+        occupation: 'Ocupación'
+        state: 'Provincia'
+        city: 'Localidad'
         work_address: 'Domicilio laboral'
+        phone: 'Teléfono'
+        neighborhood: 'Barrio'
       department:
         name: 'Repartición'
       education_level:

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160801152719) do
+ActiveRecord::Schema.define(version: 20160801154120) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,18 @@ ActiveRecord::Schema.define(version: 20160801152719) do
     t.index ["subdomain"], name: "index_accounts_on_subdomain", using: :btree
   end
 
+  create_table "advisers", force: :cascade do |t|
+    t.string   "name",                            null: false
+    t.string   "lastname",                        null: false
+    t.string   "identification_type",             null: false
+    t.string   "identification",                  null: false
+    t.string   "phone",                           null: false
+    t.integer  "lock_version",        default: 0, null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.index ["identification"], name: "index_advisers_on_identification", unique: true, using: :btree
+  end
+
   create_table "cities", force: :cascade do |t|
     t.string   "name",                     null: false
     t.integer  "state_id",                 null: false
@@ -33,20 +45,52 @@ ActiveRecord::Schema.define(version: 20160801152719) do
     t.index ["state_id"], name: "index_cities_on_state_id", using: :btree
   end
 
+  create_table "customers", force: :cascade do |t|
+    t.string   "code"
+    t.string   "name",                                                         null: false
+    t.string   "lastname",                                                     null: false
+    t.string   "identification_type",                                          null: false
+    t.string   "identification",                                               null: false
+    t.string   "phone",                                                        null: false
+    t.string   "address",                                                      null: false
+    t.string   "email"
+    t.date     "birthdate",                                                    null: false
+    t.boolean  "member",                                       default: false, null: false
+    t.string   "work_address",                                                 null: false
+    t.decimal  "monthly_income",      precision: 10, scale: 2
+    t.string   "card",                                                         null: false
+    t.integer  "occupation_id",                                                null: false
+    t.integer  "neighborhood_id"
+    t.integer  "city_id",                                                      null: false
+    t.integer  "state_id",                                                     null: false
+    t.integer  "nacionality_id",                                               null: false
+    t.integer  "marital_status_id",                                            null: false
+    t.integer  "education_level_id",                                           null: false
+    t.integer  "adviser_id",                                                   null: false
+    t.integer  "lock_version",                                 default: 0,     null: false
+    t.datetime "created_at",                                                   null: false
+    t.datetime "updated_at",                                                   null: false
+    t.index ["adviser_id"], name: "index_customers_on_adviser_id", using: :btree
+    t.index ["city_id"], name: "index_customers_on_city_id", using: :btree
+    t.index ["code"], name: "index_customers_on_code", using: :btree
+    t.index ["education_level_id"], name: "index_customers_on_education_level_id", using: :btree
+    t.index ["identification"], name: "index_customers_on_identification", unique: true, using: :btree
+    t.index ["lastname"], name: "index_customers_on_lastname", using: :btree
+    t.index ["marital_status_id"], name: "index_customers_on_marital_status_id", using: :btree
+    t.index ["member"], name: "index_customers_on_member", using: :btree
+    t.index ["nacionality_id"], name: "index_customers_on_nacionality_id", using: :btree
+    t.index ["name"], name: "index_customers_on_name", using: :btree
+    t.index ["neighborhood_id"], name: "index_customers_on_neighborhood_id", using: :btree
+    t.index ["occupation_id"], name: "index_customers_on_occupation_id", using: :btree
+    t.index ["state_id"], name: "index_customers_on_state_id", using: :btree
+  end
+
   create_table "education_levels", force: :cascade do |t|
     t.string   "name",                     null: false
     t.integer  "lock_version", default: 0, null: false
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.index ["name"], name: "index_education_levels_on_name", unique: true, using: :btree
-  end
-
-  create_table "institutions", force: :cascade do |t|
-    t.string   "name",                     null: false
-    t.integer  "lock_version", default: 0, null: false
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-    t.index ["name"], name: "index_institutions_on_name", unique: true, using: :btree
   end
 
   create_table "marital_statuses", force: :cascade do |t|
