@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   constraints AccountSubdomain do
     resources :advisers, except: [:destroy]
+    resources :cards, except: [:show, :destroy]
     resources :cities, except: [:show, :destroy]
     resources :customers, except: [:destroy]
     resources :education_levels, except: [:show, :destroy]

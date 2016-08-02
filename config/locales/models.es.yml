@@ -11,6 +11,9 @@ es:
       adviser:
         one: 'Asesor'
         other: 'Asesores'
+      card:
+        one: 'Tarjeta'
+        other: 'Tarjetas'
       city:
         one: 'Ciudad'
         other: 'Ciudades'
@@ -88,6 +91,10 @@ es:
         identification_type: 'Tipo Doc.'
         identification: 'Número Doc.'
         phone: 'Teléfono'
+      card:
+        name: 'Nombre'
+        admission_fee: 'Cuota de ingreso'
+        monthly_fee: 'Cuota mensual'
       city:
         name: 'Nombre'
         zip_code: 'Código postal'
@@ -102,16 +109,17 @@ es:
         birthdate: 'Fecha de nacimiento'
         education_level: 'Nivel de estudio'
         email: 'Correo electrónico'
-        card: 'Tarjeta'
+        card: 'Adhiere Tarjeta'
         identification_type: 'Tipo Doc.'
         identification: 'Número Doc.'
-        lastname: 'Apellido'
+        lastname: 'Apellidos'
         marital_status: 'Estado civil'
         member: 'Socio'
         monthly_income: 'Ingreso mensual'
         nacionality: 'Nacionalidad'
-        name: 'Nombre'
+        name: 'Nombres'
         occupation: 'Ocupación'
+        place_birth: 'Lugar de nacimiento'
         state: 'Provincia'
         city: 'Localidad'
         work_address: 'Domicilio laboral'

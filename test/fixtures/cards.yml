@@ -1,0 +1,4 @@
+default:
+  name: Default
+  admission_fee: 5400
+  monthly_fee: 400

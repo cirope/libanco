@@ -31,6 +31,7 @@ class CustomersControllerTest < ActionDispatch::IntegrationTest
           identification_type: 'dni',
           adviser_id: @customer.adviser_id,
           lastname: @customer.lastname,
+          place_birth: @customer.place_birth,
           marital_status_id: @customer.marital_status_id,
           member: @customer.member,
           nacionality_id: @customer.nacionality_id,
@@ -38,7 +39,7 @@ class CustomersControllerTest < ActionDispatch::IntegrationTest
           occupation_id: @customer.occupation_id,
           phone: @customer.phone,
           work_address: @customer.work_address,
-          card: @customer.card,
+          card_id: @customer.card_id,
           monthly_income: 10000
         }
       }

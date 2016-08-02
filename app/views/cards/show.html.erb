@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @card.name %>
+</p>
+
+<p>
+  <strong>Admission fee:</strong>
+  <%= @card.admission_fee %>
+</p>
+
+<p>
+  <strong>Monthly fee:</strong>
+  <%= @card.monthly_fee %>
+</p>
+
+<%= link_to 'Edit', edit_card_path(@card) %> |
+<%= link_to 'Back', cards_path %>

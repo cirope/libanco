@@ -9,7 +9,7 @@ class Customer < ApplicationRecord
   default_scope -> { order 'customers.lastname ASC' }
 
   strip_fields :name, :lastname, :code, :identification, :email,
-    :address, :work_address, :phone
+    :address, :work_address, :phone, :place_birth
 
   search_scope :search do
     attributes :name, :lastname, :identification

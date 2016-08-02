@@ -18,6 +18,22 @@
           </div>
           <div class="row">
             <div class="col-md-6">
+              <%= f.input :birthdate, as: :date_picker %>
+            </div>
+            <div class="col-md-6">
+              <%= f.input :place_birth %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <%= f.association :nacionality, prompt: true %>
+            </div>
+            <div class="col-md-6">
+              <%= f.input :phone %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
               <%= f.input :identification_type, collection: identification_types, prompt: true %>
             </div>
             <div class="col-md-6">
@@ -26,26 +42,18 @@
           </div>
           <div class="row">
             <div class="col-md-6">
-              <%= f.input :birthdate, as: :date_picker %>
-            </div>
-            <div class="col-md-6">
-              <%= f.association :nacionality, prompt: true %>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <%= f.input :phone %>
-            </div>
-            <div class="col-md-6">
               <%= f.input :email %>
             </div>
-          </div>
-          <div class="row">
             <div class="col-md-6">
               <%= f.input :address %>
             </div>
+          </div>
+          <div class="row">
             <div class="col-md-6">
               <%= f.association :neighborhood, prompt: true %>
+            </div>
+            <div class="col-md-6">
+              <%= f.association :city, prompt: true %>
             </div>
           </div>
         </div>
@@ -55,28 +63,20 @@
               <%= f.association :state, prompt: true %>
             </div>
             <div class="col-md-6">
-              <%= f.association :city, prompt: true %>
+              <%= f.association :occupation, prompt: true %>
             </div>
           </div>
           <div class="row">
-            <div class="col-md-6">
-              <%= f.association :occupation, prompt: true %>
-            </div>
             <div class="col-md-6">
               <%= f.input :work_address %>
             </div>
-          </div>
-          <div class="row">
             <div class="col-md-6">
               <%= f.association :marital_status, prompt: true %>
             </div>
-            <div class="col-md-6">
-              <%= f.association :education_level, prompt: true %>
-            </div>
           </div>
           <div class="row">
             <div class="col-md-6">
-              <%= f.input :card, collection: customer_cards, prompt: true %>
+              <%= f.association :education_level, prompt: true %>
             </div>
             <div class="col-md-6">
               <%= f.input :monthly_income %>
@@ -84,12 +84,13 @@
           </div>
           <div class="row">
             <div class="col-md-6">
-              <%= f.association :adviser, prompt: true %>
+              <%= f.association :card, prompt: true %>
             </div>
             <div class="col-md-6">
-              <%= f.input :member %>
+              <%= f.association :adviser, prompt: true %>
             </div>
           </div>
+          <%= f.input :member %>
         </div>
       </div>
     </div>

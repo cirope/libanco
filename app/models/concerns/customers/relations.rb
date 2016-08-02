@@ -3,6 +3,7 @@ module Customers::Relations
 
   included do
     belongs_to :adviser
+    belongs_to :card, optional: true
     belongs_to :city
     belongs_to :education_level
     belongs_to :marital_status

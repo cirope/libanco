@@ -21,7 +21,8 @@ ActiveRecord::Schema.define(version: 20160801154120) do
     t.integer  "lock_version", default: 0, null: false
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
-    t.index ["subdomain"], name: "index_accounts_on_subdomain", using: :btree
+    t.index ["name"], name: "index_accounts_on_name", unique: true, using: :btree
+    t.index ["subdomain"], name: "index_accounts_on_subdomain", unique: true, using: :btree
   end
 
   create_table "advisers", force: :cascade do |t|
@@ -34,6 +35,16 @@ ActiveRecord::Schema.define(version: 20160801154120) do
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
     t.index ["identification"], name: "index_advisers_on_identification", unique: true, using: :btree
+  end
+
+  create_table "cards", force: :cascade do |t|
+    t.string   "name",                                               null: false
+    t.decimal  "admission_fee", precision: 10, scale: 2,             null: false
+    t.decimal  "monthly_fee",   precision: 10, scale: 2,             null: false
+    t.integer  "lock_version",                           default: 0, null: false
+    t.datetime "created_at",                                         null: false
+    t.datetime "updated_at",                                         null: false
+    t.index ["name"], name: "index_cards_on_name", unique: true, using: :btree
   end
 
   create_table "cities", force: :cascade do |t|
@@ -58,8 +69,9 @@ ActiveRecord::Schema.define(version: 20160801154120) do
     t.boolean  "member",                                       default: false, null: false
     t.string   "work_address",                                                 null: false
     t.decimal  "monthly_income",      precision: 10, scale: 2
-    t.string   "card",                                                         null: false
+    t.string   "place_birth",                                                  null: false
     t.integer  "occupation_id",                                                null: false
+    t.integer  "card_id",                                                      null: false
     t.integer  "neighborhood_id"
     t.integer  "city_id",                                                      null: false
     t.integer  "state_id",                                                     null: false
@@ -71,6 +83,7 @@ ActiveRecord::Schema.define(version: 20160801154120) do
     t.datetime "created_at",                                                   null: false
     t.datetime "updated_at",                                                   null: false
     t.index ["adviser_id"], name: "index_customers_on_adviser_id", using: :btree
+    t.index ["card_id"], name: "index_customers_on_card_id", using: :btree
     t.index ["city_id"], name: "index_customers_on_city_id", using: :btree
     t.index ["code"], name: "index_customers_on_code", using: :btree
     t.index ["education_level_id"], name: "index_customers_on_education_level_id", using: :btree

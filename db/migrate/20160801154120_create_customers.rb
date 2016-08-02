@@ -13,8 +13,9 @@ class CreateCustomers < ActiveRecord::Migration[5.0]
       t.boolean :member, null: false, default: false
       t.string :work_address, null: false
       t.decimal :monthly_income, precision: 10, scale: 2
-      t.string :card, null: false
+      t.string :place_birth, null: false
       t.references :occupation, null: false, index: true
+      t.references :card, null: false, index: true
       t.references :neighborhood, index: true
       t.references :city, null: false, index: true
       t.references :state, null: false, index: true
