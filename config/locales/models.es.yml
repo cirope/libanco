@@ -29,9 +29,6 @@ es:
       education_level:
         one: 'Nivel de estudio'
         other: 'Niveles de estudio'
-      job:
-        one: 'Lugar de trabajo'
-        other: 'Lugares de trabajo'
       loan:
         one: 'Préstamo'
         other: 'Préstamos'
@@ -47,9 +44,6 @@ es:
       occupation:
         one: 'Ocupación'
         other: 'Ocupaciones'
-      organization:
-        one: 'Ministerio o Secretaría'
-        other: 'Ministerios o Secretarías'
       payment:
         one: 'Cuota'
         other: 'Cuotas'
@@ -62,6 +56,12 @@ es:
       rate_set:
         one: 'Tasa'
         other: 'Tasas'
+      reference:
+        one: 'Referencia'
+        other: 'Referencias'
+      relationship:
+        one: 'Vínculo'
+        other: 'Vínculos'
       reminder:
         one: 'Recordatorio'
         other: 'Recordatorios'
@@ -111,7 +111,7 @@ es:
         email: 'Correo electrónico'
         card: 'Adhiere Tarjeta'
         identification_type: 'Tipo Doc.'
-        identification: 'Número Doc.'
+        identification: 'Nro Doc.'
         lastname: 'Apellidos'
         marital_status: 'Estado civil'
         member: 'Socio'
@@ -172,6 +172,15 @@ es:
         payments_count: 'Cuotas'
         rate: 'Tasa'
       rate_set:
+        name: 'Nombre'
+      reference:
+        name: 'Nombre'
+        lastname: 'Apellido'
+        identification_type: 'Tipo Doc.'
+        identification: 'Nro Doc.'
+        phone: 'Teléfono'
+        relationship: 'Vínculo'
+      relationship:
         name: 'Nombre'
       reminder:
         remind_at: 'Fecha'

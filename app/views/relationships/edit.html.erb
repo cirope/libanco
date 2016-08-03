@@ -1,0 +1,6 @@
+<%= content_for :form_actions do %>
+  <%= link_to_show @relationship %> |
+  <%= link_to_index relationships_path %>
+<% end %>
+
+<%= render 'form', relationship: @relationship %>

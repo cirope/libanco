@@ -1,0 +1,35 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">
+      <%= fa_icon 'pencil-square-o', text: Reference.model_name.human(count: 0) %>
+    </h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-2">
+        <h5><strong><%= Reference.human_attribute_name 'name' %></strong></h5>
+      </div>
+      <div class="col-md-2">
+        <h5><strong><%= Reference.human_attribute_name 'lastname' %></strong></h5>
+      </div>
+      <div class="col-md-2">
+        <h5><strong><%= Reference.human_attribute_name 'identification_type' %></strong></h5>
+      </div>
+      <div class="col-md-2">
+        <h5><strong><%= Reference.human_attribute_name 'identification' %></strong></h5>
+      </div>
+      <div class="col-md-1">
+        <h5><strong><%= Reference.human_attribute_name 'phone' %></strong></h5>
+      </div>
+      <div class="col-md-2">
+        <h5><strong><%= Reference.human_attribute_name 'relationship' %></strong></h5>
+      </div>
+    </div>
+
+    <%= f.simple_fields_for :references, customer_references(f.object) do |rf| %>
+      <%= render 'references/reference', f: rf %>
+    <% end %>
+
+    <%= link_to_add_fields t('customers.references.new'), f, :references %>
+  </div>
+</div>

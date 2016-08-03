@@ -1,0 +1,8 @@
+default:
+  name: Default
+  lastname: Default
+  identification_type: dni
+  identification: 27789678
+  phone: 261789676
+  relationship: default
+  customer: default

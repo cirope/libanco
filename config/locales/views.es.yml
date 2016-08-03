@@ -108,9 +108,6 @@ es:
       empty_html: 'No se encontraron clientes, puede buscar o crear uno con el botón <span class="label label-info">Nuevo cliente</span>'
     new:
       title: 'Crear cliente'
-      company: 'Agregar nueva empresa'
-      organization: 'Agregar nuevo ministerio'
-      city: 'Agregar nueva ciudad'
     show:
       title: 'Ver cliente'
     member:
@@ -136,6 +133,8 @@ es:
       black: 'Black'
       gold: 'Gold'
       classic: 'Classic'
+    references:
+      new: 'Agregar referencia'
 
   education_levels:
     edit:
@@ -257,6 +256,16 @@ es:
     show:
       title: 'Ver tasa'
     simulator: 'Para habilitar el simulador, primero seleccione una tasa.'
+
+  relationships:
+    edit:
+      title: 'Editar vínculo'
+    index:
+      new: 'Nuevo vínculo'
+      title: 'Listado de vínculos'
+      empty_html: 'No hay vínculos, puede crear uno con el botón <span class="label label-info">Nuevo vínculo</span>'
+    new:
+      title: 'Crear vínculo'
 
   reports:
     index:

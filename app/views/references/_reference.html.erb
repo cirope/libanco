@@ -1,0 +1,23 @@
+<fieldset class="row">
+  <div class="col-md-2">
+    <%= f.input :name, label: false %>
+  </div>
+  <div class="col-md-2">
+    <%= f.input :lastname, label: false %>
+  </div>
+  <div class="col-md-2">
+    <%= f.input :identification_type, collection: identification_types, prompt: true, label: false %>
+  </div>
+  <div class="col-md-2">
+    <%= f.input :identification, label: false %>
+  </div>
+  <div class="col-md-1">
+    <%= f.input :phone, label: false %>
+  </div>
+  <div class="col-md-2">
+    <%= f.association :relationship, prompt: true, label: false %>
+  </div>
+  <div class="col-xs-1">
+    <%= link_to_remove_nested_item f %>
+  </div>
+</fieldset>

@@ -1,0 +1,30 @@
+<% if @relationships.blank? %>
+  <%= render 'shared/empty_index', message: t('.empty_html') %>
+<% else %>
+  <div class="table-responsive">
+    <table class="table table-striped table-condensed">
+      <thead>
+        <tr>
+          <th><%= Relationship.human_attribute_name 'created_at' %></th>
+          <th><%= Relationship.human_attribute_name 'name' %></th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @relationships.each do |relationship| %>
+          <tr>
+            <td class="col-md-2"><%= l relationship.created_at %></td>
+            <td><%= relationship.name %></td>
+            <td><%= link_to_edit [:edit, relationship] %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% end %>
+
+<hr />
+
+<%= paginate @relationships %>
+<%= link_to_new new_relationship_path, class: 'btn btn-primary' %>

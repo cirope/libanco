@@ -17,4 +17,5 @@
 //= require jquery-ui/datepicker-es
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require dynamic_form
 //= require main

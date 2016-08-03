@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160801154120) do
+ActiveRecord::Schema.define(version: 20160802232033) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -136,6 +136,30 @@ ActiveRecord::Schema.define(version: 20160801154120) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.index ["name"], name: "index_occupations_on_name", unique: true, using: :btree
+  end
+
+  create_table "references", force: :cascade do |t|
+    t.string   "name",                            null: false
+    t.string   "lastname",                        null: false
+    t.string   "identification_type",             null: false
+    t.string   "identification",                  null: false
+    t.string   "phone",                           null: false
+    t.integer  "relationship_id",                 null: false
+    t.integer  "customer_id",                     null: false
+    t.integer  "lock_version",        default: 0, null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.index ["customer_id"], name: "index_references_on_customer_id", using: :btree
+    t.index ["identification"], name: "index_references_on_identification", unique: true, using: :btree
+    t.index ["relationship_id"], name: "index_references_on_relationship_id", using: :btree
+  end
+
+  create_table "relationships", force: :cascade do |t|
+    t.string   "name",                     null: false
+    t.integer  "lock_version", default: 0, null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["name"], name: "index_relationships_on_name", unique: true, using: :btree
   end
 
   create_table "states", force: :cascade do |t|

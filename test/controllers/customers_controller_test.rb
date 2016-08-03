@@ -18,7 +18,7 @@ class CustomersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should create customer' do
-    assert_difference('Customer.count') do
+    assert_difference 'Customer.count' do
       post customers_url, params: {
         customer: {
           address: @customer.address,

@@ -3,7 +3,7 @@ class CardsController < ApplicationController
   include Authorization
   include Title
 
-  before_action :set_card, only: [:show, :edit, :update]
+  before_action :set_card, only: [:edit, :update]
 
   # GET /cards
   # GET /cards.json

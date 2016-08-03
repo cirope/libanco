@@ -63,6 +63,9 @@ class CustomersController < ApplicationController
       params.require(:customer).permit :code, :name, :lastname, :identification,
         :identification_type, :address, :work_address, :monthly_income, :email, :phone,
         :birthdate, :member, :occupation_id, :neighborhood_id, :state_id, :city_id, :card_id,
-        :place_birth, :nacionality_id, :marital_status_id, :education_level_id, :adviser_id
+        :place_birth, :nacionality_id, :marital_status_id, :education_level_id, :adviser_id,
+        references_attributes: [
+          :id, :name, :lastname, :identification_type, :identification, :phone, :relationship_id, :_destroy
+        ]
     end
 end

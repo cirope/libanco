@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     resources :nacionalities, except: [:show, :destroy]
     resources :neighborhoods, except: [:show, :destroy]
     resources :occupations, except: [:show, :destroy]
+    resources :relationships, except: [:show, :destroy]
     resources :states, except: [:show, :destroy]
   end
 
