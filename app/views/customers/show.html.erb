@@ -2,7 +2,72 @@
   <h3><%= @customer %></h3>
 </div>
 
-<hr />
+<div class="row">
+  <div class="col-md-6">
+    <div class="bs-callout bs-callout-info">
+      <p>
+        <strong><%= Customer.human_attribute_name 'identification_type' %>:</strong>
+        <%= t_field @customer, 'identification_type' %>
+      </p>
+      <p>
+        <strong><%= Customer.human_attribute_name 'identification' %>:</strong>
+        <%= @customer.identification %>
+      </p>
+      <p>
+        <strong><%= Customer.human_attribute_name 'birthdate' %>:</strong>
+        <%= l @customer.birthdate %>
+      </p>
+      <p>
+        <strong><%= Customer.human_attribute_name 'place_birth' %>:</strong>
+        <%= @customer.place_birth %>
+      </p>
+      <p>
+        <strong><%= Customer.human_attribute_name 'nacionality' %>:</strong>
+        <%= @customer.nacionality %>
+      </p>
+      <p>
+        <strong><%= Customer.human_attribute_name 'phone' %>:</strong>
+        <%= @customer.phone %>
+      </p>
+      <p>
+        <strong><%= Customer.human_attribute_name 'address' %>:</strong>
+        <%= @customer.full_address %>
+      </p>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="bs-callout bs-callout-info">
+      <p>
+        <strong><%= Customer.human_attribute_name 'occupation' %>:</strong>
+        <%= @customer.occupation %>
+      </p>
+      <p>
+        <strong><%= Customer.human_attribute_name 'work_address' %>:</strong>
+        <%= @customer.work_address %>
+      </p>
+      <p>
+        <strong><%= Customer.human_attribute_name 'marital_status' %>:</strong>
+        <%= @customer.marital_status %>
+      </p>
+      <p>
+        <strong><%= Customer.human_attribute_name 'education_level' %>:</strong>
+        <%= @customer.education_level %>
+      </p>
+      <p>
+        <strong><%= Customer.human_attribute_name 'monthly_income' %>:</strong>
+        <%= number_to_currency @customer.monthly_income %>
+      </p>
+      <p>
+        <strong><%= Customer.human_attribute_name 'card' %>:</strong>
+        <%= @customer.card %>
+      </p>
+      <p>
+        <strong><%= Customer.human_attribute_name 'adviser' %>:</strong>
+        <%= @customer.adviser %>
+      </p>
+    </div>
+  </div>
+</div>
 
 <%= link_to_edit [:edit, @customer] %> |
 <%= link_to_index customers_path %>

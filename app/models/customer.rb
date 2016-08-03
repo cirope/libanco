@@ -3,10 +3,9 @@ class Customer < ApplicationRecord
   include Auditable
   include Authority::Abilities
   include Customers::Relations
+  include Customers::Scopes
   include Customers::Validation
   include SearchCop
-
-  default_scope -> { order 'customers.lastname ASC' }
 
   strip_fields :name, :lastname, :code, :identification, :email,
     :address, :work_address, :phone, :place_birth
