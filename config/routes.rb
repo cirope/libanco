@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     resources :customers, except: [:destroy]
     resources :education_levels, except: [:show, :destroy]
     resources :institutions, except: [:show, :destroy]
+    resources :loan_types, except: [:show, :destroy]
     resources :marital_statuses, except: [:show, :destroy]
     resources :nacionalities, except: [:show, :destroy]
     resources :neighborhoods, except: [:show, :destroy]

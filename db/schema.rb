@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160802232033) do
+ActiveRecord::Schema.define(version: 20160804011326) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -104,6 +104,16 @@ ActiveRecord::Schema.define(version: 20160802232033) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.index ["name"], name: "index_education_levels_on_name", unique: true, using: :btree
+  end
+
+  create_table "loan_types", force: :cascade do |t|
+    t.string   "name",                                                    null: false
+    t.decimal  "initial_percentage", precision: 10, scale: 2,             null: false
+    t.decimal  "annual_percentage",  precision: 10, scale: 2,             null: false
+    t.integer  "lock_version",                                default: 0, null: false
+    t.datetime "created_at",                                              null: false
+    t.datetime "updated_at",                                              null: false
+    t.index ["name"], name: "index_loan_types_on_name", unique: true, using: :btree
   end
 
   create_table "marital_statuses", force: :cascade do |t|
