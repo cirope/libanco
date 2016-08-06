@@ -32,9 +32,6 @@ es:
       loan:
         one: 'Préstamo'
         other: 'Préstamos'
-      loan_type:
-        one: 'Tipo de préstamo'
-        other: 'Tipos de préstamos'
       marital_status:
         one: 'Estado civil'
         other: 'Estados civiles'
@@ -154,10 +151,6 @@ es:
         status: 'Estado'
         rate_set_id: 'Tasa'
         rate_id: 'Cuotas'
-      loan_type:
-        name: 'Nombre'
-        initial_percentage: 'Porcentaje inicial'
-        annual_percentage: 'Porcentaje anual'
       marital_status:
         name: 'Nombre'
       nacionality:

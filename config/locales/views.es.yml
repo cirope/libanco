@@ -181,16 +181,6 @@ es:
       expired: 'Atrasado'
       judicial: 'En acción judicial'
 
-  loan_types:
-    edit:
-      title: 'Editar tipo de préstamo'
-    index:
-      new: 'Nuevo tipo de préstamo'
-      title: 'Listado de tipos de préstamos'
-      empty_html: 'No hay tipos de préstamos, puede crear uno con el botón <span class="label label-info">Nuevo tipo de préstamo</span>'
-    new:
-      title: 'Crear tipo de préstamo'
-
   marital_statuses:
     edit:
       title: 'Editar estado civil'
