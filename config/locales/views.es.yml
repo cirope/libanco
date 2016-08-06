@@ -99,6 +99,16 @@ es:
     show:
       title: 'Ver empresa'
 
+  credit_lines:
+    edit:
+      title: 'Editar línea de crédito'
+    index:
+      new: 'Nueva línea de crédito'
+      title: 'Listado de líneas de crédito'
+      empty_html: 'No hay líneas de crédito, puede crear una con el botón <span class="label label-info">Nueva línea de crédito</span>'
+    new:
+      title: 'Crear línea de crédito'
+
   customers:
     edit:
       title: 'Editar cliente'

@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @credit_line.name %>
+</p>
+
+<p>
+  <strong>Commission:</strong>
+  <%= @credit_line.commission %>
+</p>
+
+<p>
+  <strong>Interest:</strong>
+  <%= @credit_line.interest %>
+</p>
+
+<p>
+  <strong>Tax:</strong>
+  <%= @credit_line.tax %>
+</p>
+
+<p>
+  <strong>Tax perception:</strong>
+  <%= @credit_line.tax_perception %>
+</p>
+
+<p>
+  <strong>Gross income perception:</strong>
+  <%= @credit_line.gross_income_perception %>
+</p>
+
+<p>
+  <strong>Insurance:</strong>
+  <%= @credit_line.insurance %>
+</p>
+
+<p>
+  <strong>Stamped:</strong>
+  <%= @credit_line.stamped %>
+</p>
+
+<%= link_to 'Edit', edit_credit_line_path(@credit_line) %> |
+<%= link_to 'Back', credit_lines_path %>

@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     resources :advisers, except: [:destroy]
     resources :cards, except: [:show, :destroy]
     resources :cities, except: [:show, :destroy]
+    resources :credit_lines, except: [:show, :destroy]
     resources :customers, except: [:destroy]
     resources :education_levels, except: [:show, :destroy]
     resources :institutions, except: [:show, :destroy]

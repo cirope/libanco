@@ -1,0 +1,44 @@
+<% if @credit_lines.blank? %>
+  <%= render 'shared/empty_index', message: t('.empty_html') %>
+<% else %>
+  <div class="table-responsive">
+    <table class="table table-striped table-condensed">
+      <thead>
+        <tr>
+          <th><%= CreditLine.human_attribute_name 'created_at' %></th>
+          <th><%= CreditLine.human_attribute_name 'name' %></th>
+          <th><%= CreditLine.human_attribute_name 'commission' %></th>
+          <th><%= CreditLine.human_attribute_name 'interest' %></th>
+          <th><%= CreditLine.human_attribute_name 'tax' %></th>
+          <th><%= CreditLine.human_attribute_name 'tax_perception' %></th>
+          <th><%= CreditLine.human_attribute_name 'gross_income_perception' %></th>
+          <th><%= CreditLine.human_attribute_name 'insurance' %></th>
+          <th><%= CreditLine.human_attribute_name 'stamped' %></th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @credit_lines.each do |credit_line| %>
+          <tr>
+            <td><%= l credit_line.created_at %></td>
+            <td><%= credit_line.name %></td>
+            <td><%= number_to_percentage credit_line.commission %></td>
+            <td><%= number_to_percentage credit_line.interest %></td>
+            <td><%= number_to_percentage credit_line.tax %></td>
+            <td><%= number_to_percentage credit_line.tax_perception %></td>
+            <td><%= number_to_percentage credit_line.gross_income_perception %></td>
+            <td><%= number_to_percentage credit_line.insurance %></td>
+            <td><%= number_to_percentage credit_line.stamped %></td>
+            <td><%= link_to_edit [:edit, credit_line] %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% end %>
+
+<hr />
+
+<%= paginate @credit_lines %>
+<%= link_to_new new_credit_line_path, class: 'btn btn-primary' %>

@@ -20,6 +20,9 @@ es:
       company:
         one: 'Empresa'
         other: 'Empresas'
+      credit_line:
+        one: 'Línea de crédito'
+        other: 'Líneas de crédito'
       customer:
         one: 'Cliente'
         other: 'Clientes'
@@ -103,6 +106,15 @@ es:
         name: 'Nombre'
         tax_id: 'CUIT'
         address: 'Dirección'
+      credit_line:
+        commission: 'Comisión'
+        gross_income_perception: 'Percepción IIBB'
+        insurance: 'Seguro'
+        interest: 'TNA'
+        name: 'Nombre'
+        stamped: 'Sellado'
+        tax: 'IVA'
+        tax_perception: 'Percepción IVA'
       customer:
         adviser: 'Asesor originante'
         address: 'Dirección'

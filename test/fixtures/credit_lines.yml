@@ -1,0 +1,9 @@
+default:
+  name: Default
+  commission: 15
+  interest: 60
+  tax: 21
+  tax_perception: 0
+  gross_income_perception: 0
+  insurance: 0
+  stamped: 1

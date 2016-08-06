@@ -1,0 +1,2 @@
+json.extract! credit_line, :id, :name, :commission, :interest, :tax, :tax_perception, :gross_income_perception, :insurance, :stamped, :created_at, :updated_at
+json.url credit_line_url(credit_line, format: :json)
