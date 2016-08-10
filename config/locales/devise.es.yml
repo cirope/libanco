@@ -5,7 +5,7 @@ es:
       unauthenticated: 'Su sesión ha expirado, por favor ingrese de nuevo para continuar.'
       unconfirmed: 'Necesita confirmar su cuenta antes de continuar.'
       locked: 'Su cuenta está bloqueada.'
-      not_found_in_database: 'DNI o contraseña inválido.'
+      not_found_in_database: 'Email o contraseña inválido.'
       invalid: 'Usuario o contraseña inválido.'
       invalid_token: 'Token de autenticación inválido.'
       timeout: 'Su sesión ha expirado, por favor ingrese de nuevo para continuar.'
