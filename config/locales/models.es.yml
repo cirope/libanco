@@ -218,4 +218,5 @@ es:
         name: 'Nombre'
         password: 'Contraseña'
         password_confirmation: 'Confirmación'
+        remember_me: 'Recordarme'
         roles_mask: 'Rol'
