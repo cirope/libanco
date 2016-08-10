@@ -1,4 +1,4 @@
-set :application, 'prestamos.cirope.com'
+set :application, 'libanco.com'
 set :user, 'deployer'
 set :repo_url, 'git://github.com/cirope/libanco.git'
 
