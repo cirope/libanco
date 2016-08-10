@@ -1,0 +1,40 @@
+<div class="clearfix"></div>
+<div class="pull-right">
+  <small>Buenos Aires <%= l Date.today, format: :long %></small>
+</div>
+<div class="clearfix"></div>
+
+<h4 class="title">SOLICITUD DE INGRESO</h4>
+
+Señor Presidente de <strong>Continental Capital</strong><br />
+<p class="text-justify text-indent">
+  Quien suscribe <strong><%= [@customer.lastname, @customer.name].join ', ' %></strong> con domicilio legal/particular
+  en <strong><%= @customer.full_address %></strong> no Particular/Celular (+54) <strong><%= @customer.phone %></strong>
+  Teléfono Comercial. Solicita ser admitido como Socio de Continental Capital Coop. De ahorro, crédito, consumo y vivienda
+  Ltda. Y a tal efecto integra como socio <strong>$1000 (Mil pesos argentinos)</strong>.<br />
+  Cada una sometiéndose desde ya a la fiel observancia de las prescripciones estatutarias y reglamentarias vigentes en
+  Continental Capital de su digna presidencia.
+</p>
+
+<br />
+
+<div class="pull-right firm-container">
+  Saludo a usted muy atte.
+
+  <div class="text-center firm">
+    --------------------------------------<br />
+    Firma
+  </div>
+
+  <div class="text-center firm">
+    --------------------------------------<br />
+    Aclaración
+  </div>
+</div>
+<div class="clearfix"></div>
+
+<div class="box">
+  <h5 class="text-center">RESOLUCIÓN DEL CONSEJO DE ADMINISTRACIÓN</h5>
+  ACTA N°.....................<br />
+  FECHA   ...../......./20.....
+</div>

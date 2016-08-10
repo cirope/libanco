@@ -26,6 +26,7 @@ gem 'whenever', require: false
 gem 'sidekiq'
 gem 'authority'
 gem 'apartment'
+gem 'wicked_pdf'
 
 gem 'unicorn'
 

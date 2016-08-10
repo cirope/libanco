@@ -2,6 +2,7 @@ class CustomersController < ApplicationController
   include Authentication
   include Authorization
   include Title
+  include Customers::GeneratePdf
 
   before_action :set_customer, only: [:show, :edit, :update, :destroy]
   before_action :set_search_path, only: [:index, :show, :new, :edit]
