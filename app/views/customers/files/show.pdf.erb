@@ -2,7 +2,7 @@
   <small>Buenos Aires <%= l Date.today, format: :long %></small>
 </div>
 
-<h4 class="title">SOLICITUD DE INGRESO</h4>
+<h4 class="title text-center"><strong>SOLICITUD DE INGRESO</strong></h4>
 
 Señor Presidente de <strong>Continental Capital</strong><br />
 <p class="text-justify text-indent">
@@ -41,107 +41,111 @@ Señor Presidente de <strong>Continental Capital</strong><br />
 
 <div class="page-break"></div>
 
-<h4 class="text-center"><strong>INFORMACIÓN DATOS</strong></h4>
-<br />
-<br />
-
-<div class="text-uppercase">
-  <div class="row">
-    <div class="col-xs-6">
-      <strong><%= Customer.human_attribute_name 'name' %>:</strong>
-      <span class="label label-default"><%= @customer.name %></span>
-    </div>
-    <div class="col-xs-6">
-      <strong><%= Customer.human_attribute_name 'lastname' %>:</strong>
-      <span class="label label-default"><%= @customer.lastname %></span>
-    </div>
+<div class="panel panel-default text-uppercase">
+  <div class="panel-heading">
+    <h3 class="panel-title text-center">
+      <strong>INFORMACIÓN DATOS</strong>
+    </h3>
   </div>
-  <br />
-  <div class="row">
-    <div class="col-xs-6">
-      <strong><%= Customer.human_attribute_name 'identification_type' %>:</strong>
-      <span class="label label-default"><%= t_field @customer, 'identification_type' %></span>
+  
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-xs-6">
+        <strong><%= Customer.human_attribute_name 'name' %>:</strong>
+        <span class="label label-default"><%= @customer.name %></span>
+      </div>
+      <div class="col-xs-6">
+        <strong><%= Customer.human_attribute_name 'lastname' %>:</strong>
+        <span class="label label-default"><%= @customer.lastname %></span>
+      </div>
     </div>
-    <div class="col-xs-6">
-      <strong><%= Customer.human_attribute_name 'identification' %>:</strong>
-      <span class="label label-default"><%= @customer.identification %></span>
+    <br />
+    <div class="row">
+      <div class="col-xs-6">
+        <strong><%= Customer.human_attribute_name 'identification_type' %>:</strong>
+        <span class="label label-default"><%= t_field @customer, 'identification_type' %></span>
+      </div>
+      <div class="col-xs-6">
+        <strong><%= Customer.human_attribute_name 'identification' %>:</strong>
+        <span class="label label-default"><%= @customer.identification %></span>
+      </div>
     </div>
-  </div>
-  <br />
-  <div class="row">
-    <div class="col-xs-6">
-      <strong><%= Customer.human_attribute_name 'birthdate' %>:</strong>
-      <span class="label label-default"><%= l @customer.birthdate %></span>
+    <br />
+    <div class="row">
+      <div class="col-xs-6">
+        <strong><%= Customer.human_attribute_name 'birthdate' %>:</strong>
+        <span class="label label-default"><%= l @customer.birthdate %></span>
+      </div>
+      <div class="col-xs-6">
+        <strong><%= Customer.human_attribute_name 'place_birth' %>:</strong>
+        <span class="label label-default"><%= @customer.place_birth %></span>
+      </div>
     </div>
-    <div class="col-xs-6">
-      <strong><%= Customer.human_attribute_name 'place_birth' %>:</strong>
-      <span class="label label-default"><%= @customer.place_birth %></span>
+    <br />
+    <div class="row">
+      <div class="col-xs-6">
+        <strong><%= Customer.human_attribute_name 'nacionality' %>:</strong>
+        <span class="label label-default"><%= @customer.nacionality %></span>
+      </div>
+      <div class="col-xs-6">
+        <strong><%= Customer.human_attribute_name 'address' %>:</strong>
+        <span class="label label-default"><%= @customer.address %></span>
+      </div>
     </div>
-  </div>
-  <br />
-  <div class="row">
-    <div class="col-xs-6">
-      <strong><%= Customer.human_attribute_name 'nacionality' %>:</strong>
-      <span class="label label-default"><%= @customer.nacionality %></span>
+    <br />
+    <div class="row">
+      <div class="col-xs-6">
+        <strong><%= Customer.human_attribute_name 'city' %>:</strong>
+        <span class="label label-default"><%= @customer.city %></span>
+      </div>
+      <div class="col-xs-6">
+        <strong><%= Customer.human_attribute_name 'state' %>:</strong>
+        <span class="label label-default"><%= @customer.state %></span>
+      </div>
     </div>
-    <div class="col-xs-6">
-      <strong><%= Customer.human_attribute_name 'address' %>:</strong>
-      <span class="label label-default"><%= @customer.address %></span>
+    <br />
+    <div class="row">
+      <div class="col-xs-6">
+        <strong><%= Customer.human_attribute_name 'phone' %>:</strong>
+        <span class="label label-default"><%= @customer.phone %></span>
+      </div>
+      <div class="col-xs-6">
+        <strong><%= Customer.human_attribute_name 'email' %>:</strong>
+        <span class="label label-default"><%= @customer.email %></span>
+      </div>
     </div>
-  </div>
-  <br />
-  <div class="row">
-    <div class="col-xs-6">
-      <strong><%= Customer.human_attribute_name 'city' %>:</strong>
-      <span class="label label-default"><%= @customer.city %></span>
+    <br />
+    <div class="row">
+      <div class="col-xs-6">
+        <strong><%= Customer.human_attribute_name 'marital_status' %>:</strong>
+        <span class="label label-default"><%= @customer.marital_status %></span>
+      </div>
+      <div class="col-xs-6">
+        <strong><%= Customer.human_attribute_name 'occupation' %>:</strong>
+        <span class="label label-default"><%= @customer.occupation %></span>
+      </div>
     </div>
-    <div class="col-xs-6">
-      <strong><%= Customer.human_attribute_name 'state' %>:</strong>
-      <span class="label label-default"><%= @customer.state %></span>
+    <br />
+    <div class="row">
+      <div class="col-xs-6">
+        <strong><%= Customer.human_attribute_name 'education_level' %>:</strong>
+        <span class="label label-default"><%= @customer.education_level %></span>
+      </div>
+      <div class="col-xs-6">
+        <strong><%= Customer.human_attribute_name 'monthly_income' %>:</strong>
+        <span class="label label-default"><%= number_to_currency @customer.monthly_income %></span>
+      </div>
     </div>
-  </div>
-  <br />
-  <div class="row">
-    <div class="col-xs-6">
-      <strong><%= Customer.human_attribute_name 'phone' %>:</strong>
-      <span class="label label-default"><%= @customer.phone %></span>
-    </div>
-    <div class="col-xs-6">
-      <strong><%= Customer.human_attribute_name 'email' %>:</strong>
-      <span class="label label-default"><%= @customer.email %></span>
-    </div>
-  </div>
-  <br />
-  <div class="row">
-    <div class="col-xs-6">
-      <strong><%= Customer.human_attribute_name 'marital_status' %>:</strong>
-      <span class="label label-default"><%= @customer.marital_status %></span>
-    </div>
-    <div class="col-xs-6">
-      <strong><%= Customer.human_attribute_name 'occupation' %>:</strong>
-      <span class="label label-default"><%= @customer.occupation %></span>
-    </div>
-  </div>
-  <br />
-  <div class="row">
-    <div class="col-xs-6">
-      <strong><%= Customer.human_attribute_name 'education_level' %>:</strong>
-      <span class="label label-default"><%= @customer.education_level %></span>
-    </div>
-    <div class="col-xs-6">
-      <strong><%= Customer.human_attribute_name 'monthly_income' %>:</strong>
-      <span class="label label-default"><%= number_to_currency @customer.monthly_income %></span>
-    </div>
-  </div>
-  <br />
-  <div class="row">
-    <div class="col-xs-6">
-      <strong><%= Customer.human_attribute_name 'work_address' %>:</strong>
-      <span class="label label-default"><%= @customer.work_address %></span>
-    </div>
-    <div class="col-xs-6">
-      <strong><%= Customer.human_attribute_name 'card' %>:</strong>
-      <span class="label label-default"><%= @customer.card %></span>
+    <br />
+    <div class="row">
+      <div class="col-xs-6">
+        <strong><%= Customer.human_attribute_name 'work_address' %>:</strong>
+        <span class="label label-default"><%= @customer.work_address %></span>
+      </div>
+      <div class="col-xs-6">
+        <strong><%= Customer.human_attribute_name 'card' %>:</strong>
+        <span class="label label-default"><%= @customer.card %></span>
+      </div>
     </div>
   </div>
 </div>
