@@ -69,5 +69,18 @@
   </div>
 </div>
 
+<div class="page-header page-header-sm">
+  <h5><%= fa_icon 'file-pdf-o', text: t('customers.pdfs.files') %></h5>
+</div>
+
+<ul>
+  <li>
+    <%= link_to t('customers.pdfs.membership_request'),
+      customer_files_url(@customer, request: 'membership'), target: '_blank'  %>
+  </li>
+</ul>
+
+<hr />
+
 <%= link_to_edit [:edit, @customer] %> |
 <%= link_to_index customers_path %>

@@ -17,7 +17,11 @@ Rails.application.routes.draw do
     resources :cards, except: [:show, :destroy]
     resources :cities, except: [:show, :destroy]
     resources :credit_lines, except: [:show, :destroy]
-    resources :customers, except: [:destroy]
+    resources :customers, except: [:destroy] do
+      scope module: 'customers' do
+        resource :files, only: [:show]
+      end
+    end
     resources :education_levels, except: [:show, :destroy]
     resources :institutions, except: [:show, :destroy]
     resources :loan_types, except: [:show, :destroy]

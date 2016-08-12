@@ -15,6 +15,6 @@ class Customer < ApplicationRecord
   end
 
   def to_s
-    [name, lastname].join ' '
+    [lastname, name].join ', '
   end
 end

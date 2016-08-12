@@ -33,6 +33,8 @@ es:
     start_date: 'Desde'
     end_date: 'Hasta'
     logout: 'Salir'
+    _yes: 'Si'
+    _no: 'No'
 
   accounts:
     edit:
@@ -145,6 +147,10 @@ es:
       classic: 'Classic'
     references:
       new: 'Agregar referencia'
+    full_name: 'Apellidos y nombres'
+    pdfs:
+      files: 'Archivos PDF'
+      membership_request: 'Solicitud de Ingreso'
 
   education_levels:
     edit:
@@ -155,6 +161,10 @@ es:
       empty_html: 'No hay niveles de estudio, puede crear uno con el botón <span class="label label-info">Nuevo nivel de estudio</span>'
     new:
       title: 'Crear nivel de estudio'
+
+  files:
+    show:
+      title: 'Solicitud de Ingreso'
 
   institutions:
     edit:
