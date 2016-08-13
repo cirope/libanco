@@ -45,25 +45,28 @@
               <%= f.input :email %>
             </div>
             <div class="col-md-6">
-              <%= f.input :address %>
+              <%= f.association :occupation, prompt: true %>
             </div>
           </div>
           <div class="row">
             <div class="col-md-6">
-              <%= f.association :neighborhood, prompt: true %>
+              <%= f.input :address %>
             </div>
             <div class="col-md-6">
-              <%= f.association :city, prompt: true %>
+              <%= f.association :neighborhood, prompt: true %>
             </div>
           </div>
         </div>
         <div class="col-md-6">
           <div class="row">
             <div class="col-md-6">
-              <%= f.association :state, prompt: true %>
+              <%= f.association :state, prompt: true, input_html: {
+                class: 'parent-model', data: { child_url: state_cities_path('child_id') }
+              } %>
             </div>
             <div class="col-md-6">
-              <%= f.association :occupation, prompt: true %>
+              <%= f.association :city, collection: state_cities(f.object.state), prompt: true,
+                input_html: { class: 'child-model' } %>
             </div>
           </div>
           <div class="row">

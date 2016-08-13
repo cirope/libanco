@@ -15,8 +15,8 @@ es:
         one: 'Tarjeta'
         other: 'Tarjetas'
       city:
-        one: 'Ciudad'
-        other: 'Ciudades'
+        one: 'Localidad'
+        other: 'Localidades'
       company:
         one: 'Empresa'
         other: 'Empresas'

@@ -1,3 +1,9 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+jQuery ($) ->
+  $(document).on 'change', '.parent-model', ->
+    data_url = $(this).attr 'data-child-url'
+
+    if $(this).val() && data_url
+      url = data_url.replace 'child_id', $(this).val()
+      $.getScript url
+    else
+      $('.child-model').val('')

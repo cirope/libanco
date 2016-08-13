@@ -11,5 +11,4 @@ jQuery ($) ->
       changeYear: true
 
 document.addEventListener 'turbolinks:load', ->
-  $('[data-submenu]').submenupicker()
   $('[data-toggle="popover"]').popover({html: true})

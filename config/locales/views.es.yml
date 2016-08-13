@@ -78,16 +78,14 @@ es:
 
   cities:
     edit:
-      title: 'Editar ciudad'
+      title: 'Editar localidad'
     index:
-      new: 'Nueva ciudad'
-      title: 'Listado de ciudades'
-      empty_html: 'No hay ciudades, puede crear una con el botón <span class="label label-info">Nueva ciudad</span>'
+      new: 'Nueva localidad'
+      title: 'Listado de localidades'
+      empty_html: 'No hay localidades, puede crear una con el botón <span class="label label-info">Nueva localidad</span>'
     new:
-      title: 'Crear ciudad'
-      state: 'Agregar nueva provincia'
-    show:
-      title: 'Ver ciudad'
+      title: 'Crear localidad'
+      state: 'Agregar nueva localidad'
 
   companies:
     edit:

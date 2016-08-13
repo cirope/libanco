@@ -8,6 +8,8 @@ class State < ApplicationRecord
 
   strip_fields :name
 
+  has_many :cities, dependent: :destroy
+
   def to_s
     name
   end

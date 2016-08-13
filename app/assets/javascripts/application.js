@@ -19,3 +19,4 @@
 //= require bootstrap-sprockets
 //= require dynamic_form
 //= require main
+//= require states

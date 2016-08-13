@@ -3,12 +3,13 @@ class CitiesController < ApplicationController
   include Authorization
   include Title
 
+  before_action :set_state, only: [:index]
   before_action :set_city, only: [:edit, :update]
 
   # GET /cities
   # GET /cities.json
   def index
-    @cities = City.page params[:page]
+    @cities = @state ? @state.cities : City.page(params[:page])
   end
 
   # GET /cities/new
@@ -43,6 +44,10 @@ class CitiesController < ApplicationController
   end
 
   private
+
+    def set_state
+      @state = State.find params[:state_id]
+    end
 
     def set_city
       @city = City.find(params[:id])

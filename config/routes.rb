@@ -30,7 +30,9 @@ Rails.application.routes.draw do
     resources :neighborhoods, except: [:show, :destroy]
     resources :occupations, except: [:show, :destroy]
     resources :relationships, except: [:show, :destroy]
-    resources :states, except: [:show, :destroy]
+    resources :states, except: [:show, :destroy] do
+      resources :cities, only: [:index]
+    end
   end
 
   root to: redirect('/users/sign_in')
