@@ -15,6 +15,8 @@
 //= require jquery-ui/autocomplete
 //= require jquery-ui/datepicker
 //= require jquery-ui/datepicker-es
+//= require bootstrap-datepicker/core
+//= require bootstrap-datepicker/locales/bootstrap-datepicker.es.js
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require dynamic_form

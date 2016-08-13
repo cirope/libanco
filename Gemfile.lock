@@ -49,6 +49,8 @@ GEM
     autoprefixer-rails (6.4.0.1)
       execjs
     bcrypt (3.1.11)
+    bootstrap-datepicker-rails (1.6.1.1)
+      railties (>= 3.0)
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -246,6 +248,7 @@ DEPENDENCIES
   apartment
   authority
   bcrypt
+  bootstrap-datepicker-rails
   bootstrap-sass
   capistrano
   capistrano-bundler
