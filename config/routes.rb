@@ -14,15 +14,21 @@ Rails.application.routes.draw do
 
   constraints AccountSubdomain do
     resources :advisers, except: [:destroy]
+    resources :body_templates, except: [:destroy]
     resources :cards, except: [:show, :destroy]
     resources :cities, except: [:show, :destroy]
     resources :credit_lines, except: [:show, :destroy]
+    resources :custom_templates
     resources :customers, except: [:destroy] do
-      scope module: 'customers' do
-        resource :files, only: [:show]
+      resources :custom_templates, only: [] do
+        scope module: 'custom_templates' do
+          resource :generate, only: [:show]
+        end
       end
     end
     resources :education_levels, except: [:show, :destroy]
+    resources :footer_templates, except: [:destroy]
+    resources :header_templates, except: [:destroy]
     resources :institutions, except: [:show, :destroy]
     resources :loan_types, except: [:show, :destroy]
     resources :marital_statuses, except: [:show, :destroy]

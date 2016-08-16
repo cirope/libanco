@@ -1,0 +1,1 @@
+json.partial! "header_templates/header_template", header_template: @header_template

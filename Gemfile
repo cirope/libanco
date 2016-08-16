@@ -28,6 +28,9 @@ gem 'sidekiq'
 gem 'authority'
 gem 'apartment'
 gem 'wicked_pdf'
+gem 'mustache'
+gem 'carrierwave'
+gem 'ckeditor_rails'
 
 gem 'unicorn'
 

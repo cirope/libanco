@@ -1,0 +1,1 @@
+json.partial! "footer_templates/footer_template", footer_template: @footer_template

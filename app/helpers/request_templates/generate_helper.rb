@@ -1,0 +1,2 @@
+module RequestTemplates::GenerateHelper
+end

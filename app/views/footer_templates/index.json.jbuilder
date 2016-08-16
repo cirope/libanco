@@ -1,0 +1,1 @@
+json.array! @footer_templates, partial: 'footer_templates/footer_template', as: :footer_template

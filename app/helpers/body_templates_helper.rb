@@ -1,0 +1,2 @@
+module BodyTemplatesHelper
+end

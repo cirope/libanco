@@ -1,0 +1,18 @@
+<div class="page-header page-header-sm">
+  <h3><%= @custom_template %></h3>
+</div>
+
+<p>
+  <strong><%= CustomTemplate.human_attribute_name 'header_template' %>:</strong>
+  <%= @custom_template.header_template %>
+</p>
+
+<p>
+  <strong><%= CustomTemplate.human_attribute_name 'footer_template' %>:</strong>
+  <%= @custom_template.footer_template %>
+</p>
+
+<hr />
+
+<%= link_to_edit [:edit, @custom_template] %> |
+<%= link_to_index custom_templates_path %>

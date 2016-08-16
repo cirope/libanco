@@ -11,6 +11,9 @@ es:
       adviser:
         one: 'Asesor'
         other: 'Asesores'
+      body_template:
+        one: 'Plantilla contenido'
+        other: 'Plantillas contenido'
       card:
         one: 'Tarjeta'
         other: 'Tarjetas'
@@ -26,12 +29,18 @@ es:
       customer:
         one: 'Cliente'
         other: 'Clientes'
-      department:
-        one: 'Repartición'
-        other: 'Reparticiones'
+      custom_template:
+        one: 'Plantilla'
+        other: 'Plantillas'
       education_level:
         one: 'Nivel de estudio'
         other: 'Niveles de estudio'
+      footer_template:
+        one: 'Pie da página'
+        other: 'Pies de página'
+      header_template:
+        one: 'Cabecera'
+        other: 'Cabeceras'
       loan:
         one: 'Préstamo'
         other: 'Préstamos'
@@ -68,6 +77,9 @@ es:
       reminder:
         one: 'Recordatorio'
         other: 'Recordatorios'
+      request_template:
+        one: 'Plantilla'
+        other: 'Plantillas'
       schedule:
         one: 'Agenda'
         other: 'Agenda'
@@ -94,6 +106,9 @@ es:
         identification_type: 'Tipo Documento'
         identification: 'Número Documento'
         phone: 'Teléfono'
+      body_template:
+        name: 'Nombre'
+        content: 'Contenido'
       card:
         name: 'Nombre'
         admission_fee: 'Cuota de ingreso'
@@ -115,6 +130,10 @@ es:
         stamped: 'Sellado'
         tax: 'IVA'
         tax_perception: 'Percepción IVA'
+      custom_template:
+        name: 'Nombre'
+        header_template: 'Cabecera'
+        footer_template: 'Pie de página'
       customer:
         adviser: 'Asesor originante'
         address: 'Dirección'
@@ -141,13 +160,13 @@ es:
         name: 'Repartición'
       education_level:
         name: 'Nombre'
-      institution:
+      footer_template:
         name: 'Nombre'
-      job:
-        kind: 'Perfil'
-        customer: 'Cliente'
-        joining_at: 'Fecha de ingreso'
-        place: 'Lugar de trabajo'
+        content: 'Contenido'
+      header_template:
+        name: 'Nombre'
+        content: 'Contenido'
+        image: 'Logo'
       loan:
         amount: 'Monto'
         canceled_at: 'Cancelación'
@@ -198,6 +217,11 @@ es:
         remind_at: 'Fecha'
         kind: 'Tipo'
         notified: 'Notificado'
+      request_template:
+        name: 'Nombre'
+        content: 'Contenido'
+        header_template: 'Cabecera'
+        footer_template: 'Pie de página'
       schedule:
         description: 'Descripción'
         scheduled_at: 'Fecha del evento'

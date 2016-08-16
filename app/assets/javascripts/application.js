@@ -19,6 +19,8 @@
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.es.js
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require bootstrap-submenu
+//= require ckeditor-jquery
 //= require dynamic_form
 //= require main
 //= require states

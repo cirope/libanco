@@ -46,7 +46,7 @@ class CitiesController < ApplicationController
   private
 
     def set_state
-      @state = State.find params[:state_id]
+      @state = State.find params[:state_id] if params[:state_id].present?
     end
 
     def set_city

@@ -1,0 +1,5 @@
+<%= content_for :form_actions do %>
+  <%= link_to_index header_templates_path %>
+<% end %>
+
+<%= render 'form', header_template: @header_template %>

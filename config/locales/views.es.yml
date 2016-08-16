@@ -4,7 +4,7 @@ es:
   menu:
     admin: 'Administración'
     loans:
-      title: 'Todos'
+      title: 'Préstamos'
       expired: 'Atrasados'
       close_to_expire: 'A vencer'
       not_renewed: 'No renovados'
@@ -12,6 +12,7 @@ es:
       payments: 'Cuotas'
       social_payments: 'Cuota Social'
       insurance: 'Seguro'
+    system: 'Sistema'
 
   messages:
     confirmation: '¿Está seguro?'
@@ -47,6 +48,18 @@ es:
       title: 'Crear cuenta'
     show:
       title: 'Ver cuenta'
+
+  body_templates:
+    edit:
+      title: 'Editar plantilla'
+    index:
+      new: 'Nueva plantilla'
+      title: 'Listado plantillas '
+      empty_html: 'No hay plantillas, puede crear una con el botón <span class="label label-info">Nueva plantilla</span>'
+    new:
+      title: 'Crear plantilla'
+    show:
+      title: 'Ver plantilla'
 
   advisers:
     edit:
@@ -109,6 +122,20 @@ es:
     new:
       title: 'Crear línea de crédito'
 
+  custom_templates:
+    edit:
+      title: 'Editar plantilla'
+    index:
+      new: 'Nueva plantilla'
+      title: 'Listado de plantillas'
+      empty_html: 'No hay plantillas, puede crear una con el botón <span class="label label-info">Nueva plantilla</span>'
+    new:
+      title: 'Crear plantilla'
+    show:
+      title: 'Ver plantilla'
+    custom_body_templates:
+      new: 'Agregar plantilla contenido'
+
   customers:
     edit:
       title: 'Editar cliente'
@@ -145,10 +172,6 @@ es:
       classic: 'Classic'
     references:
       new: 'Agregar referencia'
-    full_name: 'Apellidos y nombres'
-    pdfs:
-      files: 'Archivos PDF'
-      membership_request: 'Solicitud de Ingreso'
 
   education_levels:
     edit:
@@ -160,9 +183,29 @@ es:
     new:
       title: 'Crear nivel de estudio'
 
-  files:
+  footer_templates:
+    edit:
+      title: 'Editar pie de página'
+    index:
+      new: 'Nuevo pie de página'
+      title: 'Listado de pies de página'
+      empty_html: 'No hay pies de página, puede crear uno con el botón <span class="label label-info">Nuevo pie de página</span>'
+    new:
+      title: 'Crear pie de página'
     show:
-      title: 'Solicitud de Ingreso'
+      title: 'Ver pie de página'
+
+  header_templates:
+    edit:
+      title: 'Editar cabecera'
+    index:
+      new: 'Nueva cabecera'
+      title: 'Listado de cabeceras'
+      empty_html: 'No hay cabeceras, puede crear una con el botón <span class="label label-info">Nueva cabecera</span>'
+    new:
+      title: 'Crear cabecera'
+    show:
+      title: 'Ver cabecera'
 
   institutions:
     edit:

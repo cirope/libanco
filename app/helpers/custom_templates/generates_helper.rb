@@ -1,0 +1,2 @@
+module CustomTemplates::GeneratesHelper
+end

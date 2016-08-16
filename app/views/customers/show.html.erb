@@ -74,10 +74,12 @@
 </div>
 
 <ul>
-  <li>
-    <%= link_to t('customers.pdfs.membership_request'),
-      customer_files_url(@customer, request: 'membership'), target: '_blank'  %>
-  </li>
+  <% CustomTemplate.all.each do |custom_template| %>
+    <li>
+      <%= link_to custom_template.name,
+        customer_custom_template_generate_url(@customer, custom_template, format: :pdf), target: '_blank'  %>
+    </li>
+  <% end %>
 </ul>
 
 <hr />

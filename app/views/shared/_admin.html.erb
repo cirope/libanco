@@ -1,19 +1,43 @@
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-submenu="true">
     <%= fa_icon('gears', text: t('menu.admin')) %> <b class="caret"></b>
   </a>
   <ul class="dropdown-menu">
-    <%= menu_item_for User, users_path %>
-    <%= menu_item_for State, states_path %>
-    <%= menu_item_for City, cities_path %>
-    <%= menu_item_for Neighborhood, neighborhoods_path %>
-    <%= menu_item_for Nacionality, nacionalities_path %>
-    <%= menu_item_for MaritalStatus, marital_statuses_path %>
-    <%= menu_item_for EducationLevel, education_levels_path %>
-    <%= menu_item_for Occupation, occupations_path %>
-    <%= menu_item_for Adviser, advisers_path %>
-    <%= menu_item_for Card, cards_path %>
-    <%= menu_item_for Relationship, relationships_path %>
-    <%= menu_item_for CreditLine, credit_lines_path %>
+    <li class="dropdown-submenu">
+      <a tabindex="0"><%= t('menu.system') %></a>
+      <ul class="dropdown-menu">
+        <%= menu_item_for User, users_path %>
+        <%= menu_item_for State, states_path %>
+        <%= menu_item_for City, cities_path %>
+        <%= menu_item_for Neighborhood, neighborhoods_path %>
+        <%= menu_item_for Adviser, advisers_path %>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a tabindex="0"><%= Customer.model_name.human count: 0 %></a>
+      <ul class="dropdown-menu">
+        <%= menu_item_for Nacionality, nacionalities_path %>
+        <%= menu_item_for MaritalStatus, marital_statuses_path %>
+        <%= menu_item_for EducationLevel, education_levels_path %>
+        <%= menu_item_for Occupation, occupations_path %>
+        <%= menu_item_for Relationship, relationships_path %>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a tabindex="0"><%= t('menu.loans.title') %></a>
+      <ul class="dropdown-menu">
+        <%= menu_item_for Card, cards_path %>
+        <%= menu_item_for CreditLine, credit_lines_path %>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a tabindex="0"><%= CustomTemplate.model_name.human count: 0 %></a>
+      <ul class="dropdown-menu">
+        <%= menu_item_for HeaderTemplate, header_templates_path %>
+        <%= menu_item_for BodyTemplate, body_templates_path %>
+        <%= menu_item_for FooterTemplate, footer_templates_path %>
+        <%= menu_item_for CustomTemplate, custom_templates_path %>
+      </ul>
+    </li>
   </ul>
 </li>

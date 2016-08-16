@@ -1,0 +1,1 @@
+json.array! @body_templates, partial: 'body_templates/body_template', as: :body_template

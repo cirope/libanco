@@ -1,0 +1,11 @@
+<div class="page-header page-hader-sm">
+  <h3><%= @footer_template %></h3>
+</div>
+
+<strong><%= FooterTemplate.human_attribute_name 'content' %>:</strong>
+<p><%= @footer_template.content %></p>
+
+<hr />
+
+<%= link_to_edit [:edit, @footer_template] %> |
+<%= link_to_index footer_templates_path %>

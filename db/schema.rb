@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160806121910) do
+ActiveRecord::Schema.define(version: 20160814194306) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,14 @@ ActiveRecord::Schema.define(version: 20160806121910) do
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
     t.index ["identification"], name: "index_advisers_on_identification", unique: true, using: :btree
+  end
+
+  create_table "body_templates", force: :cascade do |t|
+    t.string   "name",                     null: false
+    t.text     "content",                  null: false
+    t.integer  "lock_version", default: 0, null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "cards", force: :cascade do |t|
@@ -69,6 +77,26 @@ ActiveRecord::Schema.define(version: 20160806121910) do
     t.datetime "created_at",                                                   null: false
     t.datetime "updated_at",                                                   null: false
     t.index ["name"], name: "index_credit_lines_on_name", unique: true, using: :btree
+  end
+
+  create_table "custom_body_templates", force: :cascade do |t|
+    t.integer  "custom_template_id", null: false
+    t.integer  "body_template_id",   null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.index ["body_template_id"], name: "index_custom_body_templates_on_body_template_id", using: :btree
+    t.index ["custom_template_id"], name: "index_custom_body_templates_on_custom_template_id", using: :btree
+  end
+
+  create_table "custom_templates", force: :cascade do |t|
+    t.string   "name",                           null: false
+    t.integer  "header_template_id"
+    t.integer  "footer_template_id"
+    t.integer  "lock_version",       default: 0, null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.index ["footer_template_id"], name: "index_custom_templates_on_footer_template_id", using: :btree
+    t.index ["header_template_id"], name: "index_custom_templates_on_header_template_id", using: :btree
   end
 
   create_table "customers", force: :cascade do |t|
@@ -119,6 +147,23 @@ ActiveRecord::Schema.define(version: 20160806121910) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.index ["name"], name: "index_education_levels_on_name", unique: true, using: :btree
+  end
+
+  create_table "footer_templates", force: :cascade do |t|
+    t.string   "name",                     null: false
+    t.text     "content",                  null: false
+    t.integer  "lock_version", default: 0, null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  create_table "header_templates", force: :cascade do |t|
+    t.string   "name",                     null: false
+    t.text     "content"
+    t.string   "image"
+    t.integer  "lock_version", default: 0, null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "marital_statuses", force: :cascade do |t|
