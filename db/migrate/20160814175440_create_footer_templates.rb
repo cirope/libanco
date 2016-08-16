@@ -7,5 +7,6 @@ class CreateFooterTemplates < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
+    add_index :footer_templates, :name, unique: true
   end
 end

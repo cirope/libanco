@@ -47,6 +47,13 @@ class CustomTemplatesController < ApplicationController
     end
   end
 
+  # DELETE /custom_templates/1
+  # DELETE /custom_templates/1.json
+  def destroy
+    @custom_template.destroy
+    redirect_to custom_templates_url
+  end
+
   private
 
     def set_custom_template

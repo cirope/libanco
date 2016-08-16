@@ -8,5 +8,6 @@ class CreateHeaderTemplates < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
+    add_index :header_templates, :name, unique: true
   end
 end

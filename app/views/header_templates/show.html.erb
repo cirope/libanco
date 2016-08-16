@@ -1,19 +1,12 @@
-<p id="notice"><%= notice %></p>
+<div class="page-header page-hader-sm">
+  <h3><%= @header_template %></h3>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @header_template.name %>
-</p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @header_template.content %>
-</p>
+<strong><%= HeaderTemplate.human_attribute_name 'content' %>:</strong>
+<p><%= @header_template.content %></p>
 
-<p>
-  <strong>Image:</strong>
-  <%= @header_template.image %>
-</p>
+<hr />
 
-<%= link_to 'Edit', edit_header_template_path(@header_template) %> |
-<%= link_to 'Back', header_templates_path %>
+<%= link_to_edit [:edit, @header_template] %> |
+<%= link_to_index header_templates_path %>

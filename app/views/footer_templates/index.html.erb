@@ -14,7 +14,7 @@
       <tbody>
         <% @footer_templates.each do |footer_template| %>
           <tr>
-            <td><%= l footer_template.created_at %></td>
+            <td class="col-md-2"><%= l footer_template.created_at %></td>
             <td><%= footer_template.name %></td>
             <td><%= link_to_show footer_template %></td>
             <td><%= link_to_edit [:edit, footer_template] %></td>

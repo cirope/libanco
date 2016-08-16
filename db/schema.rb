@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20160814194306) do
     t.integer  "lock_version", default: 0, null: false
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.index ["name"], name: "index_body_templates_on_name", unique: true, using: :btree
   end
 
   create_table "cards", force: :cascade do |t|
@@ -97,6 +98,7 @@ ActiveRecord::Schema.define(version: 20160814194306) do
     t.datetime "updated_at",                     null: false
     t.index ["footer_template_id"], name: "index_custom_templates_on_footer_template_id", using: :btree
     t.index ["header_template_id"], name: "index_custom_templates_on_header_template_id", using: :btree
+    t.index ["name"], name: "index_custom_templates_on_name", unique: true, using: :btree
   end
 
   create_table "customers", force: :cascade do |t|
@@ -155,6 +157,7 @@ ActiveRecord::Schema.define(version: 20160814194306) do
     t.integer  "lock_version", default: 0, null: false
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.index ["name"], name: "index_footer_templates_on_name", unique: true, using: :btree
   end
 
   create_table "header_templates", force: :cascade do |t|
@@ -164,6 +167,7 @@ ActiveRecord::Schema.define(version: 20160814194306) do
     t.integer  "lock_version", default: 0, null: false
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.index ["name"], name: "index_header_templates_on_name", unique: true, using: :btree
   end
 
   create_table "marital_statuses", force: :cascade do |t|

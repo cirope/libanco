@@ -8,5 +8,6 @@ class CreateCustomTemplates < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
+    add_index :custom_templates, :name, unique: true
   end
 end
