@@ -1,9 +1,11 @@
 class HeaderTemplatesController < ApplicationController
   include Authentication
-  include Authorization
   include Title
 
-  before_action :set_header_template, only: [:show, :edit, :update]
+  authorize_actions_for HeaderTemplate, except: [:image]
+  ensure_authorization_performed except: [:image]
+
+  before_action :set_header_template, only: [:show, :edit, :update, :image]
 
   # GET /header_templates
   # GET /header_templates.json
@@ -28,7 +30,9 @@ class HeaderTemplatesController < ApplicationController
   # POST /header_templates
   # POST /header_templates.json
   def create
-    @header_template = HeaderTemplate.new header_template_params
+    @header_template = HeaderTemplate.new(
+      header_template_params.merge account: current_tenant
+    )
 
     if @header_template.save
       redirect_to @header_template
@@ -47,6 +51,11 @@ class HeaderTemplatesController < ApplicationController
     end
   end
 
+  def image
+    img_url = @header_template.image.logo.url
+    send_file File.join(Rails.root, img_url), x_sendfile: true
+  end
+
   private
 
     def set_header_template
@@ -54,6 +63,6 @@ class HeaderTemplatesController < ApplicationController
     end
 
     def header_template_params
-      params.require(:header_template).permit :name, :content, :image, :lock_version
+      params.require(:header_template).permit :name, :image, :image_cache, :lock_version
     end
 end

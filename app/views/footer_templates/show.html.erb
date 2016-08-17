@@ -2,8 +2,7 @@
   <h3><%= @footer_template %></h3>
 </div>
 
-<strong><%= FooterTemplate.human_attribute_name 'content' %>:</strong>
-<p><%= @footer_template.content %></p>
+<p><%= raw @footer_template.content %></p>
 
 <hr />
 

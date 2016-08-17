@@ -2,10 +2,7 @@
   <h3><%= @body_template %></h3>
 </div>
 
-<strong><%= BodyTemplate.human_attribute_name 'content' %>:</strong>
-<p>
-  <%= @body_template.content %>
-</p>
+<p><%= raw @body_template.content %></p>
 
 <hr />
 

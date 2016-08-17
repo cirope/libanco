@@ -28,8 +28,9 @@ Rails.application.routes.draw do
     end
     resources :education_levels, except: [:show, :destroy]
     resources :footer_templates, except: [:destroy]
-    resources :header_templates, except: [:destroy]
-    resources :institutions, except: [:show, :destroy]
+    resources :header_templates, except: [:destroy] do
+      get :image, on: :member
+    end
     resources :loan_types, except: [:show, :destroy]
     resources :marital_statuses, except: [:show, :destroy]
     resources :nacionalities, except: [:show, :destroy]

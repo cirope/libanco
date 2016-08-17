@@ -4,7 +4,7 @@ class TmpTemplate
     @renderer = ApplicationController.renderer
     @customer = customer
     @custom_template = custom_template
-    @options = {}
+    @options = { margin: { top: 20 } }
 
     create_tmps
   end
@@ -21,7 +21,7 @@ class TmpTemplate
 
     def create_tmps
       set_tmp_body
-#      set_tmp_header
+      set_tmp_header
       set_tmp_footer
     end
 
@@ -36,7 +36,9 @@ class TmpTemplate
 
     def set_tmp_header
       if ht = @custom_template.header_template
-        @header_tmp_template = TmpTemplate.new 'header_tmp_template', ht
+        @options[:header] = {
+          content: @renderer.render('header_templates/header_template', layout: 'pdf.html.erb', locals: { ht: ht })
+        }
       end
     end
 

@@ -3,14 +3,33 @@
 </div>
 
 <p>
-  <strong><%= CustomTemplate.human_attribute_name 'header_template' %>:</strong>
-  <%= @custom_template.header_template %>
+  <strong class="label label-default"><%= CustomTemplate.human_attribute_name 'header_template' %>:</strong>
 </p>
+<blockquote>
+  <% if ht = @custom_template.header_template %>
+    <% if ht.image.try(:file).try(:exists?) %>
+      <%= image_tag image_header_template_path(ht) %>
+    <% end %>
+  <% end %>
+</blockquote>
 
 <p>
-  <strong><%= CustomTemplate.human_attribute_name 'footer_template' %>:</strong>
-  <%= @custom_template.footer_template %>
+  <strong class="label label-default"><%= CustomTemplate.human_attribute_name 'body_template' %>:</strong>
 </p>
+<blockquote>
+  <% @custom_template.body_templates.each do |bt|%>
+    <%= raw bt.content %>
+  <% end %>
+</blockquote>
+
+<p>
+  <strong class="label label-default"><%= CustomTemplate.human_attribute_name 'footer_template' %>:</strong>
+</p>
+<blockquote>
+  <% if ft = @custom_template.footer_template %>
+    <%= raw ft.content %>
+  <% end %>
+</blockquote>
 
 <hr />
 

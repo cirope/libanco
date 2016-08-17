@@ -20,10 +20,7 @@ class HeaderTemplatesControllerTest < ActionDispatch::IntegrationTest
   test 'should create header_template' do
     assert_difference('HeaderTemplate.count') do
       post header_templates_url, params: {
-        header_template: {
-          name: 'Header name',
-          content: @header_template.content
-        }
+        header_template: { name: 'Header name' }
       }
     end
 

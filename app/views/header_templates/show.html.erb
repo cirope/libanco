@@ -2,9 +2,9 @@
   <h3><%= @header_template %></h3>
 </div>
 
-
-<strong><%= HeaderTemplate.human_attribute_name 'content' %>:</strong>
-<p><%= @header_template.content %></p>
+<% if @header_template.image.try(:file).try(:exists?) %>
+  <%= image_tag image_header_template_path(@header_template) %>
+<% end %>
 
 <hr />
 

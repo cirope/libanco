@@ -133,6 +133,7 @@ es:
       custom_template:
         name: 'Nombre'
         header_template: 'Cabecera'
+        body_template: 'Contenido'
         footer_template: 'Pie de página'
       customer:
         adviser: 'Asesor originante'

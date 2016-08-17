@@ -9,4 +9,8 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for resource
     customers_url
   end
+
+  def current_tenant
+    @_current_tenant ||= Account.find_by subdomain: Apartment::Tenant.current
+  end
 end

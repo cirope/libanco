@@ -162,11 +162,12 @@ ActiveRecord::Schema.define(version: 20160814194306) do
 
   create_table "header_templates", force: :cascade do |t|
     t.string   "name",                     null: false
-    t.text     "content"
     t.string   "image"
+    t.integer  "account_id",               null: false
     t.integer  "lock_version", default: 0, null: false
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.index ["account_id"], name: "index_header_templates_on_account_id", using: :btree
     t.index ["name"], name: "index_header_templates_on_name", unique: true, using: :btree
   end
 

@@ -1,8 +1,15 @@
-class CustomerTemplate < Mustache
+class CustomerTemplate
 
-  def initialize customer, template
-    self.template = template
+  def initialize customer, str_template
+    @str_template = str_template
     @customer = customer
+  end
+
+  def render
+    @str_template % {
+      nombres: nombres, apellidos: apellidos, direccion_completa: direccion_completa,
+      telefono: telefono, fecha: fecha
+    }
   end
 
   def fecha
