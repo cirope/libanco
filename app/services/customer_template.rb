@@ -13,7 +13,7 @@ class CustomerTemplate
   end
 
   def fecha
-    I18n.l Date.new
+    I18n.l Date.today, format: :long
   end
 
   def nombres
