@@ -11,3 +11,8 @@ jQuery ($) ->
 document.addEventListener 'turbolinks:load', ->
   $('[data-submenu]').submenupicker()
   $('[data-toggle="popover"]').popover({html: true})
+
+  $('textarea.ckeditor').each(->
+    if $(this).css('visibility') != 'hidden'
+      CKEDITOR.replace(this)
+  )
