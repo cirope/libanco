@@ -11,5 +11,3 @@ jQuery ($) ->
 document.addEventListener 'turbolinks:load', ->
   $('[data-submenu]').submenupicker()
   $('[data-toggle="popover"]').popover({html: true})
-  $('.ckeditor').ckeditor
-    language: 'es'

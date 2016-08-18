@@ -11,7 +11,7 @@
           <%= f.input :name, autofocus: true %>
         </div>
       </div>
-      <%= f.input :content, input_html: { class: 'ckeditor' } %>
+      <%= f.input :content, as: :ckeditor %>
       <%= f.input :lock_version, as: :hidden %>
     </div>
   </div>

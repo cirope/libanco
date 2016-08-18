@@ -20,7 +20,7 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require bootstrap-submenu
-//= require ckeditor-jquery
+//= require ckeditor/init
 //= require dynamic_form
 //= require main
 //= require states

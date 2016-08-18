@@ -30,7 +30,7 @@ gem 'apartment'
 gem 'wicked_pdf'
 gem 'carrierwave'
 gem 'mini_magick'
-gem 'ckeditor_rails'
+gem 'ckeditor'
 
 gem 'unicorn'
 
