@@ -172,6 +172,7 @@ es:
       classic: 'Classic'
     references:
       new: 'Agregar referencia'
+    files: 'Archivos PDF'
 
   education_levels:
     edit:
