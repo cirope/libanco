@@ -50,6 +50,7 @@ es:
       title: 'Ver cuenta'
 
   body_templates:
+    list: 'Listado de variables'
     edit:
       title: 'Editar plantilla'
     index:

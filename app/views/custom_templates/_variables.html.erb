@@ -1,0 +1,72 @@
+<div class="bs-callout bs-callout-info">
+  <div class="page-header page-header-sm">
+    <h4><%= t 'body_templates.list' %></h4>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <p>
+        <strong><%= Customer.human_attribute_name 'full_name' %>:</strong>
+        <%= '%{nombre_completo}' %>
+      </p>
+      <p>
+        <strong><%= Customer.human_attribute_name 'identification_type' %>:</strong>
+        <%= '%{tipo_documento}' %>
+      </p>
+      <p>
+        <strong><%= Customer.human_attribute_name 'identification' %>:</strong>
+        <%= '%{nro_documento}' %>
+      </p>
+      <p>
+        <strong><%= Customer.human_attribute_name 'nacionality' %>:</strong>
+        <%= '%{nacionalidad}' %>
+      </p>
+      <p>
+        <strong><%= Customer.human_attribute_name 'birthdate' %>:</strong>
+        <%= '%{fecha_nacimiento}' %>
+      </p>
+    </div>
+    <div class="col-md-4">
+      <p>
+        <strong><%= Customer.human_attribute_name 'place_birth' %>:</strong>
+        <%= '%{lugar_nacimiento}' %>
+      </p>
+      <p>
+        <strong><%= Customer.human_attribute_name 'email' %>:</strong>
+        <%= '%{email}' %>
+      </p>
+      <p>
+        <strong><%= Customer.human_attribute_name 'marital_status' %>:</strong>
+        <%= '%{estado_civil}' %>
+      </p>
+      <p>
+        <strong><%= Customer.human_attribute_name 'occupation' %>:</strong>
+        <%= '%{ocupacion}' %>
+      </p>
+      <p>
+        <strong><%= Customer.human_attribute_name 'education_level' %>:</strong>
+        <%= '%{nivel_estudios}' %>
+      </p>
+    </div>
+    <div class="col-md-4">
+      <p>
+        <strong><%= Customer.human_attribute_name 'full_address' %>:</strong>
+        <%= '%{direccion_completa}' %>
+      </p>
+      <p>
+        <strong><%= Customer.human_attribute_name 'phone' %>:</strong>
+        <%= '%{telefono}' %>
+      </p>
+      <p>
+        <strong><%= Customer.human_attribute_name 'monthly_income' %>:</strong>
+        <%= '%{ingreso_mensual}' %>
+      </p>
+      <p>
+        <strong><%= Customer.human_attribute_name 'adviser' %>:</strong>
+        <%= '%{asesor_originante}' %>
+      </p>
+      <p>
+        <strong><%= Customer.human_attribute_name 'current_date' %>:</strong>
+        <%= '%{fecha}' %>
+      </p>
+    </div>
+  </div>
