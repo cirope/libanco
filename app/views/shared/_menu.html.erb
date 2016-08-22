@@ -17,6 +17,7 @@
             <%= menu_item_for Account, accounts_path, 'home' %>
           <% else %>
             <%= menu_item_for Customer, customers_path, 'male' %>
+            <%= menu_item_for Loan, loans_path, 'file-text' %>
             <%= render 'shared/admin' %>
           <% end %>
         </ul>

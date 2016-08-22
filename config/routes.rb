@@ -31,7 +31,7 @@ Rails.application.routes.draw do
     resources :header_templates, except: [:destroy] do
       get :image, on: :member
     end
-    resources :loan_types, except: [:show, :destroy]
+    resources :loans
     resources :marital_statuses, except: [:show, :destroy]
     resources :nacionalities, except: [:show, :destroy]
     resources :neighborhoods, except: [:show, :destroy]

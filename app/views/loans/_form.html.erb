@@ -1,0 +1,28 @@
+<%= simple_form_for(@loan) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :status %>
+    <%= f.input :amortization_system %>
+    <%= f.input :commission_amount %>
+    <%= f.input :interest_amount %>
+    <%= f.input :tax_amount %>
+    <%= f.input :tax_perception_amount %>
+    <%= f.input :gross_income_perception_amount %>
+    <%= f.input :insurance_amount %>
+    <%= f.input :stamped_amount %>
+    <%= f.input :amount %>
+    <%= f.input :amount_total %>
+    <%= f.input :payments_count %>
+    <%= f.input :payment %>
+    <%= f.input :progress %>
+    <%= f.input :expired_at %>
+    <%= f.input :canceled_at %>
+    <%= f.input :credit_line %>
+    <%= f.association :customer %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,0 +1,2 @@
+json.extract! loan, :id, :status, :amortization_system, :commission_amount, :interest_amount, :tax_amount, :tax_perception_amount, :gross_income_perception_amount, :insurance_amount, :stamped_amount, :amount, :amount_total, :payments_count, :payment, :progress, :expired_at, :canceled_at, :credit_line, :customer_id, :created_at, :updated_at
+json.url loan_url(loan, format: :json)

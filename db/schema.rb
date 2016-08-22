@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160814194306) do
+ActiveRecord::Schema.define(version: 20160821163306) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -169,6 +169,34 @@ ActiveRecord::Schema.define(version: 20160814194306) do
     t.datetime "updated_at",               null: false
     t.index ["account_id"], name: "index_header_templates_on_account_id", using: :btree
     t.index ["name"], name: "index_header_templates_on_name", unique: true, using: :btree
+  end
+
+  create_table "loans", force: :cascade do |t|
+    t.string   "status",                                                                  null: false
+    t.string   "amortization_system",                                                     null: false
+    t.decimal  "commission_amount",              precision: 10, scale: 2,                 null: false
+    t.decimal  "interest_amount",                precision: 10, scale: 2,                 null: false
+    t.decimal  "tax_amount",                     precision: 10, scale: 2,                 null: false
+    t.decimal  "tax_perception_amount",          precision: 10, scale: 2,                 null: false
+    t.decimal  "gross_income_perception_amount", precision: 10, scale: 2,                 null: false
+    t.decimal  "insurance_amount",               precision: 10, scale: 2,                 null: false
+    t.decimal  "stamped_amount",                 precision: 10, scale: 2,                 null: false
+    t.decimal  "amount",                         precision: 10, scale: 2,                 null: false
+    t.decimal  "amount_total",                   precision: 10, scale: 2,                 null: false
+    t.string   "payment_frequency",                                                       null: false
+    t.integer  "payments_count",                                                          null: false
+    t.decimal  "payment",                        precision: 10, scale: 2,                 null: false
+    t.decimal  "progress",                       precision: 10, scale: 2, default: "0.0", null: false
+    t.date     "expire_at"
+    t.datetime "canceled_at"
+    t.jsonb    "credit_line",                                                             null: false
+    t.integer  "customer_id",                                                             null: false
+    t.integer  "lock_version",                                            default: 0,     null: false
+    t.datetime "created_at",                                                              null: false
+    t.datetime "updated_at",                                                              null: false
+    t.index ["credit_line"], name: "index_loans_on_credit_line", using: :gin
+    t.index ["customer_id"], name: "index_loans_on_customer_id", using: :btree
+    t.index ["status"], name: "index_loans_on_status", using: :btree
   end
 
   create_table "marital_statuses", force: :cascade do |t|

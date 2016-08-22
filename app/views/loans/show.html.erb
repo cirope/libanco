@@ -1,0 +1,94 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @loan.status %>
+</p>
+
+<p>
+  <strong>Amortization system:</strong>
+  <%= @loan.amortization_system %>
+</p>
+
+<p>
+  <strong>Commission amount:</strong>
+  <%= @loan.commission_amount %>
+</p>
+
+<p>
+  <strong>Interest amount:</strong>
+  <%= @loan.interest_amount %>
+</p>
+
+<p>
+  <strong>Tax amount:</strong>
+  <%= @loan.tax_amount %>
+</p>
+
+<p>
+  <strong>Tax perception amount:</strong>
+  <%= @loan.tax_perception_amount %>
+</p>
+
+<p>
+  <strong>Gross income perception amount:</strong>
+  <%= @loan.gross_income_perception_amount %>
+</p>
+
+<p>
+  <strong>Insurance amount:</strong>
+  <%= @loan.insurance_amount %>
+</p>
+
+<p>
+  <strong>Stamped amount:</strong>
+  <%= @loan.stamped_amount %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @loan.amount %>
+</p>
+
+<p>
+  <strong>Amount total:</strong>
+  <%= @loan.amount_total %>
+</p>
+
+<p>
+  <strong>Payments count:</strong>
+  <%= @loan.payments_count %>
+</p>
+
+<p>
+  <strong>Payment:</strong>
+  <%= @loan.payment %>
+</p>
+
+<p>
+  <strong>Progress:</strong>
+  <%= @loan.progress %>
+</p>
+
+<p>
+  <strong>Expired at:</strong>
+  <%= @loan.expired_at %>
+</p>
+
+<p>
+  <strong>Canceled at:</strong>
+  <%= @loan.canceled_at %>
+</p>
+
+<p>
+  <strong>Credit line:</strong>
+  <%= @loan.credit_line %>
+</p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @loan.customer %>
+</p>
+
+<%= link_to 'Edit', edit_loan_path(@loan) %> |
+<%= link_to 'Back', loans_path %>
