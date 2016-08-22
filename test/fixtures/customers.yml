@@ -12,6 +12,7 @@ default:
   place_birth: Default
   member: false
   phone: Default
+  cellphone: Default
   card: default
   occupation: default
   neighborhood: default
@@ -21,3 +22,4 @@ default:
   adviser: default
   state: default
   city: default
+  workgroup: default

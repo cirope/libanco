@@ -8,7 +8,7 @@ class Customer < ApplicationRecord
   include SearchCop
 
   strip_fields :name, :lastname, :code, :identification, :email,
-    :address, :work_address, :phone, :place_birth
+    :address, :work_address, :phone, :cellphone, :place_birth
 
   search_scope :search do
     attributes :name, :lastname, :identification

@@ -11,6 +11,7 @@ module Customers::Relations
     belongs_to :neighborhood, optional: true
     belongs_to :occupation
     belongs_to :state
+    belongs_to :workgroup
     has_many :references, dependent: :destroy
     accepts_nested_attributes_for :references, allow_destroy: false,
       reject_if: :all_blank

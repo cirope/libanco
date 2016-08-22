@@ -38,9 +38,11 @@ class CustomersControllerTest < ActionDispatch::IntegrationTest
           name: @customer.name,
           occupation_id: @customer.occupation_id,
           phone: @customer.phone,
+          cellphone: @customer.cellphone,
           work_address: @customer.work_address,
           card_id: @customer.card_id,
-          monthly_income: 10000
+          monthly_income: 10000,
+          workgroup_id: @customer.workgroup_id
         }
       }
     end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160814194306) do
+ActiveRecord::Schema.define(version: 20160822201520) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -127,6 +127,8 @@ ActiveRecord::Schema.define(version: 20160814194306) do
     t.integer  "lock_version",                                 default: 0,     null: false
     t.datetime "created_at",                                                   null: false
     t.datetime "updated_at",                                                   null: false
+    t.string   "cellphone",                                                    null: false
+    t.integer  "workgroup_id",                                                 null: false
     t.index ["adviser_id"], name: "index_customers_on_adviser_id", using: :btree
     t.index ["card_id"], name: "index_customers_on_card_id", using: :btree
     t.index ["city_id"], name: "index_customers_on_city_id", using: :btree
@@ -141,6 +143,7 @@ ActiveRecord::Schema.define(version: 20160814194306) do
     t.index ["neighborhood_id"], name: "index_customers_on_neighborhood_id", using: :btree
     t.index ["occupation_id"], name: "index_customers_on_occupation_id", using: :btree
     t.index ["state_id"], name: "index_customers_on_state_id", using: :btree
+    t.index ["workgroup_id"], name: "index_customers_on_workgroup_id", using: :btree
   end
 
   create_table "education_levels", force: :cascade do |t|
@@ -267,6 +270,14 @@ ActiveRecord::Schema.define(version: 20160814194306) do
     t.jsonb    "object_changes"
     t.datetime "created_at"
     t.index ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id", using: :btree
+  end
+
+  create_table "workgroups", force: :cascade do |t|
+    t.string   "name",                     null: false
+    t.integer  "lock_version", default: 0, null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["name"], name: "index_workgroups_on_name", unique: true, using: :btree
   end
 
 end
