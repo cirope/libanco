@@ -95,6 +95,9 @@ es:
       user:
         one: 'Usuario'
         other: 'Usuarios'
+      workgroup:
+        one: 'Grupo de trabajo'
+        other: 'Grupos de trabajo'
 
     attributes:
       account:
@@ -140,6 +143,8 @@ es:
         address: 'Dirección'
         birthdate: 'Fecha de nacimiento'
         card: 'Adhiere Tarjeta'
+        cellphone: 'Celular'
+        city: 'Localidad'
         current_date: 'Fecha'
         education_level: 'Nivel de estudio'
         email: 'Email'
@@ -153,13 +158,13 @@ es:
         monthly_income: 'Ingreso mensual'
         nacionality: 'Nacionalidad'
         name: 'Nombres'
+        neighborhood: 'Barrio'
         occupation: 'Ocupación'
+        phone: 'Teléfono'
         place_birth: 'Lugar de nacimiento'
         state: 'Provincia'
-        city: 'Localidad'
+        workgroup: 'Grupo de trabajo'
         work_address: 'Domicilio laboral'
-        phone: 'Teléfono'
-        neighborhood: 'Barrio'
       department:
         name: 'Repartición'
       education_level:
@@ -254,3 +259,5 @@ es:
         password_confirmation: 'Confirmación'
         remember_me: 'Recordarme'
         roles_mask: 'Rol'
+      workgroup:
+        name: 'Nombre'

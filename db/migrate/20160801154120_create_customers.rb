@@ -7,6 +7,7 @@ class CreateCustomers < ActiveRecord::Migration[5.0]
       t.string :identification_type, null: false
       t.string :identification, null: false
       t.string :phone, null: false
+      t.string :cellphone, null: false
       t.string :address, null: false
       t.string :email
       t.date :birthdate, null: false
@@ -23,6 +24,7 @@ class CreateCustomers < ActiveRecord::Migration[5.0]
       t.references :marital_status, null: false, index: true
       t.references :education_level, null: false, index: true
       t.references :adviser, null: false, index: true
+      t.references :workgroup, null: false, index: true
       t.integer :lock_version, null: false, default: 0
 
       t.timestamps

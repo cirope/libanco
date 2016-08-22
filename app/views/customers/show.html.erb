@@ -30,6 +30,10 @@
         <%= @customer.phone %>
       </p>
       <p>
+        <strong><%= Customer.human_attribute_name 'cellphone' %>:</strong>
+        <%= @customer.cellphone %>
+      </p>
+      <p>
         <strong><%= Customer.human_attribute_name 'address' %>:</strong>
         <%= @customer.full_address %>
       </p>
@@ -52,6 +56,10 @@
       <p>
         <strong><%= Customer.human_attribute_name 'education_level' %>:</strong>
         <%= @customer.education_level %>
+      </p>
+      <p>
+        <strong><%= Customer.human_attribute_name 'workgroup' %>:</strong>
+        <%= @customer.workgroup %>
       </p>
       <p>
         <strong><%= Customer.human_attribute_name 'monthly_income' %>:</strong>

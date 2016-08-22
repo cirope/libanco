@@ -34,10 +34,18 @@
           </div>
           <div class="row">
             <div class="col-md-6">
+              <%= f.input :phone %>
+            </div>
+            <div class="col-md-6">
+              <%= f.input :cellphone %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
               <%= f.association :nacionality, prompt: true %>
             </div>
             <div class="col-md-6">
-              <%= f.input :phone %>
+              <%= f.association :occupation, prompt: true %>
             </div>
           </div>
           <div class="row">
@@ -45,9 +53,11 @@
               <%= f.input :email %>
             </div>
             <div class="col-md-6">
-              <%= f.association :occupation, prompt: true %>
+              <%= f.association :workgroup, prompt: true %>
             </div>
           </div>
+        </div>
+        <div class="col-md-6">
           <div class="row">
             <div class="col-md-6">
               <%= f.input :address %>
@@ -56,8 +66,6 @@
               <%= f.association :neighborhood, prompt: true %>
             </div>
           </div>
-        </div>
-        <div class="col-md-6">
           <div class="row">
             <div class="col-md-6">
               <%= f.association :state, prompt: true, input_html: {

@@ -40,6 +40,7 @@ Rails.application.routes.draw do
     resources :states, except: [:show, :destroy] do
       resources :cities, only: [:index]
     end
+    resources :workgroups, except: [:show, :destroy]
   end
 
   root to: redirect('/users/sign_in')
