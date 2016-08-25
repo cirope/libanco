@@ -16,15 +16,16 @@ class CreateLoans < ActiveRecord::Migration[5.0]
       t.integer :payments_count, null: false
       t.decimal :payment, null: false, precision: 10, scale: 2
       t.decimal :progress, null: false, precision: 10, scale: 2, default: 0
-      t.date :expire_at
+      t.date :expire_at, null: false
       t.datetime :canceled_at
-      t.jsonb :credit_line, null: false
+      t.jsonb :credit_line_data, null: false
+      t.references :credit_line, null: false, index: true 
       t.references :customer, null: false, index: true 
       t.integer :lock_version, null: false, default: 0
 
       t.timestamps
     end
     add_index :loans, :status
-    add_index :loans, :credit_line, using: :gin
+    add_index :loans, :credit_line_data, using: :gin
   end
 end

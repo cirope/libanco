@@ -1,41 +1,20 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  status: MyString
-  amortization_system: MyString
-  commission_amount: 9.99
-  interest_amount: 9.99
-  tax_amount: 9.99
-  tax_perception_amount: 9.99
-  gross_income_perception_amount: 9.99
-  insurance_amount: 9.99
-  stamped_amount: 9.99
-  amount: 9.99
-  amount_total: 9.99
-  payments_count: 1
-  payment: 9.99
-  progress: 9.99
-  expired_at: 2016-08-21
-  canceled_at: 2016-08-21 13:33:06
-  credit_line: 
-  customer: one
-
-two:
-  status: MyString
-  amortization_system: MyString
-  commission_amount: 9.99
-  interest_amount: 9.99
-  tax_amount: 9.99
-  tax_perception_amount: 9.99
-  gross_income_perception_amount: 9.99
-  insurance_amount: 9.99
-  stamped_amount: 9.99
-  amount: 9.99
-  amount_total: 9.99
-  payments_count: 1
-  payment: 9.99
-  progress: 9.99
-  expired_at: 2016-08-21
-  canceled_at: 2016-08-21 13:33:06
-  credit_line: 
-  customer: two
+default:
+  status: current
+  amortization_system: french
+  commission_amount: 450
+  interest_amount: 
+  tax_amount: 94.5
+  tax_perception_amount: 0
+  gross_income_perception_amount: 0
+  insurance_amount: 0
+  stamped_amount: 35.45
+  amount: 3000
+  amount_total: 3579.95
+  payments_count: 6
+  payment: 727.35
+  payment_frequency: monthly
+  progress: 0
+  expire_at: <%= 6.months.from_now %>
+  credit_line_data: { name: Default, commission: 15, interest: 60, tax: 21 }
+  credit_line: default
+  customer: default

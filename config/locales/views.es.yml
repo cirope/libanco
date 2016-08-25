@@ -37,6 +37,12 @@ es:
     _yes: 'Si'
     _no: 'No'
 
+  views:
+    generic:
+      empty_index: 'Sin elementos que listar'
+      empty_search:
+        title_html: 'La búsqueda de <span class="label label-default">%{search}</span> no obtuvo ningún resultado'
+
   accounts:
     edit:
       title: 'Editar cuenta'
@@ -228,8 +234,7 @@ es:
     index:
       new: 'Nuevo préstamo'
       title: 'Listado de préstamos'
-    empty:
-      index_html: 'No hay préstamos, puede crear uno con el botón <span class="label label-info">Nuevo préstamo</span>'
+      empty_html: 'No hay préstamos, puede crear uno con el botón <span class="label label-info">Nuevo préstamo</span>'
     new:
       title: 'Crear préstamo'
     show:

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160822201520) do
+ActiveRecord::Schema.define(version: 20160825103307) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -108,6 +108,7 @@ ActiveRecord::Schema.define(version: 20160822201520) do
     t.string   "identification_type",                                          null: false
     t.string   "identification",                                               null: false
     t.string   "phone",                                                        null: false
+    t.string   "cellphone",                                                    null: false
     t.string   "address",                                                      null: false
     t.string   "email"
     t.date     "birthdate",                                                    null: false
@@ -124,11 +125,10 @@ ActiveRecord::Schema.define(version: 20160822201520) do
     t.integer  "marital_status_id",                                            null: false
     t.integer  "education_level_id",                                           null: false
     t.integer  "adviser_id",                                                   null: false
+    t.integer  "workgroup_id",                                                 null: false
     t.integer  "lock_version",                                 default: 0,     null: false
     t.datetime "created_at",                                                   null: false
     t.datetime "updated_at",                                                   null: false
-    t.string   "cellphone",                                                    null: false
-    t.integer  "workgroup_id",                                                 null: false
     t.index ["adviser_id"], name: "index_customers_on_adviser_id", using: :btree
     t.index ["card_id"], name: "index_customers_on_card_id", using: :btree
     t.index ["city_id"], name: "index_customers_on_city_id", using: :btree
@@ -190,14 +190,16 @@ ActiveRecord::Schema.define(version: 20160822201520) do
     t.integer  "payments_count",                                                          null: false
     t.decimal  "payment",                        precision: 10, scale: 2,                 null: false
     t.decimal  "progress",                       precision: 10, scale: 2, default: "0.0", null: false
-    t.date     "expire_at"
+    t.date     "expire_at",                                                               null: false
     t.datetime "canceled_at"
-    t.jsonb    "credit_line",                                                             null: false
+    t.jsonb    "credit_line_data",                                                        null: false
+    t.integer  "credit_line_id",                                                          null: false
     t.integer  "customer_id",                                                             null: false
     t.integer  "lock_version",                                            default: 0,     null: false
     t.datetime "created_at",                                                              null: false
     t.datetime "updated_at",                                                              null: false
-    t.index ["credit_line"], name: "index_loans_on_credit_line", using: :gin
+    t.index ["credit_line_data"], name: "index_loans_on_credit_line_data", using: :gin
+    t.index ["credit_line_id"], name: "index_loans_on_credit_line_id", using: :btree
     t.index ["customer_id"], name: "index_loans_on_customer_id", using: :btree
     t.index ["status"], name: "index_loans_on_status", using: :btree
   end
@@ -232,6 +234,24 @@ ActiveRecord::Schema.define(version: 20160822201520) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.index ["name"], name: "index_occupations_on_name", unique: true, using: :btree
+  end
+
+  create_table "payments", force: :cascade do |t|
+    t.integer  "number",                                           null: false
+    t.decimal  "capital",                 precision: 10, scale: 2, null: false
+    t.decimal  "interest",                precision: 10, scale: 2, null: false
+    t.decimal  "tax",                     precision: 10, scale: 2, null: false
+    t.decimal  "tax_perception",          precision: 10, scale: 2, null: false
+    t.decimal  "gross_income_perception", precision: 10, scale: 2, null: false
+    t.decimal  "insurance",               precision: 10, scale: 2, null: false
+    t.decimal  "balance",                 precision: 10, scale: 2, null: false
+    t.decimal  "amount",                  precision: 10, scale: 2, null: false
+    t.date     "expire_at",                                        null: false
+    t.datetime "paid_at"
+    t.integer  "loan_id",                                          null: false
+    t.datetime "created_at",                                       null: false
+    t.datetime "updated_at",                                       null: false
+    t.index ["loan_id"], name: "index_payments_on_loan_id", using: :btree
   end
 
   create_table "references", force: :cascade do |t|

@@ -208,10 +208,18 @@ es:
       organization:
         name: 'Ministerio o Secretaría'
       payment:
-        number: 'Número'
-        payment: 'Cuota'
+        amount: 'Cuota'
+        balance: 'Saldo'
+        capital: 'Capital'
         expire_at: 'Vencimiento'
+        gross_income_perception: 'Percepción IIBB'
+        insurance: 'Seguro'
+        interest: 'Interés'
+        loan: 'Préstamo'
+        number: 'Número'
         paid_at: 'Fecha de pago'
+        tax: 'IVA'
+        tax_perception: 'Percepción IVA'
       phone:
         phone: 'Teléfono'
       rate:

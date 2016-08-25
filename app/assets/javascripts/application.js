@@ -21,6 +21,7 @@
 //= require bootstrap-sprockets
 //= require bootstrap-submenu
 //= require ckeditor/init
+//= require autocomplete
 //= require dynamic_form
 //= require main
 //= require states

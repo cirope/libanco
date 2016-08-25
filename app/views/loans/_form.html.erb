@@ -1,28 +1,42 @@
-<%= simple_form_for(@loan) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :status %>
-    <%= f.input :amortization_system %>
-    <%= f.input :commission_amount %>
-    <%= f.input :interest_amount %>
-    <%= f.input :tax_amount %>
-    <%= f.input :tax_perception_amount %>
-    <%= f.input :gross_income_perception_amount %>
-    <%= f.input :insurance_amount %>
-    <%= f.input :stamped_amount %>
-    <%= f.input :amount %>
-    <%= f.input :amount_total %>
-    <%= f.input :payments_count %>
-    <%= f.input :payment %>
-    <%= f.input :progress %>
-    <%= f.input :expired_at %>
-    <%= f.input :canceled_at %>
-    <%= f.input :credit_line %>
-    <%= f.association :customer %>
+<%= simple_form_for @loan do |f| %>
+  <div class="form-inputs row">
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            <%= Loan.model_name.human count: 1 %>
+          </h3>
+        </div>
+        <div class="panel-body">
+          <%= f.input :customer, as: :autocomplete, url: customers_path, autofocus: true,
+            input_html: { data: { empty_result_label: t('views.generic.empty_index') } } %>
+          <%= f.association :credit_line, prompt: true %>
+          <div class="row">
+            <div class="col-md-6">
+              <%= f.input :amortization_system, collection: amortization_systems, prompt: true %>
+            </div>
+            <div class="col-md-6">
+              <%= f.input :amount %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <%= f.input :payments_count %>
+            </div>
+            <div class="col-md-6">
+              <%= f.input :payment_frequency, collection: payment_frequencies, prompt: true %>
+            </div>
+          </div>
+          <%= f.input :lock_version, as: :hidden %>
+        </div>
+      </div>
+    </div>
   </div>
 
+  <hr />
+
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= submit_button f %>
+    <div class="pull-right"><%= yield :form_actions %></div>
   </div>
 <% end %>
