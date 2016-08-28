@@ -1,12 +1,12 @@
 default:
   number: 1
-  capital: 513.71
-  interest: 176.56
-  tax: 37.08
+  capital: 513.72
+  interest: 176.55
+  tax: 37.07
   tax_perception: 0
   gross_income_perception: 0
   insurance: 0
   balance: 3579.95
-  amount: 727.35
+  amount: 727.34
   expire_at: <%= 2.months.from_now %>
   loan: default

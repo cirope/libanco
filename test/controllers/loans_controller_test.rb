@@ -18,7 +18,7 @@ class LoansControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should create loan' do
-    assert_difference('Loan.count') do
+    assert_difference 'Loan.count' do
       post loans_url, params: {
         loan: {
           amortization_system: @loan.amortization_system,
