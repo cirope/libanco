@@ -1,5 +1,11 @@
 <div class="page-header page-header-sm">
-  <h3><%= @loan.customer %></h3>
+  <h3>
+    <%= @loan.customer %>
+    <small>
+      <%= t_field @loan.customer, 'identification_type' %>:
+      <%= @loan.customer.identification %>
+    </small>
+  </h3>
 </div>
 
 <div class="bs-callout bs-callout-info">

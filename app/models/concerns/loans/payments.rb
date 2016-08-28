@@ -8,6 +8,7 @@ module Loans::Payments
   private
 
     def calculate_payments
+      payments.map(&:destroy)
       calculate_payments_french if french?
     end
 

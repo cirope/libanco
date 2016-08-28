@@ -27,7 +27,7 @@ es:
     index: 'Listado'
     loading: 'Cargando...'
     logout: 'Salir'
-    show: 'Ver'
+    show: 'Más Información'
     payments: 'Ver cuotas'
     processing: 'Procesando...'
     search: 'Buscar'
