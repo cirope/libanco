@@ -11,6 +11,7 @@
         <th><%= Payment.human_attribute_name 'tax_perception' %></th>
         <th><%= Payment.human_attribute_name 'gross_income_perception' %></th>
         <th><%= Payment.human_attribute_name 'amount' %></th>
+        <th><%= Payment.human_attribute_name 'expire_at' %></th>
       </tr>
     </thead>
 
@@ -26,6 +27,7 @@
           <td><%= number_to_currency payment.tax_perception %></td>
           <td><%= number_to_currency payment.gross_income_perception %></td>
           <td><%= number_to_currency payment.amount %></td>
+          <td><%= l payment.expire_at %></td>
         </tr>
       <% end %>
     </tbody>

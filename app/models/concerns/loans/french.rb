@@ -46,10 +46,6 @@ module Loans::French
       self.stamped_amount = amount_total * credit_line.stamped.to_f / 100.0
     end
 
-    def percentage_of attr
-      credit_line.send(attr) / 100.0
-    end
-
     def calculare_insurance
       self.insurance_amount = percentage_of(:insurance)
     end

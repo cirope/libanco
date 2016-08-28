@@ -212,14 +212,14 @@ es:
         balance: 'Saldo'
         capital: 'Capital'
         expire_at: 'Vencimiento'
-        gross_income_perception: 'Percepción IIBB'
+        gross_income_perception: 'Perc. IIBB'
         insurance: 'Seguro'
         interest: 'Interés'
         loan: 'Préstamo'
         number: 'Número'
         paid_at: 'Fecha de pago'
         tax: 'IVA'
-        tax_perception: 'Percepción IVA'
+        tax_perception: 'Perc. IVA'
       phone:
         phone: 'Teléfono'
       rate:
