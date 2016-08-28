@@ -12,7 +12,7 @@ default:
   amount_total: 3579.95
   payments_count: 6
   payment: 727.35
-  payment_frequency: monthly
+  payment_frequency: 30
   progress: 0
   expire_at: <%= 6.months.from_now %>
   credit_line_data: { name: Default, commission: 15, interest: 60, tax: 21 }

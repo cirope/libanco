@@ -3,19 +3,19 @@ class CreateLoans < ActiveRecord::Migration[5.0]
     create_table :loans do |t|
       t.string :status, null: false
       t.string :amortization_system, null: false
-      t.decimal :commission_amount, null: false, precision: 10, scale: 2
-      t.decimal :interest_amount, null: false, precision: 10, scale: 2
-      t.decimal :tax_amount, null: false, precision: 10, scale: 2
-      t.decimal :tax_perception_amount, null: false, precision: 10, scale: 2
-      t.decimal :gross_income_perception_amount, null: false, precision: 10, scale: 2
-      t.decimal :insurance_amount, null: false, precision: 10, scale: 2
-      t.decimal :stamped_amount, null: false, precision: 10, scale: 2
-      t.decimal :amount, null: false, precision: 10, scale: 2
-      t.decimal :amount_total, null: false, precision: 10, scale: 2
-      t.string :payment_frequency, null: false
+      t.decimal :commission_amount, null: false, precision: 12, scale: 4
+      t.decimal :interest_amount, null: false, precision: 12, scale: 4
+      t.decimal :tax_amount, null: false, precision: 12, scale: 4
+      t.decimal :tax_perception_amount, null: false, precision: 12, scale: 4
+      t.decimal :gross_income_perception_amount, null: false, precision: 12, scale: 4
+      t.decimal :insurance_amount, null: false, precision: 12, scale: 4
+      t.decimal :stamped_amount, null: false, precision: 12, scale: 4
+      t.decimal :amount, null: false, precision: 12, scale: 4
+      t.decimal :amount_total, null: false, precision: 12, scale: 4
+      t.integer :payment_frequency, null: false
       t.integer :payments_count, null: false
-      t.decimal :payment, null: false, precision: 10, scale: 2
-      t.decimal :progress, null: false, precision: 10, scale: 2, default: 0
+      t.decimal :payment, null: false, precision: 12, scale: 4
+      t.decimal :progress, null: false, precision: 5, scale: 2, default: 0
       t.date :expire_at, null: false
       t.datetime :canceled_at
       t.jsonb :credit_line_data, null: false

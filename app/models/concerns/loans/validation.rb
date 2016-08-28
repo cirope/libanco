@@ -4,12 +4,17 @@ module Loans::Validation
   included do
     STATUSES = ['current', 'canceled', 'expired', 'judicial']
     SYSTEMS = ['french']
-    FREQUENCIES = ['daily', 'weekly', 'biweekly', 'monthly']
+    FREQUENCIES = {
+      'daily': 1,
+      'weekly': 7,
+      'biweekly': 15,
+      'monthly': 30
+    }
 
     validates :status, :amortization_system, :credit_line_data, :payment_frequency, presence: true
     validates :status, inclusion: { in: STATUSES }, allow_nil: true, allow_blank: true
     validates :amortization_system, inclusion: { in: SYSTEMS }, allow_nil: true, allow_blank: true
-    validates :payment_frequency, inclusion: { in: FREQUENCIES }, allow_nil: true, allow_blank: true
+    validates :payment_frequency, inclusion: { in: FREQUENCIES.values }, allow_nil: true, allow_blank: true
     validates :payments_count, presence: true, numericality: { only_integer: true, greater_than: 0 }
     validates :amount, :amount_total, :payment, presence: true, numericality: { greater_than: 0 }
     validates :commission_amount, :interest_amount, :tax_amount, :tax_perception_amount,

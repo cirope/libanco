@@ -4,6 +4,6 @@ module LoansHelper
   end
 
   def payment_frequencies
-    Loan::FREQUENCIES.map { |pf| [t("loans.payment_frequencies.#{pf}"), pf] }
+    Loan::FREQUENCIES.map { |k, v| [t("loans.payment_frequencies.#{k}"), v] }
   end
 end

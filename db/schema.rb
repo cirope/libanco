@@ -177,19 +177,19 @@ ActiveRecord::Schema.define(version: 20160825103307) do
   create_table "loans", force: :cascade do |t|
     t.string   "status",                                                                  null: false
     t.string   "amortization_system",                                                     null: false
-    t.decimal  "commission_amount",              precision: 10, scale: 2,                 null: false
-    t.decimal  "interest_amount",                precision: 10, scale: 2,                 null: false
-    t.decimal  "tax_amount",                     precision: 10, scale: 2,                 null: false
-    t.decimal  "tax_perception_amount",          precision: 10, scale: 2,                 null: false
-    t.decimal  "gross_income_perception_amount", precision: 10, scale: 2,                 null: false
-    t.decimal  "insurance_amount",               precision: 10, scale: 2,                 null: false
-    t.decimal  "stamped_amount",                 precision: 10, scale: 2,                 null: false
-    t.decimal  "amount",                         precision: 10, scale: 2,                 null: false
-    t.decimal  "amount_total",                   precision: 10, scale: 2,                 null: false
-    t.string   "payment_frequency",                                                       null: false
+    t.decimal  "commission_amount",              precision: 12, scale: 4,                 null: false
+    t.decimal  "interest_amount",                precision: 12, scale: 4,                 null: false
+    t.decimal  "tax_amount",                     precision: 12, scale: 4,                 null: false
+    t.decimal  "tax_perception_amount",          precision: 12, scale: 4,                 null: false
+    t.decimal  "gross_income_perception_amount", precision: 12, scale: 4,                 null: false
+    t.decimal  "insurance_amount",               precision: 12, scale: 4,                 null: false
+    t.decimal  "stamped_amount",                 precision: 12, scale: 4,                 null: false
+    t.decimal  "amount",                         precision: 12, scale: 4,                 null: false
+    t.decimal  "amount_total",                   precision: 12, scale: 4,                 null: false
+    t.integer  "payment_frequency",                                                       null: false
     t.integer  "payments_count",                                                          null: false
-    t.decimal  "payment",                        precision: 10, scale: 2,                 null: false
-    t.decimal  "progress",                       precision: 10, scale: 2, default: "0.0", null: false
+    t.decimal  "payment",                        precision: 12, scale: 4,                 null: false
+    t.decimal  "progress",                       precision: 5,  scale: 2, default: "0.0", null: false
     t.date     "expire_at",                                                               null: false
     t.datetime "canceled_at"
     t.jsonb    "credit_line_data",                                                        null: false
@@ -238,14 +238,14 @@ ActiveRecord::Schema.define(version: 20160825103307) do
 
   create_table "payments", force: :cascade do |t|
     t.integer  "number",                                           null: false
-    t.decimal  "capital",                 precision: 10, scale: 2, null: false
-    t.decimal  "interest",                precision: 10, scale: 2, null: false
-    t.decimal  "tax",                     precision: 10, scale: 2, null: false
-    t.decimal  "tax_perception",          precision: 10, scale: 2, null: false
-    t.decimal  "gross_income_perception", precision: 10, scale: 2, null: false
-    t.decimal  "insurance",               precision: 10, scale: 2, null: false
-    t.decimal  "balance",                 precision: 10, scale: 2, null: false
-    t.decimal  "amount",                  precision: 10, scale: 2, null: false
+    t.decimal  "capital",                 precision: 12, scale: 4, null: false
+    t.decimal  "interest",                precision: 12, scale: 4, null: false
+    t.decimal  "tax",                     precision: 12, scale: 4, null: false
+    t.decimal  "tax_perception",          precision: 12, scale: 4, null: false
+    t.decimal  "gross_income_perception", precision: 12, scale: 4, null: false
+    t.decimal  "insurance",               precision: 12, scale: 4, null: false
+    t.decimal  "balance",                 precision: 12, scale: 4, null: false
+    t.decimal  "amount",                  precision: 12, scale: 4, null: false
     t.date     "expire_at",                                        null: false
     t.datetime "paid_at"
     t.integer  "loan_id",                                          null: false
