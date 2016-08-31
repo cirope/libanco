@@ -23,7 +23,7 @@ module Loans::Payments
         tax_perception = (interest + tax + insurance) * percentage_of(:tax_perception)
         gross_income_perception = (interest + insurance) * percentage_of(:gross_income_perception)
         capital = last_payment - interest - tax - insurance - tax_perception - gross_income_perception
-        expire_at = (number * payment_frequency).days.from_now
+        expire_date = (number * payment_frequency).days.from_now
 
         payments.create!(
           number: number,
@@ -35,7 +35,7 @@ module Loans::Payments
           tax_perception: tax_perception,
           gross_income_perception: gross_income_perception,
           amount: payment,
-          expire_at: expire_at
+          expire_at: expire_at_corrector(expire_date)
         )
 
         last_capital = last_capital - capital
