@@ -1,0 +1,2 @@
+module Loans::SimulatorHelper
+end

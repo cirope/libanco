@@ -8,5 +8,7 @@ class Loan < ApplicationRecord
   include Loans::Scopes
   include Loans::Validation
 
+  attr_accessor :simulator
+
   default_scope -> { order 'loans.created_at DESC' }
 end

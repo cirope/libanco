@@ -1,0 +1,27 @@
+<div id="simulator">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        <%= t 'navigation.simulator' %>
+      </h3>
+    </div>
+    <div class="panel-body">
+      <% if !@loan.simulate_valid? %>
+        <%= render 'shared/empty_index', message: t('loans.simulator.empty_html') %>
+      <% else %>
+        <p>
+          <strong><%= Loan.human_attribute_name 'expire_at' %>:</strong>
+          <%= l @loan.expire_at if @loan.expire_at %>
+        </p>
+        <p>
+          <strong><%= Loan.human_attribute_name 'amount_total' %>:</strong>
+          <%= number_to_currency @loan.amount_total.to_f %>
+        </p>
+        <p>
+          <strong><%= Loan.human_attribute_name 'payment' %>:</strong>
+          <%= number_to_currency @loan.payment.to_f %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+</div>

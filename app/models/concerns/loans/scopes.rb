@@ -12,4 +12,13 @@ module Loans::Scopes
   def expire_at_corrector expire_date
     expire_date.on_weekend? ? expire_date.next_week : expire_date
   end
+
+  def loan_valid?
+    errors.blank?
+  end
+
+  def simulate_valid?
+    self.simulator = true
+    valid?
+  end
 end

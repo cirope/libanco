@@ -2,8 +2,13 @@ module Loans::Defaults
   extend ActiveSupport::Concern
 
   included do
-    before_validation :set_defaults
-    before_validation :set_credit_line_data, if: :credit_line
+    after_validation :set_defaults, if: :loan_valid?
+    before_create :set_credit_line_data
+  end
+
+  def calculate_expire_at
+    expire_days = payments_count.to_i * payment_frequency.to_i
+    expire_at_corrector(expire_days.days.from_now)
   end
 
   private
@@ -11,11 +16,6 @@ module Loans::Defaults
     def set_defaults
       self.expire_at = calculate_expire_at
       self.status ||= 'current'
-    end
-
-    def calculate_expire_at
-      expire_days = payments_count.to_i * payment_frequency.to_i
-      expire_at_corrector(expire_days.days.from_now)
     end
 
     def set_credit_line_data

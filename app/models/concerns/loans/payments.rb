@@ -17,7 +17,7 @@ module Loans::Payments
       last_capital = amount_total
 
       1.upto(payments_count) do |number|
-        interest = last_capital * percentage_of(:interest) * payment_frequency.to_i / 365.0
+        interest = payment_interest(last_capital, number)
         tax = interest * percentage_of(:tax)
         insurance = last_capital * percentage_of(:insurance)
         tax_perception = (interest + tax + insurance) * percentage_of(:tax_perception)
@@ -39,6 +39,14 @@ module Loans::Payments
         )
 
         last_capital = last_capital - capital
+      end
+    end
+
+    def payment_interest last_capital, number
+      if number == 1
+        last_capital * percentage_of(:interest) * first_payment_days.to_i / 365.0
+      else
+        last_capital * percentage_of(:interest) * payment_frequency.to_i / 365.0
       end
     end
 end

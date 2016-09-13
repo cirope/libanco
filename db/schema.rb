@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160825103307) do
+ActiveRecord::Schema.define(version: 20160913012501) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -198,6 +198,7 @@ ActiveRecord::Schema.define(version: 20160825103307) do
     t.integer  "lock_version",                                            default: 0,     null: false
     t.datetime "created_at",                                                              null: false
     t.datetime "updated_at",                                                              null: false
+    t.integer  "first_payment_days",                                                      null: false
     t.index ["credit_line_data"], name: "index_loans_on_credit_line_data", using: :gin
     t.index ["credit_line_id"], name: "index_loans_on_credit_line_id", using: :btree
     t.index ["customer_id"], name: "index_loans_on_customer_id", using: :btree

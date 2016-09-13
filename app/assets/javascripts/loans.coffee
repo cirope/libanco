@@ -1,3 +1,9 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+jQuery ($) ->
+  start_simulation = ->
+    $.get $('#loans').attr('data-simulator-url'), $('form').serialize(), null, 'script'
+
+  $(document).on 'change', '#loan_credit_line_id, #loan_amortization_system, #loan_payment_frequency', ->
+    start_simulation()
+
+  $(document).on 'keyup', '#loan_amount, #loan_payments_count, #loan_first_payment_days', ->
+    start_simulation()

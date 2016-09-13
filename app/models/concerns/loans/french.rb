@@ -2,23 +2,23 @@ module Loans::French
   extend ActiveSupport::Concern
 
   included do
-    before_validation :set_amount_total, :calculare_insurance,
+    after_validation :calculate_amount_total, :calculare_insurance,
       :calculate_interest, :calculate_payment, if: :loan_french?
-  end
-
-  def calculate_payment
-    self.payment = amount_total *
-      (((1 + interest_amount) ** payments_count) * interest_amount) /
-      (((1 + interest_amount) ** payments_count - 1))
   end
 
   private
 
-    def loan_french?
-      credit_line && french?
+    def calculate_payment
+      self.payment = amount_total *
+        (((1 + interest_amount) ** payments_count) * interest_amount) /
+        (((1 + interest_amount) ** payments_count - 1))
     end
 
-    def set_amount_total
+    def loan_french?
+      loan_valid? && french?
+    end
+
+    def calculate_amount_total
       self.amount_total = amount.to_f + calculate_commission + calculate_tax +
         calculate_tax_perception + calculate_gross_income_perception
       self.amount_total += calculate_stamped
@@ -51,7 +51,7 @@ module Loans::French
     end
 
     def calculate_interest
-      interest_frequency = percentage_of(:interest) * payment_frequency.to_i / 365.0
+      interest_frequency = percentage_of(:interest) * first_payment_days.to_i / 365.0
 
       self.interest_amount = (interest_frequency * (1 + percentage_of(:tax))) +
         insurance_amount +

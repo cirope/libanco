@@ -25,3 +25,4 @@
 //= require dynamic_form
 //= require main
 //= require states
+//= require loans

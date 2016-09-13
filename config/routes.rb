@@ -31,6 +31,9 @@ Rails.application.routes.draw do
     resources :header_templates, except: [:destroy] do
       get :image, on: :member
     end
+    namespace :loans do
+      get 'simulator', to: 'simulator#index', as: 'simulator'
+    end
     resources :loans
     resources :marital_statuses, except: [:show, :destroy]
     resources :nacionalities, except: [:show, :destroy]

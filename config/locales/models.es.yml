@@ -186,6 +186,7 @@ es:
         credit_line: 'Línea de crédito'
         customer: 'Cliente'
         expire_at: 'Vencimiento'
+        first_payment_days: 'Primer cuota días'
         gross_income_perception_amount: 'Percepción IIBB'
         insurance_amount: 'Seguro'
         interest_amount: 'TNA'

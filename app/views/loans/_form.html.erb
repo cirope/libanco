@@ -1,5 +1,5 @@
 <%= simple_form_for @loan do |f| %>
-  <div class="form-inputs row">
+  <div id="loans" class="row" data-simulator-url="<%= loans_simulator_url %>">
     <div class="col-md-6">
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -10,7 +10,14 @@
         <div class="panel-body">
           <%= f.input :customer, as: :autocomplete, url: customers_path, autofocus: true,
             input_html: { data: { empty_result_label: t('views.generic.empty_index') } } %>
-          <%= f.association :credit_line, prompt: true %>
+          <div class="row">
+            <div class="col-md-6">
+              <%= f.association :credit_line, prompt: true %>
+            </div>
+            <div class="col-md-6">
+              <%= f.input :first_payment_days %>
+            </div>
+          </div>
           <div class="row">
             <div class="col-md-6">
               <%= f.input :amortization_system, collection: amortization_systems, prompt: true %>
@@ -30,6 +37,9 @@
           <%= f.input :lock_version, as: :hidden %>
         </div>
       </div>
+    </div>
+    <div class="col-md-6">
+      <%= render template: 'loans/simulator/index' %>
     </div>
   </div>
 
