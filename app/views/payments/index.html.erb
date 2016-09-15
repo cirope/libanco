@@ -7,6 +7,8 @@
         <th><%= Payment.human_attribute_name 'capital' %></th>
         <th><%= Payment.human_attribute_name 'interest' %></th>
         <th><%= Payment.human_attribute_name 'tax' %></th>
+        <th><%= Payment.human_attribute_name 'extra_interest' %></th>
+        <th><%= Payment.human_attribute_name 'tax_interest' %></th>
         <th><%= Payment.human_attribute_name 'insurance' %></th>
         <th><%= Payment.human_attribute_name 'tax_perception' %></th>
         <th><%= Payment.human_attribute_name 'gross_income_perception' %></th>
@@ -23,6 +25,8 @@
           <td><%= number_to_currency payment.capital %></td>
           <td><%= number_to_currency payment.interest %></td>
           <td><%= number_to_currency payment.tax %></td>
+          <td><%= number_to_currency payment.extra_interest %></td>
+          <td><%= number_to_currency payment.tax_interest %></td>
           <td><%= number_to_currency payment.insurance %></td>
           <td><%= number_to_currency payment.tax_perception %></td>
           <td><%= number_to_currency payment.gross_income_perception %></td>

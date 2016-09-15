@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160913012501) do
+ActiveRecord::Schema.define(version: 20160914005619) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -238,20 +238,22 @@ ActiveRecord::Schema.define(version: 20160913012501) do
   end
 
   create_table "payments", force: :cascade do |t|
-    t.integer  "number",                                           null: false
-    t.decimal  "capital",                 precision: 12, scale: 4, null: false
-    t.decimal  "interest",                precision: 12, scale: 4, null: false
-    t.decimal  "tax",                     precision: 12, scale: 4, null: false
-    t.decimal  "tax_perception",          precision: 12, scale: 4, null: false
-    t.decimal  "gross_income_perception", precision: 12, scale: 4, null: false
-    t.decimal  "insurance",               precision: 12, scale: 4, null: false
-    t.decimal  "balance",                 precision: 12, scale: 4, null: false
-    t.decimal  "amount",                  precision: 12, scale: 4, null: false
-    t.date     "expire_at",                                        null: false
+    t.integer  "number",                                                           null: false
+    t.decimal  "capital",                 precision: 12, scale: 4,                 null: false
+    t.decimal  "interest",                precision: 12, scale: 4,                 null: false
+    t.decimal  "tax",                     precision: 12, scale: 4,                 null: false
+    t.decimal  "tax_perception",          precision: 12, scale: 4,                 null: false
+    t.decimal  "gross_income_perception", precision: 12, scale: 4,                 null: false
+    t.decimal  "insurance",               precision: 12, scale: 4,                 null: false
+    t.decimal  "balance",                 precision: 12, scale: 4,                 null: false
+    t.decimal  "amount",                  precision: 12, scale: 4,                 null: false
+    t.date     "expire_at",                                                        null: false
     t.datetime "paid_at"
-    t.integer  "loan_id",                                          null: false
-    t.datetime "created_at",                                       null: false
-    t.datetime "updated_at",                                       null: false
+    t.integer  "loan_id",                                                          null: false
+    t.datetime "created_at",                                                       null: false
+    t.datetime "updated_at",                                                       null: false
+    t.decimal  "extra_interest",          precision: 12, scale: 4, default: "0.0", null: false
+    t.decimal  "tax_interest",            precision: 12, scale: 4, default: "0.0", null: false
     t.index ["loan_id"], name: "index_payments_on_loan_id", using: :btree
   end
 

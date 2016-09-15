@@ -3,5 +3,7 @@ class Payment < ApplicationRecord
   include Authority::Abilities
   include Payments::Validation
 
+  default_scope -> { order 'number ASC' }
+
   belongs_to :loan
 end

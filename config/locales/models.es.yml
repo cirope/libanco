@@ -213,6 +213,8 @@ es:
         balance: 'Saldo'
         capital: 'Capital'
         expire_at: 'Vencimiento'
+        extra_interest: 'Int. Adic.'
+        tax_interest: 'IVA Int.'  
         gross_income_perception: 'Perc. IIBB'
         insurance: 'Seguro'
         interest: 'Interés'
