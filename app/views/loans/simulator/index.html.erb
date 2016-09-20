@@ -18,6 +18,30 @@
           <%= number_to_currency @loan.amount_total.to_f %>
         </p>
         <p>
+          <strong><%= Loan.human_attribute_name 'commission_amount' %>:</strong>
+          <%= number_to_currency @loan.commission_amount %>
+        </p>
+        <p>
+          <strong><%= Loan.human_attribute_name 'tax_amount' %>:</strong>
+          <%= number_to_currency @loan.tax_amount %>
+        </p>
+        <p>
+          <strong><%= Loan.human_attribute_name 'insurance_amount' %>:</strong>
+          <%= number_to_currency @loan.insurance_amount %>
+        </p>
+        <p>
+          <strong><%= Loan.human_attribute_name 'stamped_amount' %>:</strong>
+          <%= number_to_currency @loan.stamped_amount %>
+        </p>
+        <p>
+          <strong><%= Loan.human_attribute_name 'tax_perception_amount' %>:</strong>
+          <%= number_to_currency @loan.tax_perception_amount %>
+        </p>
+        <p>
+          <strong><%= Loan.human_attribute_name 'gross_income_perception_amount' %>:</strong>
+          <%= number_to_currency @loan.gross_income_perception_amount %>
+        </p>
+        <p>
           <strong><%= Loan.human_attribute_name 'payment' %>:</strong>
           <%= number_to_currency @loan.payment.to_f %>
         </p>

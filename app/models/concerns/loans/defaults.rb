@@ -3,11 +3,11 @@ module Loans::Defaults
 
   included do
     after_validation :set_defaults, if: :loan_valid?
-    before_create :set_credit_line_data
+    before_save :set_credit_line_data
   end
 
   def calculate_expire_at
-    expire_days = payments_count.to_i * payment_frequency.to_i
+    expire_days = payments_count.to_i * payment_frequency.to_i + (first_payment_days - payment_frequency)
     expire_at_corrector(expire_days.days.from_now)
   end
 
@@ -20,8 +20,8 @@ module Loans::Defaults
 
     def set_credit_line_data
       attrs = [
-        'id', 'name', 'commission', 'interest', 'tax', 'tax_perception',
-        'gross_income_perception', 'insurance', 'stamped'
+        'id', 'name', 'commission', 'commission_max', 'interest', 'tax', 'tax_perception',
+        'gross_income_perception', 'gross_income_perception_min', 'insurance', 'stamped'
       ]
       self.credit_line_data = credit_line.attributes.slice *attrs
     end

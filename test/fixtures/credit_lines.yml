@@ -1,9 +1,11 @@
 default:
   name: Default
   commission: 15
+  commission_max: 10000
   interest: 60
   tax: 21
   tax_perception: 0
   gross_income_perception: 0
+  gross_income_perception_min: 50
   insurance: 0
   stamped: 1

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160914005619) do
+ActiveRecord::Schema.define(version: 20160825103307) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,17 +66,19 @@ ActiveRecord::Schema.define(version: 20160914005619) do
   end
 
   create_table "credit_lines", force: :cascade do |t|
-    t.string   "name",                                                         null: false
-    t.decimal  "commission",              precision: 10, scale: 2,             null: false
-    t.decimal  "interest",                precision: 10, scale: 2,             null: false
-    t.decimal  "tax",                     precision: 10, scale: 2,             null: false
-    t.decimal  "tax_perception",          precision: 10, scale: 2,             null: false
-    t.decimal  "gross_income_perception", precision: 10, scale: 2,             null: false
-    t.decimal  "insurance",               precision: 10, scale: 2,             null: false
-    t.decimal  "stamped",                 precision: 10, scale: 2,             null: false
-    t.integer  "lock_version",                                     default: 0, null: false
-    t.datetime "created_at",                                                   null: false
-    t.datetime "updated_at",                                                   null: false
+    t.string   "name",                                                             null: false
+    t.decimal  "commission",                  precision: 10, scale: 2,             null: false
+    t.decimal  "commission_max",              precision: 10, scale: 2,             null: false
+    t.decimal  "interest",                    precision: 10, scale: 2,             null: false
+    t.decimal  "tax",                         precision: 10, scale: 2,             null: false
+    t.decimal  "tax_perception",              precision: 10, scale: 2,             null: false
+    t.decimal  "gross_income_perception",     precision: 10, scale: 2,             null: false
+    t.decimal  "gross_income_perception_min", precision: 10, scale: 2,             null: false
+    t.decimal  "insurance",                   precision: 10, scale: 2,             null: false
+    t.decimal  "stamped",                     precision: 10, scale: 2,             null: false
+    t.integer  "lock_version",                                         default: 0, null: false
+    t.datetime "created_at",                                                       null: false
+    t.datetime "updated_at",                                                       null: false
     t.index ["name"], name: "index_credit_lines_on_name", unique: true, using: :btree
   end
 
@@ -188,6 +190,7 @@ ActiveRecord::Schema.define(version: 20160914005619) do
     t.decimal  "amount_total",                   precision: 12, scale: 4,                 null: false
     t.integer  "payment_frequency",                                                       null: false
     t.integer  "payments_count",                                                          null: false
+    t.integer  "first_payment_days",                                                      null: false
     t.decimal  "payment",                        precision: 12, scale: 4,                 null: false
     t.decimal  "progress",                       precision: 5,  scale: 2, default: "0.0", null: false
     t.date     "expire_at",                                                               null: false
@@ -198,7 +201,6 @@ ActiveRecord::Schema.define(version: 20160914005619) do
     t.integer  "lock_version",                                            default: 0,     null: false
     t.datetime "created_at",                                                              null: false
     t.datetime "updated_at",                                                              null: false
-    t.integer  "first_payment_days",                                                      null: false
     t.index ["credit_line_data"], name: "index_loans_on_credit_line_data", using: :gin
     t.index ["credit_line_id"], name: "index_loans_on_credit_line_id", using: :btree
     t.index ["customer_id"], name: "index_loans_on_customer_id", using: :btree
@@ -241,7 +243,9 @@ ActiveRecord::Schema.define(version: 20160914005619) do
     t.integer  "number",                                                           null: false
     t.decimal  "capital",                 precision: 12, scale: 4,                 null: false
     t.decimal  "interest",                precision: 12, scale: 4,                 null: false
+    t.decimal  "extra_interest",          precision: 12, scale: 4, default: "0.0", null: false
     t.decimal  "tax",                     precision: 12, scale: 4,                 null: false
+    t.decimal  "tax_interest",            precision: 12, scale: 4, default: "0.0", null: false
     t.decimal  "tax_perception",          precision: 12, scale: 4,                 null: false
     t.decimal  "gross_income_perception", precision: 12, scale: 4,                 null: false
     t.decimal  "insurance",               precision: 12, scale: 4,                 null: false
@@ -252,8 +256,6 @@ ActiveRecord::Schema.define(version: 20160914005619) do
     t.integer  "loan_id",                                                          null: false
     t.datetime "created_at",                                                       null: false
     t.datetime "updated_at",                                                       null: false
-    t.decimal  "extra_interest",          precision: 12, scale: 4, default: "0.0", null: false
-    t.decimal  "tax_interest",            precision: 12, scale: 4, default: "0.0", null: false
     t.index ["loan_id"], name: "index_payments_on_loan_id", using: :btree
   end
 

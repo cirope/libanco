@@ -14,6 +14,7 @@ class CreateLoans < ActiveRecord::Migration[5.0]
       t.decimal :amount_total, null: false, precision: 12, scale: 4
       t.integer :payment_frequency, null: false
       t.integer :payments_count, null: false
+      t.integer :first_payment_days, null: false
       t.decimal :payment, null: false, precision: 12, scale: 4
       t.decimal :progress, null: false, precision: 5, scale: 2, default: 0
       t.date :expire_at, null: false

@@ -1,50 +1,48 @@
 <%= simple_form_for @credit_line do |f| %>
-  <div class="form-inputs row">
-    <div class="col-md-6">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">
-            <%= CreditLine.model_name.human count: 1 %>
-          </h3>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        <%= CreditLine.model_name.human count: 1 %>
+      </h3>
+    </div>
+    <div class="panel-body">
+      <%= f.input :name, autofocus: true %>
+      <div class="row">
+        <div class="col-md-4">
+          <%= f.input :commission %>
         </div>
-        <div class="panel-body">
-          <%= f.input :name, autofocus: true %>
-          <div class="row">
-            <div class="col-md-6">
-              <%= f.input :commission %>
-            </div>
-            <div class="col-md-6">
-              <%= f.input :interest %>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <%= f.input :tax %>
-            </div>
-            <div class="col-md-6">
-              <%= f.input :tax_perception %>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <%= f.input :gross_income_perception %>
-            </div>
-            <div class="col-md-6">
-              <%= f.input :insurance %>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <%= f.input :stamped %>
-            </div>
-          </div>
-          <%= f.input :lock_version, as: :hidden %>
+        <div class="col-md-4">
+          <%= f.input :interest %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :tax %>
         </div>
       </div>
+      <div class="row">
+        <div class="col-md-4">
+          <%= f.input :tax_perception %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :gross_income_perception %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :gross_income_perception_min %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <%= f.input :insurance %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :stamped %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :commission_max %>
+        </div>
+      </div>
+      <%= f.input :lock_version, as: :hidden %>
     </div>
   </div>
-
-  <hr />
 
   <div class="form-actions">
     <%= submit_button f %>

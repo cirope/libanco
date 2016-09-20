@@ -22,7 +22,9 @@ class CreditLinesControllerTest < ActionDispatch::IntegrationTest
       post credit_lines_url, params: {
         credit_line: {
           commission: @credit_line.commission,
+          commission: @credit_line.commission_max,
           gross_income_perception: @credit_line.gross_income_perception,
+          gross_income_perception_min: @credit_line.gross_income_perception_min,
           insurance: @credit_line.insurance,
           interest: @credit_line.interest,
           name: 'New credit line',

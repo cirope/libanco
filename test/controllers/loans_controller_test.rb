@@ -26,6 +26,7 @@ class LoansControllerTest < ActionDispatch::IntegrationTest
           credit_line_id: @loan.credit_line_id,
           customer_id: @loan.customer_id,
           payments_count: @loan.payments_count,
+          first_payment_days: @loan.first_payment_days,
           payment_frequency: @loan.payment_frequency
         }
       }

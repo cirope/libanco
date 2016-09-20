@@ -126,7 +126,9 @@ es:
         address: 'Dirección'
       credit_line:
         commission: 'Comisión (%)'
+        commission_max: 'Comisión Máxima'
         gross_income_perception: 'Percepción IIBB (%)'
+        gross_income_perception_min: 'Base Mínima IIBB'
         insurance: 'Seguro (%)'
         interest: 'TNA (%)'
         name: 'Nombre'

@@ -49,7 +49,8 @@ class CreditLinesController < ApplicationController
     end
 
     def credit_line_params
-      params.require(:credit_line).permit :name, :commission, :interest, :tax,
-        :tax_perception, :gross_income_perception, :insurance, :stamped, :lock_version
+      params.require(:credit_line).permit :name, :commission, :commission_max, :interest,
+        :tax, :tax_perception, :gross_income_perception, :gross_income_perception_min,
+        :insurance, :stamped, :lock_version
     end
 end

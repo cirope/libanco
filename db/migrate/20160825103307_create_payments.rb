@@ -4,7 +4,9 @@ class CreatePayments < ActiveRecord::Migration[5.0]
       t.integer :number, null: false
       t.decimal :capital, null: false, precision: 12, scale: 4
       t.decimal :interest, null: false, precision: 12, scale: 4
+      t.decimal :extra_interest, null: false, precision: 12, scale: 4, default: 0
       t.decimal :tax, null: false, precision: 12, scale: 4
+      t.decimal :tax_interest, null: false, precision: 12, scale: 4, default: 0
       t.decimal :tax_perception, null: false, precision: 12, scale: 4
       t.decimal :gross_income_perception, null: false, precision: 12, scale: 4
       t.decimal :insurance, null: false, precision: 12, scale: 4
