@@ -236,6 +236,7 @@ es:
       new: 'Nuevo préstamo'
       title: 'Listado de préstamos'
       empty_html: 'No hay préstamos, puede crear uno con el botón <span class="label label-info">Nuevo préstamo</span>'
+    loan_data: 'Datos del préstamo'
     new:
       title: 'Crear préstamo'
     show:

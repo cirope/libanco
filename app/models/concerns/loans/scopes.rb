@@ -17,6 +17,13 @@ module Loans::Scopes
     errors.blank?
   end
 
+  def payment_frequency_days number
+    case payment_frequency
+    when 30 then number.months
+    else number * payment_frequency.days
+    end
+  end
+
   def simulate_valid?
     self.simulator = true
     valid?

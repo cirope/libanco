@@ -31,6 +31,7 @@ gem 'wicked_pdf'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'ckeditor'
+gem 'holidays'
 
 gem 'unicorn'
 

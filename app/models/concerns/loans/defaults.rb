@@ -7,8 +7,8 @@ module Loans::Defaults
   end
 
   def calculate_expire_at
-    expire_days = payments_count.to_i * payment_frequency.to_i + (first_payment_days - payment_frequency)
-    expire_at_corrector(expire_days.days.from_now)
+    expire_date = (first_payment_days.days + payment_frequency_days(payments_count.to_i - 1)).from_now
+    expire_at_corrector(expire_date)
   end
 
   private

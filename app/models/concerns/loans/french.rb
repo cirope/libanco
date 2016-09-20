@@ -31,14 +31,14 @@ module Loans::French
       calculate_insurance
       calculate_interest
 
-      self.payment = amount_total *
+      self.payment = calculate_first_payment_days *
         (((1 + interest_amount) ** payments_count) * interest_amount) /
         (((1 + interest_amount) ** payments_count - 1))
     end
 
     def calculate_first_payment_days
-      coefficient = amount_total * (interest_amount / payment_frequency.to_f) * (first_payment_days - payment_frequency).abs
-#      coefficient = interest_daily_amount * (first_payment_days - payment_frequency).abs
+      coefficient = interest_daily_amount * (first_payment_days - payment_frequency).abs
+      coefficient += coefficient * percentage_of(:tax)
 
       if first_payment_days > payment_frequency
         amount_total + coefficient
