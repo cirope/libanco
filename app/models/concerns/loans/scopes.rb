@@ -10,7 +10,10 @@ module Loans::Scopes
   end
 
   def expire_at_corrector expire_date
-    expire_date.on_weekend? ? expire_date.next_week : expire_date
+    while expire_date.holiday?(:ar) || expire_date.on_weekend? do
+      expire_date += 1.day
+    end
+    expire_date
   end
 
   def loan_valid?

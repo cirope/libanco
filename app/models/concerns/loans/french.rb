@@ -90,11 +90,11 @@ module Loans::French
     end
 
     def calculate_interest
-      interest_frequency = percentage_of(:interest) * payment_frequency.to_i / 365.0
+      interest_monthly = percentage_of(:interest) * payment_frequency.to_i / 365.0
+      interest_monthly_tax = interest_monthly * (1 + percentage_of(:tax))
 
-      self.interest_amount = (interest_frequency * (1 + percentage_of(:tax))) +
-        insurance_amount +
-        (interest_frequency + insurance_amount) * percentage_of(:tax_perception) / 2.0 +
-        (interest_frequency + insurance_amount) * percentage_of(:gross_income_perception) / 10.0
+      self.interest_amount = interest_monthly_tax + insurance_amount +
+        (interest_monthly + insurance_amount) * percentage_of(:tax_perception) / 2.0 +
+        (interest_monthly + insurance_amount) * percentage_of(:gross_income_perception) / 10.0
     end
 end

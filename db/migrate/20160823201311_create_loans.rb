@@ -4,7 +4,7 @@ class CreateLoans < ActiveRecord::Migration[5.0]
       t.string :status, null: false
       t.string :amortization_system, null: false
       t.decimal :commission_amount, null: false, precision: 12, scale: 4
-      t.decimal :interest_amount, null: false, precision: 12, scale: 4
+      t.decimal :interest_amount, null: false, precision: 15, scale: 10
       t.decimal :tax_amount, null: false, precision: 12, scale: 4
       t.decimal :tax_perception_amount, null: false, precision: 12, scale: 4
       t.decimal :gross_income_perception_amount, null: false, precision: 12, scale: 4
