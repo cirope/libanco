@@ -56,7 +56,7 @@ module Loans::Payments
     end
 
     def first_expire_date
-      first_payment_days.days.from_now
+      first_payment_days.days.from_now.to_date
     end
 
     def payment_expire_at number
