@@ -16,6 +16,6 @@ default:
   payment_frequency: 30
   progress: 0
   expire_at: <%= 6.months.from_now %>
-  credit_line_data: { name: Default, commission: 15, interest: 60, tax: 21 }
+  data: { name: Default, commission: 15, interest: 60, tax: 21 }
   credit_line: default
   customer: default
