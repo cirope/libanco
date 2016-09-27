@@ -2,7 +2,8 @@ module Loans::Defaults
   extend ActiveSupport::Concern
 
   included do
-    after_validation :set_defaults, if: :loan_valid?
+    after_initialize :set_defaults
+    after_validation :set_expire_at, if: :loan_valid?
     before_save :set_data
   end
 
@@ -14,8 +15,13 @@ module Loans::Defaults
   private
 
     def set_defaults
-      self.expire_at = calculate_expire_at
       self.status ||= 'current'
+      self.first_payment_days = 30
+      self.payment_frequency = 30
+    end
+
+    def set_expire_at
+      self.expire_at = calculate_expire_at
     end
 
     def set_data

@@ -15,7 +15,7 @@
               <%= f.association :credit_line, prompt: true %>
             </div>
             <div class="col-md-6">
-              <%= f.input :first_payment_days %>
+              <%= f.input :first_payment_days, readonly: true %>
             </div>
           </div>
           <div class="row">
@@ -23,7 +23,7 @@
               <%= f.input :amortization_system, collection: amortization_systems, prompt: true %>
             </div>
             <div class="col-md-6">
-              <%= f.input :payment_frequency, collection: payment_frequencies, prompt: true %>
+              <%= f.input :payment_frequency, collection: payment_frequencies, prompt: true, readonly: true %>
             </div>
           </div>
           <div class="row">
