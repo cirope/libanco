@@ -77,20 +77,22 @@
   </div>
 </div>
 
-<div class="page-header page-header-sm">
-  <h5><%= fa_icon 'file-pdf-o', text: t('customers.files') %></h5>
-</div>
+<% if CustomTemplate.exists? %>
+  <div class="page-header page-header-sm">
+    <h5><%= fa_icon 'file-pdf-o', text: t('customers.files') %></h5>
+  </div>
 
-<ul>
-  <% CustomTemplate.all.each do |custom_template| %>
-    <li>
-      <%= link_to custom_template.name,
-        customer_custom_template_generate_url(@customer, custom_template, format: :pdf), target: '_blank'  %>
-    </li>
-  <% end %>
-</ul>
+  <ul>
+    <% CustomTemplate.all.each do |custom_template| %>
+      <li>
+        <%= link_to custom_template.name,
+          customer_custom_template_generate_url(@customer, custom_template, format: :pdf), target: '_blank'  %>
+      </li>
+    <% end %>
+  </ul>
+  <hr />
+<% end %>
 
-<hr />
 
 <%= link_to_edit [:edit, @customer] %> |
 <%= link_to_index customers_path %>
