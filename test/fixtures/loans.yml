@@ -1,6 +1,6 @@
 default:
   status: current
-  amortization_system: french
+  type: french
   commission_amount: 450
   interest_amount: 0.0597
   tax_amount: 94.5

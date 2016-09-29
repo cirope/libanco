@@ -3,7 +3,7 @@ module Loans::Validation
 
   included do
     STATUSES = ['current', 'canceled', 'expired', 'judicial']
-    SYSTEMS = ['french']
+    TYPES = ['French', 'American']
     FREQUENCIES = {
       'daily': 1,
       'weekly': 7,
@@ -11,8 +11,8 @@ module Loans::Validation
       'monthly': 30
     }
 
-    validates :amortization_system, :payment_frequency, presence: true
-    validates :amortization_system, inclusion: { in: SYSTEMS }, allow_nil: true, allow_blank: true
+    validates :type, :payment_frequency, presence: true
+    validates :type, inclusion: { in: TYPES }, allow_nil: true, allow_blank: true
     validates :payment_frequency, inclusion: { in: FREQUENCIES.values }, allow_nil: true, allow_blank: true
     validates :payments_count, :first_payment_days, presence: true,
       numericality: { only_integer: true, greater_than: 0 }

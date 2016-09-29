@@ -1,6 +1,6 @@
 module LoansHelper
   def amortization_systems
-    Loan::SYSTEMS.map { |as| [t("loans.amortization_systems.#{as}"), as] }
+    Loan::TYPES.map { |as| [t("loans.types.#{as}"), as] }
   end
 
   def payment_frequencies

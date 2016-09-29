@@ -4,7 +4,7 @@
       <%= link_to t('loans.loan_data'), '#loan-data', data: { toggle: 'collapse' } %>
     </h4>
   </div>
-  <div id="loan-data" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne"> 
+  <div id="loan-data" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
     <div class="panel-body">
       <div class="row">
         <div class="col-md-6">
@@ -81,8 +81,8 @@
                 <%= number_to_currency @loan.payment %>
               </p>
               <p>
-                <strong><%= Loan.human_attribute_name 'amortization_system' %>:</strong>
-                <%= t_field @loan, 'amortization_system' %>
+                <strong><%= Loan.human_attribute_name 'type' %>:</strong>
+                <%= t_field @loan, 'type' %>
               </p>
               <p>
                 <strong><%= Loan.human_attribute_name 'payment_frequency' %>:</strong>

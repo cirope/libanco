@@ -20,8 +20,8 @@ class CreateLoans < ActiveRecord::Migration[5.0]
       t.date :expire_at, null: false
       t.datetime :canceled_at
       t.jsonb :data, null: false
-      t.references :credit_line, null: false, index: true 
-      t.references :customer, null: false, index: true 
+      t.references :credit_line, null: false, index: true
+      t.references :customer, null: false, index: true
       t.integer :lock_version, null: false, default: 0
 
       t.timestamps

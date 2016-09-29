@@ -227,9 +227,6 @@ es:
       title: 'Crear institución'
 
   loans:
-    amortization_systems:
-      american: 'Americano'
-      french: 'Francés'
     edit:
       title: 'Editar préstamo'
     index:
@@ -253,6 +250,9 @@ es:
       canceled: 'Cancelado'
       expired: 'Atrasado'
       judicial: 'En acción judicial'
+    types:
+      American: 'Americano'
+      French: 'Francés'
 
   marital_statuses:
     edit:

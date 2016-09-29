@@ -35,6 +35,8 @@ Rails.application.routes.draw do
       get 'simulator', to: 'simulator#index', as: 'simulator'
     end
     resources :loans
+    resources :frenches, controller: :loans
+    resources :americans, controller: :loans
     resources :marital_statuses, except: [:show, :destroy]
     resources :nacionalities, except: [:show, :destroy]
     resources :neighborhoods, except: [:show, :destroy]

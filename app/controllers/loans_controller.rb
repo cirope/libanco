@@ -61,7 +61,7 @@ class LoansController < ApplicationController
     end
 
     def loan_params
-      params.require(:loan).permit :amortization_system, :amount, :payments_count,
+      params.require(:loan).permit :type, :amount, :payments_count,
         :payment_frequency, :first_payment_days, :credit_line_id, :customer_id, :lock_version
     end
 end

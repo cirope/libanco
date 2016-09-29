@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160825103307) do
+ActiveRecord::Schema.define(version: 20160928155132) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -178,14 +178,14 @@ ActiveRecord::Schema.define(version: 20160825103307) do
 
   create_table "loans", force: :cascade do |t|
     t.string   "status",                                                                   null: false
-    t.string   "amortization_system",                                                      null: false
-    t.decimal  "commission_amount",              precision: 12, scale: 4,                  null: false
-    t.decimal  "interest_amount",                precision: 15, scale: 10,                 null: false
-    t.decimal  "tax_amount",                     precision: 12, scale: 4,                  null: false
-    t.decimal  "tax_perception_amount",          precision: 12, scale: 4,                  null: false
-    t.decimal  "gross_income_perception_amount", precision: 12, scale: 4,                  null: false
-    t.decimal  "insurance_amount",               precision: 12, scale: 4,                  null: false
-    t.decimal  "stamped_amount",                 precision: 12, scale: 4,                  null: false
+    t.string   "type",                                                                     null: false
+    t.decimal  "commission_amount",              precision: 12, scale: 4,  default: "0.0", null: false
+    t.decimal  "interest_amount",                precision: 15, scale: 10, default: "0.0", null: false
+    t.decimal  "tax_amount",                     precision: 12, scale: 4,  default: "0.0", null: false
+    t.decimal  "tax_perception_amount",          precision: 12, scale: 4,  default: "0.0", null: false
+    t.decimal  "gross_income_perception_amount", precision: 12, scale: 4,  default: "0.0", null: false
+    t.decimal  "insurance_amount",               precision: 12, scale: 4,  default: "0.0", null: false
+    t.decimal  "stamped_amount",                 precision: 12, scale: 4,  default: "0.0", null: false
     t.decimal  "amount",                         precision: 12, scale: 4,                  null: false
     t.decimal  "amount_total",                   precision: 12, scale: 4,                  null: false
     t.integer  "payment_frequency",                                                        null: false

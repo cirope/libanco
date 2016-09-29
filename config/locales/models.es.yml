@@ -179,7 +179,7 @@ es:
         content: 'Contenido'
         image: 'Logo'
       loan:
-        amortization_system: 'Sistema de amortización'
+        type: 'Sistema de amortización'
         amount: 'Monto'
         amount_total: 'Capital financiado'
         canceled_at: 'Cancelación'
