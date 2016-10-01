@@ -18,8 +18,8 @@ module Loans::Scopes
 
   def payment_frequency_days number
     case payment_frequency
-    when 30 then number.months
-    else number * payment_frequency.days
+    when 30 then number.months.from_now.to_date
+    else (number * payment_frequency).days.from_now.to_date
     end
   end
 
@@ -49,11 +49,7 @@ module Loans::Scopes
       coefficient * percentage_of(:gross_income_perception) : 0
   end
 
-  def first_expire_date
-    first_payment_days.days.from_now.to_date
-  end
-
   def payment_expire_at number
-    number == 1 ? first_expire_date : (first_expire_date + payment_frequency_days(number-1))
+    payment_frequency_days number
   end
 end

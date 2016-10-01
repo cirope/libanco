@@ -2,14 +2,14 @@ class CreateLoans < ActiveRecord::Migration[5.0]
   def change
     create_table :loans do |t|
       t.string :status, null: false
-      t.string :amortization_system, null: false
-      t.decimal :commission_amount, null: false, precision: 12, scale: 4
-      t.decimal :interest_amount, null: false, precision: 15, scale: 10
-      t.decimal :tax_amount, null: false, precision: 12, scale: 4
-      t.decimal :tax_perception_amount, null: false, precision: 12, scale: 4
-      t.decimal :gross_income_perception_amount, null: false, precision: 12, scale: 4
-      t.decimal :insurance_amount, null: false, precision: 12, scale: 4
-      t.decimal :stamped_amount, null: false, precision: 12, scale: 4
+      t.string :type, null: false
+      t.decimal :commission_amount, null: false, precision: 12, scale: 4, default: 0
+      t.decimal :interest_amount, null: false, precision: 15, scale: 10, default: 0
+      t.decimal :tax_amount, null: false, precision: 12, scale: 4, default: 0
+      t.decimal :tax_perception_amount, null: false, precision: 12, scale: 4, default: 0
+      t.decimal :gross_income_perception_amount, null: false, precision: 12, scale: 4, default: 0
+      t.decimal :insurance_amount, null: false, precision: 12, scale: 4, default: 0
+      t.decimal :stamped_amount, null: false, precision: 12, scale: 4, default: 0
       t.decimal :amount, null: false, precision: 12, scale: 4
       t.decimal :amount_total, null: false, precision: 12, scale: 4
       t.integer :payment_frequency, null: false
