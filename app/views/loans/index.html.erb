@@ -23,7 +23,7 @@
           <tr>
             <td><%= l loan.created_at %></td>
             <td><%= loan.customer %></td>
-            <td><%= t_field loan, 'type' %></td>
+            <td><%= t_loan_type loan %></td>
             <td><%= number_to_currency loan.amount %></td>
             <td><%= number_to_currency loan.amount_total %></td>
             <td><%= loan.payments_count %></td>

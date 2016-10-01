@@ -18,7 +18,7 @@ module Loans::Defaults
     def set_defaults
       self.status ||= 'current'
       self.first_payment_days = 30
-      self.payment_frequency = 30
+      self.payment_frequency ||= 30
     end
 
     def calculate_amount_total

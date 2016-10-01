@@ -10,7 +10,7 @@ class Loans::SimulatorControllerTest < ActionDispatch::IntegrationTest
   test 'should get index' do
     get loans_simulator_url, xhr: true, params: {
       loan: {
-        amortization_system: @loan.amortization_system,
+        type: @loan.type,
         amount: @loan.amount,
         payments_count: @loan.payments_count,
         payment_frequency: @loan.payment_frequency,

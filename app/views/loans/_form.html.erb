@@ -15,15 +15,15 @@
               <%= f.association :credit_line, prompt: true %>
             </div>
             <div class="col-md-6">
-              <%= f.input :first_payment_days, readonly: true %>
+              <%= f.input :first_payment_days, disabled: true %>
             </div>
           </div>
           <div class="row">
             <div class="col-md-6">
-              <%= f.input :type, collection: amortization_systems, prompt: true %>
+              <%= f.input :type, collection: amortization_systems, prompt: true, disabled: @loan.persisted? %>
             </div>
             <div class="col-md-6">
-              <%= f.input :payment_frequency, collection: payment_frequencies, prompt: true, readonly: true %>
+              <%= f.input :payment_frequency, collection: payment_frequencies, prompt: true %>
             </div>
           </div>
           <div class="row">
@@ -35,6 +35,7 @@
             </div>
           </div>
           <%= f.input :lock_version, as: :hidden %>
+          <%= f.input :type, as: :hidden if @loan.persisted? %>
         </div>
       </div>
     </div>

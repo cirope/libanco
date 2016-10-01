@@ -21,7 +21,7 @@ class LoansControllerTest < ActionDispatch::IntegrationTest
     assert_difference 'Loan.count' do
       post loans_url, params: {
         loan: {
-          amortization_system: @loan.amortization_system,
+          type: @loan.type,
           amount: @loan.amount,
           credit_line_id: @loan.credit_line_id,
           customer_id: @loan.customer_id,
