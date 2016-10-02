@@ -4,11 +4,13 @@ class LoansController < ApplicationController
   include Title
 
   before_action :set_loan, only: [:show, :edit, :update, :destroy]
+  before_action :set_search_path, only: [:index, :show, :new, :edit]
 
   # GET /loans
   # GET /loans.json
   def index
-    @loans = Loan.page params[:page]
+    @loans = params[:q].present? ? Loan.search(params[:q]) : Loan.all
+    @loans = @loans.page params[:page]
   end
 
   # GET /loans/1
@@ -58,6 +60,10 @@ class LoansController < ApplicationController
 
     def set_loan
       @loan = Loan.find params[:id]
+    end
+
+    def set_search_path
+      @search_path = loans_url
     end
 
     def loan_params

@@ -309,7 +309,7 @@ es:
 
   payments:
     edit:
-      title: 'Editar cuota'
+      title: 'Cuota'
     index:
       title: 'Listado de cuotas'
 

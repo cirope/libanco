@@ -34,7 +34,9 @@ Rails.application.routes.draw do
     namespace :loans do
       get 'simulator', to: 'simulator#index', as: 'simulator'
     end
-    resources :loans
+    resources :loans do
+      resources :payments, only: [:edit, :update]
+    end
     resources :marital_statuses, except: [:show, :destroy]
     resources :nacionalities, except: [:show, :destroy]
     resources :neighborhoods, except: [:show, :destroy]

@@ -6,5 +6,6 @@ module Payments::Validation
     validates :capital, :amount, :interest, :tax, :tax_perception, :gross_income_perception,
       :balance, :insurance, presence: true, numericality: true
     validates_date :expire_at
+    validates_date :paid_at, on: :update
   end
 end

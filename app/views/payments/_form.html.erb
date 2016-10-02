@@ -1,22 +1,15 @@
-<%= simple_form_for(@payment) do |f| %>
-  <%= f.error_notification %>
-
+<%= simple_form_for [@loan, @payment], data: { remote: true } do |f| %>
   <div class="form-inputs">
-    <%= f.input :number %>
-    <%= f.input :capital %>
-    <%= f.input :interest %>
-    <%= f.input :tax %>
-    <%= f.input :tax_perception %>
-    <%= f.input :gross_income_perception %>
-    <%= f.input :insurance %>
-    <%= f.input :balance %>
-    <%= f.input :amount %>
-    <%= f.input :expire_at %>
-    <%= f.input :paid_at %>
-    <%= f.association :loan %>
+    <div class="row">
+      <div class="col-md-6">
+        <%= f.input :paid_at, as: :date_picker, autofocus: true %>
+      </div>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <hr />
+
+  <div class="actions">
+    <%= submit_button f %>
   </div>
 <% end %>
