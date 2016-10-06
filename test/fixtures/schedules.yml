@@ -1,0 +1,5 @@
+default:
+  description: Visit on Monday and offer a loan
+  scheduled_at: <%= 1.day.from_now %>
+  done: false
+  user: admin

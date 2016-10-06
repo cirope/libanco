@@ -1,4 +1,3 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'from@example.com'
-  layout 'mailer'
+  default from: "'#{I18n.t('app_name')}' <#{ENV['EMAIL_ADDRESS']}>"
 end

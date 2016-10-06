@@ -12,5 +12,5 @@ module Devise::StrongParameters
       devise_parameter_sanitizer.permit(:account_update) do |u|
         u.permit(:name, :lastname, :email, :password, :password_confirmation, :current_password)
       end
-    end 
+    end
 end

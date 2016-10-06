@@ -22,7 +22,6 @@ gem 'newrelic_rpm'
 gem 'validates_timeliness'
 gem 'search_cop'
 gem 'font-awesome-rails'
-gem 'bootstrap-datepicker-rails'
 gem 'whenever', require: false
 gem 'sidekiq'
 gem 'authority'

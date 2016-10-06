@@ -49,8 +49,6 @@ GEM
     autoprefixer-rails (6.5.0.1)
       execjs
     bcrypt (3.1.11)
-    bootstrap-datepicker-rails (1.6.4.1)
-      railties (>= 3.0)
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -61,7 +59,7 @@ GEM
       i18n
       rake (>= 10.0.0)
       sshkit (>= 1.9.0)
-    capistrano-bundler (1.1.4)
+    capistrano-bundler (1.2.0)
       capistrano (~> 3.1)
       sshkit (~> 1.2)
     capistrano-harrow (0.5.3)
@@ -216,10 +214,11 @@ GEM
     simple_form (3.3.1)
       actionpack (> 4, < 5.1)
       activemodel (> 4, < 5.1)
-    spring (1.7.2)
-    spring-watcher-listen (2.0.0)
+    spring (2.0.0)
+      activesupport (>= 4.2)
+    spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
-      spring (~> 1.2)
+      spring (>= 1.2, < 3.0)
     sprockets (3.7.0)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -267,7 +266,6 @@ DEPENDENCIES
   apartment
   authority
   bcrypt
-  bootstrap-datepicker-rails
   bootstrap-sass
   capistrano
   capistrano-bundler

@@ -1,0 +1,4 @@
+<% if @schedule.new_record? || @schedule.errors.any? %>
+  $('#modal form').replaceWith('<%= j render('form') %>');
+  $('[data-calendar-time]').trigger('calendar-time-setup');
+<% end %>

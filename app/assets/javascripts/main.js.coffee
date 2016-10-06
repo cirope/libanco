@@ -6,7 +6,9 @@ jQuery ($) ->
     $('#modal').remove()
 
   $(document).on 'focus', '[data-date-picker]', ->
-    $(this).datepicker({ language: 'es', todayHighlight: true, autoclose: true })
+    $(this).datepicker
+      changeMonth: true
+      changeYear: true
 
 document.addEventListener 'turbolinks:load', ->
   $('[data-submenu]').submenupicker()

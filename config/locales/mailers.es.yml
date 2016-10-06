@@ -1,0 +1,9 @@
+es:
+  user_mailer:
+    password_reset:
+      subject: 'Restablecer contraseña'
+  notifier_mailer:
+    remind:
+      subject: 'Recordatorio'
+    summary:
+      subject: 'Resumen diario'

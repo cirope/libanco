@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160928155132) do
+ActiveRecord::Schema.define(version: 20161002150416) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -281,6 +281,35 @@ ActiveRecord::Schema.define(version: 20160928155132) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.index ["name"], name: "index_relationships_on_name", unique: true, using: :btree
+  end
+
+  create_table "reminders", force: :cascade do |t|
+    t.datetime "remind_at",                   null: false
+    t.string   "type",                        null: false
+    t.boolean  "notified",    default: false, null: false
+    t.boolean  "scheduled",   default: false, null: false
+    t.integer  "schedule_id",                 null: false
+    t.integer  "account_id",                  null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.index ["account_id"], name: "index_reminders_on_account_id", using: :btree
+    t.index ["schedule_id"], name: "index_reminders_on_schedule_id", using: :btree
+  end
+
+  create_table "schedules", force: :cascade do |t|
+    t.text     "description",                      null: false
+    t.datetime "scheduled_at",                     null: false
+    t.boolean  "done",             default: false, null: false
+    t.boolean  "remind_me",        default: false, null: false
+    t.integer  "user_id",                          null: false
+    t.string   "schedulable_type"
+    t.integer  "schedulable_id"
+    t.integer  "lock_version",     default: 0,     null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.index ["schedulable_type", "schedulable_id"], name: "index_schedules_on_schedulable_type_and_schedulable_id", using: :btree
+    t.index ["scheduled_at"], name: "index_schedules_on_scheduled_at", using: :btree
+    t.index ["user_id"], name: "index_schedules_on_user_id", using: :btree
   end
 
   create_table "states", force: :cascade do |t|

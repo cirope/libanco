@@ -3,5 +3,6 @@ module Users::Relations
 
   included do
     belongs_to :account
+    has_many :schedules, dependent: :destroy
   end
 end

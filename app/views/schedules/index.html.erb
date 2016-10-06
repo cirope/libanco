@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-lg-3">
+    <%= calendar_data %>
+    <br />
+  </div>
+  <div class="col-lg-9">
+    <h4>
+      <%= l @current_date, format: :long %>
+    </h4>
+
+    <hr />
+
+    <% if @schedules.empty? %>
+      <%= render 'empty_index' %>
+    <% else %>
+      <%= render @schedules, as: :schedule %>
+
+      <hr />
+      <div class="footer">
+        <%= link_to_new new_schedule_path(date: @current_date),
+          class: 'btn btn-primary', data: { remote: true } %>
+      </div>
+    <% end %>
+  </div>
+</div>

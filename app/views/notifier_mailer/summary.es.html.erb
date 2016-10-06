@@ -1,0 +1,33 @@
+<h2>Hola <%= @user %>,<h2>
+<h3>Éstos son los eventos para mañana <%= l(Date.tomorrow, format: :minimal) %>:</h3>
+
+<% @schedules.each do |schedule| %>
+  <p>
+    <strong><%= l(schedule.scheduled_at, format: :time) %></strong> | <%= schedule.description %>
+    <% if schedule.schedulable %>
+      <br />
+      <div style="margin-left: 40px;">
+        <div>
+          <strong><%= Customer.model_name.human(count: 1) %>:</strong>
+          <span><%= schedule.customer %></span>
+        </div>
+        <strong><%= Phone.model_name.human(count: 0) %>:</strong>
+        <ul>
+          <% schedule.phones.each do |phone| %>
+            <li><%= phone %></li>
+          <% end %>
+        </ul>
+        <div>
+          <strong><%= Customer.human_attribute_name :address %>:</strong>
+          <span><%= schedule.customer_address %></span>
+        </div>
+      </div>
+    <% end %>
+  </p>
+<% end %>
+
+<hr />
+<p>
+  Podés <strong>organizar</strong> tus eventos en Libanco desde
+  <%= link_to 'acá', "#{schedules_url(subdomain: @user.account.subdomain)}/#{l(Date.tomorrow, format: :calendar)}" %>
+</p>

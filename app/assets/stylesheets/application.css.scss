@@ -1,12 +1,12 @@
 /*
 *= require jquery-ui/autocomplete
 *= require jquery-ui/datepicker
-*/  
+*= require jquery-ui/timepicker
+*/
 
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 @import 'bootstrap-submenu';
 @import 'bootstrap-extras';
 @import 'font-awesome';
-@import 'bootstrap-datepicker3';
 @import 'main';
