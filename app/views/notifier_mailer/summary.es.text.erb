@@ -6,8 +6,9 @@ Hola <%= @user %>,
   <%= l(schedule.scheduled_at, format: :time) %> | <%= schedule.description %>
   <% if schedule.schedulable %>
     <%= Customer.model_name.human(count: 1) %>: <%= schedule.customer %>
-    <%= Schedule.human_attribute_name :phone %>: <%= schedule.phones.first %>
-    <%= Schedule.human_attribute_name :address %>: <%= schedule.customer_address %>
+    <%= Customer.human_attribute_name :phone %>: <%= schedule.phone %>
+    <%= Customer.human_attribute_name :cellphone %>: <%= schedule.cellphone %>
+    <%= Customer.human_attribute_name :address %>: <%= schedule.address %>
   <% end %>
 <% end %>
 

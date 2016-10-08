@@ -1,6 +1,10 @@
 module Loans::Scopes
   extend ActiveSupport::Concern
 
+  def credit_line_data attribute
+    data['credit_line'][attribute]
+  end
+
   def percentage_of attr
     credit_line.send(attr).to_f / 100.0
   end

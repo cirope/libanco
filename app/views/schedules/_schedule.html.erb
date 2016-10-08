@@ -5,9 +5,7 @@
     </span>
     <% if schedule.schedulable %>
       <span class="text-muted">|</span>
-      <%= link_to(
-        schedule.customer, schedule, data: { remote: true }
-      ) %>
+      <%= link_to schedule.customer, schedule.customer %>
     <% end %>
     <span class="text-muted">|</span>
     <%= schedule.description %>

@@ -10,7 +10,7 @@ class LoansController < ApplicationController
   # GET /loans.json
   def index
     @loans = params[:q].present? ? Loan.search(params[:q]) : Loan.all
-    @loans = @loans.page params[:page]
+    @loans = @loans.includes(:customer).references(:customer).page params[:page]
   end
 
   # GET /loans/1

@@ -16,7 +16,7 @@ module Schedules::Reminders
 
   module ClassMethods
     def for_tomorrow
-      where(scheduled_at: (Date.tomorrow.at_beginning_of_day..Date.tomorrow.at_end_of_day))
+      where scheduled_at: Date.tomorrow.to_time.all_day
     end
   end
 

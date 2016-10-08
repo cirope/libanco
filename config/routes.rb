@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   constraints AccountSubdomain do
     get '/schedules(/:date)', to: 'schedules#index', as: 'schedules', constraints: { date: /\d{4}\/\d{2}\/\d{2}/ }
     get '/schedules/new(/:date)', to: 'schedules#new', as: 'new_schedule', constraints: { date: /\d{4}-\d{2}-\d{2}/ }
-    resources :schedules, only: [:new, :create, :edit, :update] do
+    resources :schedules, only: [:create, :edit, :update] do
       patch 'mark_as_done', to: 'schedules#mark_as_done', as: 'mark_as_done', on: :member
     end
     resources :advisers, except: [:destroy]

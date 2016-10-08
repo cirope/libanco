@@ -9,15 +9,17 @@
         <strong><%= Customer.model_name.human(count: 1) %>:</strong>
         <span><%= @reminder.schedule.customer %></span>
       </div>
-      <strong><%= Phone.model_name.human(count: 0) %>:</strong>
-      <ul>
-        <% @reminder.schedule.phones.each do |phone| %>
-          <li><%= phone %></li>
-        <% end %>
-      </ul>
+      <div>
+        <strong><%= Customer.human_attribute_name :phone %>:</strong>
+        <span><%= @reminder.schedule.phone %></span>
+      </div>
+      <div>
+        <strong><%= Customer.human_attribute_name :cellphone %>:</strong>
+        <span><%= @reminder.schedule.cellphone %></span>
+      </div>
       <div>
         <strong><%= Customer.human_attribute_name :address %>:</strong>
-        <span><%= @reminder.schedule.customer_address %></span>
+        <span><%= @reminder.schedule.address %></span>
       </div>
     </div>
   <% end %>

@@ -6,7 +6,7 @@ class SchedulesController < ApplicationController
   before_action :set_schedulable, only: [:new, :create, :edit, :update]
   before_action :set_current_date, only: [:index, :new, :create]
   before_action :set_scheduled_month, only: [:index]
-  before_action :set_schedule, only: [:edit, :update, :mark_as_done]
+  before_action :set_schedule, only: [:edit, :update, :destroy, :mark_as_done]
 
   # GET /schedules
   def index
@@ -34,7 +34,7 @@ class SchedulesController < ApplicationController
     @schedule.schedulable = @schedulable
 
     if @schedule.save
-      redirect_to :back, turbolinks: true
+      redirect_back fallback_location: schedules_url, turbolinks: true
     else
       render 'action'
     end
@@ -43,7 +43,7 @@ class SchedulesController < ApplicationController
   # PATCH/PUT /schedules/1
   def update
     if @schedule.update schedule_params
-      redirect_to :back, turbolinks: true
+      redirect_back fallback_location: schedules_url, turbolinks: true
     else
       render 'action'
     end

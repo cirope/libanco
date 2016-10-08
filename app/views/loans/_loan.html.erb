@@ -15,45 +15,45 @@
             <div class="col-md-6">
               <p>
                 <strong><%= CreditLine.human_attribute_name 'name' %>:</strong>
-                <%= @loan.credit_line.name %>
+                <%= @loan.credit_line_data 'name' %>
               </p>
               <p>
                 <strong><%= CreditLine.human_attribute_name 'commission' %>:</strong>
-                <%= number_to_percentage @loan.credit_line.commission %>
+                <%= number_to_percentage @loan.credit_line_data 'commission' %>
               </p>
               <p>
                 <strong><%= CreditLine.human_attribute_name 'interest' %>:</strong>
-                <%= number_to_percentage @loan.credit_line.interest %>
+                <%= number_to_percentage @loan.credit_line_data 'interest' %>
               </p>
               <p>
                 <strong><%= CreditLine.human_attribute_name 'tax' %>:</strong>
-                <%= number_to_percentage @loan.credit_line.tax %>
+                <%= number_to_percentage @loan.credit_line_data 'tax' %>
               </p>
               <p>
                 <strong><%= CreditLine.human_attribute_name 'commission_max' %>:</strong>
-                <%= number_to_currency @loan.credit_line.commission_max %>
+                <%= number_to_currency @loan.credit_line_data 'commission_max' %>
               </p>
             </div>
             <div class="col-md-6">
               <p>
                 <strong><%= CreditLine.human_attribute_name 'tax_perception' %>:</strong>
-                <%= number_to_percentage @loan.credit_line.tax_perception %>
+                <%= number_to_percentage @loan.credit_line_data 'tax_perception' %>
               </p>
               <p>
                 <strong><%= CreditLine.human_attribute_name 'gross_income_perception' %>:</strong>
-                <%= number_to_percentage @loan.credit_line.gross_income_perception %>
+                <%= number_to_percentage @loan.credit_line_data 'gross_income_perception' %>
               </p>
               <p>
                 <strong><%= CreditLine.human_attribute_name 'insurance' %>:</strong>
-                <%= number_to_percentage @loan.credit_line.insurance %>
+                <%= number_to_percentage @loan.credit_line_data 'insurance' %>
               </p>
               <p>
                 <strong><%= CreditLine.human_attribute_name 'stamped' %>:</strong>
-                <%= number_to_percentage @loan.credit_line.stamped %>
+                <%= number_to_percentage @loan.credit_line_data 'stamped' %>
               </p>
               <p>
                 <strong><%= CreditLine.human_attribute_name 'gross_income_perception_min' %>:</strong>
-                <%= number_to_currency @loan.credit_line.gross_income_perception_min %>
+                <%= number_to_currency @loan.credit_line_data 'gross_income_perception_min' %>
               </p>
             </div>
           </div>

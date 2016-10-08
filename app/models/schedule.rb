@@ -5,19 +5,13 @@ class Schedule < ApplicationRecord
   include Schedules::Validation
   include Schedules::Scopes
   include Schedules::Reminders
-  include Schedules::Schedulable
   include Schedules::Done
 
   strip_fields :description
 
-  belongs_to :user
-  has_many :reminders, dependent: :destroy
+  delegate :customer, :address, :phone, :cellphone, to: :schedulable, allow_nil: false
 
-  def move(date)
-    update(
-      scheduled_at: scheduled_at.change(
-        year: date.year, month: date.month, day: date.day
-      )
-    )
-  end
+  belongs_to :user
+  belongs_to :schedulable, polymorphic: true, optional: true
+  has_many :reminders, dependent: :destroy
 end

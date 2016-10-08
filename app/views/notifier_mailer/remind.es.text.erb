@@ -5,8 +5,9 @@ Para el <%= l(@reminder.scheduled_at, format: :long) %>:
 
 <% if @reminder.schedulable %>
   <%= Customer.model_name.human(count: 1) %>: <%= @reminder.schedule.customer %>
-  <%= Phone.model_name.human(count: 1) %>: <%= @reminder.schedule.phones.first %>
-  <%= Customer.human_attribute_name :address %>: <%= @reminder.schedule.customer_address %>
+  <%= Customer.human_attribute_name :phone %>: <%= @reminder.schedule.phone %>
+  <%= Customer.human_attribute_name :cellphone %>: <%= @reminder.schedule.cellphone %>
+  <%= Customer.human_attribute_name :address %>: <%= @reminder.schedule.address %>
 <% end %>
 
 Podés organizar tus eventos en Libanco desde
