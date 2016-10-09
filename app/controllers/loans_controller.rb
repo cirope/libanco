@@ -3,13 +3,20 @@ class LoansController < ApplicationController
   include Authorization
   include Title
 
+  before_action :set_customer, only: [:index]
   before_action :set_loan, only: [:show, :edit, :update, :destroy]
   before_action :set_search_path, only: [:index, :show, :new, :edit]
 
   # GET /loans
   # GET /loans.json
   def index
-    @loans = params[:q].present? ? Loan.search(params[:q]) : Loan.all
+    @loans = if @customer
+               @customer.loans
+             elsif params[:q].present?
+              Loan.search(params[:q])
+             else
+              Loan.all
+             end
     @loans = @loans.includes(:customer).references(:customer).page params[:page]
   end
 
@@ -57,6 +64,10 @@ class LoansController < ApplicationController
   end
 
   private
+
+    def set_customer
+      @customer = Customer.find params[:customer_id] if params[:customer_id].present?
+    end
 
     def set_loan
       @loan = Loan.find params[:id]

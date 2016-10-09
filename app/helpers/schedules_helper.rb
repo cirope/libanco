@@ -11,9 +11,9 @@ module SchedulesHelper
     }
   end
 
-  def mark_schedule_as_done(schedule)
+  def mark_schedule_as_done schedule
     link_to mark_as_done_schedule_path(schedule), data: { remote: true, method: :patch } do
-      content_tag(:span, nil, class: 'icon glyphicon glyphicon-ok')
+      content_tag(:i, nil, class: 'fa fa-lg fa-check-square-o')
     end
   end
 

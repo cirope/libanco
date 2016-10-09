@@ -30,6 +30,7 @@ Rails.application.routes.draw do
           resource :generate, only: [:show]
         end
       end
+      resources :loans, only: [:index]
     end
     resources :education_levels, except: [:show, :destroy]
     resources :footer_templates, except: [:destroy]

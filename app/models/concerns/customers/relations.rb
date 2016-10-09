@@ -13,6 +13,7 @@ module Customers::Relations
     belongs_to :state
     belongs_to :workgroup
     has_many :references, dependent: :destroy
+    has_many :loans
     accepts_nested_attributes_for :references, allow_destroy: false,
       reject_if: :all_blank
   end
