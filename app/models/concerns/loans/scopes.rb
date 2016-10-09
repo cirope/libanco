@@ -1,6 +1,10 @@
 module Loans::Scopes
   extend ActiveSupport::Concern
 
+  def has_schedule_pending?
+    schedules.any? { |s| !s.done }
+  end
+
   def credit_line_data attribute
     data['credit_line'][attribute]
   end
