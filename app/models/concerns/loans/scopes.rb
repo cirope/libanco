@@ -1,6 +1,15 @@
 module Loans::Scopes
   extend ActiveSupport::Concern
 
+  def frequency_interest
+    case payment_frequency.to_i
+    when 30 then 12
+    when 15 then 24
+    when 7 then 48
+    when 1 then 365
+    end
+  end
+
   def has_schedule_pending?
     schedules.any? { |s| !s.done }
   end

@@ -5,7 +5,7 @@ module Loans::Validation
     STATUSES = ['current', 'canceled', 'expired', 'judicial']
     TYPES = ['French', 'American']
     FREQUENCIES = {
-#      'daily': 1,
+      'daily': 1,
       'weekly': 7,
       'biweekly': 15,
       'monthly': 30

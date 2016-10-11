@@ -8,6 +8,6 @@ module Loans::AmericanPayment
   end
 
   def calculate_interest
-    self.interest_amount = amount_total * percentage_of(:interest)
+    self.interest_amount = amount_total * ((credit_line.interest / frequency_interest.to_f) / 100.0)
   end
 end
