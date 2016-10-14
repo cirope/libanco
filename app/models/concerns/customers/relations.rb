@@ -2,16 +2,16 @@ module Customers::Relations
   extend ActiveSupport::Concern
 
   included do
-    belongs_to :adviser, optional: true
+    belongs_to :adviser
     belongs_to :card
-    belongs_to :city, optional: true
-    belongs_to :education_level, optional: true
-    belongs_to :marital_status, optional: true
-    belongs_to :nacionality, optional: true
+    belongs_to :city
+    belongs_to :education_level
+    belongs_to :marital_status
+    belongs_to :nacionality
     belongs_to :neighborhood, optional: true
-    belongs_to :occupation, optional: true
-    belongs_to :state, optional: true
-    belongs_to :workgroup, optional: true
+    belongs_to :occupation
+    belongs_to :state
+    belongs_to :workgroup
     has_many :references, dependent: :destroy
     has_many :loans
     accepts_nested_attributes_for :references, allow_destroy: false,
