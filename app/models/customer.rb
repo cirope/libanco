@@ -11,7 +11,7 @@ class Customer < ApplicationRecord
     :address, :work_address, :phone, :cellphone, :place_birth
 
   search_scope :search do
-    attributes :name, :lastname, :identification
+    attributes :name, :lastname, :identification, :code
   end
 
   def to_s

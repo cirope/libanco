@@ -10,7 +10,6 @@ default:
   email: default@gmail.com
   birthdate: <%= 20.years.ago %>
   place_birth: Default
-  member: false
   phone: Default
   cellphone: Default
   card: default
