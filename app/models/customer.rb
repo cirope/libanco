@@ -12,6 +12,7 @@ class Customer < ApplicationRecord
 
   search_scope :search do
     attributes :name, :lastname, :identification, :code
+    attributes card: ['card.name']
   end
 
   def to_s
