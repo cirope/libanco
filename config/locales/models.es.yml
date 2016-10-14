@@ -105,10 +105,6 @@ es:
         subdomain: 'Subdominio'
       adviser:
         name: 'Nombre'
-        lastname: 'Apellido'
-        identification_type: 'Tipo Documento'
-        identification: 'Número Documento'
-        phone: 'Teléfono'
       body_template:
         name: 'Nombre'
         content: 'Contenido'
@@ -141,6 +137,7 @@ es:
         body_template: 'Contenido'
         footer_template: 'Pie de página'
       customer:
+        code: 'Socio'
         adviser: 'Asesor originante'
         address: 'Dirección'
         birthdate: 'Fecha de nacimiento'
@@ -152,8 +149,8 @@ es:
         email: 'Email'
         full_address: 'Dirección completa'
         full_name: 'Nombre completo'
-        identification_type: 'Tipo Documento'
-        identification: 'Nro Documento'
+        identification_type: 'Tipo Doc.'
+        identification: 'Nro Doc.'
         lastname: 'Apellidos'
         marital_status: 'Estado civil'
         member: 'Socio'

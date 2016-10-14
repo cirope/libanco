@@ -8,23 +8,7 @@
           </h3>
         </div>
         <div class="panel-body">
-          <div class="row">
-            <div class="col-md-6">
-              <%= f.input :name, autofocus: true %>
-            </div>
-            <div class="col-md-6">
-              <%= f.input :lastname %>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
-              <%= f.input :identification_type, collection: identification_types, prompt: true %>
-            </div>
-            <div class="col-md-6">
-              <%= f.input :identification %>
-            </div>
-          </div>
-          <%= f.input :phone %>
+          <%= f.input :name, autofocus: true %>
           <%= f.input :lock_version, as: :hidden %>
         </div>
       </div>

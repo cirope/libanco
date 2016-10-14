@@ -19,21 +19,10 @@ class AdvisersControllerTest < ActionDispatch::IntegrationTest
 
   test 'should create adviser' do
     assert_difference('Adviser.count') do
-      post advisers_url, params: { adviser: {
-        identification: 2757465,
-        identification_type: @adviser.identification_type,
-        lastname: @adviser.lastname,
-        name: @adviser.name,
-        phone: @adviser.phone }
-      }
+      post advisers_url, params: { adviser: { name: 'New name' } }
     end
 
-    assert_redirected_to adviser_url(Adviser.unscoped.last)
-  end
-
-  test 'should show adviser' do
-    get adviser_url(@adviser)
-    assert_response :success
+    assert_redirected_to advisers_url
   end
 
   test 'should get edit' do
@@ -43,6 +32,6 @@ class AdvisersControllerTest < ActionDispatch::IntegrationTest
 
   test 'should update adviser' do
     patch adviser_url(@adviser), params: { adviser: { name: 'Adviser updated' } }
-    assert_redirected_to adviser_url(@adviser)
+    assert_redirected_to advisers_url
   end
 end

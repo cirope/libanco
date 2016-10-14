@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     resources :schedules, only: [:create, :edit, :update] do
       patch 'mark_as_done', to: 'schedules#mark_as_done', as: 'mark_as_done', on: :member
     end
-    resources :advisers, except: [:destroy]
+    resources :advisers, except: [:show, :destroy]
     resources :body_templates, except: [:destroy]
     resources :cards, except: [:show, :destroy]
     resources :cities, except: [:show, :destroy]

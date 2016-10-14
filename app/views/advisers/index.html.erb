@@ -7,11 +7,7 @@
         <tr>
           <th><%= Adviser.human_attribute_name 'created_at' %></th>
           <th><%= Adviser.human_attribute_name 'name' %></th>
-          <th><%= Adviser.human_attribute_name 'lastname' %></th>
-          <th><%= Adviser.human_attribute_name 'identification_type' %></th>
-          <th><%= Adviser.human_attribute_name 'identification' %></th>
-          <th><%= Adviser.human_attribute_name 'phone' %></th>
-          <th colspan="2"></th>
+          <th></th>
         </tr>
       </thead>
 
@@ -20,11 +16,6 @@
           <tr>
             <td class="col-md-2"><%= l adviser.created_at %></td>
             <td><%= adviser.name %></td>
-            <td><%= adviser.lastname %></td>
-            <td><%= t_field adviser, 'identification_type' %></td>
-            <td><%= adviser.identification %></td>
-            <td><%= adviser.phone %></td>
-            <td><%= link_to_show adviser %></td>
             <td><%= link_to_edit [:edit, adviser] %></td>
           </tr>
         <% end %>

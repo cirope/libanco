@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161002150416) do
+ActiveRecord::Schema.define(version: 20161013102931) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,15 +26,11 @@ ActiveRecord::Schema.define(version: 20161002150416) do
   end
 
   create_table "advisers", force: :cascade do |t|
-    t.string   "name",                            null: false
-    t.string   "lastname",                        null: false
-    t.string   "identification_type",             null: false
-    t.string   "identification",                  null: false
-    t.string   "phone",                           null: false
-    t.integer  "lock_version",        default: 0, null: false
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
-    t.index ["identification"], name: "index_advisers_on_identification", unique: true, using: :btree
+    t.string   "name",                     null: false
+    t.integer  "lock_version", default: 0, null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["name"], name: "index_advisers_on_name", unique: true, using: :btree
   end
 
   create_table "body_templates", force: :cascade do |t|
@@ -109,25 +105,25 @@ ActiveRecord::Schema.define(version: 20161002150416) do
     t.string   "lastname",                                                     null: false
     t.string   "identification_type",                                          null: false
     t.string   "identification",                                               null: false
-    t.string   "phone",                                                        null: false
-    t.string   "cellphone",                                                    null: false
-    t.string   "address",                                                      null: false
+    t.string   "phone"
+    t.string   "cellphone"
+    t.string   "address"
     t.string   "email"
-    t.date     "birthdate",                                                    null: false
+    t.date     "birthdate"
     t.boolean  "member",                                       default: false, null: false
-    t.string   "work_address",                                                 null: false
+    t.string   "work_address"
     t.decimal  "monthly_income",      precision: 10, scale: 2
-    t.string   "place_birth",                                                  null: false
-    t.integer  "occupation_id",                                                null: false
+    t.string   "place_birth"
+    t.integer  "occupation_id"
     t.integer  "card_id",                                                      null: false
     t.integer  "neighborhood_id"
-    t.integer  "city_id",                                                      null: false
-    t.integer  "state_id",                                                     null: false
-    t.integer  "nacionality_id",                                               null: false
-    t.integer  "marital_status_id",                                            null: false
-    t.integer  "education_level_id",                                           null: false
-    t.integer  "adviser_id",                                                   null: false
-    t.integer  "workgroup_id",                                                 null: false
+    t.integer  "city_id"
+    t.integer  "state_id"
+    t.integer  "nacionality_id"
+    t.integer  "marital_status_id"
+    t.integer  "education_level_id"
+    t.integer  "adviser_id"
+    t.integer  "workgroup_id"
     t.integer  "lock_version",                                 default: 0,     null: false
     t.datetime "created_at",                                                   null: false
     t.datetime "updated_at",                                                   null: false

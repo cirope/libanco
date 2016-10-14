@@ -11,11 +11,6 @@ class AdvisersController < ApplicationController
     @advisers = Adviser.page params[:page]
   end
 
-  # GET /advisers/1
-  # GET /advisers/1.json
-  def show
-  end
-
   # GET /advisers/new
   def new
     @adviser = Adviser.new
@@ -31,7 +26,7 @@ class AdvisersController < ApplicationController
     @adviser = Adviser.new adviser_params
 
     if @adviser.save
-      redirect_to @adviser
+      redirect_to advisers_url
     else
       render 'new'
     end
@@ -41,7 +36,7 @@ class AdvisersController < ApplicationController
   # PATCH/PUT /advisers/1.json
   def update
     if @adviser.update adviser_params
-      redirect_to @adviser
+      redirect_to advisers_url
     else
       render 'edit'
     end
@@ -54,7 +49,6 @@ class AdvisersController < ApplicationController
     end
 
     def adviser_params
-      params.require(:adviser).permit :name, :lastname, :identification_type, :identification,
-        :phone, :lock_version
+      params.require(:adviser).permit :name, :lock_version
     end
 end

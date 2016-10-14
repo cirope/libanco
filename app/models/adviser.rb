@@ -4,11 +4,11 @@ class Adviser < ApplicationRecord
   include Authority::Abilities
   include Advisers::Validation
 
-  default_scope -> { order 'advisers.lastname ASC' }
+  default_scope -> { order 'advisers.name ASC' }
 
-  strip_fields :name, :lastname, :identification, :phone
+  strip_fields :name
 
   def to_s
-    [name, lastname].join ' '
+    name
   end
 end
