@@ -10,7 +10,7 @@ class CustomersController < ApplicationController
   # GET /customers.json
   def index
     @customers = params[:q].present? ? Customer.search(params[:q]) : Customer.all
-    @customers = @customers.page params[:page]
+    @customers = @customers.includes(:card, :nacionality).references(:card, :nacionality).page params[:page]
   end
 
   # GET /customers/1
