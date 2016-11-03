@@ -2,7 +2,7 @@ module Customers::Scopes
   extend ActiveSupport::Concern
 
   included do
-    default_scope -> { order 'customers.lastname ASC' }
+    scope :ordered, -> { order 'customers.created_at DESC' }
   end
 
   def full_address

@@ -2,6 +2,7 @@ class Customer < ApplicationRecord
   include Attributes::Strip
   include Auditable
   include Authority::Abilities
+  include Customers::Defaults
   include Customers::Relations
   include Customers::Scopes
   include Customers::Validation

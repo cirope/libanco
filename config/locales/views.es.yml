@@ -156,10 +156,8 @@ es:
     show:
       title: 'Ver cliente'
     member:
-      _yes: 'Sí'
-      _no: 'No'
-      active: 'Socio'
-      inactive: 'Dado de baja'
+      active: 'Activo'
+      inactive: 'Inactivo'
     marital_statuses:
       married: 'Casado'
       single: 'Soltero'

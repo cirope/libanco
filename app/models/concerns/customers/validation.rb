@@ -11,7 +11,10 @@ module Customers::Validation
     validates :member, inclusion: { in: [true, false] }
     validates :identification, uniqueness: { scope: :identification_type },
       numericality: { only_integer: true, greater_than_or_equal_to: 1_000_000, less_than: 1_000_000_000 }
-    validates :monthly_income, numericality: { greater_than: 0 }
+    validates :monthly_income, numericality: { greater_than_or_equal_to: 0 }
     validates :identification_type, inclusion: { in: TYPES }
+    validates :starting_day, numericality: { only_integer: true,
+      greater_than_or_equal_to: 1, less_than_or_equal_to: 31 }
+    validates :member, inclusion: { in: [true, false] }
   end
 end

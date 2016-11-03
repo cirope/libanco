@@ -101,6 +101,11 @@
               <%= f.association :adviser, prompt: true %>
             </div>
           </div>
+          <div class="row">
+            <div class="col-md-6" style="margin-top: 10px;">
+              <%= f.input :member %>
+            </div>
+          </div>
         </div>
       </div>
       <%= render 'references/form', f: f %>

@@ -138,6 +138,7 @@ es:
         footer_template: 'Pie de página'
       customer:
         code: 'Socio'
+        created_at: 'Ingreso'
         adviser: 'Asesor originante'
         address: 'Dirección'
         birthdate: 'Fecha de nacimiento'

@@ -6,6 +6,13 @@
   <div class="col-md-6">
     <div class="bs-callout bs-callout-info">
       <p>
+        <%= show_customer_member @customer.member %>
+      </p>
+      <p>
+        <strong><%= Customer.human_attribute_name 'created_at' %>:</strong>
+        <%= l @customer.created_at %>
+      </p>
+      <p>
         <strong><%= Customer.human_attribute_name 'identification_type' %>:</strong>
         <%= t_field @customer, 'identification_type' %>
       </p>
@@ -33,14 +40,14 @@
         <strong><%= Customer.human_attribute_name 'cellphone' %>:</strong>
         <%= @customer.cellphone %>
       </p>
-      <p>
-        <strong><%= Customer.human_attribute_name 'address' %>:</strong>
-        <%= @customer.full_address %>
-      </p>
     </div>
   </div>
   <div class="col-md-6">
     <div class="bs-callout bs-callout-info">
+      <p>
+        <strong><%= Customer.human_attribute_name 'address' %>:</strong>
+        <%= @customer.full_address %>
+      </p>
       <p>
         <strong><%= Customer.human_attribute_name 'occupation' %>:</strong>
         <%= @customer.occupation %>
@@ -56,6 +63,10 @@
       <p>
         <strong><%= Customer.human_attribute_name 'education_level' %>:</strong>
         <%= @customer.education_level %>
+      </p>
+      <p>
+        <strong><%= Customer.human_attribute_name 'email' %>:</strong>
+        <%= @customer.email %>
       </p>
       <p>
         <strong><%= Customer.human_attribute_name 'workgroup' %>:</strong>

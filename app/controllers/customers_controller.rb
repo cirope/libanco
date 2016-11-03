@@ -10,7 +10,8 @@ class CustomersController < ApplicationController
   # GET /customers.json
   def index
     @customers = params[:q].present? ? Customer.search(params[:q]) : Customer.all
-    @customers = @customers.includes(:card, :nacionality).references(:card, :nacionality).page params[:page]
+    @customers = @customers.includes(:card, :nacionality).ordered.
+      page(params[:page]).references(:card, :nacionality)
   end
 
   # GET /customers/1
@@ -61,7 +62,7 @@ class CustomersController < ApplicationController
 
     def customer_params
       params.require(:customer).permit :name, :lastname, :identification, :identification_type,
-        :address, :work_address, :monthly_income, :email, :phone, :cellphone, :workgroup_id,
+        :address, :work_address, :monthly_income, :email, :phone, :cellphone, :member, :workgroup_id,
         :birthdate, :occupation_id, :neighborhood_id, :state_id, :city_id, :card_id,
         :place_birth, :nacionality_id, :marital_status_id, :education_level_id, :adviser_id,
         references_attributes: [

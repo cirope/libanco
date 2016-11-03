@@ -1,0 +1,14 @@
+<%= simple_form_for(@member_payment) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :amount %>
+    <%= f.input :paid_at %>
+    <%= f.input :expire_at %>
+    <%= f.association :customer %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

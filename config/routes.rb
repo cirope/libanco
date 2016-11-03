@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :member_payments
   devise_for :users, skip: [:registrations, :passwords]
 
   as :user do
@@ -31,6 +32,7 @@ Rails.application.routes.draw do
         end
       end
       resources :loans, only: [:index]
+      resources :membership_payments, only: [:update]
     end
     resources :education_levels, except: [:show, :destroy]
     resources :footer_templates, except: [:destroy]

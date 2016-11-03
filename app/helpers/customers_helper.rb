@@ -13,4 +13,9 @@ module CustomersHelper
       link_to fa_icon('file-text'), customer_loans_path(customer), title: Loan.model_name.human(count: 0)
     end
   end
+
+  def show_customer_member member
+    label_class = member ? 'label-success' : 'label-danger'
+    content_tag :span, t("customers.member.#{member ? 'active' : 'inactive'}"), class: "label #{label_class}"
+  end
 end

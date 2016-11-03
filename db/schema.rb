@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161013102931) do
+ActiveRecord::Schema.define(version: 20161103010351) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -127,6 +127,7 @@ ActiveRecord::Schema.define(version: 20161013102931) do
     t.integer  "lock_version",                                 default: 0,     null: false
     t.datetime "created_at",                                                   null: false
     t.datetime "updated_at",                                                   null: false
+    t.integer  "starting_day"
     t.index ["adviser_id"], name: "index_customers_on_adviser_id", using: :btree
     t.index ["card_id"], name: "index_customers_on_card_id", using: :btree
     t.index ["city_id"], name: "index_customers_on_city_id", using: :btree
@@ -209,6 +210,18 @@ ActiveRecord::Schema.define(version: 20161013102931) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.index ["name"], name: "index_marital_statuses_on_name", unique: true, using: :btree
+  end
+
+  create_table "member_payments", force: :cascade do |t|
+    t.decimal  "amount",      precision: 10, scale: 2, null: false
+    t.date     "paid_at"
+    t.date     "expire_at",                            null: false
+    t.integer  "customer_id",                          null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+    t.index ["customer_id"], name: "index_member_payments_on_customer_id", using: :btree
+    t.index ["expire_at"], name: "index_member_payments_on_expire_at", using: :btree
+    t.index ["paid_at"], name: "index_member_payments_on_paid_at", using: :btree
   end
 
   create_table "nacionalities", force: :cascade do |t|
