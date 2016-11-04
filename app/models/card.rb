@@ -5,6 +5,7 @@ class Card < ApplicationRecord
   include Cards::Validation
 
   default_scope -> { order 'cards.name ASC' }
+  scope :actives, -> { where active: true }
 
   strip_fields :name
 

@@ -95,7 +95,7 @@
           </div>
           <div class="row">
             <div class="col-md-6">
-              <%= f.association :card, prompt: true %>
+              <%= f.association :card, collection: active_cards, prompt: true %>
             </div>
             <div class="col-md-6">
               <%= f.association :adviser, prompt: true %>
