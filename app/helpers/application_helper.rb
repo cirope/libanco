@@ -20,7 +20,15 @@ module ApplicationHelper
   end
 
   def t_boolean field
-    t "navigation.#{field ? '_yes' : '_no'}"
+    if field
+      icon = 'check-square-o'
+      text_class = 'text-success'
+    else
+      icon = 'minus-square'
+      text_class = 'text-danger'
+    end
+
+    content_tag :span, fa_icon(icon), class: text_class
   end
 
   def t_field object, field

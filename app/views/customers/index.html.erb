@@ -30,7 +30,7 @@
             <td><%= customer.cellphone %></td>
             <td><%= customer.card %></td>
             <td><%= customer.code %></td>
-            <td><%= show_customer_member customer.member %></td>
+            <td><%= t_boolean customer.member %></td>
             <td><%= link_to_show customer %></td>
             <td><%= link_to_customer_loans customer %></td>
             <td><%= link_to_edit [:edit, customer] %></td>

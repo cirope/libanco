@@ -109,6 +109,7 @@ es:
         name: 'Nombre'
         content: 'Contenido'
       card:
+        active: 'Activa'
         name: 'Nombre'
         admission_fee: 'Cuota de ingreso'
         monthly_fee: 'Cuota mensual'

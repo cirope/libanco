@@ -49,6 +49,6 @@ class CardsController < ApplicationController
     end
 
     def card_params
-      params.require(:card).permit :name, :admission_fee, :monthly_fee, :lock_version
+      params.require(:card).permit :name, :admission_fee, :monthly_fee, :active, :lock_version
     end
 end

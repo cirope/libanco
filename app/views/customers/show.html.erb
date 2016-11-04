@@ -1,13 +1,15 @@
 <div class="page-header page-header-sm">
-  <h3><%= @customer %></h3>
+  <h3>
+    <%= @customer %>
+    <span style="margin-left: 20px;">
+      <%= t_boolean @customer.member %>
+    </span>
+  </h3>
 </div>
 
 <div class="row">
   <div class="col-md-6">
     <div class="bs-callout bs-callout-info">
-      <p>
-        <%= show_customer_member @customer.member %>
-      </p>
       <p>
         <strong><%= Customer.human_attribute_name 'created_at' %>:</strong>
         <%= l @customer.created_at %>
@@ -40,14 +42,14 @@
         <strong><%= Customer.human_attribute_name 'cellphone' %>:</strong>
         <%= @customer.cellphone %>
       </p>
-    </div>
-  </div>
-  <div class="col-md-6">
-    <div class="bs-callout bs-callout-info">
       <p>
         <strong><%= Customer.human_attribute_name 'address' %>:</strong>
         <%= @customer.full_address %>
       </p>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="bs-callout bs-callout-info">
       <p>
         <strong><%= Customer.human_attribute_name 'occupation' %>:</strong>
         <%= @customer.occupation %>

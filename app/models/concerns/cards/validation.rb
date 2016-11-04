@@ -5,6 +5,7 @@ module Cards::Validation
     validates :name, uniqueness: { case_sensitive: false }, length: { maximum: 255 },
       presence: true
     validates :admission_fee, :monthly_fee, presence: true,
-      numericality: { greater_than: 0 }
+      numericality: { greater_than_or_equal_to: 0 }
+    validates :active, inclusion: { in: [true, false] }
   end
 end

@@ -9,7 +9,7 @@
           <th><%= Card.human_attribute_name 'name' %></th>
           <th><%= Card.human_attribute_name 'admission_fee' %></th>
           <th><%= Card.human_attribute_name 'monthly_fee' %></th>
-          <th></th>
+          <th colspan="2"></th>
         </tr>
       </thead>
 
@@ -20,6 +20,7 @@
             <td><%= card.name %></td>
             <td><%= number_to_currency card.admission_fee %></td>
             <td><%= number_to_currency card.monthly_fee %></td>
+            <td><%= t_boolean card.active %></td>
             <td><%= link_to_edit [:edit, card] %></td>
           </tr>
         <% end %>

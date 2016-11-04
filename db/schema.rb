@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161103010351) do
+ActiveRecord::Schema.define(version: 20161104144956) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,12 +43,14 @@ ActiveRecord::Schema.define(version: 20161103010351) do
   end
 
   create_table "cards", force: :cascade do |t|
-    t.string   "name",                                               null: false
-    t.decimal  "admission_fee", precision: 10, scale: 2,             null: false
-    t.decimal  "monthly_fee",   precision: 10, scale: 2,             null: false
-    t.integer  "lock_version",                           default: 0, null: false
-    t.datetime "created_at",                                         null: false
-    t.datetime "updated_at",                                         null: false
+    t.string   "name",                                                  null: false
+    t.decimal  "admission_fee", precision: 10, scale: 2,                null: false
+    t.decimal  "monthly_fee",   precision: 10, scale: 2,                null: false
+    t.integer  "lock_version",                           default: 0,    null: false
+    t.datetime "created_at",                                            null: false
+    t.datetime "updated_at",                                            null: false
+    t.boolean  "active",                                 default: true, null: false
+    t.index ["active"], name: "index_cards_on_active", using: :btree
     t.index ["name"], name: "index_cards_on_name", unique: true, using: :btree
   end
 
