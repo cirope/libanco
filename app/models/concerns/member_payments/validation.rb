@@ -3,6 +3,6 @@ module MemberPayments::Validation
 
   included do
     validates :amount, presence: true, numericality: { greater_than: 0 }
-    validates_date :expired_at
+    validates_date :expire_at
   end
 end

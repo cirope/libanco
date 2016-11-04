@@ -3,6 +3,7 @@ module Customers::Scopes
 
   included do
     scope :ordered, -> { order 'customers.created_at DESC' }
+    scope :members, -> { where member: true }
   end
 
   def full_address

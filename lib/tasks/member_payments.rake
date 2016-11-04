@@ -1,6 +1,6 @@
 namespace :member_payments do
   desc 'Member payments generate'
-  task send: :environment do
+  task generate: :environment do
     Apartment::Tenant.switch! 'public'
 
     Account.all.each do |account|
