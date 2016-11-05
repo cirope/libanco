@@ -11,7 +11,7 @@ module MemberPayments::Generate
 
         Customer.members.where('starting_day = ?', mday).each do |customer|
           customer.member_payments.create!(
-            amount: customer.card.monthly_fee.to_f, expire_at: expire_at
+            period: today, amount: customer.card.monthly_fee.to_f, expire_at: expire_at.to_date
           )
         end
       end

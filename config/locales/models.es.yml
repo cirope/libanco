@@ -3,6 +3,16 @@ es:
     created_at: 'Fecha'
     updated_at: 'Actualización'
 
+  activemodel:
+    models:
+      report:
+        one: 'Reporte'
+        other: 'Reportes'
+    attributes:
+      report:
+        from: 'Desde'
+        to: 'Hasta'
+
   activerecord:
     models:
       account:
@@ -47,6 +57,9 @@ es:
       marital_status:
         one: 'Estado civil'
         other: 'Estados civiles'
+      member_payment:
+        one: 'Cuota social'
+        other: 'Cuotas sociales'
       nacionality:
         one: 'Nacionalidad'
         other: 'Nacionalidades'
@@ -201,6 +214,12 @@ es:
         tax_perception_amount: 'Percepción IVA'
       marital_status:
         name: 'Nombre'
+      member_payment:
+        amount: 'Monto'
+        customer: 'Cliente'
+        expire_at: 'Fecha Venc.'
+        paid_at: 'Fecha Pago'
+        period: 'Período'
       nacionality:
         name: 'Nombre'
       neighborhood:
@@ -215,7 +234,7 @@ es:
         capital: 'Capital'
         expire_at: 'Vencimiento'
         extra_interest: 'Int. Adic.'
-        tax_interest: 'IVA Int.'  
+        tax_interest: 'IVA Int.'
         gross_income_perception: 'Perc. IIBB'
         insurance: 'Seguro'
         interest: 'Interés'

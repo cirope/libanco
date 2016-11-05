@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161104144956) do
+ActiveRecord::Schema.define(version: 20161105110108) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -134,6 +134,7 @@ ActiveRecord::Schema.define(version: 20161104144956) do
     t.index ["card_id"], name: "index_customers_on_card_id", using: :btree
     t.index ["city_id"], name: "index_customers_on_city_id", using: :btree
     t.index ["code"], name: "index_customers_on_code", using: :btree
+    t.index ["created_at"], name: "index_customers_on_created_at", using: :btree
     t.index ["education_level_id"], name: "index_customers_on_education_level_id", using: :btree
     t.index ["identification"], name: "index_customers_on_identification", unique: true, using: :btree
     t.index ["lastname"], name: "index_customers_on_lastname", using: :btree
@@ -143,6 +144,7 @@ ActiveRecord::Schema.define(version: 20161104144956) do
     t.index ["name"], name: "index_customers_on_name", using: :btree
     t.index ["neighborhood_id"], name: "index_customers_on_neighborhood_id", using: :btree
     t.index ["occupation_id"], name: "index_customers_on_occupation_id", using: :btree
+    t.index ["starting_day"], name: "index_customers_on_starting_day", using: :btree
     t.index ["state_id"], name: "index_customers_on_state_id", using: :btree
     t.index ["workgroup_id"], name: "index_customers_on_workgroup_id", using: :btree
   end
@@ -221,9 +223,12 @@ ActiveRecord::Schema.define(version: 20161104144956) do
     t.integer  "customer_id",                          null: false
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
+    t.date     "period",                               null: false
+    t.text     "comment"
     t.index ["customer_id"], name: "index_member_payments_on_customer_id", using: :btree
     t.index ["expire_at"], name: "index_member_payments_on_expire_at", using: :btree
     t.index ["paid_at"], name: "index_member_payments_on_paid_at", using: :btree
+    t.index ["period"], name: "index_member_payments_on_period", using: :btree
   end
 
   create_table "nacionalities", force: :cascade do |t|

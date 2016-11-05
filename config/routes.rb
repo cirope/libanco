@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :member_payments
+
   devise_for :users, skip: [:registrations, :passwords]
 
   as :user do
@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   end
 
   constraints AccountSubdomain do
+    get 'reports', to: 'reports#index', as: 'reports'
+    get 'customers/searches', to: 'customers/searches#index', as: 'customers_searches'
     get '/schedules(/:date)', to: 'schedules#index', as: 'schedules', constraints: { date: /\d{4}\/\d{2}\/\d{2}/ }
     get '/schedules/new(/:date)', to: 'schedules#new', as: 'new_schedule', constraints: { date: /\d{4}-\d{2}-\d{2}/ }
     resources :schedules, only: [:create, :edit, :update] do
