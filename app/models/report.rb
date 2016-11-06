@@ -8,6 +8,8 @@ class Report
     parse_date_range params[:date_range]
 
     self.filter ||= 'member_payment'
+    self.customer_id = params[:customer_id].blank? ? nil : params[:customer_id]
+    self.customer = params[:customer].blank? ? nil : params[:customer]
   end
 
   def model_filter

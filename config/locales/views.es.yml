@@ -344,8 +344,7 @@ es:
       empty_html: 'No se encontraron datos en la fecha indicada.'
     summary:
       total: 'Total'
-      amount: 'Monto'
-      new_total: 'Nuevos'
+      debt: 'Deuda'
 
   schedules:
     edit:

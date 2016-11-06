@@ -31,6 +31,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'ckeditor'
 gem 'holidays'
+gem 'momentjs-rails'
 
 gem 'unicorn'
 

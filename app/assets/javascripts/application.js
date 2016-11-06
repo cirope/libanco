@@ -20,6 +20,10 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require bootstrap-submenu
+//= require moment
+//= require moment/es
+//= require daterangepicker
+//= require date_pickers
 //= require ckeditor/init
 //= require autocomplete
 //= require dynamic_form

@@ -1,0 +1,8 @@
+<ul class="list-group">
+  <% @summary.each do |k, v| %>
+    <li class="list-group-item">
+      <strong><%= t "reports.summary.#{k}" %>:</strong>
+      <%= v %>
+    </li>
+  <% end %>
+</ul>

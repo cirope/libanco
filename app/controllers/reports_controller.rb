@@ -5,9 +5,12 @@ class ReportsController < ApplicationController
   before_action :set_report
 
   def index
-    @reports = @report.model_filter.reports(
-      @report.conditions
-    ).page params[:page]
+    model = @report.model_filter
+
+    @reports = model.reports @report.conditions
+    @summary = model.summary @reports
+
+    @reports = @reports.page params[:page]
   end
 
   private
@@ -22,6 +25,6 @@ class ReportsController < ApplicationController
     end
 
     def reports_params
-      params.require(:report).permit :filter, :date_range, :customer_id
+      params.require(:report).permit :filter, :date_range, :customer, :customer_id
     end
 end
