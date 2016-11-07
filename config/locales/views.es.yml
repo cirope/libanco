@@ -343,7 +343,8 @@ es:
       title: 'Reportes'
       empty_html: 'No se encontraron datos en la fecha indicada.'
     summary:
-      amount: 'Monto'
+      total: 'Total'
+      paid: 'Pagado'
       debt: 'Deuda'
 
   schedules:

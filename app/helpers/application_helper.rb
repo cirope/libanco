@@ -38,4 +38,8 @@ module ApplicationHelper
       t object.send(field), scope: [model, field.pluralize] if object.send(field).present?
     end
   end
+
+  def link_to_new_schedule model
+    link_to fa_icon('calendar'), [:new, model, :schedule], data: { remote: true }
+  end
 end

@@ -34,7 +34,9 @@ Rails.application.routes.draw do
         end
       end
       resources :loans, only: [:index]
-      resources :membership_payments, only: [:update]
+    end
+    resources :customers, only: [] do
+      resources :schedules, only: [:new, :create, :edit, :update]
     end
     resources :education_levels, except: [:show, :destroy]
     resources :footer_templates, except: [:destroy]

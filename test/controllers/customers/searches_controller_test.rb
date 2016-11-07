@@ -1,9 +1,12 @@
 require 'test_helper'
 
 class Customers::SearchesControllerTest < ActionDispatch::IntegrationTest
-  test "should get index" do
-    get customers_searches_index_url
-    assert_response :success
+  setup do
+    login
   end
 
+  test 'should get index' do
+    get customers_searches_url, xhr: true, as: :json
+    assert_response :success
+  end
 end

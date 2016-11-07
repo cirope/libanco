@@ -12,6 +12,7 @@
           <th><%= MemberPayment.human_attribute_name 'expire_at' %></th>
           <th><%= MemberPayment.human_attribute_name 'paid_at' %></th>
           <th><%= MemberPayment.human_attribute_name 'amount' %></th>
+          <th></th>
         </tr>
       </thead>
 
@@ -19,12 +20,13 @@
         <% @reports.each do |member_payment| %>
           <tr>
             <td><%= member_payment.customer.code %></td>
-            <td><%= member_payment.customer %></td>
+            <td><%= link_to member_payment.customer, member_payment.customer %></td>
             <td><%= member_payment.customer.card %></td>
             <td><%= l member_payment.period, format: :period %></td>
             <td><%= l member_payment.expire_at %></td>
             <td><%= l member_payment.paid_at if member_payment.paid_at %></td>
             <td><%= number_to_currency member_payment.amount %></td>
+            <td><%= link_to_new_schedule member_payment.customer %></td>
           </tr>
         <% end %>
       </tbody>

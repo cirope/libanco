@@ -8,6 +8,7 @@ jQuery ($) ->
       alwaysShowCalendars: true
       linkedCalendars: false
       ranges:
+        'Total': [moment("01012000", "MMDDYYYY"), moment()]
         'Hoy': [moment(), moment()],
         'Ayer': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
         'Esta semana': [moment().startOf('week'), moment().endOf('week')],

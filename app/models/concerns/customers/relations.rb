@@ -15,6 +15,7 @@ module Customers::Relations
     has_many :references, dependent: :destroy
     has_many :loans, dependent: :destroy
     has_many :member_payments, dependent: :destroy
+    has_many :schedules, as: :schedulable, dependent: :destroy
     accepts_nested_attributes_for :references, allow_destroy: false,
       reject_if: :all_blank
   end
