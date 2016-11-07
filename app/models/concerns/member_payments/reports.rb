@@ -8,8 +8,10 @@ module MemberPayments::Reports
 
     def summary reports
       {
-        total: reports.count,
-        debt: ActionController::Base.helpers.number_to_currency(reports.where(paid_at: nil).sum(:amount))
+        amount: ActionController::Base.helpers.number_to_currency(reports.sum(:amount)),
+        debt: ActionController::Base.helpers.number_to_currency(
+          reports.where('paid_at IS NULL AND expire_at > ?', Date.today).sum(:amount)
+        )
       }
     end
   end
