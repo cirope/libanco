@@ -10,22 +10,21 @@
           <th><%= Customer.human_attribute_name 'card' %></th>
           <th><%= MemberPayment.human_attribute_name 'period' %></th>
           <th><%= MemberPayment.human_attribute_name 'expire_at' %></th>
-          <th><%= MemberPayment.human_attribute_name 'paid_at' %></th>
           <th><%= MemberPayment.human_attribute_name 'amount' %></th>
-          <th></th>
+          <th colspan="2"></th>
         </tr>
       </thead>
 
       <tbody>
         <% @reports.each do |member_payment| %>
-          <tr>
+          <tr <%== 'class="warning"' if member_payment.customer.schedules.exists? %>>
             <td><%= member_payment.customer.code %></td>
             <td><%= link_to member_payment.customer, member_payment.customer %></td>
             <td><%= member_payment.customer.card %></td>
             <td><%= l member_payment.period, format: :period %></td>
             <td><%= l member_payment.expire_at %></td>
-            <td><%= l member_payment.paid_at if member_payment.paid_at %></td>
             <td><%= number_to_currency member_payment.amount %></td>
+            <td><%= show_paid_at_label member_payment.paid_at %></td>
             <td><%= link_to_new_schedule member_payment.customer %></td>
           </tr>
         <% end %>

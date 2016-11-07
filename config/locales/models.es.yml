@@ -218,7 +218,7 @@ es:
         amount: 'Monto'
         customer: 'Cliente'
         expire_at: 'Fecha Venc.'
-        paid_at: 'Fecha Pago'
+        paid_at: 'Pago'
         period: 'Período'
       nacionality:
         name: 'Nombre'

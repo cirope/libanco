@@ -262,6 +262,11 @@ es:
     new:
       title: 'Crear estado civil'
 
+  member_payments:
+    payments:
+      paid: 'PAGADO'
+      unpaid: 'IMPAGO'
+
   nacionalities:
     edit:
       title: 'Editar nacionalidad'
@@ -292,19 +297,6 @@ es:
     new:
       title: 'Crear ocupación'
 
-  organizations:
-    edit:
-      title: 'Editar ministerio'
-    index:
-      new: 'Nuevo ministerio'
-      title: 'Listado de ministerios'
-      empty_html: 'No hay ministerios, puede crear uno con el botón <span class="label label-info">Nuevo ministerio</span>'
-    new:
-      title: 'Crear ministerio'
-      department: 'Agregar repartición'
-    show:
-      title: 'Ver ministerio'
-
   payments:
     edit:
       title: 'Cuota'
@@ -313,20 +305,6 @@ es:
 
   phones:
     new: 'Agregar teléfono'
-
-  rate_sets:
-    edit:
-      title: 'Editar tasa'
-    index:
-      new: 'Nueva tasa'
-      title: 'Listado de tasas'
-      empty_html: 'No hay tasas, puede crear una con el botón <span class="label label-info">Nueva tasa</span>'
-    new:
-      title: 'Crear tasa'
-      rate: 'Agregar tasa'
-    show:
-      title: 'Ver tasa'
-    simulator: 'Para habilitar el simulador, primero seleccione una tasa.'
 
   relationships:
     edit:

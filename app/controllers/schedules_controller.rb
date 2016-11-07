@@ -71,7 +71,11 @@ class SchedulesController < ApplicationController
     end
 
     def set_schedulable
-      @schedulable = Loan.find(params[:loan_id]) if params[:loan_id].present?
+      @schedulable = if params[:loan_id].present?
+          Loan.find params[:loan_id]
+        elsif params[:customer_id].present?
+          Customer.find params[:customer_id]
+        end
     end
 
     def schedule_params
