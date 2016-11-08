@@ -8,6 +8,8 @@ class Customer < ApplicationRecord
   include Customers::Validation
   include SearchCop
 
+  alias_method :full_name, :to_s
+
   strip_fields :name, :lastname, :code, :identification, :email,
     :address, :work_address, :phone, :cellphone, :place_birth
 

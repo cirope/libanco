@@ -9,7 +9,7 @@ class Schedule < ApplicationRecord
 
   strip_fields :description
 
-  delegate :customer, :address, :phone, :cellphone, to: :schedulable, allow_nil: false
+  delegate :full_name, :address, :phone, :cellphone, to: :schedulable, allow_nil: false
 
   belongs_to :user
   belongs_to :schedulable, polymorphic: true, optional: true

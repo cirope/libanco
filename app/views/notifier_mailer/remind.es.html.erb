@@ -7,7 +7,7 @@
     <div style="margin-left: 40px;">
       <div>
         <strong><%= Customer.model_name.human(count: 1) %>:</strong>
-        <span><%= @reminder.schedule.customer %></span>
+        <span><%= @reminder.schedule.full_name %></span>
       </div>
       <div>
         <strong><%= Customer.human_attribute_name :phone %>:</strong>

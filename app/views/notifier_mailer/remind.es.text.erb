@@ -4,7 +4,7 @@ Para el <%= l(@reminder.scheduled_at, format: :long) %>:
 <%= @reminder.description %>
 
 <% if @reminder.schedulable %>
-  <%= Customer.model_name.human(count: 1) %>: <%= @reminder.schedule.customer %>
+  <%= Customer.model_name.human(count: 1) %>: <%= @reminder.schedule.full_name %>
   <%= Customer.human_attribute_name :phone %>: <%= @reminder.schedule.phone %>
   <%= Customer.human_attribute_name :cellphone %>: <%= @reminder.schedule.cellphone %>
   <%= Customer.human_attribute_name :address %>: <%= @reminder.schedule.address %>
