@@ -47,7 +47,7 @@ class Report
         self.from = date_range.split('-')[0].to_date
         self.to   = date_range.split('-')[1].to_date
       rescue
-        self.from = Date.today.beginning_of_month
+        self.from = Date.parse '01-01-2000'
         self.to   = Date.today.end_of_month
       end
       self.date_range = "#{I18n.l(from)} - #{I18n.l(to)}"
