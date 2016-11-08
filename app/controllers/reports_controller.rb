@@ -5,7 +5,7 @@ class ReportsController < ApplicationController
   before_action :set_report
 
   def index
-    model = @report.model_filter
+    model = @report.model_filter.classify.constantize
 
     @reports = model.reports @report.conditions
     @summary = model.summary @reports

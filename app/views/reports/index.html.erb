@@ -1,12 +1,18 @@
 <div class="row">
   <div class="col-md-3">
-    <div class="list-group">
-      <%= link_to_filter 'member_payment', 'card' %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= MemberPayment.model_name.human count: 0 %></h3>
+      </div>
+      <div class="list-group">
+        <%= link_to_filter 'mp_all' %>
+        <%= link_to_filter 'mp_expired' %>
+      </div>
     </div>
     <%= render 'summary' %>
   </div>
   <div class="col-md-9">
     <%= render 'filters' %>
-    <%= render @report.filter %>
+    <%= render @report.model_filter %>
   </div>
 </div>

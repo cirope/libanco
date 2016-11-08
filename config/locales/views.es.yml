@@ -320,6 +320,9 @@ es:
     index:
       title: 'Reportes'
       empty_html: 'No se encontraron datos en la fecha indicada.'
+    menu:
+      mp_all: 'Todos'
+      mp_expired: 'Morosos'
     summary:
       total: 'Total'
       paid: 'Pagado'
