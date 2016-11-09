@@ -49,7 +49,6 @@ Rails.application.routes.draw do
     resources :loans
     resources :loans, only: [] do
       resources :payments, only: [:edit, :update]
-      resources :schedules, only: [:new, :create, :edit, :update]
     end
     resources :marital_statuses, except: [:show, :destroy]
     resources :nacionalities, except: [:show, :destroy]

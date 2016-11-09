@@ -3,7 +3,7 @@ class SchedulesController < ApplicationController
   include Authorization
   include Title
 
-  before_action :set_schedulable, only: [:new, :create, :edit, :update]
+  before_action :set_customer, only: [:new, :create, :edit, :update]
   before_action :set_current_date, only: [:index, :new, :create]
   before_action :set_scheduled_month, only: [:index]
   before_action :set_schedule, only: [:edit, :update, :destroy, :mark_as_done]
@@ -30,8 +30,7 @@ class SchedulesController < ApplicationController
 
   # POST /schedules
   def create
-    @schedule = current_user.schedules.new schedule_params
-    @schedule.schedulable = @schedulable
+    @schedule = current_user.schedules.new schedule_params.merge(customer: @customer)
 
     if @schedule.save
       redirect_back fallback_location: schedules_url, turbolinks: true
@@ -70,12 +69,8 @@ class SchedulesController < ApplicationController
       @scheduled_month = Schedule.find_by_month(@current_date)
     end
 
-    def set_schedulable
-      @schedulable = if params[:loan_id].present?
-          Loan.find params[:loan_id]
-        elsif params[:customer_id].present?
-          Customer.find params[:customer_id]
-        end
+    def set_customer
+      @customer = Customer.find(params[:customer_id]) if params[:customer_id].present?
     end
 
     def schedule_params

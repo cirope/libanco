@@ -4,5 +4,6 @@ module Reminders::Relations
   included do
     belongs_to :schedule
     has_one :user, through: :schedule
+    has_one :customer, through: :schedule
   end
 end

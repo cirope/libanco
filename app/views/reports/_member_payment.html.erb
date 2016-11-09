@@ -17,7 +17,7 @@
 
       <tbody>
         <% @reports.each do |member_payment| %>
-          <tr <%== 'class="warning"' if member_payment.customer.schedules.exists? %>>
+          <tr <%== 'class="warning"' if member_payment.customer.has_schedule_pending? %>>
             <td><%= member_payment.customer.code %></td>
             <td><%= link_to member_payment.customer, member_payment.customer %></td>
             <td><%= member_payment.customer.card %></td>

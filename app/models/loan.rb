@@ -13,7 +13,5 @@ class Loan < ApplicationRecord
     attributes customer: ['customer.name', 'customer.lastname', 'customer.identification']
   end
 
-  delegate :full_name, :address, :phone, :cellphone, to: :customer, allow_nil: false
-
   default_scope -> { order 'loans.created_at DESC' }
 end

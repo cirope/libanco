@@ -20,7 +20,7 @@
 
       <tbody>
         <% @loans.each do |loan| %>
-          <tr <%== 'class="warning"' if loan.has_schedule_pending? %>>
+          <tr <%== 'class="warning"' if loan.customer.has_schedule_pending? %>>
             <td><%= l loan.created_at %></td>
             <td><%= loan.customer %></td>
             <td><%= t_loan_type loan %></td>
@@ -32,7 +32,7 @@
             <td><%= loan.credit_line_data 'name' %></td>
             <td><%= link_to_show loan %></td>
             <td><%= link_to_edit [:edit, loan] %></td>
-            <td><%= link_to_new_schedule loan %></td>
+            <td><%= link_to_new_schedule loan.customer %></td>
             <td><%= link_to_destroy loan %></td>
           </tr>
         <% end %>

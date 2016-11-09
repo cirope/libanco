@@ -35,5 +35,7 @@ class CreateCustomers < ActiveRecord::Migration[5.0]
     add_index :customers, :lastname
     add_index :customers, :identification, unique: true
     add_index :customers, :member
+    add_index :customers, :starting_day
+    add_index :customers, :created_at
   end
 end

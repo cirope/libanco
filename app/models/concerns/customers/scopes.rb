@@ -9,4 +9,8 @@ module Customers::Scopes
   def full_address
     [address, neighborhood, city, state].compact.join ', '
   end
+
+  def has_schedule_pending?
+    schedules.any? { |s| !s.done }
+  end
 end
