@@ -97,6 +97,26 @@ es:
     show:
       title: 'Ver tarjeta'
 
+  cashes:
+    edit:
+      title: 'Editar caja'
+    index:
+      new: 'Nueva caja'
+      title: 'Listado de cajas'
+      empty_html: 'No hay cajas, puede crear una con el botón <span class="label label-info">Nueva caja</span>'
+    new:
+      title: 'Crear caja'
+    show:
+      title: 'Ver caja'
+    statuses:
+      opened: 'Abierta'
+      closed: 'Cerrada'
+    cash_member_payments:
+      index:
+        new: 'Nuevo pago'
+        title: 'Pago de cuotas sociales'
+        empty_html: 'No hay pagos de cuotas sociales, puede crear uno con el botón <span class="label label-info">Nuevo pago</span>'
+
   cities:
     edit:
       title: 'Editar localidad'
@@ -189,6 +209,10 @@ es:
       empty_html: 'No hay niveles de estudio, puede crear uno con el botón <span class="label label-info">Nuevo nivel de estudio</span>'
     new:
       title: 'Crear nivel de estudio'
+
+  flows:
+    index:
+      title: 'Movimientos'
 
   footer_templates:
     edit:

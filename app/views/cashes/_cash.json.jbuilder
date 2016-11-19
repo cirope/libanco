@@ -1,0 +1,2 @@
+json.extract! cash, :id, :status, :opened_at, :closed_at, :opening_balance, :closing_balance, :final_count, :incomes, :outcomes, :user_id, :created_at, :updated_at
+json.url cash_url(cash, format: :json)

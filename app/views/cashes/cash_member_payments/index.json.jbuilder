@@ -1,0 +1,1 @@
+json.array! @cash_member_payments, partial: 'cash_member_payments/cash_member_payment', as: :cash_member_payment

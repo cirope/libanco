@@ -24,6 +24,12 @@ Rails.application.routes.draw do
     resources :advisers, except: [:show, :destroy]
     resources :body_templates, except: [:destroy]
     resources :cards, except: [:show, :destroy]
+    resources :cashes do
+      scope module: 'cashes' do
+        resources :flows, only: [:index]
+        resources :cash_member_payments, except: [:show]
+      end
+    end
     resources :cities, except: [:show, :destroy]
     resources :credit_lines, except: [:show, :destroy]
     resources :custom_templates

@@ -1,0 +1,10 @@
+default:
+  status: closed
+  opened_at: <%= Date.yesterday %>
+  closed_at: <%= Date.yesterday %>
+  opening_balance: 1000
+  closing_balance: 1000
+  final_count: 1000
+  incomes: 1000
+  outcomes: 1000
+  user: default

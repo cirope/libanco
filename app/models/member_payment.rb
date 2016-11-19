@@ -6,4 +6,8 @@ class MemberPayment < ApplicationRecord
   include MemberPayments::Validation
 
   belongs_to :customer
+
+  def to_s
+    amount
+  end
 end

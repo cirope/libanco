@@ -1,0 +1,27 @@
+<%= simple_form_for @cash do |f| %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        <%= fa_icon 'inbox', text: Cash.model_name.human(count: 1) %>
+      </h3>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-6">
+          <%= f.input :opened_at, as: :date_picker, autofocus: true %>
+        </div>
+        <div class="col-md-6">
+          <%= f.input :opening_balance %>
+        </div>
+      </div>
+      <%= f.input :lock_version, as: :hidden %>
+    </div>
+  </div>
+
+  <br />
+
+  <div class="form-actions">
+    <%= submit_button f %>
+    <div class="pull-right"><%= yield :form_actions %></div>
+  </div>
+<% end %>

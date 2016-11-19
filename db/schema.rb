@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161109022452) do
+ActiveRecord::Schema.define(version: 20161119183453) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,36 @@ ActiveRecord::Schema.define(version: 20161109022452) do
     t.boolean  "active",                                 default: true, null: false
     t.index ["active"], name: "index_cards_on_active", using: :btree
     t.index ["name"], name: "index_cards_on_name", unique: true, using: :btree
+  end
+
+  create_table "cash_member_payments", force: :cascade do |t|
+    t.integer  "user_id",                       null: false
+    t.integer  "member_payment_id",             null: false
+    t.integer  "cash_id",                       null: false
+    t.integer  "lock_version",      default: 0, null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.index ["cash_id"], name: "index_cash_member_payments_on_cash_id", using: :btree
+    t.index ["member_payment_id"], name: "index_cash_member_payments_on_member_payment_id", using: :btree
+    t.index ["user_id"], name: "index_cash_member_payments_on_user_id", using: :btree
+  end
+
+  create_table "cashes", force: :cascade do |t|
+    t.string   "status",                                               null: false
+    t.date     "opened_at",                                            null: false
+    t.datetime "closed_at"
+    t.decimal  "opening_balance", precision: 10, scale: 2,             null: false
+    t.decimal  "closing_balance", precision: 10, scale: 2
+    t.decimal  "final_count",     precision: 10, scale: 2
+    t.decimal  "incomes",         precision: 10, scale: 2
+    t.decimal  "outcomes",        precision: 10, scale: 2
+    t.integer  "user_id",                                              null: false
+    t.integer  "lock_version",                             default: 0, null: false
+    t.datetime "created_at",                                           null: false
+    t.datetime "updated_at",                                           null: false
+    t.index ["opened_at"], name: "index_cashes_on_opened_at", using: :btree
+    t.index ["status"], name: "index_cashes_on_status", using: :btree
+    t.index ["user_id"], name: "index_cashes_on_user_id", using: :btree
   end
 
   create_table "cities", force: :cascade do |t|

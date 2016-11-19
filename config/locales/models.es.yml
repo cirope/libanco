@@ -21,6 +21,12 @@ es:
       adviser:
         one: 'Asesor'
         other: 'Asesores'
+      cash:
+        one: 'Caja'
+        other: 'Cajas'
+      cash_member_payment:
+        one: 'Cuota social'
+        other: 'Cuotas sociales'
       body_template:
         one: 'Plantilla contenido'
         other: 'Plantillas contenido'
@@ -118,6 +124,16 @@ es:
         subdomain: 'Subdominio'
       adviser:
         name: 'Nombre'
+      cash:
+        closed_at: 'Cierre'
+        closing_balance: 'Recuento final'
+        difference: 'Diferencia'
+        final_count: 'Saldo final'
+        incomes: 'Ingresos'
+        opened_at: 'Fecha'
+        opening_balance: 'Recuento inicial'
+        outcomes: 'Egresos'
+        user: 'Cajero'
       body_template:
         name: 'Nombre'
         content: 'Contenido'
