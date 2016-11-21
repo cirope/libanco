@@ -64,4 +64,12 @@ class CustomersControllerTest < ActionDispatch::IntegrationTest
     patch customer_url(@customer), params: { customer: { address: 'Address updated' } }
     assert_redirected_to customer_url(@customer)
   end
+
+  test 'should destroy customer' do
+    assert_difference 'Customer.count', -1 do
+      delete customer_url(@customer)
+    end
+
+    assert_redirected_to customers_url
+  end
 end

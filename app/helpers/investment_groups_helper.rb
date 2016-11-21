@@ -1,0 +1,2 @@
+module InvestmentGroupsHelper
+end

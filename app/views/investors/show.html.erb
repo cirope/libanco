@@ -1,0 +1,53 @@
+<div class="page-header page-header-sm">
+  <h3><%= @investor %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="bs-callout bs-callout-info">
+      <p>
+        <strong><%= Investor.human_attribute_name 'created_at' %>:</strong>
+        <%= l @investor.created_at %>
+      </p>
+      <p>
+        <strong><%= Investor.human_attribute_name 'identification_type' %>:</strong>
+        <%= t_field @investor, 'identification_type' %>
+      </p>
+      <p>
+        <strong><%= Investor.human_attribute_name 'identification' %>:</strong>
+        <%= @investor.identification %>
+      </p>
+      <p>
+        <strong><%= Investor.human_attribute_name 'phone' %>:</strong>
+        <%= @investor.phone %>
+      </p>
+      <p>
+        <strong><%= Investor.human_attribute_name 'cellphone' %>:</strong>
+        <%= @investor.cellphone %>
+      </p>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="bs-callout bs-callout-info">
+      <p>
+        <strong><%= Investor.human_attribute_name 'address' %>:</strong>
+        <%= @investor.full_address %>
+      </p>
+      <p>
+        <strong><%= Investor.human_attribute_name 'investment_group' %>:</strong>
+        <%= @investor.investment_group %>
+      </p>
+      <p>
+        <strong><%= Investor.human_attribute_name 'consultant' %>:</strong>
+        <%= @investor.consultant %>
+      </p>
+      <p>
+        <strong><%= Investor.human_attribute_name 'user' %>:</strong>
+        <%= @investor.user %>
+      </p>
+    </div>
+  </div>
+</div>
+
+<%= link_to_edit [:edit, @investor] %> |
+<%= link_to_index investors_path %>

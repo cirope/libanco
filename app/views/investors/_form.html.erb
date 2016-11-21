@@ -1,0 +1,70 @@
+<%= simple_form_for @investor do |f| %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        <%= fa_icon 'male', text: Investor.model_name.human(count: 1) %>
+      </h3>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-6">
+              <%= f.input :name, autofocus: true %>
+            </div>
+            <div class="col-md-6">
+              <%= f.input :lastname %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <%= f.input :identification_type, collection: identification_types, prompt: true %>
+            </div>
+            <div class="col-md-6">
+              <%= f.input :identification %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <%= f.input :phone %>
+            </div>
+            <div class="col-md-6">
+              <%= f.input :cellphone %>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-6">
+              <%= f.association :investment_group, prompt: true %>
+            </div>
+            <div class="col-md-6">
+              <%= f.input :address %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <%= f.association :state, prompt: true, input_html: {
+                class: 'parent-model', data: { child_url: state_cities_path('child_id') }
+              } %>
+            </div>
+            <div class="col-md-6">
+              <%= f.association :city, collection: state_cities(f.object.state), prompt: true,
+                input_html: { class: 'child-model' } %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <%= f.association :consultant, prompt: true %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= submit_button f %>
+    <div class="pull-right"><%= yield :form_actions %></div>
+  </div>
+<% end %>

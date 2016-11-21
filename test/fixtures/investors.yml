@@ -1,0 +1,13 @@
+default:
+  name: Default
+  lastname: Default
+  identification_type: dni
+  identification: Default
+  phone: Default
+  cellphone: Default
+  address: Default
+  city: default
+  state: default
+  investment_group: default
+  consultant: default
+  user: cashier

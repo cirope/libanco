@@ -14,7 +14,7 @@
           <th><%= Customer.human_attribute_name 'cellphone' %></th>
           <th><%= Customer.human_attribute_name 'card' %></th>
           <th><%= Customer.human_attribute_name 'code' %></th>
-          <th colspan="4"></th>
+          <th colspan="5"></th>
         </tr>
       </thead>
 
@@ -34,6 +34,7 @@
             <td><%= link_to_show customer %></td>
             <td><%= link_to_customer_loans customer %></td>
             <td><%= link_to_edit [:edit, customer] %></td>
+            <td><%= link_to_destroy customer %></td>
           </tr>
         <% end %>
       </tbody>

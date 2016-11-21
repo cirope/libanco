@@ -1,0 +1,2 @@
+json.extract! investor, :id, :name, :lastname, :identification_type, :identification, :phone, :cellphone, :address, :city_id, :investment_group_id, :consultant_id, :user_id, :created_at, :updated_at
+json.url investor_url(investor, format: :json)

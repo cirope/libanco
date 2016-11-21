@@ -25,9 +25,10 @@ Rails.application.routes.draw do
     resources :body_templates, except: [:destroy]
     resources :cards, except: [:show, :destroy]
     resources :cities, except: [:show, :destroy]
+    resources :consultants, except: [:show, :destroy]
     resources :credit_lines, except: [:show, :destroy]
     resources :custom_templates
-    resources :customers, except: [:destroy] do
+    resources :customers do
       resources :custom_templates, only: [] do
         scope module: 'custom_templates' do
           resource :generate, only: [:show]
@@ -43,6 +44,8 @@ Rails.application.routes.draw do
     resources :header_templates, except: [:destroy] do
       get :image, on: :member
     end
+    resources :investment_groups, except: [:show, :destroy]
+    resources :investors
     namespace :loans do
       get 'simulator', to: 'simulator#index', as: 'simulator'
     end

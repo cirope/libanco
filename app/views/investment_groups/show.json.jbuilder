@@ -1,0 +1,1 @@
+json.partial! "investment_groups/investment_group", investment_group: @investment_group

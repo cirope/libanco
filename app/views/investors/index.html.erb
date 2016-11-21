@@ -1,0 +1,46 @@
+<% if @investors.blank? %>
+  <%= render 'shared/empty_index', message: t('.empty_html') %>
+<% else %>
+  <div class="table-responsive">
+    <table class="table table-striped table-condensed">
+      <thead>
+        <tr>
+          <th><%= Investor.human_attribute_name 'created_at' %></th>
+          <th><%= Investor.human_attribute_name 'name' %></th>
+          <th><%= Investor.human_attribute_name 'lastname' %></th>
+          <th><%= Investor.human_attribute_name 'identification_type' %></th>
+          <th><%= Investor.human_attribute_name 'identification' %></th>
+          <th><%= Investor.human_attribute_name 'cellphone' %></th>
+          <th><%= Investor.human_attribute_name 'investment_group' %></th>
+          <th><%= Investor.human_attribute_name 'consultant' %></th>
+          <th><%= Investor.human_attribute_name 'user' %></th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @investors.each do |investor| %>
+          <tr>
+            <td><%= l investor.created_at %></td>
+            <td><%= investor.name %></td>
+            <td><%= investor.lastname %></td>
+            <td><%= t_field investor, 'identification_type' %></td>
+            <td><%= investor.identification %></td>
+            <td><%= investor.cellphone %></td>
+            <td><%= investor.investment_group %></td>
+            <td><%= investor.consultant %></td>
+            <td><%= investor.user %></td>
+            <td><%= link_to_show investor %></td>
+            <td><%= link_to_edit [:edit, investor] %></td>
+            <td><%= link_to_destroy investor %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% end %>
+
+<hr />
+
+<%= paginate @investors %>
+<%= link_to_new new_investor_path, class: 'btn btn-primary' %>

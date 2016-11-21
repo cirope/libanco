@@ -33,6 +33,9 @@ es:
       company:
         one: 'Empresa'
         other: 'Empresas'
+      consultant:
+        one: 'Asesor'
+        other: 'Asesores'
       credit_line:
         one: 'Línea de crédito'
         other: 'Líneas de crédito'
@@ -51,6 +54,12 @@ es:
       header_template:
         one: 'Cabecera'
         other: 'Cabeceras'
+      investment_group:
+        one: 'Grupo de inversión'
+        other: 'Grupos de inversiones'
+      investor:
+        one: 'Inversor'
+        other: 'Inversores'
       loan:
         one: 'Préstamo'
         other: 'Préstamos'
@@ -134,6 +143,8 @@ es:
         name: 'Nombre'
         tax_id: 'CUIT'
         address: 'Dirección'
+      consultant:
+        name: 'Nombre'
       credit_line:
         commission: 'Comisión (%)'
         commission_max: 'Comisión Máxima'
@@ -190,6 +201,23 @@ es:
         name: 'Nombre'
         content: 'Contenido'
         image: 'Logo'
+      investment_group:
+        name: 'Nombre'
+      investor:
+        address: 'Dirección'
+        cellphone: 'Celular'
+        city: 'Localidad'
+        consultant: 'Asesor'
+        full_address: 'Dirección completa'
+        full_name: 'Nombre completo'
+        identification_type: 'Tipo Doc.'
+        identification: 'Nro Doc.'
+        investment_group: 'Grupo de inversión'
+        lastname: 'Apellidos'
+        name: 'Nombres'
+        phone: 'Teléfono'
+        state: 'Provincia'
+        user: 'Atendido por'
       loan:
         type: 'Sistema de amortización'
         amount: 'Monto'

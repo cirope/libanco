@@ -32,6 +32,13 @@
       </ul>
     </li>
     <li class="dropdown-submenu">
+      <a tabindex="0"><%= t('menu.investments') %></a>
+      <ul class="dropdown-menu">
+        <%= menu_item_for InvestmentGroup, investment_groups_path %>
+        <%= menu_item_for Consultant, consultants_path %>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
       <a tabindex="0"><%= CustomTemplate.model_name.human count: 0 %></a>
       <ul class="dropdown-menu">
         <%= menu_item_for HeaderTemplate, header_templates_path %>
