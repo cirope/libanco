@@ -2,24 +2,25 @@
 
 <p>
   <%= @reminder.description %>
-  <% if @reminder.customer %>
+    <% if @reminder.schedulable
+      model = @reminder.schedulable.class %>
     <br />
     <div style="margin-left: 40px;">
       <div>
-        <strong><%= Customer.model_name.human(count: 1) %>:</strong>
-        <span><%= @reminder.customer %></span>
+        <strong><%= @reminder.schedulable.model_name.human(count: 1) %>:</strong>
+        <span><%= @reminder.schedulable %></span>
       </div>
       <div>
-        <strong><%= Customer.human_attribute_name :phone %>:</strong>
-        <span><%= @reminder.customer.phone %></span>
+        <strong><%= model.human_attribute_name 'phone' %>:</strong>
+        <span><%= @reminder.phone %></span>
       </div>
       <div>
-        <strong><%= Customer.human_attribute_name :cellphone %>:</strong>
-        <span><%= @reminder.customer.cellphone %></span>
+        <strong><%= model.human_attribute_name 'cellphone' %>:</strong>
+        <span><%= @reminder.cellphone %></span>
       </div>
       <div>
-        <strong><%= Customer.human_attribute_name :address %>:</strong>
-        <span><%= @reminder.customer.address %></span>
+        <strong><%= model.human_attribute_name 'address' %>:</strong>
+        <span><%= @reminder.full_address %></span>
       </div>
     </div>
   <% end %>

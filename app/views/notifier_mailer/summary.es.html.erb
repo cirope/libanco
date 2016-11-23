@@ -4,24 +4,25 @@
 <% @schedules.each do |schedule| %>
   <p>
     <strong><%= l(schedule.scheduled_at, format: :time) %></strong> | <%= schedule.description %>
-    <% if schedule.customer %>
+    <% if schedule.schedulable
+      model = schedule.schedulable.class %>
       <br />
       <div style="margin-left: 40px;">
         <div>
-          <strong><%= Customer.model_name.human(count: 1) %>:</strong>
-          <span><%= schedule.customer %></span>
+          <strong><%= schedule.schedulable.model_name.human(count: 1) %>:</strong>
+          <span><%= schedule.schedulable %></span>
         </div>
         <div>
-          <strong><%= Customer.human_attribute_name :phone %>:</strong>
-          <span><%= schedule.customer.phone %></span>
+          <strong><%= model.human_attribute_name 'phone' %>:</strong>
+          <span><%= schedule.phone %></span>
         </div>
         <div>
-          <strong><%= Customer.human_attribute_name :cellphone %>:</strong>
-          <span><%= schedule.customer.cellphone %></span>
+          <strong><%= model.human_attribute_name 'cellphone' %>:</strong>
+          <span><%= schedule.cellphone %></span>
         </div>
         <div>
-          <strong><%= Customer.human_attribute_name :address %>:</strong>
-          <span><%= schedule.customer.address %></span>
+          <strong><%= model.human_attribute_name 'address' %>:</strong>
+          <span><%= schedule.full_address %></span>
         </div>
       </div>
     <% end %>

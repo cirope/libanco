@@ -10,4 +10,8 @@ module LoansHelper
   def t_loan_type loan
     t "loans.types.#{loan.type}"
   end
+
+  def show_loan_frequency loan
+    t "loans.payment_frequencies.#{Loan::FREQUENCIES.key(loan.payment_frequency)}"
+  end
 end

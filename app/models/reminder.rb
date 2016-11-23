@@ -9,6 +9,7 @@ class Reminder < ApplicationRecord
 
   delegate :email, to: :user, prefix: true
   delegate :scheduled_at, :description, to: :schedule
+  delegate :schedulable, :phone, :cellphone, :full_address, to: :schedule
 
   default_scope -> { order("#{table_name}.remind_at ASC") }
 end

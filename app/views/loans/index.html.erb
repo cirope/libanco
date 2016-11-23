@@ -27,7 +27,7 @@
             <td><%= number_to_currency loan.amount %></td>
             <td><%= number_to_currency loan.amount_total %></td>
             <td><%= loan.payments_count %></td>
-            <td><%= t("loans.payment_frequencies.#{Loan::FREQUENCIES.key(loan.payment_frequency)}") %></td>
+            <td><%= show_loan_frequency loan %></td>
             <td><%= number_to_currency loan.payment %></td>
             <td><%= loan.credit_line_data 'name' %></td>
             <td><%= link_to_show loan %></td>

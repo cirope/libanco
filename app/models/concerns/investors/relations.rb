@@ -7,5 +7,6 @@ module Investors::Relations
     belongs_to :investment_group
     belongs_to :consultant
     belongs_to :user
+    has_many :schedules, as: :schedulable, dependent: :destroy
   end
 end

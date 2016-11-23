@@ -14,13 +14,13 @@
           <th><%= Investor.human_attribute_name 'investment_group' %></th>
           <th><%= Investor.human_attribute_name 'consultant' %></th>
           <th><%= Investor.human_attribute_name 'user' %></th>
-          <th colspan="3"></th>
+          <th colspan="4"></th>
         </tr>
       </thead>
 
       <tbody>
         <% @investors.each do |investor| %>
-          <tr>
+          <tr <%== 'class="warning"' if investor.has_schedule_pending? %>>
             <td><%= l investor.created_at %></td>
             <td><%= investor.name %></td>
             <td><%= investor.lastname %></td>
@@ -32,6 +32,7 @@
             <td><%= investor.user %></td>
             <td><%= link_to_show investor %></td>
             <td><%= link_to_edit [:edit, investor] %></td>
+            <td><%= link_to_new_schedule investor %></td>
             <td><%= link_to_destroy investor %></td>
           </tr>
         <% end %>

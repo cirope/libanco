@@ -4,11 +4,12 @@ Hola <%= @user %>,
 
 <% @schedules.each do |schedule| %>
   <%= l(schedule.scheduled_at, format: :time) %> | <%= schedule.description %>
-  <% if schedule.customer %>
-    <%= Customer.model_name.human(count: 1) %>: <%= schedule.customer %>
-    <%= Customer.human_attribute_name :phone %>: <%= schedule.customer.phone %>
-    <%= Customer.human_attribute_name :cellphone %>: <%= schedule.customer.cellphone %>
-    <%= Customer.human_attribute_name :address %>: <%= schedule.customer.address %>
+  <% if schedule.schedulable
+    model = schedule.schedulable.class %>
+    <%= schedule.schedulable.model_name.human(count: 1) %>: <%= schedule.schedulable %>
+    <%= model.human_attribute_name 'phone' %>: <%= schedule.phone %>
+    <%= model.human_attribute_name 'cellphone' %>: <%= schedule.cellphone %>
+    <%= model.human_attribute_name 'address' %>: <%= schedule.full_address %>
   <% end %>
 <% end %>
 

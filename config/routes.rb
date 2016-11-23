@@ -46,6 +46,9 @@ Rails.application.routes.draw do
     end
     resources :investment_groups, except: [:show, :destroy]
     resources :investors
+    resources :investors, only: [] do
+      resources :schedules, only: [:new, :create, :edit, :update]
+    end
     namespace :loans do
       get 'simulator', to: 'simulator#index', as: 'simulator'
     end

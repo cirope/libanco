@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161121181442) do
+ActiveRecord::Schema.define(version: 20161122195033) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -355,16 +355,17 @@ ActiveRecord::Schema.define(version: 20161121181442) do
   end
 
   create_table "schedules", force: :cascade do |t|
-    t.text     "description",                  null: false
-    t.datetime "scheduled_at",                 null: false
-    t.boolean  "done",         default: false, null: false
-    t.boolean  "remind_me",    default: false, null: false
-    t.integer  "user_id",                      null: false
-    t.integer  "lock_version", default: 0,     null: false
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.integer  "customer_id"
-    t.index ["customer_id"], name: "index_schedules_on_customer_id", using: :btree
+    t.text     "description",                      null: false
+    t.datetime "scheduled_at",                     null: false
+    t.boolean  "done",             default: false, null: false
+    t.boolean  "remind_me",        default: false, null: false
+    t.integer  "user_id",                          null: false
+    t.integer  "lock_version",     default: 0,     null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.string   "schedulable_type"
+    t.integer  "schedulable_id"
+    t.index ["schedulable_type", "schedulable_id"], name: "index_schedules_on_schedulable_type_and_schedulable_id", using: :btree
     t.index ["scheduled_at"], name: "index_schedules_on_scheduled_at", using: :btree
     t.index ["user_id"], name: "index_schedules_on_user_id", using: :btree
   end
