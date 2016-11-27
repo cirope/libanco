@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161119183453) do
+ActiveRecord::Schema.define(version: 20161122195033) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -91,6 +91,14 @@ ActiveRecord::Schema.define(version: 20161119183453) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.index ["state_id"], name: "index_cities_on_state_id", using: :btree
+  end
+
+  create_table "consultants", force: :cascade do |t|
+    t.string   "name",                     null: false
+    t.integer  "lock_version", default: 0, null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["name"], name: "index_consultants_on_name", unique: true, using: :btree
   end
 
   create_table "credit_lines", force: :cascade do |t|
@@ -205,6 +213,40 @@ ActiveRecord::Schema.define(version: 20161119183453) do
     t.datetime "updated_at",               null: false
     t.index ["account_id"], name: "index_header_templates_on_account_id", using: :btree
     t.index ["name"], name: "index_header_templates_on_name", unique: true, using: :btree
+  end
+
+  create_table "investment_groups", force: :cascade do |t|
+    t.string   "name",                     null: false
+    t.integer  "lock_version", default: 0, null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["name"], name: "index_investment_groups_on_name", unique: true, using: :btree
+  end
+
+  create_table "investors", force: :cascade do |t|
+    t.string   "name",                            null: false
+    t.string   "lastname",                        null: false
+    t.string   "identification_type",             null: false
+    t.string   "identification",                  null: false
+    t.string   "phone",                           null: false
+    t.string   "cellphone",                       null: false
+    t.string   "address",                         null: false
+    t.integer  "city_id",                         null: false
+    t.integer  "state_id",                        null: false
+    t.integer  "investment_group_id",             null: false
+    t.integer  "consultant_id",                   null: false
+    t.integer  "user_id",                         null: false
+    t.integer  "lock_version",        default: 0, null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.index ["city_id"], name: "index_investors_on_city_id", using: :btree
+    t.index ["consultant_id"], name: "index_investors_on_consultant_id", using: :btree
+    t.index ["identification"], name: "index_investors_on_identification", unique: true, using: :btree
+    t.index ["investment_group_id"], name: "index_investors_on_investment_group_id", using: :btree
+    t.index ["lastname"], name: "index_investors_on_lastname", using: :btree
+    t.index ["name"], name: "index_investors_on_name", using: :btree
+    t.index ["state_id"], name: "index_investors_on_state_id", using: :btree
+    t.index ["user_id"], name: "index_investors_on_user_id", using: :btree
   end
 
   create_table "loans", force: :cascade do |t|
@@ -343,16 +385,17 @@ ActiveRecord::Schema.define(version: 20161119183453) do
   end
 
   create_table "schedules", force: :cascade do |t|
-    t.text     "description",                  null: false
-    t.datetime "scheduled_at",                 null: false
-    t.boolean  "done",         default: false, null: false
-    t.boolean  "remind_me",    default: false, null: false
-    t.integer  "user_id",                      null: false
-    t.integer  "lock_version", default: 0,     null: false
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.integer  "customer_id"
-    t.index ["customer_id"], name: "index_schedules_on_customer_id", using: :btree
+    t.text     "description",                      null: false
+    t.datetime "scheduled_at",                     null: false
+    t.boolean  "done",             default: false, null: false
+    t.boolean  "remind_me",        default: false, null: false
+    t.integer  "user_id",                          null: false
+    t.integer  "lock_version",     default: 0,     null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.string   "schedulable_type"
+    t.integer  "schedulable_id"
+    t.index ["schedulable_type", "schedulable_id"], name: "index_schedules_on_schedulable_type_and_schedulable_id", using: :btree
     t.index ["scheduled_at"], name: "index_schedules_on_scheduled_at", using: :btree
     t.index ["user_id"], name: "index_schedules_on_user_id", using: :btree
   end
