@@ -1,0 +1,4 @@
+default:
+  status: 'active'
+  tax_id: '12-12345678-1'
+  legal_name: Default

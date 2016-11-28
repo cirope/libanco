@@ -3,6 +3,7 @@ es:
 
   menu:
     admin: 'Administración'
+    invoicing: 'Facturación'
     loans:
       title: 'Préstamos'
       expired: 'Atrasados'
@@ -78,12 +79,6 @@ es:
       empty_html: 'No hay asesores, puede crear uno con el botón <span class="label label-info">Nuevo asesor</span>'
     new:
       title: 'Crear asesor'
-    show:
-      title: 'Ver asesor'
-    identification_types:
-      dni: 'DNI'
-      cie: 'CI Extranjera'
-      passport: 'Pasaporte'
 
   cards:
     edit:
@@ -94,8 +89,6 @@ es:
       empty_html: 'No hay tarjetas, puede crear una con el botón <span class="label label-info">Nueva tarjeta</span>'
     new:
       title: 'Crear tarjeta'
-    show:
-      title: 'Ver tarjeta'
 
   cashes:
     edit:
@@ -116,6 +109,11 @@ es:
         new: 'Nuevo pago'
         title: 'Pago de cuotas sociales'
         empty_html: 'No hay pagos de cuotas sociales, puede crear uno con el botón <span class="label label-info">Nuevo pago</span>'
+    invoices:
+      index:
+        new: 'Nueva factura'
+        title: 'Listado de facturas'
+        empty_html: 'No hay facturas, puede crear una con el botón <span class="label label-info">Nueva factura</span>'
 
   cities:
     edit:
@@ -210,6 +208,16 @@ es:
     new:
       title: 'Crear nivel de estudio'
 
+  expense_types:
+    edit:
+      title: 'Editar tipo de gasto'
+    index:
+      new: 'Nuevo tipo de gasto'
+      title: 'Listado de tipos de gastos'
+      empty_html: 'No hay tipos de gastos, puede crear uno con el botón <span class="label label-info">Nuevo tipo de gasto</span>'
+    new:
+      title: 'Crear tipo de gasto'
+
   flows:
     index:
       title: 'Movimientos'
@@ -238,15 +246,15 @@ es:
     show:
       title: 'Ver cabecera'
 
-  institutions:
+  invoice_types:
     edit:
-      title: 'Editar institución'
+      title: 'Editar tipo de factura'
     index:
-      new: 'Nueva institución'
-      title: 'Listado de instituciones'
-      empty_html: 'No hay instituciones, puede crear una con el botón <span class="label label-info">Nueva institución</span>'
+      new: 'Nuevo tipo de factura'
+      title: 'Listado de tipos de facturas'
+      empty_html: 'No hay tipos de facturas, puede crear uno con el botón <span class="label label-info">Nuevo tipo de factura</span>'
     new:
-      title: 'Crear institución'
+      title: 'Crear tipo de factura'
 
   loans:
     edit:
@@ -321,6 +329,16 @@ es:
     new:
       title: 'Crear ocupación'
 
+  payment_methods:
+    edit:
+      title: 'Editar forma de pago'
+    index:
+      new: 'Nueva forma de pago'
+      title: 'Listado de formas de pagos'
+      empty_html: 'No hay formas de pagos, puede crear una con el botón <span class="label label-info">Nueva forma de pago</span>'
+    new:
+      title: 'Crear forma de pago'
+
   payments:
     edit:
       title: 'Cuota'
@@ -329,6 +347,11 @@ es:
 
   phones:
     new: 'Agregar teléfono'
+
+  profiles:
+    edit:
+      title: 'Mis datos'
+      submit: 'Actualizar mis datos'
 
   relationships:
     edit:
@@ -352,6 +375,16 @@ es:
       paid: 'Pagado'
       debt: 'Deuda'
 
+  tax_conditions:
+    edit:
+      title: 'Editar condición IVA'
+    index:
+      new: 'Nueva condición IVA'
+      title: 'Listado de condiciones IVA'
+      empty_html: 'No hay condiciones de IVA, puede crear una con el botón <span class="label label-info">Nueva condición IVA</span>'
+    new:
+      title: 'Crear condición IVA'
+
   schedules:
     edit:
       title: 'Editar evento'
@@ -367,15 +400,6 @@ es:
       empty_html: 'No hay eventos programados'
     save: 'Guardar evento'
 
-  sessions:
-    new:
-      title: 'Ingreso'
-      log_in: 'Ingresar'
-      email: 'Correo'
-      password: 'Contraseña'
-      remember_me: 'Recordarme'
-      forgot_password: '¿Olvidaste tu contraseña?'
-
   states:
     edit:
       title: 'Editar provincia'
@@ -389,38 +413,15 @@ es:
     show:
       title: 'Ver provincia'
 
-  password_resets:
+  suppliers:
     edit:
-      title: 'Cambiar contraseña'
-      update: 'Actualizar contraseña'
-    new:
-      title: 'Restablecer contraseña'
-      email: 'Correo'
-      send_instructions: 'Enviar instrucciones'
-      back: 'Volver'
-
-  profiles:
-    edit:
-      title: 'Mis datos'
-      submit: 'Actualizar mis datos'
-
-  taxes:
+      title: 'Editar proveedor'
     index:
-      title: 'Listado de adicionales'
-      empty_html: 'No se encontraron adicionales en la fecha indicada.'
-
-  tax_settings:
-    edit:
-      title: 'Editar adicional'
-    index:
-      new: 'Nuevo adicional'
-      title: 'Listado de adicionales'
-      empty_html: 'No hay un adicional, puede crear una con el botón <span class="label label-info">Nuevo adicional</span>'
+      new: 'Nuevo proveedor'
+      title: 'Listado de proveedores'
+      empty_html: 'No hay proveedores, puede crear uno con el botón <span class="label label-info">Nuevo proveedor</span>'
     new:
-      title: 'Crear adicional'
-      state: 'Agregar nuevo adicional'
-    show:
-      title: 'Ver adicional'
+      title: 'Crear proveedor'
 
   users:
     edit:

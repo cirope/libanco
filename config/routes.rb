@@ -26,8 +26,9 @@ Rails.application.routes.draw do
     resources :cards, except: [:show, :destroy]
     resources :cashes do
       scope module: 'cashes' do
-        resources :flows, only: [:index]
         resources :cash_member_payments, except: [:show]
+        resources :flows, only: [:index]
+        resources :invoices, except: [:show]
       end
     end
     resources :cities, except: [:show, :destroy]
@@ -45,10 +46,12 @@ Rails.application.routes.draw do
       resources :schedules, only: [:new, :create, :edit, :update]
     end
     resources :education_levels, except: [:show, :destroy]
+    resources :expense_types, except: [:show, :destroy]
     resources :footer_templates, except: [:destroy]
     resources :header_templates, except: [:destroy] do
       get :image, on: :member
     end
+    resources :invoice_types, except: [:show, :destroy]
     namespace :loans do
       get 'simulator', to: 'simulator#index', as: 'simulator'
     end
@@ -60,10 +63,13 @@ Rails.application.routes.draw do
     resources :nacionalities, except: [:show, :destroy]
     resources :neighborhoods, except: [:show, :destroy]
     resources :occupations, except: [:show, :destroy]
+    resources :payment_methods, except: [:show, :destroy]
     resources :relationships, except: [:show, :destroy]
     resources :states, except: [:show, :destroy] do
       resources :cities, only: [:index]
     end
+    resources :suppliers, except: [:show, :destroy]
+    resources :tax_conditions, except: [:show, :destroy]
     resources :workgroups, except: [:show, :destroy]
   end
 

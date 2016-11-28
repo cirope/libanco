@@ -1,0 +1,30 @@
+<% if @invoice_types.blank? %>
+  <%= render 'shared/empty_index', message: t('.empty_html') %>
+<% else %>
+  <div class="table-responsive">
+    <table class="table table-striped table-condensed">
+      <thead>
+        <tr>
+          <th><%= InvoiceType.human_attribute_name 'created_at' %></th>
+          <th><%= InvoiceType.human_attribute_name 'name' %></th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @invoice_types.each do |invoice_type| %>
+          <tr>
+            <td class="col-md-2"><%= l invoice_type.created_at %></td>
+            <td><%= invoice_type.name %></td>
+            <td><%= link_to_edit [:edit, invoice_type] %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% end %>
+
+<hr />
+
+<%= paginate @invoice_types %>
+<%= link_to_new new_invoice_type_path, class: 'btn btn-primary' %>

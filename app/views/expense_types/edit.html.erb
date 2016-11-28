@@ -1,0 +1,5 @@
+<%= content_for :form_actions do %>
+  <%= link_to_index expense_types_path %>
+<% end %>
+
+<%= render 'form', expense_type: @expense_type %>

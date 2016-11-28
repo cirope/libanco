@@ -3,7 +3,7 @@ class AdvisersController < ApplicationController
   include Authorization
   include Title
 
-  before_action :set_adviser, only: [:show, :edit, :update]
+  before_action :set_adviser, only: [:edit, :update]
 
   # GET /advisers
   # GET /advisers.json
