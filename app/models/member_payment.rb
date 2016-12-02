@@ -7,6 +7,8 @@ class MemberPayment < ApplicationRecord
 
   belongs_to :customer
 
+  scope :pendings, -> { where paid_at: nil }
+
   def to_s
     amount
   end

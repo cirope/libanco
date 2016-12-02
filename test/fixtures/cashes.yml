@@ -7,4 +7,4 @@ default:
   final_count: 1000
   incomes: 1000
   outcomes: 1000
-  user: default
+  user: cashier

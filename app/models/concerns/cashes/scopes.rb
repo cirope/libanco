@@ -7,6 +7,10 @@ module Cashes::Scopes
     end
   end
 
+  included do
+    scope :ordered, -> { order 'created_at DESC' }
+  end
+
   def opened?
     status == 'opened'
   end

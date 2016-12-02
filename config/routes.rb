@@ -14,10 +14,11 @@ Rails.application.routes.draw do
   end
 
   constraints AccountSubdomain do
-    get 'reports', to: 'reports#index', as: 'reports'
     get 'customers/searches', to: 'customers/searches#index', as: 'customers_searches'
+    get 'reports', to: 'reports#index', as: 'reports'
     get '/schedules(/:date)', to: 'schedules#index', as: 'schedules', constraints: { date: /\d{4}\/\d{2}\/\d{2}/ }
     get '/schedules/new(/:date)', to: 'schedules#new', as: 'new_schedule', constraints: { date: /\d{4}-\d{2}-\d{2}/ }
+    get 'suppliers/searches', to: 'suppliers/searches#index', as: 'suppliers_searches'
     resources :schedules, only: [:create, :edit, :update] do
       patch 'mark_as_done', to: 'schedules#mark_as_done', as: 'mark_as_done', on: :member
     end
@@ -26,7 +27,7 @@ Rails.application.routes.draw do
     resources :cards, except: [:show, :destroy]
     resources :cashes do
       scope module: 'cashes' do
-        resources :cash_member_payments, except: [:show]
+        resources :cash_member_payments, except: [:show, :edit, :update]
         resources :flows, only: [:index]
         resources :invoices, except: [:show]
       end
@@ -44,6 +45,7 @@ Rails.application.routes.draw do
     end
     resources :customers, only: [] do
       resources :schedules, only: [:new, :create, :edit, :update]
+      resources :member_payments, only: [:index]
     end
     resources :education_levels, except: [:show, :destroy]
     resources :expense_types, except: [:show, :destroy]

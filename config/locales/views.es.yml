@@ -14,6 +14,8 @@ es:
       social_payments: 'Cuota Social'
       insurance: 'Seguro'
     system: 'Sistema'
+    fees: 'Cuotas'
+    payments: 'Pagos'
 
   messages:
     confirmation: '¿Está seguro?'
@@ -90,6 +92,16 @@ es:
     new:
       title: 'Crear tarjeta'
 
+  cash_member_payments:
+    edit:
+      title: 'Editar pago de cuota social'
+    new:
+      title: 'Pago de cuota social'
+      search_customer: 'Debe buscar un cliente para listar las cuotas sociales impagas.'
+    paid: 'Pagar cuota social'
+    errors:
+      select_payments: 'Debe selecionar la/s cuota/s que desea pagar.'
+
   cashes:
     edit:
       title: 'Editar caja'
@@ -101,12 +113,14 @@ es:
       title: 'Crear caja'
     show:
       title: 'Ver caja'
+    menu:
+      select: 'Seleccione una opción del menú'
     statuses:
       opened: 'Abierta'
       closed: 'Cerrada'
     cash_member_payments:
       index:
-        new: 'Nuevo pago'
+        new: 'Nuevo pago de cuota social'
         title: 'Pago de cuotas sociales'
         empty_html: 'No hay pagos de cuotas sociales, puede crear uno con el botón <span class="label label-info">Nuevo pago</span>'
     invoices:
@@ -220,7 +234,7 @@ es:
 
   flows:
     index:
-      title: 'Movimientos'
+      title: 'Movimientos de caja'
 
   footer_templates:
     edit:
@@ -255,6 +269,12 @@ es:
       empty_html: 'No hay tipos de facturas, puede crear uno con el botón <span class="label label-info">Nuevo tipo de factura</span>'
     new:
       title: 'Crear tipo de factura'
+
+  invoices:
+    edit:
+      title: 'Editar factura'
+    new:
+      title: 'Crear factura'
 
   loans:
     edit:
@@ -295,6 +315,8 @@ es:
       title: 'Crear estado civil'
 
   member_payments:
+    index:
+      empty_html: 'El cliente no posee cuotas impagas.'
     payments:
       paid: 'PAGADO'
       unpaid: 'IMPAGO'

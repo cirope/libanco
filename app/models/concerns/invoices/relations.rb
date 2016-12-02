@@ -8,5 +8,6 @@ module Invoices::Relations
     belongs_to :payment_method
     belongs_to :supplier
     belongs_to :tax_condition
+    belongs_to :user
   end
 end

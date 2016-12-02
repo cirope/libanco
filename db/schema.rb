@@ -55,13 +55,15 @@ ActiveRecord::Schema.define(version: 20161128125102) do
   end
 
   create_table "cash_member_payments", force: :cascade do |t|
-    t.integer  "user_id",                       null: false
+    t.integer  "customer_id",                   null: false
     t.integer  "member_payment_id",             null: false
+    t.integer  "user_id",                       null: false
     t.integer  "cash_id",                       null: false
     t.integer  "lock_version",      default: 0, null: false
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
     t.index ["cash_id"], name: "index_cash_member_payments_on_cash_id", using: :btree
+    t.index ["customer_id"], name: "index_cash_member_payments_on_customer_id", using: :btree
     t.index ["member_payment_id"], name: "index_cash_member_payments_on_member_payment_id", using: :btree
     t.index ["user_id"], name: "index_cash_member_payments_on_user_id", using: :btree
   end
@@ -237,6 +239,7 @@ ActiveRecord::Schema.define(version: 20161128125102) do
     t.integer  "expense_type_id",                                                     null: false
     t.integer  "payment_method_id",                                                   null: false
     t.integer  "supplier_id",                                                         null: false
+    t.integer  "user_id",                                                             null: false
     t.integer  "cash_id",                                                             null: false
     t.integer  "lock_version",                                            default: 0, null: false
     t.datetime "created_at",                                                          null: false
@@ -249,6 +252,7 @@ ActiveRecord::Schema.define(version: 20161128125102) do
     t.index ["payment_method_id"], name: "index_invoices_on_payment_method_id", using: :btree
     t.index ["supplier_id"], name: "index_invoices_on_supplier_id", using: :btree
     t.index ["tax_condition_id"], name: "index_invoices_on_tax_condition_id", using: :btree
+    t.index ["user_id"], name: "index_invoices_on_user_id", using: :btree
   end
 
   create_table "loans", force: :cascade do |t|

@@ -1,2 +1,0 @@
-json.extract! invoice, :id, :date, :number, :subtotal, :tax_amount, :tax_perception_amount, :gross_income_perception_amount, :amount, :detail, :invoice_type_id, :tax_condition_id, :payment_type_id, :payment_method_id, :supplier_id, :cash_id, :created_at, :updated_at
-json.url invoice_url(invoice, format: :json)

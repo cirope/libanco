@@ -1,4 +1,5 @@
 default:
-  user: default
+  customer: default
   member_payment: default
+  user: default
   cash: default

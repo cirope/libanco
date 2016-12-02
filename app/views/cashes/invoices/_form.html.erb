@@ -1,0 +1,55 @@
+<%= simple_form_for [@cash, @invoice], remote: true do |f| %>
+  <div class="form-inputs">
+    <div class="row">
+      <div class="col-md-4">
+        <%= f.input :supplier, as: :autocomplete, url: suppliers_searches_path,
+          autofocus: true, input_html: { data: { empty_result_label: t('views.generic.empty_index') } } %>
+      </div>
+      <div class="col-md-4">
+        <%= f.input :date, as: :date_picker %>
+      </div>
+      <div class="col-md-4">
+        <%= f.association :invoice_type, prompt: true %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <%= f.input :number %>
+      </div>
+      <div class="col-md-4">
+        <%= f.association :tax_condition, prompt: true %>
+      </div>
+      <div class="col-md-4">
+        <%= f.input :subtotal %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <%= f.input :tax_amount %>
+      </div>
+      <div class="col-md-4">
+        <%= f.input :tax_perception_amount %>
+      </div>
+      <div class="col-md-4">
+        <%= f.input :gross_income_perception_amount %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <%= f.input :amount %>
+      </div>
+      <div class="col-md-4">
+        <%= f.association :expense_type, prompt: true %>
+      </div>
+      <div class="col-md-4">
+        <%= f.association :payment_method, prompt: true %>
+      </div>
+    </div>
+    <%= f.input :detail %>
+    <%= f.input :lock_version, as: :hidden %>
+  </div>
+
+  <div class="actions">
+    <%= submit_button f %>
+  </div>
+<% end %>

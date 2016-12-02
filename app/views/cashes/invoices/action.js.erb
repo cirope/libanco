@@ -1,0 +1,6 @@
+<% if @invoice.new_record? || @invoice.errors.any? %>
+  $('#modal form').replaceWith('<%= j render('form') %>');
+<% else %>
+  $('#invoices').html('<%= j render(template: 'cashes/invoices/index', formats: [:html]) %>');
+  $('#modal').modal('hide');
+<% end %>

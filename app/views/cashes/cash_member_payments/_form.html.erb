@@ -1,14 +1,22 @@
-<%= simple_form_for(@cash_member_payment) do |f| %>
-  <%= f.error_notification %>
-
+<%= simple_form_for [@cash, @cash_member_payment], remote: true do |f| %>
   <div class="form-inputs">
-    <%= f.association :user %>
-    <%= f.association :member_payment %>
-    <%= f.association :cash %>
+    <%= f.input :customer, as: :autocomplete, url: customers_searches_path, autofocus: true,
+      input_html: {
+        id: 'model_id',
+          data: {
+            empty_result_label: t('views.generic.empty_index'),
+            update_autocomplete_url: customer_member_payments_path(customer_id: 'model_id')
+      } } %>
     <%= f.input :lock_version, as: :hidden %>
-  </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+    <div id="member_payments_pendings">
+      <% if @member_payments %>
+        <%= render template: 'member_payments/index', formats: [:html] %>
+      <% else %>
+        <div class="alert alert-warning">
+          <strong><%= t 'cash_member_payments.new.search_customer' %></strong>
+        </div>
+      <% end %>
+    </div>
   </div>
 <% end %>

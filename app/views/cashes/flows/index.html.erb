@@ -1,6 +1,19 @@
 <%= render 'cash' %>
 
-<%= render 'cashes/flows/menu' %>
+<ul class="nav nav-tabs" id="nav-tabs">
+  <li>
+    <%= link_to '#cash_member_payments', data: { toggle: 'pill', tab_focus: true, tab_url: cash_cash_member_payments_path(@cash) } do %>
+      <%= fa_icon 'id-card', text: CashMemberPayment.model_name.human(count: 0) %>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to '#invoices', data: { toggle: 'pill', tab_url: cash_invoices_path(@cash) } do %>
+      <%= fa_icon 'file-text', text: Invoice.model_name.human(count: 0) %>
+    <% end %>
+  </li>
+</ul>
 
-<% if @cash.opened? %>
-<% end %>
+<div class="tab-content">
+  <div class="tab-pane" id="cash_member_payments"></div>
+  <div class="tab-pane" id="invoices"></div>
+</div>

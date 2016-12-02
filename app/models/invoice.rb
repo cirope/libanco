@@ -6,7 +6,7 @@ class Invoice < ApplicationRecord
   include Invoices::Scopes
   include Invoices::Validation
 
-  strip_fields :number
+  strip_fields :number, :detail
 
   def to_s
     number

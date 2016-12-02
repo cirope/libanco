@@ -9,7 +9,7 @@ class CashesController < ApplicationController
   # GET /cashes
   # GET /cashes.json
   def index
-    @cashes = Cash.all
+    @cashes = Cash.ordered
   end
 
   # GET /cashes/1
@@ -41,14 +41,10 @@ class CashesController < ApplicationController
   # PATCH/PUT /cashes/1
   # PATCH/PUT /cashes/1.json
   def update
-    respond_to do |format|
-      if @cash.update(cash_params)
-        format.html { redirect_to @cash, notice: 'Cash was successfully updated.' }
-        format.json { render :show, status: :ok, location: @cash }
-      else
-        format.html { render :edit }
-        format.json { render json: @cash.errors, status: :unprocessable_entity }
-      end
+    if @cash.update cash_params
+      redirect_to cash_flows_url(@cash)
+    else
+      render 'edit'
     end
   end
 
@@ -56,10 +52,7 @@ class CashesController < ApplicationController
   # DELETE /cashes/1.json
   def destroy
     @cash.destroy
-    respond_to do |format|
-      format.html { redirect_to cashes_url, notice: 'Cash was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to cashes_url
   end
 
   private

@@ -1,11 +1,10 @@
 class CashMemberPayment < ApplicationRecord
   include Auditable
   include Authority::Abilities
+  include CashMemberPayments::MemberPayments
+  include CashMemberPayments::Relations
+
+  delegate :amount, :expire_at, :paid_at, :period, to: :member_payment
 
   scope :ordered, -> { order 'created_at DESC' }
-
-  belongs_to :cash
-  belongs_to :user
-  belongs_to :member_payment
-  has_one :customer, through: :member_payment
 end

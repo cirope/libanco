@@ -27,6 +27,7 @@
 //= require ckeditor/init
 //= require autocomplete
 //= require dynamic_form
+//= require remote_tabs
 //= require calendar-setup
 //= require calendar-time-setup
 //= require main

@@ -9,7 +9,6 @@ class InvoicesController < ApplicationController
   # GET /invoices
   # GET /invoices.json
   def index
-    @invoices = @cash.invoices.ordered
   end
 
   # GET /invoices/new

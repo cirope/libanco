@@ -14,6 +14,7 @@ class CreateInvoices < ActiveRecord::Migration[5.0]
       t.references :expense_type, null: false, index: true
       t.references :payment_method, null: false, index: true
       t.references :supplier, null: false, index: true
+      t.references :user, null: false, index: true
       t.references :cash, null: false, index: true
       t.integer :lock_version, null: false, default: 0
 

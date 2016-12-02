@@ -146,6 +146,9 @@ es:
         opening_balance: 'Recuento inicial'
         outcomes: 'Egresos'
         user: 'Cajero'
+      cash_member_payment:
+        customer: 'Cliente'
+        user: 'Cajero'
       body_template:
         name: 'Nombre'
         content: 'Contenido'
@@ -221,19 +224,20 @@ es:
       invoice_type:
         name: 'Nombre'
       invoice:
-        amount: 'Importe total'
-        date: 'Fecha'
+        amount: 'Importe'
+        date: 'Emisión'
         detail: 'Detalle'
+        expense_type: 'Tipo de gasto'
         gross_income_perception_amount: 'Percepción IIBB'
-        invoice_type: 'Tipo Factura'
+        invoice_type: 'Factura'
         number: 'Número'
         payment_method: 'Forma de pago'
-        payment_type: 'Tipo de gasto'
         subtotal: 'Subtotal'
         supplier: 'Proveedor'
         tax_amount: 'IVA'
         tax_condition: 'Condición IVA'
         tax_perception_amount: 'Percepción IVA'
+        user: 'Cajero'
       loan:
         type: 'Sistema de amortización'
         amount: 'Monto'
@@ -261,7 +265,7 @@ es:
       member_payment:
         amount: 'Monto'
         customer: 'Cliente'
-        expire_at: 'Fecha Venc.'
+        expire_at: 'Vencimiento'
         paid_at: 'Pago'
         period: 'Período'
       nacionality:

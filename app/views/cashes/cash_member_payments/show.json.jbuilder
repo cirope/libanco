@@ -1,1 +1,0 @@
-json.partial! "cash_member_payments/cash_member_payment", cash_member_payment: @cash_member_payment

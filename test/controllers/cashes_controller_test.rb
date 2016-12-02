@@ -39,7 +39,7 @@ class CashesControllerTest < ActionDispatch::IntegrationTest
 
   test 'should update cash' do
     patch cash_url(@cash), params: { cash: { opening_balance: 2000 } }
-    assert_redirected_to cash_url(@cash)
+    assert_redirected_to cash_flows_url(@cash)
   end
 
   test 'should destroy cash' do
