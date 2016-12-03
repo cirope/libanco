@@ -31,6 +31,7 @@ Rails.application.routes.draw do
         resources :flows, only: [:index]
         resources :invoices, except: [:show]
         resource :counts, only: [:edit, :update]
+        resource :lock, only: [:update, :destroy]
       end
     end
     resources :cities, except: [:show, :destroy]

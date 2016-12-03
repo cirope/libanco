@@ -21,4 +21,12 @@ module CashesHelper
       content_tag :i, nil, class: 'fa fa-exchange'
     end
   end
+
+  def current_cash_path
+    if cash = Cash.current_cash
+      cash_flows_path(cash)
+    else
+      new_cash_path(cash)
+    end
+  end
 end

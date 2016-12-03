@@ -2,9 +2,19 @@
 
 <%= render template: 'cashes/flows/show', locals: { '@cash': @cash } %>
 
-<hr />
-
 <% if @cash.opened? %>
+  <hr />
+
   <%= link_to fa_icon('arrow-circle-left', text: t('cashes.flows')),
     cash_flows_path(@cash), class: 'btn btn-warning' %>
+  <%= link_to edit_cash_counts_path(@cash), class: 'btn btn-warning', remote: true do %>
+    <%= fa_icon 'lock', text: Cash.human_attribute_name('closing_balance') %>
+  <% end %>
+  <%= link_to cash_lock_path(@cash), class: 'btn btn-danger', method: :patch do %>
+    <%= fa_icon('lock', text: t('cashes.lock')) %>
+  <% end %>
+<% elsif LockAuthorizer.deletable_by?(current_user) %>
+  <%= link_to cash_lock_path(@cash), class: 'btn btn-success', method: :delete do %>
+    <%= fa_icon('unlock', text: t('cashes.unlock')) %>
+  <% end %>
 <% end %>

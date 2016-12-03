@@ -16,12 +16,19 @@
           <% if admin_subdomain? %>
             <%= menu_item_for Account, accounts_path, 'home' %>
           <% else %>
-            <%= menu_item_for Cash, cashes_path, 'inbox' %>
+            <% if current_user.can_list?(Cash) %>
+              <%= menu_item_for Cash, cashes_path, 'inbox' %>
+            <% else %>
+              <%= menu_for Cash, current_cash_path, 'inbox' %>
+            <% end %>
             <%= menu_item_for Schedule, schedules_path, 'calendar' %>
             <%= menu_item_for Customer, customers_path, 'male' %>
             <%= menu_item_for Loan, loans_path, 'file-text' %>
+            <%= menu_item_for Supplier, suppliers_path, 'truck' %>
             <%= menu_item_for Report, reports_path, 'bar-chart' %>
-            <%= render 'shared/admin' %>
+            <% if current_user.can?(:list_menu_admin) %>
+              <%= render 'shared/admin' %>
+            <% end %>
           <% end %>
         </ul>
         <% if @search_path %>

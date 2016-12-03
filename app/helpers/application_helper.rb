@@ -8,15 +8,11 @@ module ApplicationHelper
   end
 
   def menu_item_for model, path, icon = nil
-    if current_user.can_read? model
-      model_name = model.model_name.human(count: 0)
-      model_name = fa_icon(icon, text: model_name) if icon
+    menu_link_for(model, path, icon) if current_user.can_list? model
+  end
 
-      link = link_to model_name, path
-      active = model.model_name.route_key == controller_name
-
-      content_tag(:li, link, (active ? { class: 'active' } : {}))
-    end
+  def menu_for model, path, icon = nil
+    menu_link_for(model, path, icon) if current_user.can_read? model
   end
 
   def t_boolean field
@@ -42,4 +38,16 @@ module ApplicationHelper
   def link_to_new_schedule model
     link_to fa_icon('calendar'), [:new, model, :schedule], data: { remote: true }
   end
+
+  private
+
+    def menu_link_for model, path, icon = nil
+      model_name = model.model_name.human(count: 0)
+      model_name = fa_icon(icon, text: model_name) if icon
+
+      link = link_to model_name, path
+      active = model.model_name.route_key == controller_name
+
+      content_tag(:li, link, (active ? { class: 'active' } : {}))
+    end
 end

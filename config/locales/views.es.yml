@@ -104,6 +104,8 @@ es:
 
   cashes:
     flows: 'Movimientos'
+    lock: 'Cerrar caja'
+    unlock: 'Abrir caja'
     edit:
       title: 'Editar caja'
     index:

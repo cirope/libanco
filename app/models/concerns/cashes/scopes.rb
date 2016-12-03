@@ -14,4 +14,12 @@ module Cashes::Scopes
   def opened?
     status == 'opened'
   end
+
+  def lock!
+    update_columns status: 'closed', closed_at: Time.now
+  end
+
+  def unlock!
+    update_column :status, 'opened'
+  end
 end

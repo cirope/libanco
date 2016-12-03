@@ -1,5 +1,6 @@
 class CashesController < ApplicationController
   include Authentication
+  include Authorization
   include Title
 
   before_action :set_cash, only: [:show, :edit, :update, :destroy]

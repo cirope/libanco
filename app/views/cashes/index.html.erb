@@ -29,7 +29,7 @@
             <td><%= number_to_currency cash.opening_balance %></td>
             <td><%= number_to_currency cash.closing_balance %></td>
             <td><%= number_to_currency cash.final_count %></td>
-            <td><%= %></td>
+            <td><%= number_to_currency cash.difference %></td>
             <td><%= show_lock_status cash.opened? %></td>
             <% if cash.opened? %>
               <td><%= link_to_flows cash %></td>
