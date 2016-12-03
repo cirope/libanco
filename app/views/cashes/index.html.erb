@@ -8,8 +8,8 @@
           <th><%= Cash.human_attribute_name 'user' %></th>
           <th><%= Cash.human_attribute_name 'opened_at' %></th>
           <th><%= Cash.human_attribute_name 'closed_at' %></th>
-          <th><%= Cash.human_attribute_name 'incomes' %></th>
-          <th><%= Cash.human_attribute_name 'outcomes' %></th>
+          <th><%= Cash.human_attribute_name 'incomes_count' %></th>
+          <th><%= Cash.human_attribute_name 'outcomes_count' %></th>
           <th><%= Cash.human_attribute_name 'opening_balance' %></th>
           <th><%= Cash.human_attribute_name 'closing_balance' %></th>
           <th><%= Cash.human_attribute_name 'final_count' %></th>
@@ -24,8 +24,8 @@
             <td><%= cash.user %></td>
             <td><%= l cash.opened_at %></td>
             <td><%= l cash.closed_at if cash.closed_at %></td>
-            <td><%= number_to_currency cash.incomes %></td>
-            <td><%= number_to_currency cash.outcomes %></td>
+            <td><%= number_to_currency cash.incomes_count %></td>
+            <td><%= number_to_currency cash.outcomes_count %></td>
             <td><%= number_to_currency cash.opening_balance %></td>
             <td><%= number_to_currency cash.closing_balance %></td>
             <td><%= number_to_currency cash.final_count %></td>

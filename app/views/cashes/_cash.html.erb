@@ -1,0 +1,34 @@
+<div class="panel panel-<%= @cash.opened? ? 'success' : 'danger' %>">
+  <div class="panel-heading">
+    <%= show_cash_status @cash %>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th><%= Cash.human_attribute_name 'user' %></th>
+          <th><%= Cash.human_attribute_name 'opened_at' %></th>
+          <th><%= Cash.human_attribute_name 'created_at' %></th>
+          <th><%= Cash.human_attribute_name 'opening_balance' %></th>
+          <th><%= Cash.human_attribute_name 'closing_balance' %></th>
+          <th><%= Cash.human_attribute_name 'final_count' %></th>
+          <th><%= Cash.human_attribute_name 'difference' %></th>
+          <th><%= Cash.human_attribute_name 'closed_at' %></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td><%= @cash.user %></td>
+          <td><%= l @cash.opened_at %></td>
+          <td><%= l @cash.created_at %></td>
+          <td><%= number_to_currency @cash.opening_balance %></td>
+          <td><%= number_to_currency @cash.closing_balance %></td>
+          <td><%= number_to_currency @cash.final_count %></td>
+          <td><%= number_to_currency @cash.difference %></td>
+          <td><%= l(@cash.closed_at) if @cash.closed_at %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

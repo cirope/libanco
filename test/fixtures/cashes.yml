@@ -5,6 +5,6 @@ default:
   opening_balance: 1000
   closing_balance: 1000
   final_count: 1000
-  incomes: 1000
-  outcomes: 1000
+  incomes_count: 1000
+  outcomes_count: 1000
   user: cashier

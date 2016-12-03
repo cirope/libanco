@@ -1,49 +1,10 @@
-<p id="notice"><%= notice %></p>
+<%= render 'cashes/cash' %>
 
-<p>
-  <strong>Status:</strong>
-  <%= @cash.status %>
-</p>
+<%= render template: 'cashes/flows/show', locals: { '@cash': @cash } %>
 
-<p>
-  <strong>Opened at:</strong>
-  <%= @cash.opened_at %>
-</p>
+<hr />
 
-<p>
-  <strong>Closed at:</strong>
-  <%= @cash.closed_at %>
-</p>
-
-<p>
-  <strong>Opening balance:</strong>
-  <%= @cash.opening_balance %>
-</p>
-
-<p>
-  <strong>Closing balance:</strong>
-  <%= @cash.closing_balance %>
-</p>
-
-<p>
-  <strong>Final count:</strong>
-  <%= @cash.final_count %>
-</p>
-
-<p>
-  <strong>Incomes:</strong>
-  <%= @cash.incomes %>
-</p>
-
-<p>
-  <strong>Outcomes:</strong>
-  <%= @cash.outcomes %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @cash.user %>
-</p>
-
-<%= link_to 'Edit', edit_cash_path(@cash) %> |
-<%= link_to 'Back', cashes_path %>
+<% if @cash.opened? %>
+  <%= link_to fa_icon('arrow-circle-left', text: t('cashes.flows')),
+    cash_flows_path(@cash), class: 'btn btn-warning' %>
+<% end %>

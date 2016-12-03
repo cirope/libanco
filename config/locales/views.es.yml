@@ -103,6 +103,7 @@ es:
       select_payments: 'Debe selecionar la/s cuota/s que desea pagar.'
 
   cashes:
+    flows: 'Movimientos'
     edit:
       title: 'Editar caja'
     index:
@@ -112,7 +113,7 @@ es:
     new:
       title: 'Crear caja'
     show:
-      title: 'Ver caja'
+      title: 'Movimientos de caja'
     menu:
       select: 'Seleccione una opción del menú'
     statuses:
@@ -151,6 +152,10 @@ es:
       title: 'Crear empresa'
     show:
       title: 'Ver empresa'
+
+  counts:
+    edit:
+      title: 'Recuento final'
 
   credit_lines:
     edit:

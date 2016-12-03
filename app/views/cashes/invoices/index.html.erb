@@ -12,7 +12,7 @@
           <th><%= Invoice.human_attribute_name 'number' %></th>
           <th><%= Invoice.human_attribute_name 'supplier' %></th>
           <th><%= Invoice.human_attribute_name 'tax_condition' %></th>
-          <th><%= Invoice.human_attribute_name 'subtotal' %></th>
+          <th><%= Invoice.human_attribute_name 'payment_method' %></th>
           <th><%= Invoice.human_attribute_name 'amount' %></th>
           <th><%= Invoice.human_attribute_name 'detail' %></th>
           <th colspan="2"></th>
@@ -29,7 +29,7 @@
             <td><%= invoice.number %></td>
             <td><%= invoice.supplier %></td>
             <td><%= invoice.tax_condition %></td>
-            <td><%= number_to_currency invoice.subtotal %></td>
+            <td><%= invoice.payment_method %></td>
             <td><%= number_to_currency invoice.amount %></td>
             <td><%= invoice.detail %></td>
             <td><%= link_to_edit [:edit, @cash, invoice], remote: true %></td>
@@ -43,4 +43,6 @@
 
 <hr />
 
-<%= link_to_new [:new, @cash, :invoice], remote: true, class: 'btn btn-primary' %>
+<div class="pull-left">
+  <%= link_to_new [:new, @cash, :invoice], remote: true, class: 'btn btn-primary' %>
+</div>

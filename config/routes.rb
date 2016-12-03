@@ -30,6 +30,7 @@ Rails.application.routes.draw do
         resources :cash_member_payments, except: [:show, :edit, :update]
         resources :flows, only: [:index]
         resources :invoices, except: [:show]
+        resource :counts, only: [:edit, :update]
       end
     end
     resources :cities, except: [:show, :destroy]

@@ -75,8 +75,8 @@ ActiveRecord::Schema.define(version: 20161128125102) do
     t.decimal  "opening_balance", precision: 10, scale: 2,             null: false
     t.decimal  "closing_balance", precision: 10, scale: 2
     t.decimal  "final_count",     precision: 10, scale: 2
-    t.decimal  "incomes",         precision: 10, scale: 2
-    t.decimal  "outcomes",        precision: 10, scale: 2
+    t.decimal  "incomes_count",   precision: 10, scale: 2
+    t.decimal  "outcomes_count",  precision: 10, scale: 2
     t.integer  "user_id",                                              null: false
     t.integer  "lock_version",                             default: 0, null: false
     t.datetime "created_at",                                           null: false

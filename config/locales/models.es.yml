@@ -141,10 +141,10 @@ es:
         closing_balance: 'Recuento final'
         difference: 'Diferencia'
         final_count: 'Saldo final'
-        incomes: 'Ingresos'
+        incomes_count: 'Ingresos'
         opened_at: 'Fecha'
         opening_balance: 'Recuento inicial'
-        outcomes: 'Egresos'
+        outcomes_count: 'Egresos'
         user: 'Cajero'
       cash_member_payment:
         customer: 'Cliente'

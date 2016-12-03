@@ -17,3 +17,11 @@
   <div class="tab-pane" id="cash_member_payments"></div>
   <div class="tab-pane" id="invoices"></div>
 </div>
+
+<% if @cash.opened? %>
+  <div class="pull-right">
+    <%= link_to edit_cash_counts_path(@cash), class: 'btn btn-warning', remote: true do %>
+      <%= fa_icon 'lock', text: Cash.human_attribute_name('closing_balance') %>
+    <% end %>
+  </div>
+<% end %>

@@ -1,0 +1,40 @@
+<div class="panel-group" id="cash-summary">
+  <% if @cash.cash_member_payments.exists? %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <%= link_to '#cash_member_payments', data: { toggle: 'collapse' } do %>
+            <%= fa_icon 'id-card', text: CashMemberPayment.model_name.human(count: 0) %>
+          <% end %>
+          <strong class="pull-right">
+            <%= number_to_currency @cash.cash_member_payments_sum %>
+          </strong>
+        </h4>
+      </div>
+      <div id="cash_member_payments" class="panel-collapse collapse">
+        <div class="panel-body">
+          <%= render 'cashes/cash_member_payments/cash_member_payment' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <% if @cash.invoices.exists? %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <%= link_to '#invoices', data: { toggle: 'collapse' } do %>
+            <%= fa_icon 'file-text', text: Invoice.model_name.human(count: 0) %>
+          <% end %>
+          <strong class="pull-right">
+            <%= number_to_currency @cash.invoices_sum %>
+          </strong>
+        </h4>
+      </div>
+      <div id="invoices" class="panel-collapse collapse">
+        <div class="panel-body">
+          <%= render 'cashes/invoices/invoice' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

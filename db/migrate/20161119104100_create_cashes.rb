@@ -7,8 +7,8 @@ class CreateCashes < ActiveRecord::Migration[5.0]
       t.decimal :opening_balance, null: false, precision: 10, scale: 2
       t.decimal :closing_balance, precision: 10, scale: 2
       t.decimal :final_count, precision: 10, scale: 2
-      t.decimal :incomes, precision: 10, scale: 2
-      t.decimal :outcomes, precision: 10, scale: 2
+      t.decimal :incomes_count, precision: 10, scale: 2
+      t.decimal :outcomes_count, precision: 10, scale: 2
       t.references :user, null: false, index: true
       t.integer :lock_version, default: 0, null: false
 

@@ -1,6 +1,5 @@
 class Cashes::CashMemberPaymentsController < ApplicationController
   include Authentication
-  include Authorization
   include Cash::Scoped
   include Title
 
