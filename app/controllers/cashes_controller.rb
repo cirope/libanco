@@ -68,6 +68,6 @@ class CashesController < ApplicationController
     end
 
     def cash_params
-      params.require(:cash).permit :opened_at, :opening_balance, :lock_version
+      params.require(:cash).permit :opening_balance, :lock_version
     end
 end

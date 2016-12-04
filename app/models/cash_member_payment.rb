@@ -1,6 +1,7 @@
 class CashMemberPayment < ApplicationRecord
   include Auditable
   include Authority::Abilities
+  include Cashes::UpdateBalance
   include CashMemberPayments::MemberPayments
   include CashMemberPayments::Relations
 

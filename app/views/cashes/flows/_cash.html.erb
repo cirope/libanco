@@ -7,18 +7,20 @@
       <thead>
         <tr>
           <th><%= Cash.human_attribute_name 'user' %></th>
-          <th><%= Cash.human_attribute_name 'opened_at' %></th>
+          <th><%= Cash.human_attribute_name 'created_at' %></th>
           <th><%= Cash.human_attribute_name 'opening_balance' %></th>
           <th><%= Cash.human_attribute_name 'closing_balance' %></th>
+          <th><%= Cash.human_attribute_name 'balance' %></th>
         </tr>
       </thead>
 
       <tbody>
         <tr>
           <td><%= @cash.user %></td>
-          <td><%= l @cash.opened_at %></td>
+          <td><%= l @cash.created_at %></td>
           <td><%= number_to_currency @cash.opening_balance %></td>
           <td><%= number_to_currency @cash.closing_balance %></td>
+          <td id="cash_balance"><%= number_to_currency @cash.balance %></td>
         </tr>
       </tbody>
     </table>

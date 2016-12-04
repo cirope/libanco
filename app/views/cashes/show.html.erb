@@ -17,4 +17,5 @@
   <%= link_to cash_lock_path(@cash), class: 'btn btn-success', method: :delete do %>
     <%= fa_icon('unlock', text: t('cashes.unlock')) %>
   <% end %>
+  <div class="pull-right"><%= link_to_index cashes_path %></div>
 <% end %>

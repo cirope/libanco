@@ -137,10 +137,10 @@ es:
       adviser:
         name: 'Nombre'
       cash:
+        balance: 'Saldo'
         closed_at: 'Cierre'
         closing_balance: 'Recuento final'
         difference: 'Diferencia'
-        final_count: 'Saldo final'
         incomes_count: 'Ingresos'
         opened_at: 'Fecha'
         opening_balance: 'Recuento inicial'

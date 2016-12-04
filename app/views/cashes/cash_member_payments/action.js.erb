@@ -2,5 +2,6 @@
   $('#modal form').replaceWith('<%= j render('form') %>');
 <% else %>
   $('#cash_member_payments').html('<%= j render(template: 'cashes/cash_member_payments/index', formats: [:html]) %>');
+  $('#cash_balance').html('<%= number_to_currency @cash.balance %>');
   $('#modal').modal('hide');
 <% end %>

@@ -70,18 +70,18 @@ ActiveRecord::Schema.define(version: 20161128125102) do
 
   create_table "cashes", force: :cascade do |t|
     t.string   "status",                                               null: false
-    t.date     "opened_at",                                            null: false
     t.datetime "closed_at"
     t.decimal  "opening_balance", precision: 10, scale: 2,             null: false
     t.decimal  "closing_balance", precision: 10, scale: 2
-    t.decimal  "final_count",     precision: 10, scale: 2
+    t.decimal  "balance",         precision: 10, scale: 2
     t.decimal  "incomes_count",   precision: 10, scale: 2
     t.decimal  "outcomes_count",  precision: 10, scale: 2
+    t.decimal  "difference",      precision: 10, scale: 2
     t.integer  "user_id",                                              null: false
     t.integer  "lock_version",                             default: 0, null: false
     t.datetime "created_at",                                           null: false
     t.datetime "updated_at",                                           null: false
-    t.index ["opened_at"], name: "index_cashes_on_opened_at", using: :btree
+    t.index ["created_at"], name: "index_cashes_on_created_at", using: :btree
     t.index ["status"], name: "index_cashes_on_status", using: :btree
     t.index ["user_id"], name: "index_cashes_on_user_id", using: :btree
   end
