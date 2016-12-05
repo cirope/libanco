@@ -9,7 +9,7 @@
           </div>
         </div>
         <div class="col-md-5">
-          <% if ['mp_all', 'mp_expired'].include?(@report.filter) %>
+          <% if ['mp_all', 'mp_expired', 'p_all', 'p_expired'].include?(@report.filter) %>
             <div class="input-group">
               <span class="input-group-addon"><%= Customer.model_name.human(count: 1) %></span>
               <%= f.input :customer, as: :autocomplete, url: customers_searches_path,

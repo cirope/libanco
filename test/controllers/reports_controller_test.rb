@@ -20,6 +20,16 @@ class ReportsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test 'should get p all' do
+    get reports_url, params: { report: { filter: 'p_all' } }
+    assert_response :success
+  end
+
+  test 'should get p expired' do
+    get reports_url, params: { report: { filter: 'p_expired' } }
+    assert_response :success
+  end
+
   test 'should get invoice' do
     get reports_url, params: { report: { filter: 'invoice' } }
     assert_response :success

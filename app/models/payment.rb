@@ -2,6 +2,7 @@ class Payment < ApplicationRecord
   include Auditable
   include Authority::Abilities
   include Payments::Relations
+  include Payments::Reports
   include Payments::Validation
 
   default_scope -> { order 'number ASC' }

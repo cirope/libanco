@@ -419,6 +419,8 @@ es:
     menu:
       mp_all: 'Todos'
       mp_expired: 'Morosos'
+      p_all: 'Todos'
+      p_expired: 'Morosos'
       invoice: 'Facturas'
     summary:
       total: 'Total'

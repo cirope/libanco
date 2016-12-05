@@ -18,6 +18,7 @@ class Report
   def model_filter
     case filter
       when 'mp_all', 'mp_expired' then 'member_payment'
+      when 'p_all', 'p_expired' then 'payment'
       when 'invoice' then 'invoice'
     end
   end
@@ -26,6 +27,8 @@ class Report
     case filter
       when 'mp_all' then mp_all_conditions
       when 'mp_expired' then mp_expired_conditions
+      when 'p_all' then p_all_conditions
+      when 'p_expired' then p_expired_conditions
       when 'invoice' then invoice_conditions
     end
   end
@@ -43,6 +46,22 @@ class Report
       conditions = {}
       conditions[:period] = from.beginning_of_month..to.end_of_month
       conditions[:expire_at] = from.beginning_of_month..Date.today
+      conditions[:customer_id] = customer_id if customer_id.present?
+      conditions[:paid_at] = nil
+      conditions
+    end
+
+    def p_all_conditions
+      conditions = {}
+      conditions[:created_at] = from.beginning_of_month..to.end_of_month
+      conditions[:loans] = { customer_id: customer_id } if customer_id.present?
+      conditions
+    end
+
+    def p_expired_conditions
+      conditions = {}
+      conditions[:expire_at] = from.beginning_of_month..to.end_of_month
+      conditions[:loans] = { customer_id: customer_id } if customer_id.present?
       conditions[:paid_at] = nil
       conditions
     end
