@@ -286,6 +286,7 @@ es:
         amount: 'Cuota'
         balance: 'Saldo'
         capital: 'Capital'
+        credit_line: 'Producto'
         expire_at: 'Vencimiento'
         extra_interest: 'Int. Adic.'
         tax_interest: 'IVA Int.'
