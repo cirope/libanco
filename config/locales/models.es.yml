@@ -54,6 +54,9 @@ es:
       education_level:
         one: 'Nivel de estudio'
         other: 'Niveles de estudio'
+      employee:
+        one: 'Personal'
+        other: 'Personal'
       expense_type:
         one: 'Tipo de gasto'
         other: 'Tipos de gastos'
@@ -218,6 +221,10 @@ es:
         work_address: 'Domicilio laboral'
       education_level:
         name: 'Nombre'
+      employee:
+        name: 'Nombres'
+        lastname: 'Apellidos'
+        tax_id: 'CUIL'
       expense_type:
         name: 'Nombre'
       footer_template:

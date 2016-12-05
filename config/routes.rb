@@ -52,6 +52,7 @@ Rails.application.routes.draw do
       resources :payments, only: [:index]
     end
     resources :education_levels, except: [:show, :destroy]
+    resources :employees, except: [:show, :destroy]
     resources :expense_types, except: [:show, :destroy]
     resources :footer_templates, except: [:destroy]
     resources :header_templates, except: [:destroy] do

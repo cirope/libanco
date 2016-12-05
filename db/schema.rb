@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161205012940) do
+ActiveRecord::Schema.define(version: 20161205185543) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -201,6 +201,20 @@ ActiveRecord::Schema.define(version: 20161205012940) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.index ["name"], name: "index_education_levels_on_name", unique: true, using: :btree
+  end
+
+  create_table "employees", force: :cascade do |t|
+    t.string   "status",                   null: false
+    t.string   "name",                     null: false
+    t.string   "lastname",                 null: false
+    t.string   "tax_id",                   null: false
+    t.integer  "lock_version", default: 0, null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["lastname"], name: "index_employees_on_lastname", using: :btree
+    t.index ["name"], name: "index_employees_on_name", using: :btree
+    t.index ["status"], name: "index_employees_on_status", using: :btree
+    t.index ["tax_id"], name: "index_employees_on_tax_id", unique: true, using: :btree
   end
 
   create_table "expense_types", force: :cascade do |t|
