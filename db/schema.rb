@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161128125102) do
+ActiveRecord::Schema.define(version: 20161205012940) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,20 @@ ActiveRecord::Schema.define(version: 20161128125102) do
     t.index ["customer_id"], name: "index_cash_member_payments_on_customer_id", using: :btree
     t.index ["member_payment_id"], name: "index_cash_member_payments_on_member_payment_id", using: :btree
     t.index ["user_id"], name: "index_cash_member_payments_on_user_id", using: :btree
+  end
+
+  create_table "cash_payments", force: :cascade do |t|
+    t.integer  "customer_id",              null: false
+    t.integer  "payment_id",               null: false
+    t.integer  "user_id",                  null: false
+    t.integer  "cash_id",                  null: false
+    t.integer  "lock_version", default: 0, null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["cash_id"], name: "index_cash_payments_on_cash_id", using: :btree
+    t.index ["customer_id"], name: "index_cash_payments_on_customer_id", using: :btree
+    t.index ["payment_id"], name: "index_cash_payments_on_payment_id", using: :btree
+    t.index ["user_id"], name: "index_cash_payments_on_user_id", using: :btree
   end
 
   create_table "cashes", force: :cascade do |t|

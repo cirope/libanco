@@ -6,4 +6,6 @@ class Payment < ApplicationRecord
   default_scope -> { order 'number ASC' }
 
   belongs_to :loan
+
+  scope :pendings, -> { where paid_at: nil }
 end

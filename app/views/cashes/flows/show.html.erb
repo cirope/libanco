@@ -4,7 +4,7 @@
       <div class="panel-heading">
         <h4 class="panel-title">
           <%= link_to '#cash_member_payments', data: { toggle: 'collapse' } do %>
-            <%= fa_icon 'id-card', text: CashMemberPayment.model_name.human(count: 0) %>
+            <%= fa_icon 'id-card-o', text: CashMemberPayment.model_name.human(count: 0) %>
           <% end %>
           <strong class="pull-right">
             <%= number_to_currency @cash.cash_member_payments_sum %>
@@ -14,6 +14,25 @@
       <div id="cash_member_payments" class="panel-collapse collapse">
         <div class="panel-body">
           <%= render 'cashes/cash_member_payments/cash_member_payment' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <% if @cash.cash_payments.exists? %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <%= link_to '#cash_payments', data: { toggle: 'collapse' } do %>
+            <%= fa_icon 'credit-card', text: CashPayment.model_name.human(count: 0) %>
+          <% end %>
+          <strong class="pull-right">
+            <%= number_to_currency @cash.cash_payments_sum %>
+          </strong>
+        </h4>
+      </div>
+      <div id="cash_payments" class="panel-collapse collapse">
+        <div class="panel-body">
+          <%= render 'cashes/cash_payments/cash_payment' %>
         </div>
       </div>
     </div>

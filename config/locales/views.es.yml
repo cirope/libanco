@@ -102,6 +102,16 @@ es:
     errors:
       select_payments: 'Debe selecionar la/s cuota/s que desea pagar.'
 
+  cash_payments:
+    edit:
+      title: 'Editar pago de cuota'
+    new:
+      title: 'Pago de cuota'
+      search_customer: 'Debe buscar un cliente para listar las cuotas impagas.'
+    paid: 'Pagar cuota'
+    errors:
+      select_payments: 'Debe selecionar la/s cuota/s que desea pagar.'
+
   cashes:
     flows: 'Movimientos'
     lock: 'Cerrar caja'
@@ -126,6 +136,11 @@ es:
         new: 'Nuevo pago de cuota social'
         title: 'Pago de cuotas sociales'
         empty_html: 'No hay pagos de cuotas sociales, puede crear uno con el botón <span class="label label-info">Nuevo pago</span>'
+    cash_payments:
+      index:
+        new: 'Nuevo pago de cuota'
+        title: 'Pago de cuotas'
+        empty_html: 'No hay pagos de cuotas, puede crear uno con el botón <span class="label label-info">Nuevo pago</span>'
     invoices:
       index:
         new: 'Nueva factura'

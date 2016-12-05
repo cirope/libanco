@@ -19,6 +19,10 @@ module Cashes::Balance
     member_payments.sum :amount
   end
 
+  def cash_payments_sum
+    payments.sum :amount
+  end
+
   def invoices_sum
     invoices.sum :amount
   end
@@ -30,7 +34,7 @@ module Cashes::Balance
     end
 
     def total_incomes
-      opening_balance.to_f + cash_member_payments_sum
+      opening_balance.to_f + cash_member_payments_sum + cash_payments_sum
     end
 
     def total_outcomes

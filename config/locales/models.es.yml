@@ -27,6 +27,9 @@ es:
       cash_member_payment:
         one: 'Cuota social'
         other: 'Cuotas sociales'
+      cash_payment:
+        one: 'Cuota'
+        other: 'Cuotas'
       body_template:
         one: 'Plantilla contenido'
         other: 'Plantillas contenido'
@@ -147,6 +150,9 @@ es:
         outcomes_count: 'Egresos'
         user: 'Cajero'
       cash_member_payment:
+        customer: 'Cliente'
+        user: 'Cajero'
+      cash_payment:
         customer: 'Cliente'
         user: 'Cajero'
       body_template:
@@ -288,7 +294,7 @@ es:
         interest: 'Interés'
         loan: 'Préstamo'
         number: 'Número'
-        paid_at: 'Fecha de pago'
+        paid_at: 'Pago'
         tax: 'IVA'
         tax_perception: 'Perc. IVA'
       payment_method:

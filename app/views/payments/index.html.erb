@@ -1,43 +1,43 @@
-<div id="payments">
-  <div class="table-responsive">
-    <table class="table table-striped table-condensed">
-      <thead>
-        <tr>
-          <th><%= Payment.human_attribute_name 'number' %></th>
-          <th><%= Payment.human_attribute_name 'balance' %></th>
-          <th><%= Payment.human_attribute_name 'capital' %></th>
-          <th><%= Payment.human_attribute_name 'interest' %></th>
-          <th><%= Payment.human_attribute_name 'tax' %></th>
-          <th><%= Payment.human_attribute_name 'extra_interest' %></th>
-          <th><%= Payment.human_attribute_name 'tax_interest' %></th>
-          <th><%= Payment.human_attribute_name 'insurance' %></th>
-          <th><%= Payment.human_attribute_name 'tax_perception' %></th>
-          <th><%= Payment.human_attribute_name 'gross_income_perception' %></th>
-          <th><%= Payment.human_attribute_name 'amount' %></th>
-          <th><%= Payment.human_attribute_name 'expire_at' %></th>
-          <th><%= Payment.human_attribute_name 'paid_at' %></th>
-        </tr>
-      </thead>
+<div class="table-responsive">
+  <table class="table table-striped table-condensed">
+    <thead>
+      <tr>
+        <th><%= Payment.human_attribute_name 'number' %></th>
+        <th><%= Payment.human_attribute_name 'balance' %></th>
+        <th><%= Payment.human_attribute_name 'capital' %></th>
+        <th><%= Payment.human_attribute_name 'interest' %></th>
+        <th><%= Payment.human_attribute_name 'tax' %></th>
+        <th><%= Payment.human_attribute_name 'extra_interest' %></th>
+        <th><%= Payment.human_attribute_name 'tax_interest' %></th>
+        <th><%= Payment.human_attribute_name 'insurance' %></th>
+        <th><%= Payment.human_attribute_name 'tax_perception' %></th>
+        <th><%= Payment.human_attribute_name 'gross_income_perception' %></th>
+        <th><%= Payment.human_attribute_name 'amount' %></th>
+        <th><%= Payment.human_attribute_name 'expire_at' %></th>
+        <th><%= Payment.human_attribute_name 'paid_at' %></th>
+        <th></th>
+      </tr>
+    </thead>
 
-      <tbody>
-        <% @loan.payments.each do |payment| %>
-          <tr>
-            <td><%= payment.number %></td>
-            <td><%= number_to_currency payment.balance %></td>
-            <td><%= number_to_currency payment.capital %></td>
-            <td><%= number_to_currency payment.interest %></td>
-            <td><%= number_to_currency payment.tax %></td>
-            <td><%= number_to_currency payment.extra_interest %></td>
-            <td><%= number_to_currency payment.tax_interest %></td>
-            <td><%= number_to_currency payment.insurance %></td>
-            <td><%= number_to_currency payment.tax_perception %></td>
-            <td><%= number_to_currency payment.gross_income_perception %></td>
-            <td><%= number_to_currency payment.amount %></td>
-            <td><%= l payment.expire_at %></td>
-            <td><%= link_to_payment_paid_at payment %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
+    <tbody>
+      <% @loan.payments.each do |payment| %>
+        <tr>
+          <td><%= payment.number %></td>
+          <td><%= number_to_currency payment.balance %></td>
+          <td><%= number_to_currency payment.capital %></td>
+          <td><%= number_to_currency payment.interest %></td>
+          <td><%= number_to_currency payment.tax %></td>
+          <td><%= number_to_currency payment.extra_interest %></td>
+          <td><%= number_to_currency payment.tax_interest %></td>
+          <td><%= number_to_currency payment.insurance %></td>
+          <td><%= number_to_currency payment.tax_perception %></td>
+          <td><%= number_to_currency payment.gross_income_perception %></td>
+          <td><%= number_to_currency payment.amount %></td>
+          <td><%= l payment.expire_at %></td>
+          <td><%= l payment.paid_at if payment.paid_at %></td>
+          <td><%= show_paid_at_label payment.paid_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>

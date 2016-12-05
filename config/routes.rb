@@ -28,6 +28,7 @@ Rails.application.routes.draw do
     resources :cashes do
       scope module: 'cashes' do
         resources :cash_member_payments, except: [:show, :edit, :update]
+        resources :cash_payments, except: [:show, :edit, :update]
         resources :flows, only: [:index]
         resources :invoices, except: [:show]
         resource :counts, only: [:edit, :update]
@@ -48,6 +49,7 @@ Rails.application.routes.draw do
     resources :customers, only: [] do
       resources :schedules, only: [:new, :create, :edit, :update]
       resources :member_payments, only: [:index]
+      resources :payments, only: [:index]
     end
     resources :education_levels, except: [:show, :destroy]
     resources :expense_types, except: [:show, :destroy]
@@ -60,9 +62,6 @@ Rails.application.routes.draw do
       get 'simulator', to: 'simulator#index', as: 'simulator'
     end
     resources :loans
-    resources :loans, only: [] do
-      resources :payments, only: [:edit, :update]
-    end
     resources :marital_statuses, except: [:show, :destroy]
     resources :nacionalities, except: [:show, :destroy]
     resources :neighborhoods, except: [:show, :destroy]
