@@ -4,6 +4,7 @@ class Invoice < ApplicationRecord
   include Authority::Abilities
   include Cashes::UpdateBalance
   include Invoices::Relations
+  include Invoices::Reports
   include Invoices::Scopes
   include Invoices::Validation
 

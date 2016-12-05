@@ -9,11 +9,19 @@
           </div>
         </div>
         <div class="col-md-5">
-          <div class="input-group">
-            <span class="input-group-addon"><%= Customer.model_name.human(count: 1) %></span>
-            <%= f.input :customer, as: :autocomplete, url: customers_searches_path,
-              label: false, input_html: { data: { empty_result_label: t('views.generic.empty_index') } } %>
-          </div>
+          <% if ['mp_all', 'mp_expired'].include?(@report.filter) %>
+            <div class="input-group">
+              <span class="input-group-addon"><%= Customer.model_name.human(count: 1) %></span>
+              <%= f.input :customer, as: :autocomplete, url: customers_searches_path,
+                label: false, input_html: { data: { empty_result_label: t('views.generic.empty_index') } } %>
+            </div>
+          <% else %>
+            <div class="input-group">
+              <span class="input-group-addon"><%= Supplier.model_name.human(count: 1) %></span>
+              <%= f.input :supplier, as: :autocomplete, url: suppliers_searches_path,
+                label: false, input_html: { data: { empty_result_label: t('views.generic.empty_index') } } %>
+            </div>
+          <% end %>
         </div>
         <%= f.input :filter, as: :hidden, input_html: { value: @report.filter } %>
         <div class="col-md-2">

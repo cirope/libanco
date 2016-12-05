@@ -25,6 +25,7 @@ class ReportsController < ApplicationController
     end
 
     def reports_params
-      params.require(:report).permit :filter, :date_range, :customer, :customer_id
+      params.require(:report).permit :filter, :date_range, :customer, :customer_id,
+        :supplier, :supplier_id
     end
 end

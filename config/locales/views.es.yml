@@ -419,6 +419,7 @@ es:
     menu:
       mp_all: 'Todos'
       mp_expired: 'Morosos'
+      invoice: 'Facturas'
     summary:
       total: 'Total'
       paid: 'Pagado'

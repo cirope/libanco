@@ -2,19 +2,23 @@ class Report
   include ActiveModel::Model
   include Authority::Abilities
 
-  attr_accessor :filter, :date_range, :from, :to, :customer, :customer_id
+  attr_accessor :filter, :date_range, :from, :to, :customer, :customer_id,
+    :supplier, :supplier_id
 
   def initialize params = {}
     parse_date_range params[:date_range]
 
     self.filter = params[:filter].present? ? params[:filter] : 'mp_all'
-    self.customer_id = params[:customer_id].blank? ? nil : params[:customer_id]
     self.customer = params[:customer].blank? ? nil : params[:customer]
+    self.customer_id = params[:customer_id].blank? ? nil : params[:customer_id]
+    self.supplier = params[:supplier].blank? ? nil : params[:supplier]
+    self.supplier_id = params[:supplier_id].blank? ? nil : params[:supplier_id]
   end
 
   def model_filter
     case filter
       when 'mp_all', 'mp_expired' then 'member_payment'
+      when 'invoice' then 'invoice'
     end
   end
 
@@ -22,6 +26,7 @@ class Report
     case filter
       when 'mp_all' then mp_all_conditions
       when 'mp_expired' then mp_expired_conditions
+      when 'invoice' then invoice_conditions
     end
   end
 
@@ -39,6 +44,13 @@ class Report
       conditions[:period] = from.beginning_of_month..to.end_of_month
       conditions[:expire_at] = from.beginning_of_month..Date.today
       conditions[:paid_at] = nil
+      conditions
+    end
+
+    def invoice_conditions
+      conditions = {}
+      conditions[:date] = from.beginning_of_month..to.end_of_month
+      conditions[:supplier_id] = supplier_id if supplier_id.present?
       conditions
     end
 
