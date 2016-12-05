@@ -92,6 +92,12 @@ es:
     new:
       title: 'Crear tarjeta'
 
+  cash_employees:
+    edit:
+      title: 'Editar liquidación'
+    new:
+      title: 'Pagar liquidación'
+
   cash_member_payments:
     edit:
       title: 'Editar pago de cuota social'
@@ -131,6 +137,11 @@ es:
     statuses:
       opened: 'Abierta'
       closed: 'Cerrada'
+    cash_employees:
+      index:
+        new: 'Nueva liquidación'
+        title: 'Pago de liquidación'
+        empty_html: 'No hay liquidaciones, puede crear una con el botón <span class="label label-info">Nueva liquidación</span>'
     cash_member_payments:
       index:
         new: 'Nuevo pago de cuota social'

@@ -24,6 +24,9 @@ es:
       cash:
         one: 'Caja'
         other: 'Cajas'
+      cash_employee:
+        one: 'Liquidación'
+        other: 'Liquidaciones'
       cash_member_payment:
         one: 'Cuota social'
         other: 'Cuotas sociales'
@@ -151,6 +154,11 @@ es:
         opened_at: 'Fecha'
         opening_balance: 'Recuento inicial'
         outcomes_count: 'Egresos'
+        user: 'Cajero'
+      cash_employee:
+        amount: 'Salario'
+        employee: 'Personal'
+        period: 'Período'
         user: 'Cajero'
       cash_member_payment:
         customer: 'Cliente'

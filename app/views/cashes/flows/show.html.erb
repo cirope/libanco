@@ -56,4 +56,23 @@
       </div>
     </div>
   <% end %>
+  <% if @cash.cash_employees.exists? %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <%= link_to '#cash_employees', data: { toggle: 'collapse' } do %>
+            <%= fa_icon 'male', text: CashEmployee.model_name.human(count: 0) %>
+          <% end %>
+          <strong class="pull-right">
+            <%= number_to_currency @cash.cash_employees_sum %>
+          </strong>
+        </h4>
+      </div>
+      <div id="cash_employees" class="panel-collapse collapse">
+        <div class="panel-body">
+          <%= render 'cashes/cash_employees/cash_employee' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>

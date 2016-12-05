@@ -23,8 +23,12 @@ module Cashes::Balance
     payments.sum :amount
   end
 
+  def cash_employees_sum
+    cash_employees.sum :amount
+  end
+
   def invoices_sum
-    invoices.sum :amount
+    invoices.cash_discount.sum :amount
   end
 
   private
@@ -38,6 +42,6 @@ module Cashes::Balance
     end
 
     def total_outcomes
-      invoices.cash_discount.sum :amount
+      invoices_sum + cash_employees_sum
     end
 end

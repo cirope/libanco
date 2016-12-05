@@ -27,6 +27,7 @@ class Cashes::CashMemberPaymentsControllerTest < ActionDispatch::IntegrationTest
         }
     end
     assert_response :success
+    assert_no_match(/alert-danger/, @response.body)
   end
 
   test 'should destroy cash_member_payment' do

@@ -16,12 +16,18 @@
       <%= fa_icon 'file-text', text: Invoice.model_name.human(count: 0) %>
     <% end %>
   </li>
+  <li>
+    <%= link_to '#cash_employees', data: { toggle: 'pill', tab_url: cash_cash_employees_path(@cash) } do %>
+      <%= fa_icon 'male', text: CashEmployee.model_name.human(count: 0) %>
+    <% end %>
+  </li>
 </ul>
 
 <div class="tab-content">
   <div class="tab-pane" id="cash_member_payments"></div>
   <div class="tab-pane" id="cash_payments"></div>
   <div class="tab-pane" id="invoices"></div>
+  <div class="tab-pane" id="cash_employees"></div>
 </div>
 
 <% if @cash.opened? %>

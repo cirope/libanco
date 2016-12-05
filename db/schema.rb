@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161205185543) do
+ActiveRecord::Schema.define(version: 20161205193001) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,21 @@ ActiveRecord::Schema.define(version: 20161205185543) do
     t.boolean  "active",                                 default: true, null: false
     t.index ["active"], name: "index_cards_on_active", using: :btree
     t.index ["name"], name: "index_cards_on_name", unique: true, using: :btree
+  end
+
+  create_table "cash_employees", force: :cascade do |t|
+    t.date     "period",                                            null: false
+    t.decimal  "amount",       precision: 10, scale: 2,             null: false
+    t.integer  "employee_id",                                       null: false
+    t.integer  "user_id",                                           null: false
+    t.integer  "cash_id",                                           null: false
+    t.integer  "lock_version",                          default: 0, null: false
+    t.datetime "created_at",                                        null: false
+    t.datetime "updated_at",                                        null: false
+    t.index ["cash_id"], name: "index_cash_employees_on_cash_id", using: :btree
+    t.index ["employee_id"], name: "index_cash_employees_on_employee_id", using: :btree
+    t.index ["period"], name: "index_cash_employees_on_period", using: :btree
+    t.index ["user_id"], name: "index_cash_employees_on_user_id", using: :btree
   end
 
   create_table "cash_member_payments", force: :cascade do |t|
