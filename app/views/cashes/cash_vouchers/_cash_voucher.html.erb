@@ -13,7 +13,7 @@
     <tbody>
       <% @cash.cash_vouchers.each do |cash_voucher| %>
         <tr>
-          <td class="col-md-2"><%= l cash_voucher.created_at %></td>
+          <td><%= l cash_voucher.created_at %></td>
           <td><%= cash_voucher.user %></td>
           <td><%= cash_voucher.employee %></td>
           <td><%= number_to_currency cash_voucher.amount %></td>

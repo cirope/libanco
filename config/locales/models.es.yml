@@ -37,8 +37,8 @@ es:
         one: 'Cuota'
         other: 'Cuotas'
       cash_voucher:
-        one: 'Vale'
-        other: 'Vales'
+        one: 'Entrega Vale'
+        other: 'Entrega Vales'
       body_template:
         one: 'Plantilla contenido'
         other: 'Plantillas contenido'
