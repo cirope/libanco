@@ -1,4 +1,4 @@
-module Invoices::Relations
+module CashInvoices::Relations
   extend ActiveSupport::Concern
 
   included do

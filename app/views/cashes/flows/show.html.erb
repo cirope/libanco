@@ -37,21 +37,21 @@
       </div>
     </div>
   <% end %>
-  <% if @cash.invoices.exists? %>
+  <% if @cash.cash_invoices.exists? %>
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <%= link_to '#invoices', data: { toggle: 'collapse' } do %>
-            <%= fa_icon 'file-text', text: Invoice.model_name.human(count: 0) %>
+          <%= link_to '#cash_invoices', data: { toggle: 'collapse' } do %>
+            <%= fa_icon 'file-text', text: CashInvoice.model_name.human(count: 0) %>
           <% end %>
           <strong class="pull-right">
-            <%= number_to_currency @cash.invoices_sum %>
+            <%= number_to_currency @cash.cash_invoices_sum %>
           </strong>
         </h4>
       </div>
-      <div id="invoices" class="panel-collapse collapse">
+      <div id="cash_invoices" class="panel-collapse collapse">
         <div class="panel-body">
-          <%= render 'cashes/invoices/invoice' %>
+          <%= render 'cashes/cash_invoices/cash_invoice' %>
         </div>
       </div>
     </div>

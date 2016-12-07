@@ -1,6 +1,6 @@
-class CreateInvoices < ActiveRecord::Migration[5.0]
+class CreateCashInvoices < ActiveRecord::Migration[5.0]
   def change
-    create_table :invoices do |t|
+    create_table :cash_invoices do |t|
       t.date :date, null: false
       t.string :number, null: false
       t.decimal :subtotal, null: false, precision: 10, scale: 2
@@ -20,7 +20,7 @@ class CreateInvoices < ActiveRecord::Migration[5.0]
 
       t.timestamps
     end
-    add_index :invoices, :date
-    add_index :invoices, :number
+    add_index :cash_invoices, :date
+    add_index :cash_invoices, :number
   end
 end

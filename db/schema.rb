@@ -69,6 +69,36 @@ ActiveRecord::Schema.define(version: 20161205193001) do
     t.index ["user_id"], name: "index_cash_employees_on_user_id", using: :btree
   end
 
+  create_table "cash_invoices", force: :cascade do |t|
+    t.date     "date",                                                                null: false
+    t.string   "number",                                                              null: false
+    t.decimal  "subtotal",                       precision: 10, scale: 2,             null: false
+    t.decimal  "tax_amount",                     precision: 10, scale: 2,             null: false
+    t.decimal  "tax_perception_amount",          precision: 10, scale: 2,             null: false
+    t.decimal  "gross_income_perception_amount", precision: 10, scale: 2,             null: false
+    t.decimal  "amount",                         precision: 10, scale: 2,             null: false
+    t.text     "detail"
+    t.integer  "invoice_type_id",                                                     null: false
+    t.integer  "tax_condition_id",                                                    null: false
+    t.integer  "expense_type_id",                                                     null: false
+    t.integer  "payment_method_id",                                                   null: false
+    t.integer  "supplier_id",                                                         null: false
+    t.integer  "user_id",                                                             null: false
+    t.integer  "cash_id",                                                             null: false
+    t.integer  "lock_version",                                            default: 0, null: false
+    t.datetime "created_at",                                                          null: false
+    t.datetime "updated_at",                                                          null: false
+    t.index ["cash_id"], name: "index_cash_invoices_on_cash_id", using: :btree
+    t.index ["date"], name: "index_cash_invoices_on_date", using: :btree
+    t.index ["expense_type_id"], name: "index_cash_invoices_on_expense_type_id", using: :btree
+    t.index ["invoice_type_id"], name: "index_cash_invoices_on_invoice_type_id", using: :btree
+    t.index ["number"], name: "index_cash_invoices_on_number", using: :btree
+    t.index ["payment_method_id"], name: "index_cash_invoices_on_payment_method_id", using: :btree
+    t.index ["supplier_id"], name: "index_cash_invoices_on_supplier_id", using: :btree
+    t.index ["tax_condition_id"], name: "index_cash_invoices_on_tax_condition_id", using: :btree
+    t.index ["user_id"], name: "index_cash_invoices_on_user_id", using: :btree
+  end
+
   create_table "cash_member_payments", force: :cascade do |t|
     t.integer  "customer_id",                   null: false
     t.integer  "member_payment_id",             null: false
@@ -266,36 +296,6 @@ ActiveRecord::Schema.define(version: 20161205193001) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.index ["name"], name: "index_invoice_types_on_name", unique: true, using: :btree
-  end
-
-  create_table "invoices", force: :cascade do |t|
-    t.date     "date",                                                                null: false
-    t.string   "number",                                                              null: false
-    t.decimal  "subtotal",                       precision: 10, scale: 2,             null: false
-    t.decimal  "tax_amount",                     precision: 10, scale: 2,             null: false
-    t.decimal  "tax_perception_amount",          precision: 10, scale: 2,             null: false
-    t.decimal  "gross_income_perception_amount", precision: 10, scale: 2,             null: false
-    t.decimal  "amount",                         precision: 10, scale: 2,             null: false
-    t.text     "detail"
-    t.integer  "invoice_type_id",                                                     null: false
-    t.integer  "tax_condition_id",                                                    null: false
-    t.integer  "expense_type_id",                                                     null: false
-    t.integer  "payment_method_id",                                                   null: false
-    t.integer  "supplier_id",                                                         null: false
-    t.integer  "user_id",                                                             null: false
-    t.integer  "cash_id",                                                             null: false
-    t.integer  "lock_version",                                            default: 0, null: false
-    t.datetime "created_at",                                                          null: false
-    t.datetime "updated_at",                                                          null: false
-    t.index ["cash_id"], name: "index_invoices_on_cash_id", using: :btree
-    t.index ["date"], name: "index_invoices_on_date", using: :btree
-    t.index ["expense_type_id"], name: "index_invoices_on_expense_type_id", using: :btree
-    t.index ["invoice_type_id"], name: "index_invoices_on_invoice_type_id", using: :btree
-    t.index ["number"], name: "index_invoices_on_number", using: :btree
-    t.index ["payment_method_id"], name: "index_invoices_on_payment_method_id", using: :btree
-    t.index ["supplier_id"], name: "index_invoices_on_supplier_id", using: :btree
-    t.index ["tax_condition_id"], name: "index_invoices_on_tax_condition_id", using: :btree
-    t.index ["user_id"], name: "index_invoices_on_user_id", using: :btree
   end
 
   create_table "loans", force: :cascade do |t|

@@ -13,7 +13,7 @@
     <tbody>
       <% @cash.cash_employees.each do |cash_employee| %>
         <tr>
-          <td><%= l cash_employee.created_at %></td>
+          <td class="col-md-2"><%= l cash_employee.created_at %></td>
           <td><%= cash_employee.user %></td>
           <td><%= cash_employee.employee %></td>
           <td><%= l cash_employee.period, format: :period %></td>

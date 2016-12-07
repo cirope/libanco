@@ -19,7 +19,7 @@ class Report
     case filter
       when 'mp_all', 'mp_expired' then 'member_payment'
       when 'p_all', 'p_expired' then 'payment'
-      when 'invoice' then 'invoice'
+      when 'cash_invoice' then 'cash_invoice'
     end
   end
 
@@ -29,7 +29,7 @@ class Report
       when 'mp_expired' then mp_expired_conditions
       when 'p_all' then p_all_conditions
       when 'p_expired' then p_expired_conditions
-      when 'invoice' then invoice_conditions
+      when 'cash_invoice' then cash_invoice_conditions
     end
   end
 
@@ -66,7 +66,7 @@ class Report
       conditions
     end
 
-    def invoice_conditions
+    def cash_invoice_conditions
       conditions = {}
       conditions[:date] = from.beginning_of_month..to.end_of_month
       conditions[:supplier_id] = supplier_id if supplier_id.present?

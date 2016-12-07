@@ -1,12 +1,12 @@
-class Invoice < ApplicationRecord
+class CashInvoice < ApplicationRecord
   include Attributes::Strip
   include Auditable
   include Authority::Abilities
   include Cashes::UpdateBalance
-  include Invoices::Relations
-  include Invoices::Reports
-  include Invoices::Scopes
-  include Invoices::Validation
+  include CashInvoices::Relations
+  include CashInvoices::Reports
+  include CashInvoices::Scopes
+  include CashInvoices::Validation
 
   strip_fields :number, :detail
 

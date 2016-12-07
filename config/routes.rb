@@ -29,10 +29,10 @@ Rails.application.routes.draw do
     resources :cashes do
       scope module: 'cashes' do
         resources :cash_employees, except: [:show]
+        resources :cash_invoices, except: [:show]
         resources :cash_member_payments, except: [:show, :edit, :update]
         resources :cash_payments, except: [:show, :edit, :update]
         resources :flows, only: [:index]
-        resources :invoices, except: [:show]
         resource :counts, only: [:edit, :update]
         resource :lock, only: [:update, :destroy]
       end

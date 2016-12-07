@@ -1,4 +1,4 @@
-module Invoices::Reports
+module CashInvoices::Reports
   extend ActiveSupport::Concern
 
   module ClassMethods
