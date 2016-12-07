@@ -31,6 +31,10 @@ module Cashes::Balance
     cash_invoices.cash_discount.sum :amount
   end
 
+  def cash_vouchers_sum
+    cash_vouchers.sum :amount
+  end
+
   private
 
     def calculate_difference
@@ -42,6 +46,6 @@ module Cashes::Balance
     end
 
     def total_outcomes
-      cash_invoices_sum + cash_employees_sum
+      cash_invoices_sum + cash_employees_sum + cash_vouchers_sum
     end
 end

@@ -1,0 +1,7 @@
+<% if @cash_voucher.new_record? || @cash_voucher.errors.any? %>
+  $('#modal form').replaceWith('<%= j render('form') %>');
+<% else %>
+  $('#cash_vouchers').html('<%= j render(template: 'cashes/cash_vouchers/index', formats: [:html]) %>');
+  $('#cash_balance').html('<%= number_to_currency @cash.balance %>');
+  $('#modal').modal('hide');
+<% end %>

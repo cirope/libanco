@@ -9,5 +9,6 @@ module Cashes::Relations
     has_many :member_payments, through: :cash_member_payments
     has_many :cash_payments, dependent: :destroy
     has_many :payments, through: :cash_payments
+    has_many :cash_vouchers, dependent: :destroy
   end
 end

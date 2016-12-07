@@ -36,6 +36,9 @@ es:
       cash_payment:
         one: 'Cuota'
         other: 'Cuotas'
+      cash_voucher:
+        one: 'Vale'
+        other: 'Vales'
       body_template:
         one: 'Plantilla contenido'
         other: 'Plantillas contenido'
@@ -180,6 +183,11 @@ es:
         user: 'Cajero'
       cash_payment:
         customer: 'Cliente'
+        user: 'Cajero'
+      cash_voucher:
+        amount: 'Monto'
+        comment: 'Comentario'
+        employee: 'Personal'
         user: 'Cajero'
       body_template:
         name: 'Nombre'

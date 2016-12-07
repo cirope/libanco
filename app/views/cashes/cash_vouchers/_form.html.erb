@@ -1,0 +1,19 @@
+<%= simple_form_for [@cash, @cash_voucher], remote: true do |f| %>
+  <div class="form-inputs">
+    <%= f.input :employee, as: :autocomplete, url: employees_searches_path,
+      autofocus: true, input_html: { data: { empty_result_label: t('views.generic.empty_index') } } %>
+    <div class="row">
+      <div class="col-md-6">
+        <%= f.input :amount %>
+      </div>
+    </div>
+    <%= f.input :comment %>
+    <%= f.input :lock_version, as: :hidden %>
+  </div>
+
+  <hr />
+
+  <div class="actions">
+    <%= submit_button f %>
+  </div>
+<% end %>

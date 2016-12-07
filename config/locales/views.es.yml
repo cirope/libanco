@@ -124,6 +124,12 @@ es:
     errors:
       select_payments: 'Debe selecionar la/s cuota/s que desea pagar.'
 
+  cash_vouchers:
+    edit:
+      title: 'Editar vale'
+    new:
+      title: 'Crear vale'
+
   cashes:
     flows: 'Movimientos'
     lock: 'Cerrar caja'
@@ -165,6 +171,11 @@ es:
         empty_html: 'No hay pagos de cuotas, puede crear uno con el botón <span class="label label-info">Nuevo pago</span>'
       payments:
         empty_html: 'El cliente no posee cuotas impagas.'
+    cash_vouchers:
+      index:
+        new: 'Nuevo vale'
+        title: 'Listado de vales'
+        empty_html: 'No hay vales, puede crear uno con el botón <span class="label label-info">Nuevo vale</span>'
 
   cities:
     edit:

@@ -32,6 +32,7 @@ Rails.application.routes.draw do
         resources :cash_invoices, except: [:show]
         resources :cash_member_payments, except: [:show, :edit, :update]
         resources :cash_payments, except: [:show, :edit, :update]
+        resources :cash_vouchers, except: [:show]
         resources :flows, only: [:index]
         resource :counts, only: [:edit, :update]
         resource :lock, only: [:update, :destroy]

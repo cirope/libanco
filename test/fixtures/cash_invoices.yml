@@ -12,5 +12,5 @@ default:
   expense_type: default
   payment_method: default
   supplier: default
-  user: default
+  user: cashier
   cash: default

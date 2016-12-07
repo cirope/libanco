@@ -1,6 +1,7 @@
 default:
-  period: <%= 1.month.ago %>
-  amount: 5000
+  status: pending
+  amount: 500
+  comment: Default
   employee: default
   user: cashier
   cash: default

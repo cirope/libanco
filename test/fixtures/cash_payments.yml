@@ -1,5 +1,5 @@
 default:
   customer: default
   payment: default
-  user: default
+  user: cashier
   cash: default
