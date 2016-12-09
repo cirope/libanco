@@ -53,7 +53,7 @@ class Cashes::CashInvoicesController < ApplicationController
     def cash_invoice_params
       params.require(:cash_invoice).permit :date, :number, :subtotal, :tax_amount,
         :tax_perception_amount, :gross_income_perception_amount, :amount, :detail,
-        :invoice_type_id, :tax_condition_id, :expense_type_id, :payment_method_id,
-        :supplier_id, :lock_version
+        :is_voucher, :invoice_type_id, :tax_condition_id, :expense_type_id,
+        :payment_method_id, :supplier_id, :cash_voucher_id, :lock_version
     end
 end

@@ -9,6 +9,8 @@ class CreateCashInvoices < ActiveRecord::Migration[5.0]
       t.decimal :gross_income_perception_amount, null: false, precision: 10, scale: 2
       t.decimal :amount, null: false, precision: 10, scale: 2
       t.text :detail
+      t.boolean :is_voucher, null: false, default: false
+      t.references :cash_voucher, index: true
       t.references :invoice_type, null: false, index: true
       t.references :tax_condition, null: false, index: true
       t.references :expense_type, null: false, index: true

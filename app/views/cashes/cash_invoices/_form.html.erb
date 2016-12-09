@@ -45,6 +45,14 @@
         <%= f.association :payment_method, prompt: true %>
       </div>
     </div>
+    <div class="row">
+      <div class="col-md-4" style="margin-top: 10px;">
+        <%= f.input :is_voucher %>
+      </div>
+      <div class="col-md-8">
+        <%= f.association :cash_voucher, prompt: true %>
+      </div>
+    </div>
     <%= f.input :detail %>
     <%= f.input :lock_version, as: :hidden %>
   </div>

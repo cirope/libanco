@@ -7,6 +7,7 @@ default:
   gross_income_perception_amount: 100
   amount: 1300
   detail: Default
+  is_voucher: false
   invoice_type: default
   tax_condition: default
   expense_type: default

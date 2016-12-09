@@ -129,6 +129,9 @@ es:
       title: 'Editar vale'
     new:
       title: 'Crear vale'
+    statuses:
+      pending: 'Pendiente'
+      assigned: 'Asignado'
 
   cashes:
     flows: 'Movimientos'

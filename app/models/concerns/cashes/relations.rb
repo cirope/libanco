@@ -10,5 +10,6 @@ module Cashes::Relations
     has_many :cash_payments, dependent: :destroy
     has_many :payments, through: :cash_payments
     has_many :cash_vouchers, dependent: :destroy
+    has_many :cash_income_vouchers, -> { uniq }, through: :cash_invoices, source: :cash_voucher
   end
 end

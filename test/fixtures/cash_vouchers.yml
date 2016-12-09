@@ -1,7 +1,0 @@
-default:
-  status: pending
-  amount: 500
-  comment: Default
-  employee: default
-  user: cashier
-  cash: default

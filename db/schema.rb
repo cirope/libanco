@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161207145116) do
+ActiveRecord::Schema.define(version: 20161205193001) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,25 +70,28 @@ ActiveRecord::Schema.define(version: 20161207145116) do
   end
 
   create_table "cash_invoices", force: :cascade do |t|
-    t.date     "date",                                                                null: false
-    t.string   "number",                                                              null: false
-    t.decimal  "subtotal",                       precision: 10, scale: 2,             null: false
-    t.decimal  "tax_amount",                     precision: 10, scale: 2,             null: false
-    t.decimal  "tax_perception_amount",          precision: 10, scale: 2,             null: false
-    t.decimal  "gross_income_perception_amount", precision: 10, scale: 2,             null: false
-    t.decimal  "amount",                         precision: 10, scale: 2,             null: false
+    t.date     "date",                                                                    null: false
+    t.string   "number",                                                                  null: false
+    t.decimal  "subtotal",                       precision: 10, scale: 2,                 null: false
+    t.decimal  "tax_amount",                     precision: 10, scale: 2,                 null: false
+    t.decimal  "tax_perception_amount",          precision: 10, scale: 2,                 null: false
+    t.decimal  "gross_income_perception_amount", precision: 10, scale: 2,                 null: false
+    t.decimal  "amount",                         precision: 10, scale: 2,                 null: false
     t.text     "detail"
-    t.integer  "invoice_type_id",                                                     null: false
-    t.integer  "tax_condition_id",                                                    null: false
-    t.integer  "expense_type_id",                                                     null: false
-    t.integer  "payment_method_id",                                                   null: false
-    t.integer  "supplier_id",                                                         null: false
-    t.integer  "user_id",                                                             null: false
-    t.integer  "cash_id",                                                             null: false
-    t.integer  "lock_version",                                            default: 0, null: false
-    t.datetime "created_at",                                                          null: false
-    t.datetime "updated_at",                                                          null: false
+    t.boolean  "is_voucher",                                              default: false, null: false
+    t.integer  "cash_voucher_id"
+    t.integer  "invoice_type_id",                                                         null: false
+    t.integer  "tax_condition_id",                                                        null: false
+    t.integer  "expense_type_id",                                                         null: false
+    t.integer  "payment_method_id",                                                       null: false
+    t.integer  "supplier_id",                                                             null: false
+    t.integer  "user_id",                                                                 null: false
+    t.integer  "cash_id",                                                                 null: false
+    t.integer  "lock_version",                                            default: 0,     null: false
+    t.datetime "created_at",                                                              null: false
+    t.datetime "updated_at",                                                              null: false
     t.index ["cash_id"], name: "index_cash_invoices_on_cash_id", using: :btree
+    t.index ["cash_voucher_id"], name: "index_cash_invoices_on_cash_voucher_id", using: :btree
     t.index ["date"], name: "index_cash_invoices_on_date", using: :btree
     t.index ["expense_type_id"], name: "index_cash_invoices_on_expense_type_id", using: :btree
     t.index ["invoice_type_id"], name: "index_cash_invoices_on_invoice_type_id", using: :btree
@@ -125,22 +128,6 @@ ActiveRecord::Schema.define(version: 20161207145116) do
     t.index ["customer_id"], name: "index_cash_payments_on_customer_id", using: :btree
     t.index ["payment_id"], name: "index_cash_payments_on_payment_id", using: :btree
     t.index ["user_id"], name: "index_cash_payments_on_user_id", using: :btree
-  end
-
-  create_table "cash_vouchers", force: :cascade do |t|
-    t.string   "status",                                            null: false
-    t.decimal  "amount",       precision: 10, scale: 2,             null: false
-    t.text     "comment",                                           null: false
-    t.integer  "employee_id",                                       null: false
-    t.integer  "user_id",                                           null: false
-    t.integer  "cash_id",                                           null: false
-    t.integer  "lock_version",                          default: 0, null: false
-    t.datetime "created_at",                                        null: false
-    t.datetime "updated_at",                                        null: false
-    t.index ["cash_id"], name: "index_cash_vouchers_on_cash_id", using: :btree
-    t.index ["employee_id"], name: "index_cash_vouchers_on_employee_id", using: :btree
-    t.index ["status"], name: "index_cash_vouchers_on_status", using: :btree
-    t.index ["user_id"], name: "index_cash_vouchers_on_user_id", using: :btree
   end
 
   create_table "cashes", force: :cascade do |t|

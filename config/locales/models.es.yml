@@ -165,11 +165,13 @@ es:
         user: 'Cajero'
       cash_invoice:
         amount: 'Importe'
+        cash_voucher: 'Vale'
         date: 'Emisión'
         detail: 'Detalle'
         expense_type: 'Tipo de gasto'
         gross_income_perception_amount: 'Percepción IIBB'
         invoice_type: 'Factura'
+        is_voucher: '¿Pertence a un vale?'
         number: 'Número'
         payment_method: 'Forma de pago'
         subtotal: 'Subtotal'
