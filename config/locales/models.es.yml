@@ -21,6 +21,9 @@ es:
       adviser:
         one: 'Asesor'
         other: 'Asesores'
+      bank:
+        one: 'Banco'
+        other: 'Bancos'
       cash:
         one: 'Caja'
         other: 'Cajas'
@@ -147,6 +150,8 @@ es:
         name: 'Nombre'
         subdomain: 'Subdominio'
       adviser:
+        name: 'Nombre'
+      bank:
         name: 'Nombre'
       cash:
         balance: 'Saldo'

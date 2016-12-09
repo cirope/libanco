@@ -75,23 +75,4 @@
       </div>
     </div>
   <% end %>
-  <% if @cash.cash_vouchers.exists? %>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <%= link_to '#cash_vouchers', data: { toggle: 'collapse' } do %>
-            <%= fa_icon 'ticket', text: CashVoucher.model_name.human(count: 0) %>
-          <% end %>
-          <strong class="pull-right">
-            <%= number_to_currency @cash.cash_vouchers_sum %>
-          </strong>
-        </h4>
-      </div>
-      <div id="cash_vouchers" class="panel-collapse collapse">
-        <div class="panel-body">
-          <%= render 'cashes/cash_vouchers/cash_voucher' %>
-        </div>
-      </div>
-    </div>
-  <% end %>
 </div>

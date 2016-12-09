@@ -28,11 +28,8 @@ module Cashes::Balance
   end
 
   def cash_invoices_sum
-    cash_invoices_outcomes_sum - cash_invoices_incomes_sum
-  end
-
-  def cash_vouchers_sum
-    cash_vouchers.sum :amount
+#    cash_invoices_outcomes_sum - cash_invoices_incomes_sum
+    cash_invoices.sum :amount
   end
 
   private
@@ -52,10 +49,10 @@ module Cashes::Balance
     end
 
     def total_incomes
-      opening_balance.to_f + cash_member_payments_sum + cash_payments_sum + cash_invoices_incomes_sum
+      opening_balance.to_f + cash_member_payments_sum + cash_payments_sum
     end
 
     def total_outcomes
-      cash_invoices_outcomes_sum + cash_employees_sum + cash_vouchers_sum
+      cash_employees_sum
     end
 end

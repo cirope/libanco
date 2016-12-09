@@ -1,1 +1,0 @@
-json.array! @tax_conditions, partial: 'tax_conditions/tax_condition', as: :tax_condition

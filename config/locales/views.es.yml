@@ -3,6 +3,7 @@ es:
 
   menu:
     admin: 'Administración'
+    bank: 'Bancos'
     invoicing: 'Facturación'
     loans:
       title: 'Préstamos'
@@ -58,6 +59,16 @@ es:
       title: 'Crear cuenta'
     show:
       title: 'Ver cuenta'
+
+  banks:
+    edit:
+      title: 'Editar banco'
+    index:
+      new: 'Nuevo banco'
+      title: 'Listado de bancos'
+      empty_html: 'No hay bancos, puede crear uno con el botón <span class="label label-info">Nuevo banco</span>'
+    new:
+      title: 'Crear banco'
 
   body_templates:
     list: 'Listado de variables'

@@ -20,10 +20,9 @@ Rails.application.routes.draw do
     get '/schedules/new(/:date)', to: 'schedules#new', as: 'new_schedule', constraints: { date: /\d{4}-\d{2}-\d{2}/ }
     get 'employees/searches', to: 'employees/searches#index', as: 'employees_searches'
     get 'suppliers/searches', to: 'suppliers/searches#index', as: 'suppliers_searches'
-    resources :schedules, only: [:create, :edit, :update] do
-      patch 'mark_as_done', to: 'schedules#mark_as_done', as: 'mark_as_done', on: :member
-    end
+
     resources :advisers, except: [:show, :destroy]
+    resources :banks, except: [:show, :destroy]
     resources :body_templates, except: [:destroy]
     resources :cards, except: [:show, :destroy]
     resources :cashes do
@@ -72,6 +71,9 @@ Rails.application.routes.draw do
     resources :occupations, except: [:show, :destroy]
     resources :payment_methods, except: [:show, :destroy]
     resources :relationships, except: [:show, :destroy]
+    resources :schedules, only: [:create, :edit, :update] do
+      patch 'mark_as_done', to: 'schedules#mark_as_done', as: 'mark_as_done', on: :member
+    end
     resources :states, except: [:show, :destroy] do
       resources :cities, only: [:index]
     end
