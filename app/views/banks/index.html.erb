@@ -7,7 +7,7 @@
         <tr>
           <th><%= Bank.human_attribute_name 'created_at' %></th>
           <th><%= Bank.human_attribute_name 'name' %></th>
-          <th></th>
+          <th colspan="2"></th>
         </tr>
       </thead>
 
@@ -16,6 +16,7 @@
           <tr>
             <td class="col-md-2"><%= l bank.created_at %></td>
             <td><%= bank.name %></td>
+            <td><%= link_to_show bank %></td>
             <td><%= link_to_edit [:edit, bank] %></td>
           </tr>
         <% end %>

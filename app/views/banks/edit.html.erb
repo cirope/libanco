@@ -1,5 +1,6 @@
 <%= content_for :form_actions do %>
-  <%= link_to_index banks_path %>
+  <%= link_to_index banks_path %> |
+  <%= link_to_show @bank %>
 <% end %>
 
 <%= render 'form', bank: @bank %>

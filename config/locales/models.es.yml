@@ -24,6 +24,9 @@ es:
       bank:
         one: 'Banco'
         other: 'Bancos'
+      bank_account:
+        one: 'Cuenta bancaria'
+        other: 'Cuentas bancarias'
       cash:
         one: 'Caja'
         other: 'Cajas'
@@ -153,6 +156,10 @@ es:
         name: 'Nombre'
       bank:
         name: 'Nombre'
+      bank_account:
+        account: 'Cuenta bancaria'
+        cbu: 'CBU'
+        bank: 'Banco'
       cash:
         balance: 'Saldo'
         closed_at: 'Cierre'

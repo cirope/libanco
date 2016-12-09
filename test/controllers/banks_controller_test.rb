@@ -19,10 +19,23 @@ class BanksControllerTest < ActionDispatch::IntegrationTest
 
   test 'should create bank' do
     assert_difference('Bank.count') do
-      post banks_url, params: { bank: { name: 'New Bank' } }
+      post banks_url, params: {
+        bank: {
+          name: 'New Bank',
+          bank_accounts_attributes: [
+            account: '123456',
+            cbu: '2222222222222222222222'
+          ]
+        }
+      }
     end
 
     assert_redirected_to banks_url
+  end
+
+  test 'should get shoe' do
+    get bank_url(@bank)
+    assert_response :success
   end
 
   test 'should get edit' do

@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     get 'suppliers/searches', to: 'suppliers/searches#index', as: 'suppliers_searches'
 
     resources :advisers, except: [:show, :destroy]
-    resources :banks, except: [:show, :destroy]
+    resources :banks, except: [:destroy]
     resources :body_templates, except: [:destroy]
     resources :cards, except: [:show, :destroy]
     resources :cashes do

@@ -3,7 +3,7 @@ class BanksController < ApplicationController
   include Authorization
   include Title
 
-  before_action :set_bank, only: [:edit, :update]
+  before_action :set_bank, only: [:show, :edit, :update]
 
   # GET /banks
   # GET /banks.json
@@ -14,6 +14,10 @@ class BanksController < ApplicationController
   # GET /banks/new
   def new
     @bank = Bank.new
+  end
+
+  # GET /banks/1
+  def show
   end
 
   # GET /banks/1/edit
@@ -56,6 +60,7 @@ class BanksController < ApplicationController
     end
 
     def bank_params
-      params.require(:bank).permit :name, :lock_version
+      params.require(:bank).permit :name, :lock_version,
+        bank_accounts_attributes: [:id, :account, :cbu]
     end
 end
