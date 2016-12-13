@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   end
 
   constraints AccountSubdomain do
+    get 'bank_accounts/searches', to: 'bank_accounts/searches#index', as: 'bank_accounts_searches'
     get 'customers/searches', to: 'customers/searches#index', as: 'customers_searches'
     get 'reports', to: 'reports#index', as: 'reports'
     get '/schedules(/:date)', to: 'schedules#index', as: 'schedules', constraints: { date: /\d{4}\/\d{2}\/\d{2}/ }
@@ -31,7 +32,7 @@ Rails.application.routes.draw do
         resources :cash_invoices, except: [:show]
         resources :cash_member_payments, except: [:show, :edit, :update]
         resources :cash_payments, except: [:show, :edit, :update]
-        resources :cash_vouchers, except: [:show]
+        resources :cash_vouchers
         resources :flows, only: [:index]
         resource :counts, only: [:edit, :update]
         resource :lock, only: [:update, :destroy]

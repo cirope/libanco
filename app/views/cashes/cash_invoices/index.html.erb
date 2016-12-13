@@ -14,6 +14,7 @@
           <th><%= CashInvoice.human_attribute_name 'tax_condition' %></th>
           <th><%= CashInvoice.human_attribute_name 'payment_method' %></th>
           <th><%= CashInvoice.human_attribute_name 'amount' %></th>
+          <th><%= CashInvoice.human_attribute_name 'cash_voucher' %></th>
           <th><%= CashInvoice.human_attribute_name 'detail' %></th>
           <th colspan="2"></th>
         </tr>
@@ -31,6 +32,7 @@
             <td><%= cash_invoice.tax_condition %></td>
             <td><%= cash_invoice.payment_method %></td>
             <td><%= number_to_currency cash_invoice.amount %></td>
+            <td><%= number_to_currency cash_invoice.cash_voucher.amount if cash_invoice.cash_voucher %></td>
             <td><%= cash_invoice.detail %></td>
             <td><%= link_to_edit [:edit, @cash, cash_invoice], remote: true %></td>
             <td><%= link_to_destroy [@cash, cash_invoice], remote: true %></td>

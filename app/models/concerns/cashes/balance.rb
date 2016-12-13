@@ -28,8 +28,11 @@ module Cashes::Balance
   end
 
   def cash_invoices_sum
-#    cash_invoices_outcomes_sum - cash_invoices_incomes_sum
-    cash_invoices.sum :amount
+    (cash_invoices_outcomes_sum - cash_invoices_incomes_sum).abs
+  end
+
+  def cash_vouchers_sum
+    (cash_vouchers_outcome_sum - cash_vouchers_income_sum).abs
   end
 
   private
@@ -44,15 +47,24 @@ module Cashes::Balance
       end.sum
     end
 
+    def cash_vouchers_income_sum
+      cash_vouchers.select { |cv| CashVoucher::KINDS[cv.kind.to_sym][:incout] == 'income' }.map(&:amount).sum
+    end
+
+    def cash_vouchers_outcome_sum
+      cash_vouchers.select { |cv| CashVoucher::KINDS[cv.kind.to_sym][:incout] == 'outcome' }.map(&:amount).sum
+    end
+
     def calculate_difference
       self.difference = closing_balance.to_f - balance.to_f
     end
 
     def total_incomes
-      opening_balance.to_f + cash_member_payments_sum + cash_payments_sum
+      opening_balance.to_f + cash_member_payments_sum + cash_payments_sum +
+        cash_invoices_incomes_sum + cash_vouchers_income_sum
     end
 
     def total_outcomes
-      cash_employees_sum
+      cash_employees_sum + cash_vouchers_outcome_sum + cash_invoices_outcomes_sum
     end
 end

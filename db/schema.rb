@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161209185411) do
+ActiveRecord::Schema.define(version: 20161210121202) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -147,6 +147,23 @@ ActiveRecord::Schema.define(version: 20161209185411) do
     t.index ["customer_id"], name: "index_cash_payments_on_customer_id", using: :btree
     t.index ["payment_id"], name: "index_cash_payments_on_payment_id", using: :btree
     t.index ["user_id"], name: "index_cash_payments_on_user_id", using: :btree
+  end
+
+  create_table "cash_vouchers", force: :cascade do |t|
+    t.string   "kind",                                              null: false
+    t.decimal  "amount",       precision: 10, scale: 2,             null: false
+    t.text     "comment",                                           null: false
+    t.string   "owner_type",                                        null: false
+    t.integer  "owner_id",                                          null: false
+    t.integer  "user_id",                                           null: false
+    t.integer  "cash_id",                                           null: false
+    t.integer  "lock_version",                          default: 0, null: false
+    t.datetime "created_at",                                        null: false
+    t.datetime "updated_at",                                        null: false
+    t.index ["cash_id"], name: "index_cash_vouchers_on_cash_id", using: :btree
+    t.index ["kind"], name: "index_cash_vouchers_on_kind", using: :btree
+    t.index ["owner_type", "owner_id"], name: "index_cash_vouchers_on_owner_type_and_owner_id", using: :btree
+    t.index ["user_id"], name: "index_cash_vouchers_on_user_id", using: :btree
   end
 
   create_table "cashes", force: :cascade do |t|

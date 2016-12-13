@@ -1,0 +1,23 @@
+<%= simple_form_for [@cash, @cash_voucher], remote: true do |f| %>
+  <div class="form-inputs">
+    <div class="row">
+      <div class="col-md-6">
+        <%= f.input :kind, collection: cash_voucher_kinds, autofocus: true, prompt: true %>
+      </div>
+      <div class="col-md-6">
+        <%= f.input :amount %>
+      </div>
+    </div>
+    <div id="owner_searches" <%== 'style="display: none;"' if @cash_voucher.kind.blank? %>>
+      <%= f.input :owner_type, as: :hidden %>
+      <%= f.input :owner, as: :autocomplete, url: owner_searches_url(@cash_voucher),
+        input_html: { data: { empty_result_label: t('views.generic.empty_index') } } %>
+    </div>
+    <%= f.input :comment %>
+    <%= f.input :lock_version, as: :hidden %>
+  </div>
+
+  <div class="actions">
+    <%= submit_button f %>
+  </div>
+<% end %>

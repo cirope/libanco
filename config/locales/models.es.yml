@@ -201,7 +201,8 @@ es:
       cash_voucher:
         amount: 'Monto'
         comment: 'Comentario'
-        employee: 'Personal'
+        kind: 'Vale'
+        owner: 'Asignado a'
         user: 'Cajero'
       body_template:
         name: 'Nombre'

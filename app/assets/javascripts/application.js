@@ -33,3 +33,4 @@
 //= require main
 //= require states
 //= require loans
+//= require cashes

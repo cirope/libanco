@@ -1,0 +1,7 @@
+default:
+  kind: remittance_income
+  amount: 500
+  comment: Default
+  owner: cashier (User)
+  user: cashier
+  cash: default

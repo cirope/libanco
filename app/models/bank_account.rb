@@ -3,10 +3,16 @@ class BankAccount < ApplicationRecord
   include Auditable
   include Authority::Abilities
   include BankAccounts::Validation
+  include SearchCop
+
+  belongs_to :bank, optional: true
 
   strip_fields :account, :cbu
 
-  belongs_to :bank, optional: true
+  search_scope :search do
+    attributes :account, :cbu
+    attributes bank: ['bank.name']
+  end
 
   def to_s
     [bank, account].join ' - '

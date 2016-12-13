@@ -4,7 +4,6 @@ module CashInvoices::CashVouchers
   included do
     before_validation :set_payment_method, if: :is_voucher
     after_save :update_cash_voucher
-    after_destroy :set_cash_voucher_pending
   end
 
   private
@@ -14,17 +13,6 @@ module CashInvoices::CashVouchers
     end
 
     def update_cash_voucher
-      if is_voucher
-        cash_voucher.update_column :status, 'assigned'
-      else
-        set_cash_voucher_pending
-        update_column :cash_voucher_id, nil
-      end
-    end
-
-    def set_cash_voucher_pending
-      if cash_voucher && !cash_voucher.cash_invoices.exists?
-        cash_voucher.update_column(:status, 'pending')
-      end
+      update_column :cash_voucher_id, nil if !is_voucher
     end
 end
