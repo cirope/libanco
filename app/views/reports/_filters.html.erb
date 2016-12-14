@@ -2,7 +2,7 @@
   <div class="panel panel-default">
     <div class="panel-body">
       <div class="row">
-        <div class="col-md-5">
+        <div class="col-md-4">
           <div class="input-group">
             <span class="input-group-addon">Fecha</span>
             <%= f.text_field :date_range, class: 'form-control', data: { date_range_picker: 'true' } %>
@@ -30,8 +30,12 @@
           <% end %>
         </div>
         <%= f.input :filter, as: :hidden, input_html: { value: @report.filter } %>
-        <div class="col-md-2">
-          <%= f.submit t('navigation.search'), class: 'btn btn-block btn-primary' %>
+        <div class="col-md-3">
+          <%= f.submit t('navigation.search'), class: 'btn btn-primary' %>
+          <% if @reports.present? %>
+            <%= link_to fa_icon('file-excel-o', text: t('reports.export_to_xls')),
+              reports_path(report: params[:report].try(:to_unsafe_h), format: :xls), class: 'btn btn-primary' %>
+          <% end %>
         </div>
       </div>
     </div>

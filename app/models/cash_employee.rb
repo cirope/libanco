@@ -5,6 +5,7 @@ class CashEmployee < ApplicationRecord
   include CashEmployees::Relations
   include CashEmployees::Reports
   include CashEmployees::Validation
+  include CashEmployees::Xls
 
   delegate :tax_id, to: :employee
 

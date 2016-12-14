@@ -14,7 +14,6 @@
           <th><%= CashInvoice.human_attribute_name 'tax_condition' %></th>
           <th><%= CashInvoice.human_attribute_name 'payment_method' %></th>
           <th><%= CashInvoice.human_attribute_name 'amount' %></th>
-          <th><%= CashInvoice.human_attribute_name 'cash_voucher' %></th>
           <th><%= CashInvoice.human_attribute_name 'detail' %></th>
         <tr>
       </thead>
@@ -31,7 +30,6 @@
             <td><%= cash_invoice.tax_condition %></td>
             <td><%= cash_invoice.payment_method %></td>
             <td><%= number_to_currency cash_invoice.amount %></td>
-            <td><%= number_to_currency cash_invoice.cash_voucher.amount if cash_invoice.cash_voucher %></td>
             <td><%= cash_invoice.detail %></td>
           </tr>
         <% end %>

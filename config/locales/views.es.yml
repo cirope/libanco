@@ -474,6 +474,7 @@ es:
       title: 'Crear vínculo'
 
   reports:
+    export_to_xls: 'Exportar XLS'
     index:
       title: 'Reportes'
       empty_html: 'No se encontraron datos en la fecha indicada.'

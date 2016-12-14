@@ -10,7 +10,14 @@ class ReportsController < ApplicationController
     @reports = model.reports @report.conditions
     @summary = model.summary @reports
 
-    @reports = @reports.page params[:page]
+    respond_to do |format|
+      format.html { @reports = @reports.page params[:page] }
+      format.xls {
+        xls = model.to_xls @reports
+        send_data xls.string, filename: "#{model.model_name.human(count: 0)}.xls",
+          disposition: :inline
+      }
+    end
   end
 
   private
