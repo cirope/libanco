@@ -2,7 +2,7 @@ module CashInvoices::Validation
   extend ActiveSupport::Concern
 
   included do
-    validates :detail, presence: true
+    validates :detail, :date, presence: true
     validates :number, presence: true, length: { maximum: 255 },
       uniqueness: { scope: [:supplier, :invoice_type] }
     validates :subtotal, :tax_amount, :tax_perception_amount,

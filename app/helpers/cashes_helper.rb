@@ -29,4 +29,8 @@ module CashesHelper
       new_cash_path(cash)
     end
   end
+
+  def cash_vouchers_system cash
+    cash.cash_vouchers.where kind: ['cash_deficit', 'cash_surplus']
+  end
 end

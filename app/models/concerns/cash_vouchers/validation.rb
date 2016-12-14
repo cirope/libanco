@@ -12,7 +12,7 @@ module CashVouchers::Validation
     }
 
     validates :kind, presence: true, inclusion: { in: KINDS.keys.map(&:to_s) }
-    validates :amount, presence: true, numericality: { greater_than: 0 }
+    validates :amount, presence: true, numericality: true
     validates :comment, presence: true
   end
 end

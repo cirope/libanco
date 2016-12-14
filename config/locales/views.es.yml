@@ -158,6 +158,8 @@ es:
     unlock: 'Abrir caja'
     edit:
       title: 'Editar caja'
+    errors:
+      cash_difference: 'Existe una diferencia de caja significativa, es obligatorio dejar un comentario.'
     index:
       new: 'Nueva caja'
       title: 'Listado de cajas'

@@ -1,0 +1,18 @@
+<%= simple_form_for @cash, url: cash_lock_path(@cash), method: :patch do |f| %>
+  <div class="panel panel-danger">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <%= fa_icon('warning', text: t('cashes.errors.cash_difference')) %>
+      </h4>
+    </div>
+    <div class="panel-body">
+      <div class="form-group">
+        <%= label_tag :comment, CashVoucher.human_attribute_name('comment'), class: 'control-label' %>
+        <%= text_area_tag :comment, nil, autofocus: true, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+  <div class="pull-left" style="margin-right: 4px;">
+    <%= f.submit t('cashes.lock'), class: 'btn btn-danger' %>
+  </div>
+<% end %>
