@@ -8,6 +8,7 @@
         <th><%= CashVoucher.human_attribute_name 'owner' %></th>
         <th><%= CashVoucher.human_attribute_name 'amount' %></th>
         <th><%= CashVoucher.human_attribute_name 'comment' %></th>
+        <th></th>
       </tr>
     </thead>
 
@@ -20,6 +21,7 @@
           <td><%= cash_voucher.owner %></td>
           <td><%= number_to_currency cash_voucher.amount %></td>
           <td><%= cash_voucher.comment %></td>
+          <td><%= show_annulled_label cash_voucher.annulled %></td>
         </tr>
       <% end %>
     </tbody>

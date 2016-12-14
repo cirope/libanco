@@ -1,6 +1,7 @@
 class Cashes::LocksController < ApplicationController
   include Authentication
   include Cash::Scoped
+  include Title
 
   authorize_actions_for LockAuthorizer
   ensure_authorization_performed

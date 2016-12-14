@@ -35,8 +35,8 @@ module ApplicationHelper
     end
   end
 
-  def link_to_new_schedule model
-    link_to fa_icon('calendar'), [:new, model, :schedule], data: { remote: true }
+  def show_annulled_label annulled
+    content_tag(:span, t('cashes.annulled'), class: 'label label-danger') if annulled
   end
 
   private

@@ -153,6 +153,7 @@ es:
       remittance_outcome: 'Retiro remesa'
 
   cashes:
+    annulled: 'Anulado'
     flows: 'Movimientos'
     lock: 'Cerrar caja'
     unlock: 'Abrir caja'
@@ -383,6 +384,10 @@ es:
     types:
       American: 'Americano'
       French: 'Francés'
+
+  locks:
+    edit:
+      title: 'Cierre de caja'
 
   marital_statuses:
     edit:
