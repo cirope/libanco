@@ -4,6 +4,7 @@ class Payment < ApplicationRecord
   include Payments::Relations
   include Payments::Reports
   include Payments::Validation
+  include Payments::Xls
 
   default_scope -> { order 'number ASC' }
 

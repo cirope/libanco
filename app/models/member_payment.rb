@@ -4,6 +4,7 @@ class MemberPayment < ApplicationRecord
   include MemberPayments::Generate
   include MemberPayments::Reports
   include MemberPayments::Validation
+  include MemberPayments::Xls
 
   belongs_to :customer
 
