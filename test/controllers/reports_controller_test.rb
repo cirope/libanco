@@ -34,4 +34,9 @@ class ReportsControllerTest < ActionDispatch::IntegrationTest
     get reports_url, params: { report: { filter: 'cash_invoice' } }
     assert_response :success
   end
+
+  test 'should get cash employee' do
+    get reports_url, params: { report: { filter: 'cash_employee' } }
+    assert_response :success
+  end
 end

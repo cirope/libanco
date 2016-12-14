@@ -3,6 +3,7 @@ class CashEmployee < ApplicationRecord
   include Authority::Abilities
   include Cashes::UpdateBalance
   include CashEmployees::Relations
+  include CashEmployees::Reports
   include CashEmployees::Validation
 
   delegate :tax_id, to: :employee

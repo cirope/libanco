@@ -483,6 +483,7 @@ es:
       p_all: 'Todos'
       p_expired: 'Morosos'
       cash_invoice: 'Facturas'
+      cash_employee: 'Liquidaciones'
     summary:
       total: 'Total'
       paid: 'Pagado'
