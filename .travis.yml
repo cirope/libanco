@@ -2,7 +2,7 @@ language: ruby
 rvm:
   - 2.3.3
 addons:
-  postgresql: 9.5
+  postgresql: 9.4
 before_script:
   - 'cp config/application.travis.yml config/application.yml'
   - "psql -c 'create database libanco_test;' -U postgres"
