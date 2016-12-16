@@ -9,11 +9,9 @@ class Cashes::LocksController < ApplicationController
   def update
     @cash.closed_at ||= Time.zone.now
 
-    if @cash.difference_status && params[:comment].present?
-      @cash.cash_voucher_system current_user: current_user, comment: params[:comment]
-    end
+    parameters = params[:cash] ? cash_params : {}
 
-    if @cash.update status: 'closed'
+    if @cash.update parameters.merge(status: 'closed')
       if current_user.admin?
         redirect_to cashes_url
       else
@@ -30,4 +28,10 @@ class Cashes::LocksController < ApplicationController
     @cash.unlock!
     redirect_to cash_flows_url(@cash)
   end
+
+  private
+
+    def cash_params
+      params.require(:cash).permit :comment
+    end
 end

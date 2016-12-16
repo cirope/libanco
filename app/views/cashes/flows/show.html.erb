@@ -94,4 +94,20 @@
       </div>
     </div>
   <% end %>
+  <% if @cash.comment.present? %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <%= link_to '#comments', data: { toggle: 'collapse' } do %>
+            <%= fa_icon 'comments', text: Cash.human_attribute_name('comment') %>
+          <% end %>
+        </h4>
+      </div>
+      <div id="comments" class="panel-collapse collapse">
+        <div class="panel-body">
+          <p><%= @cash.comment %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>

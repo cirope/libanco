@@ -3,8 +3,6 @@ module CashVouchers::Validation
 
   included do
     KINDS = {
-      cash_deficit: { type: 'system', owner: 'User', incout: 'income' },
-      cash_surplus: { type: 'system', owner: 'User', incout: 'outcome' },
       capital_customer: { type: 'manual', owner: 'Customer', incout: 'income' },
       remittance_income: { type: 'manual', owner: 'BankAccount', incout: 'income' },
       remittance_outcome: { type: 'manual', owner: 'BankAccount', incout: 'outcome' },

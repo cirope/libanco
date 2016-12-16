@@ -9,6 +9,7 @@ class CreateCashes < ActiveRecord::Migration[5.0]
       t.decimal :incomes_count, precision: 10, scale: 2
       t.decimal :outcomes_count, precision: 10, scale: 2
       t.decimal :difference, precision: 10, scale: 2
+      t.text :comment
       t.references :user, null: false, index: true
       t.integer :lock_version, default: 0, null: false
 

@@ -7,8 +7,7 @@
     </div>
     <div class="panel-body">
       <div class="form-group">
-        <%= label_tag :comment, CashVoucher.human_attribute_name('comment'), class: 'control-label' %>
-        <%= text_area_tag :comment, nil, autofocus: true, class: 'form-control' %>
+        <%= f.input :comment, autofocus: true, required: true %>
       </div>
     </div>
   </div>

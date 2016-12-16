@@ -18,11 +18,7 @@ module Cashes::Validation
     end
 
     def cash_difference
-      cv_kind = difference_status
-
-      if cv_kind && !cash_vouchers.where(kind: cv_kind).exists?
-        #cash_vouchers.new created_at: Time.zone.now, kind: cv_kind, amount: difference
-
+      if (difference >= 100 || difference <= -100) && comment.blank?
         errors.add :status, :cash_difference
         throw :abort
       end

@@ -164,6 +164,7 @@ es:
         balance: 'Saldo'
         closed_at: 'Cierre'
         closing_balance: 'Recuento final'
+        comment: 'Comentario'
         difference: 'Diferencia'
         incomes_count: 'Ingresos'
         opened_at: 'Fecha'

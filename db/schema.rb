@@ -176,6 +176,7 @@ ActiveRecord::Schema.define(version: 20161210121202) do
     t.decimal  "incomes_count",   precision: 10, scale: 2
     t.decimal  "outcomes_count",  precision: 10, scale: 2
     t.decimal  "difference",      precision: 10, scale: 2
+    t.text     "comment"
     t.integer  "user_id",                                              null: false
     t.integer  "lock_version",                             default: 0, null: false
     t.datetime "created_at",                                           null: false

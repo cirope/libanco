@@ -146,8 +146,6 @@ es:
       title: 'Crear vale'
     kinds:
       capital_customer: 'Aporte de capital'
-      cash_deficit: 'Faltante de caja'
-      cash_surplus: 'Sobrante de caja'
       cash_outcome: 'Entrega efectivo'
       remittance_income: 'Ingreso remesa'
       remittance_outcome: 'Retiro remesa'
