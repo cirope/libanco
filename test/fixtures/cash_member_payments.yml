@@ -1,0 +1,5 @@
+default:
+  customer: default
+  member_payment: default
+  user: cashier
+  cash: default

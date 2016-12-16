@@ -21,6 +21,30 @@ es:
       adviser:
         one: 'Asesor'
         other: 'Asesores'
+      bank:
+        one: 'Banco'
+        other: 'Bancos'
+      bank_account:
+        one: 'Cuenta bancaria'
+        other: 'Cuentas bancarias'
+      cash:
+        one: 'Caja'
+        other: 'Cajas'
+      cash_employee:
+        one: 'Liquidación'
+        other: 'Liquidaciones'
+      cash_invoice:
+        one: 'Factura'
+        other: 'Facturas'
+      cash_member_payment:
+        one: 'Cuota social'
+        other: 'Cuotas sociales'
+      cash_payment:
+        one: 'Cuota'
+        other: 'Cuotas'
+      cash_voucher:
+        one: 'Entrega Vale'
+        other: 'Entrega Vales'
       body_template:
         one: 'Plantilla contenido'
         other: 'Plantillas contenido'
@@ -45,12 +69,21 @@ es:
       education_level:
         one: 'Nivel de estudio'
         other: 'Niveles de estudio'
+      employee:
+        one: 'Personal'
+        other: 'Personal'
+      expense_type:
+        one: 'Tipo de gasto'
+        other: 'Tipos de gastos'
       footer_template:
         one: 'Pie da página'
         other: 'Pies de página'
       header_template:
         one: 'Cabecera'
         other: 'Cabeceras'
+      invoice_type:
+        one: 'Tipo de factura'
+        other: 'Tipos de facturas'
       loan:
         one: 'Préstamo'
         other: 'Préstamos'
@@ -72,6 +105,9 @@ es:
       payment:
         one: 'Cuota'
         other: 'Cuotas'
+      payment_method:
+        one: 'Forma de pago'
+        other: 'Formas de pagos'
       phone:
         one: 'Teléfono'
         other: 'Teléfonos'
@@ -99,12 +135,12 @@ es:
       state:
         one: 'Provincia'
         other: 'Provincias'
-      tax:
-        one: 'Adicional'
-        other: 'Adicionales'
-      tax_setting:
-        one: 'Adicional'
-        other: 'Adicionales'
+      supplier:
+        one: 'Proveedor'
+        other: 'Proveedores'
+      tax_condition:
+        one: 'Condición IVA'
+        other: 'Condiciones de IVA'
       user:
         one: 'Usuario'
         other: 'Usuarios'
@@ -118,6 +154,57 @@ es:
         subdomain: 'Subdominio'
       adviser:
         name: 'Nombre'
+      bank:
+        name: 'Nombre'
+      bank_account:
+        account: 'Cuenta bancaria'
+        cbu: 'CBU'
+        bank: 'Banco'
+      cash:
+        balance: 'Saldo'
+        closed_at: 'Cierre'
+        closing_balance: 'Recuento final'
+        comment: 'Comentario'
+        difference: 'Diferencia'
+        incomes_count: 'Ingresos'
+        opened_at: 'Fecha'
+        opening_balance: 'Recuento inicial'
+        outcomes_count: 'Egresos'
+        user: 'Cajero'
+      cash_employee:
+        amount: 'Salario'
+        employee: 'Personal'
+        period: 'Período'
+        user: 'Cajero'
+      cash_invoice:
+        amount: 'Importe'
+        cash_voucher: 'Vale'
+        date: 'Emisión'
+        detail: 'Detalle'
+        expense_type: 'Tipo de gasto'
+        gross_income_perception_amount: 'Percepción IIBB'
+        invoice_type: 'Factura'
+        is_voucher: '¿Pertence a un vale?'
+        number: 'Número'
+        payment_method: 'Forma de pago'
+        subtotal: 'Subtotal'
+        supplier: 'Proveedor'
+        tax_amount: 'IVA'
+        tax_condition: 'Condición IVA'
+        tax_perception_amount: 'Percepción IVA'
+        user: 'Cajero'
+      cash_member_payment:
+        customer: 'Cliente'
+        user: 'Cajero'
+      cash_payment:
+        customer: 'Cliente'
+        user: 'Cajero'
+      cash_voucher:
+        amount: 'Monto'
+        comment: 'Comentario'
+        kind: 'Vale'
+        owner: 'Asignado a'
+        user: 'Cajero'
       body_template:
         name: 'Nombre'
         content: 'Contenido'
@@ -179,9 +266,13 @@ es:
         state: 'Provincia'
         workgroup: 'Grupo de trabajo'
         work_address: 'Domicilio laboral'
-      department:
-        name: 'Repartición'
       education_level:
+        name: 'Nombre'
+      employee:
+        name: 'Nombres'
+        lastname: 'Apellidos'
+        tax_id: 'CUIL'
+      expense_type:
         name: 'Nombre'
       footer_template:
         name: 'Nombre'
@@ -190,6 +281,8 @@ es:
         name: 'Nombre'
         content: 'Contenido'
         image: 'Logo'
+      invoice_type:
+        name: 'Nombre'
       loan:
         type: 'Sistema de amortización'
         amount: 'Monto'
@@ -217,7 +310,7 @@ es:
       member_payment:
         amount: 'Monto'
         customer: 'Cliente'
-        expire_at: 'Fecha Venc.'
+        expire_at: 'Vencimiento'
         paid_at: 'Pago'
         period: 'Período'
       nacionality:
@@ -232,6 +325,7 @@ es:
         amount: 'Cuota'
         balance: 'Saldo'
         capital: 'Capital'
+        credit_line: 'Producto'
         expire_at: 'Vencimiento'
         extra_interest: 'Int. Adic.'
         tax_interest: 'IVA Int.'
@@ -240,9 +334,12 @@ es:
         interest: 'Interés'
         loan: 'Préstamo'
         number: 'Número'
-        paid_at: 'Fecha de pago'
+        paid_at: 'Pago'
         tax: 'IVA'
         tax_perception: 'Perc. IVA'
+      payment_method:
+        cash_discount: '¿Descontar en caja?'
+        name: 'Nombre'
       phone:
         phone: 'Teléfono'
       rate:
@@ -274,13 +371,11 @@ es:
         remind_me: 'Recordarme por correo 15 minutos antes'
       state:
         name: 'Nombre'
-      tax:
-        value: 'Valor'
-        expire_at: 'Vencimiento'
-        paid_at: 'Fecha de pago'
-      tax_setting:
+      supplier:
+        legal_name: 'Nombre'
+        tax_id: 'CUIT'
+      tax_condition:
         name: 'Nombre'
-        value: 'Valor'
       user:
         current_password: 'Contraseña actual'
         email: 'Correo'

@@ -6,7 +6,7 @@ module Users::Roles
 
     after_initialize :set_default_rol
 
-    roles :admin, :adviser, :cashier
+    roles :admin, :cashier
   end
 
   def rol

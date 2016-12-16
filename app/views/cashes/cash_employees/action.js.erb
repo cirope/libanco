@@ -1,0 +1,7 @@
+<% if @cash_employee.new_record? || @cash_employee.errors.any? %>
+  $('#modal form').replaceWith('<%= j render('form') %>');
+<% else %>
+  $('#cash_employees').html('<%= j render(template: 'cashes/cash_employees/index', formats: [:html]) %>');
+  $('#cash_balance').html('<%= number_to_currency @cash.balance %>');
+  $('#modal').modal('hide');
+<% end %>

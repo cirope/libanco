@@ -25,4 +25,8 @@ module SchedulesHelper
       input_html: { disabled: !@schedule.allow_remind_me? }
     )
   end
+
+  def link_to_new_schedule model
+    link_to fa_icon('calendar'), [:new, model, :schedule], data: { remote: true }
+  end
 end

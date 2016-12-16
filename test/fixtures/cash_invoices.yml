@@ -1,0 +1,17 @@
+default:
+  date: <%= Date.today %>
+  number: Default
+  subtotal: 1000
+  tax_amount: 100
+  tax_perception_amount: 100
+  gross_income_perception_amount: 100
+  amount: 1300
+  detail: Default
+  is_voucher: false
+  invoice_type: default
+  tax_condition: default
+  expense_type: default
+  payment_method: default
+  supplier: default
+  user: cashier
+  cash: default

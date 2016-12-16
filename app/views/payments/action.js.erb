@@ -1,6 +1,0 @@
-<% if @payment.errors.any? %>
-  $('#modal form').replaceWith('<%= j render('form') %>');
-<% else %>
-  $('#payments').html('<%= j render(template: 'payments/index', formats: [:html]) %>');
-  $('#modal').modal('hide');
-<% end %>

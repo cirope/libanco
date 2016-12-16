@@ -4,6 +4,13 @@ class MemberPayment < ApplicationRecord
   include MemberPayments::Generate
   include MemberPayments::Reports
   include MemberPayments::Validation
+  include MemberPayments::Xls
 
   belongs_to :customer
+
+  scope :pendings, -> { where paid_at: nil }
+
+  def to_s
+    amount
+  end
 end

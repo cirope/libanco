@@ -1,0 +1,45 @@
+<%= render 'cash' %>
+
+<ul class="nav nav-tabs" id="nav-tabs">
+  <li>
+    <%= link_to '#cash_member_payments', data: { toggle: 'pill', tab_focus: true, tab_url: cash_cash_member_payments_path(@cash) } do %>
+      <%= fa_icon 'id-card-o', text: CashMemberPayment.model_name.human(count: 0) %>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to '#cash_payments', data: { toggle: 'pill', tab_url: cash_cash_payments_path(@cash) } do %>
+      <%= fa_icon 'credit-card', text: CashPayment.model_name.human(count: 0) %>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to '#cash_invoices', data: { toggle: 'pill', tab_url: cash_cash_invoices_path(@cash) } do %>
+      <%= fa_icon 'file-text', text: CashInvoice.model_name.human(count: 0) %>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to '#cash_employees', data: { toggle: 'pill', tab_url: cash_cash_employees_path(@cash) } do %>
+      <%= fa_icon 'male', text: CashEmployee.model_name.human(count: 0) %>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to '#cash_vouchers', data: { toggle: 'pill', tab_url: cash_cash_vouchers_path(@cash) } do %>
+      <%= fa_icon 'ticket', text: CashVoucher.model_name.human(count: 0) %>
+    <% end %>
+  </li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane" id="cash_member_payments"></div>
+  <div class="tab-pane" id="cash_payments"></div>
+  <div class="tab-pane" id="cash_invoices"></div>
+  <div class="tab-pane" id="cash_employees"></div>
+  <div class="tab-pane" id="cash_vouchers"></div>
+</div>
+
+<% if @cash.opened? %>
+  <div class="pull-right">
+    <%= link_to edit_cash_counts_path(@cash), class: 'btn btn-warning', remote: true do %>
+      <%= fa_icon 'lock', text: Cash.human_attribute_name('closing_balance') %>
+    <% end %>
+  </div>
+<% end %>

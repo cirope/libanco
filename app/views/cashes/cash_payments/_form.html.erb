@@ -1,0 +1,22 @@
+<%= simple_form_for [@cash, @cash_payment], remote: true do |f| %>
+  <div class="form-inputs">
+    <%= f.input :customer, as: :autocomplete, url: customers_searches_path, autofocus: true,
+      input_html: {
+        id: 'model_id',
+          data: {
+            empty_result_label: t('views.generic.empty_index'),
+            update_autocomplete_url: customer_payments_path(customer_id: 'model_id')
+      } } %>
+    <%= f.input :lock_version, as: :hidden %>
+
+    <div id="payments_pendings">
+      <% if @payments %>
+        <%= render 'cashes/cash_payments/payments', formats: [:html] %>
+      <% else %>
+        <div class="alert alert-warning">
+          <strong><%= t 'cash_payments.new.search_customer' %></strong>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>

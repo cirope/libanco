@@ -3,6 +3,8 @@ es:
 
   menu:
     admin: 'Administración'
+    company: 'Empresa'
+    invoicing: 'Facturación'
     loans:
       title: 'Préstamos'
       expired: 'Atrasados'
@@ -13,6 +15,8 @@ es:
       social_payments: 'Cuota Social'
       insurance: 'Seguro'
     system: 'Sistema'
+    fees: 'Cuotas'
+    payments: 'Pagos'
 
   messages:
     confirmation: '¿Está seguro?'
@@ -56,6 +60,20 @@ es:
     show:
       title: 'Ver cuenta'
 
+  banks:
+    edit:
+      title: 'Editar banco'
+    index:
+      new: 'Nuevo banco'
+      title: 'Listado de bancos'
+      empty_html: 'No hay bancos, puede crear uno con el botón <span class="label label-info">Nuevo banco</span>'
+    new:
+      title: 'Crear banco'
+    show:
+      title: 'Ver banco'
+    bank_accounts:
+      new: 'Agregar cuenta bancaria'
+
   body_templates:
     list: 'Listado de variables'
     edit:
@@ -78,12 +96,6 @@ es:
       empty_html: 'No hay asesores, puede crear uno con el botón <span class="label label-info">Nuevo asesor</span>'
     new:
       title: 'Crear asesor'
-    show:
-      title: 'Ver asesor'
-    identification_types:
-      dni: 'DNI'
-      cie: 'CI Extranjera'
-      passport: 'Pasaporte'
 
   cards:
     edit:
@@ -94,8 +106,99 @@ es:
       empty_html: 'No hay tarjetas, puede crear una con el botón <span class="label label-info">Nueva tarjeta</span>'
     new:
       title: 'Crear tarjeta'
+
+  cash_employees:
+    edit:
+      title: 'Editar liquidación'
+    new:
+      title: 'Pagar liquidación'
+
+  cash_invoices:
+    edit:
+      title: 'Editar factura'
+    new:
+      title: 'Crear factura'
+
+  cash_member_payments:
+    edit:
+      title: 'Editar pago de cuota social'
+    new:
+      title: 'Pago de cuota social'
+      search_customer: 'Debe buscar un cliente para listar las cuotas sociales impagas.'
+    paid: 'Pagar cuota social'
+    errors:
+      select_payments: 'Debe selecionar la/s cuota/s que desea pagar.'
+
+  cash_payments:
+    edit:
+      title: 'Editar pago de cuota'
+    new:
+      title: 'Pago de cuota'
+      search_customer: 'Debe buscar un cliente para listar las cuotas impagas.'
+    paid: 'Pagar cuota'
+    errors:
+      select_payments: 'Debe selecionar la/s cuota/s que desea pagar.'
+
+  cash_vouchers:
+    edit:
+      title: 'Editar vale'
+    new:
+      title: 'Crear vale'
+    kinds:
+      capital_customer: 'Aporte de capital'
+      cash_outcome: 'Entrega efectivo'
+      remittance_income: 'Ingreso remesa'
+      remittance_outcome: 'Retiro remesa'
+
+  cashes:
+    annulled: 'Anulado'
+    flows: 'Movimientos'
+    lock: 'Cerrar caja'
+    unlock: 'Abrir caja'
+    edit:
+      title: 'Editar caja'
+    errors:
+      cash_difference: 'Existe una diferencia de caja significativa, es obligatorio dejar un comentario.'
+    index:
+      new: 'Nueva caja'
+      title: 'Listado de cajas'
+      empty_html: 'No hay cajas, puede crear una con el botón <span class="label label-info">Nueva caja</span>'
+    new:
+      title: 'Crear caja'
     show:
-      title: 'Ver tarjeta'
+      title: 'Movimientos de caja'
+    menu:
+      select: 'Seleccione una opción del menú'
+    statuses:
+      opened: 'Abierta'
+      closed: 'Cerrada'
+    cash_employees:
+      index:
+        new: 'Nueva liquidación'
+        title: 'Pago de liquidación'
+        empty_html: 'No hay liquidaciones, puede crear una con el botón <span class="label label-info">Nueva liquidación</span>'
+    cash_invoices:
+      index:
+        new: 'Nueva factura'
+        title: 'Listado de facturas'
+        empty_html: 'No hay facturas, puede crear una con el botón <span class="label label-info">Nueva factura</span>'
+    cash_member_payments:
+      index:
+        new: 'Nuevo pago de cuota social'
+        title: 'Pago de cuotas sociales'
+        empty_html: 'No hay pagos de cuotas sociales, puede crear uno con el botón <span class="label label-info">Nuevo pago</span>'
+    cash_payments:
+      index:
+        new: 'Nuevo pago de cuota'
+        title: 'Pago de cuotas'
+        empty_html: 'No hay pagos de cuotas, puede crear uno con el botón <span class="label label-info">Nuevo pago</span>'
+      payments:
+        empty_html: 'El cliente no posee cuotas impagas.'
+    cash_vouchers:
+      index:
+        new: 'Nuevo vale'
+        title: 'Listado de vales'
+        empty_html: 'No hay vales, puede crear uno con el botón <span class="label label-info">Nuevo vale</span>'
 
   cities:
     edit:
@@ -119,6 +222,10 @@ es:
       title: 'Crear empresa'
     show:
       title: 'Ver empresa'
+
+  counts:
+    edit:
+      title: 'Recuento final'
 
   credit_lines:
     edit:
@@ -190,6 +297,30 @@ es:
     new:
       title: 'Crear nivel de estudio'
 
+  employees:
+    edit:
+      title: 'Editar personal'
+    index:
+      new: 'Nuevo personal'
+      title: 'Listado de personal'
+      empty_html: 'No hay personal, puede crear uno con el botón <span class="label label-info">Nuevo personal</span>'
+    new:
+      title: 'Crear personal'
+
+  expense_types:
+    edit:
+      title: 'Editar tipo de gasto'
+    index:
+      new: 'Nuevo tipo de gasto'
+      title: 'Listado de tipos de gastos'
+      empty_html: 'No hay tipos de gastos, puede crear uno con el botón <span class="label label-info">Nuevo tipo de gasto</span>'
+    new:
+      title: 'Crear tipo de gasto'
+
+  flows:
+    index:
+      title: 'Movimientos de caja'
+
   footer_templates:
     edit:
       title: 'Editar pie de página'
@@ -214,15 +345,15 @@ es:
     show:
       title: 'Ver cabecera'
 
-  institutions:
+  invoice_types:
     edit:
-      title: 'Editar institución'
+      title: 'Editar tipo de factura'
     index:
-      new: 'Nueva institución'
-      title: 'Listado de instituciones'
-      empty_html: 'No hay instituciones, puede crear una con el botón <span class="label label-info">Nueva institución</span>'
+      new: 'Nuevo tipo de factura'
+      title: 'Listado de tipos de facturas'
+      empty_html: 'No hay tipos de facturas, puede crear uno con el botón <span class="label label-info">Nuevo tipo de factura</span>'
     new:
-      title: 'Crear institución'
+      title: 'Crear tipo de factura'
 
   loans:
     edit:
@@ -252,6 +383,10 @@ es:
       American: 'Americano'
       French: 'Francés'
 
+  locks:
+    edit:
+      title: 'Cierre de caja'
+
   marital_statuses:
     edit:
       title: 'Editar estado civil'
@@ -263,6 +398,8 @@ es:
       title: 'Crear estado civil'
 
   member_payments:
+    index:
+      empty_html: 'El cliente no posee cuotas impagas.'
     payments:
       paid: 'PAGADO'
       unpaid: 'IMPAGO'
@@ -297,14 +434,32 @@ es:
     new:
       title: 'Crear ocupación'
 
+  payment_methods:
+    edit:
+      title: 'Editar forma de pago'
+    index:
+      new: 'Nueva forma de pago'
+      title: 'Listado de formas de pagos'
+      empty_html: 'No hay formas de pagos, puede crear una con el botón <span class="label label-info">Nueva forma de pago</span>'
+    new:
+      title: 'Crear forma de pago'
+
   payments:
     edit:
       title: 'Cuota'
     index:
       title: 'Listado de cuotas'
+    payments:
+      paid: 'PAGADO'
+      unpaid: 'IMPAGO'
 
   phones:
     new: 'Agregar teléfono'
+
+  profiles:
+    edit:
+      title: 'Mis datos'
+      submit: 'Actualizar mis datos'
 
   relationships:
     edit:
@@ -317,16 +472,31 @@ es:
       title: 'Crear vínculo'
 
   reports:
+    export_to_xls: 'Exportar XLS'
     index:
       title: 'Reportes'
       empty_html: 'No se encontraron datos en la fecha indicada.'
     menu:
       mp_all: 'Todos'
       mp_expired: 'Morosos'
+      p_all: 'Todos'
+      p_expired: 'Morosos'
+      cash_invoice: 'Facturas'
+      cash_employee: 'Liquidaciones'
     summary:
       total: 'Total'
       paid: 'Pagado'
       debt: 'Deuda'
+
+  tax_conditions:
+    edit:
+      title: 'Editar condición IVA'
+    index:
+      new: 'Nueva condición IVA'
+      title: 'Listado de condiciones IVA'
+      empty_html: 'No hay condiciones de IVA, puede crear una con el botón <span class="label label-info">Nueva condición IVA</span>'
+    new:
+      title: 'Crear condición IVA'
 
   schedules:
     edit:
@@ -343,15 +513,6 @@ es:
       empty_html: 'No hay eventos programados'
     save: 'Guardar evento'
 
-  sessions:
-    new:
-      title: 'Ingreso'
-      log_in: 'Ingresar'
-      email: 'Correo'
-      password: 'Contraseña'
-      remember_me: 'Recordarme'
-      forgot_password: '¿Olvidaste tu contraseña?'
-
   states:
     edit:
       title: 'Editar provincia'
@@ -365,38 +526,15 @@ es:
     show:
       title: 'Ver provincia'
 
-  password_resets:
+  suppliers:
     edit:
-      title: 'Cambiar contraseña'
-      update: 'Actualizar contraseña'
-    new:
-      title: 'Restablecer contraseña'
-      email: 'Correo'
-      send_instructions: 'Enviar instrucciones'
-      back: 'Volver'
-
-  profiles:
-    edit:
-      title: 'Mis datos'
-      submit: 'Actualizar mis datos'
-
-  taxes:
+      title: 'Editar proveedor'
     index:
-      title: 'Listado de adicionales'
-      empty_html: 'No se encontraron adicionales en la fecha indicada.'
-
-  tax_settings:
-    edit:
-      title: 'Editar adicional'
-    index:
-      new: 'Nuevo adicional'
-      title: 'Listado de adicionales'
-      empty_html: 'No hay un adicional, puede crear una con el botón <span class="label label-info">Nuevo adicional</span>'
+      new: 'Nuevo proveedor'
+      title: 'Listado de proveedores'
+      empty_html: 'No hay proveedores, puede crear uno con el botón <span class="label label-info">Nuevo proveedor</span>'
     new:
-      title: 'Crear adicional'
-      state: 'Agregar nuevo adicional'
-    show:
-      title: 'Ver adicional'
+      title: 'Crear proveedor'
 
   users:
     edit:

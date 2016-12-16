@@ -1,0 +1,2 @@
+module Cashes::LocksHelper
+end

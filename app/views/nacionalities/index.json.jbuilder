@@ -1,1 +1,0 @@
-json.array! @nacionalities, partial: 'nacionalities/nacionality', as: :nacionality
