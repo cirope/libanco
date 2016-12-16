@@ -65,10 +65,10 @@ ActiveRecord::Schema.define(version: 20161210121202) do
     t.string   "name",                                                  null: false
     t.decimal  "admission_fee", precision: 10, scale: 2,                null: false
     t.decimal  "monthly_fee",   precision: 10, scale: 2,                null: false
+    t.boolean  "active",                                 default: true, null: false
     t.integer  "lock_version",                           default: 0,    null: false
     t.datetime "created_at",                                            null: false
     t.datetime "updated_at",                                            null: false
-    t.boolean  "active",                                 default: true, null: false
     t.index ["active"], name: "index_cards_on_active", using: :btree
     t.index ["name"], name: "index_cards_on_name", unique: true, using: :btree
   end
@@ -256,6 +256,7 @@ ActiveRecord::Schema.define(version: 20161210121202) do
     t.string   "work_address"
     t.decimal  "monthly_income",      precision: 10, scale: 2
     t.string   "place_birth"
+    t.integer  "starting_day"
     t.integer  "occupation_id"
     t.integer  "card_id",                                                      null: false
     t.integer  "neighborhood_id"
@@ -269,7 +270,6 @@ ActiveRecord::Schema.define(version: 20161210121202) do
     t.integer  "lock_version",                                 default: 0,     null: false
     t.datetime "created_at",                                                   null: false
     t.datetime "updated_at",                                                   null: false
-    t.integer  "starting_day"
     t.index ["adviser_id"], name: "index_customers_on_adviser_id", using: :btree
     t.index ["card_id"], name: "index_customers_on_card_id", using: :btree
     t.index ["city_id"], name: "index_customers_on_city_id", using: :btree
@@ -423,12 +423,12 @@ ActiveRecord::Schema.define(version: 20161210121202) do
   create_table "member_payments", force: :cascade do |t|
     t.decimal  "amount",      precision: 10, scale: 2, null: false
     t.date     "paid_at"
+    t.date     "period",                               null: false
     t.date     "expire_at",                            null: false
+    t.text     "comment"
     t.integer  "customer_id",                          null: false
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
-    t.date     "period",                               null: false
-    t.text     "comment"
     t.index ["customer_id"], name: "index_member_payments_on_customer_id", using: :btree
     t.index ["expire_at"], name: "index_member_payments_on_expire_at", using: :btree
     t.index ["paid_at"], name: "index_member_payments_on_paid_at", using: :btree
@@ -532,11 +532,11 @@ ActiveRecord::Schema.define(version: 20161210121202) do
     t.boolean  "done",             default: false, null: false
     t.boolean  "remind_me",        default: false, null: false
     t.integer  "user_id",                          null: false
+    t.string   "schedulable_type"
+    t.integer  "schedulable_id"
     t.integer  "lock_version",     default: 0,     null: false
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
-    t.string   "schedulable_type"
-    t.integer  "schedulable_id"
     t.index ["schedulable_type", "schedulable_id"], name: "index_schedules_on_schedulable_type_and_schedulable_id", using: :btree
     t.index ["scheduled_at"], name: "index_schedules_on_scheduled_at", using: :btree
     t.index ["user_id"], name: "index_schedules_on_user_id", using: :btree
