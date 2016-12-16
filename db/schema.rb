@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161122195033) do
+ActiveRecord::Schema.define(version: 20161210121202) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,25 @@ ActiveRecord::Schema.define(version: 20161122195033) do
     t.index ["name"], name: "index_advisers_on_name", unique: true, using: :btree
   end
 
+  create_table "bank_accounts", force: :cascade do |t|
+    t.string   "account",    null: false
+    t.string   "cbu",        null: false
+    t.integer  "bank_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["account"], name: "index_bank_accounts_on_account", using: :btree
+    t.index ["bank_id"], name: "index_bank_accounts_on_bank_id", using: :btree
+    t.index ["cbu"], name: "index_bank_accounts_on_cbu", unique: true, using: :btree
+  end
+
+  create_table "banks", force: :cascade do |t|
+    t.string   "name",                     null: false
+    t.integer  "lock_version", default: 0, null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["name"], name: "index_banks_on_name", unique: true, using: :btree
+  end
+
   create_table "body_templates", force: :cascade do |t|
     t.string   "name",                     null: false
     t.text     "content",                  null: false
@@ -52,6 +71,119 @@ ActiveRecord::Schema.define(version: 20161122195033) do
     t.boolean  "active",                                 default: true, null: false
     t.index ["active"], name: "index_cards_on_active", using: :btree
     t.index ["name"], name: "index_cards_on_name", unique: true, using: :btree
+  end
+
+  create_table "cash_employees", force: :cascade do |t|
+    t.date     "period",                                            null: false
+    t.decimal  "amount",       precision: 10, scale: 2,             null: false
+    t.integer  "employee_id",                                       null: false
+    t.integer  "user_id",                                           null: false
+    t.integer  "cash_id",                                           null: false
+    t.integer  "lock_version",                          default: 0, null: false
+    t.datetime "created_at",                                        null: false
+    t.datetime "updated_at",                                        null: false
+    t.index ["cash_id"], name: "index_cash_employees_on_cash_id", using: :btree
+    t.index ["employee_id"], name: "index_cash_employees_on_employee_id", using: :btree
+    t.index ["period"], name: "index_cash_employees_on_period", using: :btree
+    t.index ["user_id"], name: "index_cash_employees_on_user_id", using: :btree
+  end
+
+  create_table "cash_invoices", force: :cascade do |t|
+    t.date     "date",                                                                    null: false
+    t.string   "number",                                                                  null: false
+    t.decimal  "subtotal",                       precision: 10, scale: 2,                 null: false
+    t.decimal  "tax_amount",                     precision: 10, scale: 2,                 null: false
+    t.decimal  "tax_perception_amount",          precision: 10, scale: 2,                 null: false
+    t.decimal  "gross_income_perception_amount", precision: 10, scale: 2,                 null: false
+    t.decimal  "amount",                         precision: 10, scale: 2,                 null: false
+    t.text     "detail"
+    t.boolean  "is_voucher",                                              default: false, null: false
+    t.integer  "cash_voucher_id"
+    t.integer  "invoice_type_id",                                                         null: false
+    t.integer  "tax_condition_id",                                                        null: false
+    t.integer  "expense_type_id",                                                         null: false
+    t.integer  "payment_method_id",                                                       null: false
+    t.integer  "supplier_id",                                                             null: false
+    t.integer  "user_id",                                                                 null: false
+    t.integer  "cash_id",                                                                 null: false
+    t.integer  "lock_version",                                            default: 0,     null: false
+    t.datetime "created_at",                                                              null: false
+    t.datetime "updated_at",                                                              null: false
+    t.index ["cash_id"], name: "index_cash_invoices_on_cash_id", using: :btree
+    t.index ["cash_voucher_id"], name: "index_cash_invoices_on_cash_voucher_id", using: :btree
+    t.index ["date"], name: "index_cash_invoices_on_date", using: :btree
+    t.index ["expense_type_id"], name: "index_cash_invoices_on_expense_type_id", using: :btree
+    t.index ["invoice_type_id"], name: "index_cash_invoices_on_invoice_type_id", using: :btree
+    t.index ["number"], name: "index_cash_invoices_on_number", using: :btree
+    t.index ["payment_method_id"], name: "index_cash_invoices_on_payment_method_id", using: :btree
+    t.index ["supplier_id"], name: "index_cash_invoices_on_supplier_id", using: :btree
+    t.index ["tax_condition_id"], name: "index_cash_invoices_on_tax_condition_id", using: :btree
+    t.index ["user_id"], name: "index_cash_invoices_on_user_id", using: :btree
+  end
+
+  create_table "cash_member_payments", force: :cascade do |t|
+    t.integer  "customer_id",                   null: false
+    t.integer  "member_payment_id",             null: false
+    t.integer  "user_id",                       null: false
+    t.integer  "cash_id",                       null: false
+    t.integer  "lock_version",      default: 0, null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.index ["cash_id"], name: "index_cash_member_payments_on_cash_id", using: :btree
+    t.index ["customer_id"], name: "index_cash_member_payments_on_customer_id", using: :btree
+    t.index ["member_payment_id"], name: "index_cash_member_payments_on_member_payment_id", using: :btree
+    t.index ["user_id"], name: "index_cash_member_payments_on_user_id", using: :btree
+  end
+
+  create_table "cash_payments", force: :cascade do |t|
+    t.integer  "customer_id",              null: false
+    t.integer  "payment_id",               null: false
+    t.integer  "user_id",                  null: false
+    t.integer  "cash_id",                  null: false
+    t.integer  "lock_version", default: 0, null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["cash_id"], name: "index_cash_payments_on_cash_id", using: :btree
+    t.index ["customer_id"], name: "index_cash_payments_on_customer_id", using: :btree
+    t.index ["payment_id"], name: "index_cash_payments_on_payment_id", using: :btree
+    t.index ["user_id"], name: "index_cash_payments_on_user_id", using: :btree
+  end
+
+  create_table "cash_vouchers", force: :cascade do |t|
+    t.string   "kind",                                                  null: false
+    t.decimal  "amount",       precision: 10, scale: 2,                 null: false
+    t.text     "comment",                                               null: false
+    t.boolean  "annulled",                              default: false, null: false
+    t.string   "owner_type",                                            null: false
+    t.integer  "owner_id",                                              null: false
+    t.integer  "user_id",                                               null: false
+    t.integer  "cash_id",                                               null: false
+    t.integer  "lock_version",                          default: 0,     null: false
+    t.datetime "created_at",                                            null: false
+    t.datetime "updated_at",                                            null: false
+    t.index ["cash_id"], name: "index_cash_vouchers_on_cash_id", using: :btree
+    t.index ["kind"], name: "index_cash_vouchers_on_kind", using: :btree
+    t.index ["owner_type", "owner_id"], name: "index_cash_vouchers_on_owner_type_and_owner_id", using: :btree
+    t.index ["user_id"], name: "index_cash_vouchers_on_user_id", using: :btree
+  end
+
+  create_table "cashes", force: :cascade do |t|
+    t.string   "status",                                               null: false
+    t.datetime "closed_at"
+    t.decimal  "opening_balance", precision: 10, scale: 2,             null: false
+    t.decimal  "closing_balance", precision: 10, scale: 2
+    t.decimal  "balance",         precision: 10, scale: 2
+    t.decimal  "incomes_count",   precision: 10, scale: 2
+    t.decimal  "outcomes_count",  precision: 10, scale: 2
+    t.decimal  "difference",      precision: 10, scale: 2
+    t.text     "comment"
+    t.integer  "user_id",                                              null: false
+    t.integer  "lock_version",                             default: 0, null: false
+    t.datetime "created_at",                                           null: false
+    t.datetime "updated_at",                                           null: false
+    t.index ["created_at"], name: "index_cashes_on_created_at", using: :btree
+    t.index ["status"], name: "index_cashes_on_status", using: :btree
+    t.index ["user_id"], name: "index_cashes_on_user_id", using: :btree
   end
 
   create_table "cities", force: :cascade do |t|
@@ -165,6 +297,28 @@ ActiveRecord::Schema.define(version: 20161122195033) do
     t.index ["name"], name: "index_education_levels_on_name", unique: true, using: :btree
   end
 
+  create_table "employees", force: :cascade do |t|
+    t.string   "status",                   null: false
+    t.string   "name",                     null: false
+    t.string   "lastname",                 null: false
+    t.string   "tax_id",                   null: false
+    t.integer  "lock_version", default: 0, null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["lastname"], name: "index_employees_on_lastname", using: :btree
+    t.index ["name"], name: "index_employees_on_name", using: :btree
+    t.index ["status"], name: "index_employees_on_status", using: :btree
+    t.index ["tax_id"], name: "index_employees_on_tax_id", unique: true, using: :btree
+  end
+
+  create_table "expense_types", force: :cascade do |t|
+    t.string   "name",                     null: false
+    t.integer  "lock_version", default: 0, null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["name"], name: "index_expense_types_on_name", unique: true, using: :btree
+  end
+
   create_table "footer_templates", force: :cascade do |t|
     t.string   "name",                     null: false
     t.text     "content",                  null: false
@@ -217,6 +371,14 @@ ActiveRecord::Schema.define(version: 20161122195033) do
     t.index ["name"], name: "index_investors_on_name", using: :btree
     t.index ["state_id"], name: "index_investors_on_state_id", using: :btree
     t.index ["user_id"], name: "index_investors_on_user_id", using: :btree
+  end
+
+  create_table "invoice_types", force: :cascade do |t|
+    t.string   "name",                     null: false
+    t.integer  "lock_version", default: 0, null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["name"], name: "index_invoice_types_on_name", unique: true, using: :btree
   end
 
   create_table "loans", force: :cascade do |t|
@@ -295,6 +457,16 @@ ActiveRecord::Schema.define(version: 20161122195033) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.index ["name"], name: "index_occupations_on_name", unique: true, using: :btree
+  end
+
+  create_table "payment_methods", force: :cascade do |t|
+    t.string   "name",                          null: false
+    t.boolean  "cash_discount", default: false, null: false
+    t.integer  "lock_version",  default: 0,     null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.index ["cash_discount"], name: "index_payment_methods_on_cash_discount", using: :btree
+    t.index ["name"], name: "index_payment_methods_on_name", unique: true, using: :btree
   end
 
   create_table "payments", force: :cascade do |t|
@@ -376,6 +548,26 @@ ActiveRecord::Schema.define(version: 20161122195033) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.index ["name"], name: "index_states_on_name", unique: true, using: :btree
+  end
+
+  create_table "suppliers", force: :cascade do |t|
+    t.string   "status",                   null: false
+    t.string   "tax_id",                   null: false
+    t.string   "legal_name",               null: false
+    t.integer  "lock_version", default: 0, null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["legal_name"], name: "index_suppliers_on_legal_name", unique: true, using: :btree
+    t.index ["status"], name: "index_suppliers_on_status", using: :btree
+    t.index ["tax_id"], name: "index_suppliers_on_tax_id", unique: true, using: :btree
+  end
+
+  create_table "tax_conditions", force: :cascade do |t|
+    t.string   "name",                     null: false
+    t.integer  "lock_version", default: 0, null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["name"], name: "index_tax_conditions_on_name", unique: true, using: :btree
   end
 
   create_table "users", force: :cascade do |t|

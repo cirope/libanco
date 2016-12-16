@@ -10,6 +10,13 @@ jQuery ($) ->
       changeMonth: true
       changeYear: true
 
+  $(document).on 'update.autocomplete', '#model_id', (el) ->
+    model_id = el.item.id
+    autocomplete_url = $(this).attr('data-update-autocomplete-url').replace('model_id', model_id)
+
+    if autocomplete_url
+      $.getScript autocomplete_url
+
 document.addEventListener 'turbolinks:load', ->
   $('[data-submenu]').submenupicker()
   $('[data-toggle="popover"]').popover({html: true})

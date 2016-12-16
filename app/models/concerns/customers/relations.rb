@@ -12,10 +12,11 @@ module Customers::Relations
     belongs_to :occupation, optional: true
     belongs_to :state
     belongs_to :workgroup, optional: true
-    has_many :references, dependent: :destroy
-    has_many :loans, dependent: :destroy
     has_many :member_payments, dependent: :destroy
     has_many :schedules, as: :schedulable, dependent: :destroy
+    has_many :loans, dependent: :destroy
+    has_many :payments, through: :loans
+    has_many :references, dependent: :destroy
     accepts_nested_attributes_for :references, allow_destroy: false,
       reject_if: :all_blank
   end

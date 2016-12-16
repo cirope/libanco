@@ -1,0 +1,2 @@
+module BankAccounts::SearchesHelper
+end

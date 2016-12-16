@@ -1,0 +1,10 @@
+default:
+  status: closed
+  closed_at: <%= Date.yesterday %>
+  opening_balance: 1000
+  closing_balance: 1000
+  balance: 1000
+  incomes_count: 1000
+  outcomes_count: 1000
+  difference: 0
+  user: cashier

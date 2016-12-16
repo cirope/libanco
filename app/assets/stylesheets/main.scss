@@ -12,6 +12,10 @@ hr {
   margin: 15px 0 !important;
 }
 
+.tab-content {
+  margin-top: 15px;
+}
+
 .pagination {
   margin: 0;
 }
@@ -33,4 +37,8 @@ hr {
 
 .strike {
   text-decoration: line-through;
+}
+
+#member_payments_pendings, #payments_pendings {
+  input[type="checkbox"] { margin: 0; }
 }

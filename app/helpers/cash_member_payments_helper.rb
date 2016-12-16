@@ -1,0 +1,2 @@
+module CashMemberPaymentsHelper
+end

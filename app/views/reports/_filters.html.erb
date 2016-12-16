@@ -2,22 +2,40 @@
   <div class="panel panel-default">
     <div class="panel-body">
       <div class="row">
-        <div class="col-md-5">
+        <div class="col-md-4">
           <div class="input-group">
             <span class="input-group-addon">Fecha</span>
             <%= f.text_field :date_range, class: 'form-control', data: { date_range_picker: 'true' } %>
           </div>
         </div>
         <div class="col-md-5">
-          <div class="input-group">
-            <span class="input-group-addon"><%= Customer.model_name.human(count: 1) %></span>
-            <%= f.input :customer, as: :autocomplete, url: customers_searches_path,
-              label: false, input_html: { data: { empty_result_label: t('views.generic.empty_index') } } %>
-          </div>
+          <% if ['mp_all', 'mp_expired', 'p_all', 'p_expired'].include?(@report.filter) %>
+            <div class="input-group">
+              <span class="input-group-addon"><%= Customer.model_name.human(count: 1) %></span>
+              <%= f.input :customer, as: :autocomplete, url: customers_searches_path,
+                label: false, input_html: { data: { empty_result_label: t('views.generic.empty_index') } } %>
+            </div>
+          <% elsif ['cash_employee'].include?(@report.filter) %>
+            <div class="input-group">
+              <span class="input-group-addon"><%= Employee.model_name.human(count: 1) %></span>
+              <%= f.input :employee, as: :autocomplete, url: employees_searches_path,
+                label: false, input_html: { data: { empty_result_label: t('views.generic.empty_index') } } %>
+            </div>
+          <% else %>
+            <div class="input-group">
+              <span class="input-group-addon"><%= Supplier.model_name.human(count: 1) %></span>
+              <%= f.input :supplier, as: :autocomplete, url: suppliers_searches_path,
+                label: false, input_html: { data: { empty_result_label: t('views.generic.empty_index') } } %>
+            </div>
+          <% end %>
         </div>
         <%= f.input :filter, as: :hidden, input_html: { value: @report.filter } %>
-        <div class="col-md-2">
-          <%= f.submit t('navigation.search'), class: 'btn btn-block btn-primary' %>
+        <div class="col-md-3">
+          <%= f.submit t('navigation.search'), class: 'btn btn-primary' %>
+          <% if @reports.present? %>
+            <%= link_to fa_icon('file-excel-o', text: t('reports.export_to_xls')),
+              reports_path(report: params[:report].try(:to_unsafe_h), format: :xls), class: 'btn btn-primary' %>
+          <% end %>
         </div>
       </div>
     </div>

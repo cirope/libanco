@@ -1,1 +1,0 @@
-json.array! @member_payments, partial: 'member_payments/member_payment', as: :member_payment

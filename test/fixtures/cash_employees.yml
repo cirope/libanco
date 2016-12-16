@@ -1,0 +1,6 @@
+default:
+  period: <%= 1.month.ago %>
+  amount: 5000
+  employee: default
+  user: cashier
+  cash: default

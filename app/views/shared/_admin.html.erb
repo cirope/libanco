@@ -14,6 +14,13 @@
       </ul>
     </li>
     <li class="dropdown-submenu">
+      <a tabindex="0"><%= t('menu.company') %></a>
+      <ul class="dropdown-menu">
+        <%= menu_item_for Employee, employees_path %>
+        <%= menu_item_for Bank, banks_path %>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
       <a tabindex="0"><%= Customer.model_name.human count: 0 %></a>
       <ul class="dropdown-menu">
         <%= menu_item_for Nacionality, nacionalities_path %>
@@ -36,6 +43,15 @@
       <ul class="dropdown-menu">
         <%= menu_item_for InvestmentGroup, investment_groups_path %>
         <%= menu_item_for Consultant, consultants_path %>
+      </ul>
+    </li>
+    <li class="dropdown-submenu">
+      <a tabindex="0"><%= t('menu.invoicing') %></a>
+      <ul class="dropdown-menu">
+        <%= menu_item_for TaxCondition, tax_conditions_path %>
+        <%= menu_item_for ExpenseType, expense_types_path %>
+        <%= menu_item_for PaymentMethod, payment_methods_path %>
+        <%= menu_item_for InvoiceType, invoice_types_path %>
       </ul>
     </li>
     <li class="dropdown-submenu">

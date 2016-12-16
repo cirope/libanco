@@ -1,0 +1,2 @@
+module Cashes::FlowsHelper
+end

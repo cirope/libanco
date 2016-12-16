@@ -1,0 +1,31 @@
+<% if @banks.blank? %>
+  <%= render 'shared/empty_index', message: t('.empty_html') %>
+<% else %>
+  <div class="table-responsive">
+    <table class="table table-striped table-condensed">
+      <thead>
+        <tr>
+          <th><%= Bank.human_attribute_name 'created_at' %></th>
+          <th><%= Bank.human_attribute_name 'name' %></th>
+          <th colspan="2"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @banks.each do |bank| %>
+          <tr>
+            <td class="col-md-2"><%= l bank.created_at %></td>
+            <td><%= bank.name %></td>
+            <td><%= link_to_show bank %></td>
+            <td><%= link_to_edit [:edit, bank] %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% end %>
+
+<hr />
+
+<%= paginate @banks %>
+<%= link_to_new new_bank_path, class: 'btn btn-primary' %>

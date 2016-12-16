@@ -1,0 +1,8 @@
+<% if @cash.errors.any? %>
+  $('#modal form').replaceWith('<%= j render('form') %>');
+<% else %>
+  $('body').append(
+    '<%= j render('shared/modal', title: @title, body: render('form')) %>'
+  );
+  $('#modal').modal('show');
+<% end %>

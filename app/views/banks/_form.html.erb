@@ -1,0 +1,27 @@
+<%= simple_form_for @bank do |f| %>
+  <div class="form-inputs row">
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            <%= Bank.model_name.human count: 1 %>
+          </h3>
+        </div>
+        <div class="panel-body">
+          <%= f.input :name, autofocus: true %>
+          <%= f.input :lock_version, as: :hidden %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <%= render 'bank_accounts/form', f: f %>
+    </div>
+  </div>
+
+  <hr />
+
+  <div class="form-actions">
+    <%= submit_button f %>
+    <div class="pull-right"><%= yield :form_actions %></div>
+  </div>
+<% end %>
