@@ -4,10 +4,11 @@ class CashEmployee < ApplicationRecord
   include Cashes::UpdateBalance
   include CashEmployees::Relations
   include CashEmployees::Reports
+  include CashEmployees::Templates
   include CashEmployees::Validation
   include CashEmployees::Xls
 
-  delegate :tax_id, to: :employee
+  delegate :name, :lastname, :tax_id, to: :employee
 
   scope :ordered, -> { order 'created_at DESC' }
 end

@@ -26,11 +26,7 @@ class TmpTemplate
     end
 
     def set_tmp_body
-      body_template = case @custom_template.kind
-        when 'Customer' then CustomerTemplate.new(@templatable, @custom_template.content).render
-        when 'CashMemberPayment' then CashMemberPaymentTemplate.new(@templatable, @custom_template.content).render
-      end
-      tmp = create_tmp 'body_tmp_template', body_template
+      tmp = create_tmp 'body_tmp_template', @templatable.to_template(@custom_template)
       @body_string = @renderer.render(file: tmp.path, layout: 'pdf.html.erb')
       tmp.unlink
     end

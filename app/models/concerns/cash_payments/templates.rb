@@ -1,16 +1,11 @@
-class CashMemberPaymentTemplate
+module CashPayments::Templates
+  extend ActiveSupport::Concern
 
-  def initialize cmp, content
-    @cmp = cmp
-    @content = content
-    @customer = cmp.customer
+  def to_template ct
+    ct.content % template_attrs
   end
 
-  def render
-    @content % attributes
-  end
-
-  def attributes
+  def template_attrs
     {
       nombres: nombres,
       apellidos: apellidos,
@@ -20,7 +15,7 @@ class CashMemberPaymentTemplate
       nacionalidad: nacionalidad,
       fecha_nacimiento: fecha_nacimiento,
       lugar_nacimiento: lugar_nacimiento,
-      email: email,
+      correo_electronico: correo_electronico,
       estado_civil: estado_civil,
       ocupacion: ocupacion,
       nivel_estudios: nivel_estudios,
@@ -41,78 +36,78 @@ class CashMemberPaymentTemplate
     end
 
     def nombres
-      @customer.name
+      customer.name
     end
 
     def apellidos
-      @customer.lastname
+      customer.lastname
     end
 
     def nombre_completo
-      @customer
+      customer
     end
 
     def tipo_documento
-      I18n.t "customers.identification_types.#{@customer.identification_type}"
+      I18n.t "customers.identification_types.#{customer.identification_type}"
     end
 
     def nro_documento
-      @customer.identification
+      customer.identification
     end
 
     def nacionalidad
-      @customer.nacionality
+      customer.nacionality
     end
 
     def fecha_nacimiento
-      I18n.l @customer.birthdate
+      I18n.l customer.birthdate
     end
 
     def lugar_nacimiento
-      @customer.place_birth
+      customer.place_birth
     end
 
-    def email
-      @customer.email
+    def correo_electronico
+      customer.email
     end
 
     def estado_civil
-      @customer.marital_status
+      customer.marital_status
     end
 
     def ocupacion
-      @customer.occupation
+      customer.occupation
     end
 
     def domicilio_laboral
-      @customer.work_address
+      customer.work_address
     end
 
     def nivel_estudios
-      @customer.education_level
+      customer.education_level
     end
 
     def ingreso_mensual
-      @customer.monthly_income
+      customer.monthly_income
     end
 
     def direccion_completa
-      @customer.full_address
+      customer.full_address
     end
 
     def telefono
-      @customer.cellphone
+      customer.cellphone
     end
 
     def adhiere_tarjeta
-      @customer.card
+      customer.card
     end
 
     def asesor_originante
-      @customer.adviser
+      customer.adviser
     end
 
     def monto
-      ActionController::Base.helpers.number_to_currency @cmp.amount
+      ActionController::Base.helpers.number_to_currency amount
     end
 end

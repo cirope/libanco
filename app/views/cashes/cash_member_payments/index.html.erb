@@ -28,7 +28,7 @@
             <td><%= l cash_member_payment.expire_at %></td>
             <td>
               <% CustomTemplate.cash_member_payments.each do |ct| %>
-                <%= link_to_cash_member_template cash_member_payment, ct %>
+                <%= link_to_custom_template cash_member_payment, ct %>
               <% end %>
             </td>
             <td><%= link_to_destroy [@cash, cash_member_payment], remote: true %></td>

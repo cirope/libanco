@@ -5,6 +5,7 @@ class Customer < ApplicationRecord
   include Customers::Defaults
   include Customers::Relations
   include Customers::Scopes
+  include Customers::Templates
   include Customers::Validation
   include SearchCop
 

@@ -4,6 +4,7 @@ class CashMemberPayment < ApplicationRecord
   include Cashes::UpdateBalance
   include CashMemberPayments::MemberPayments
   include CashMemberPayments::Relations
+  include CashMemberPayments::Templates
 
   delegate :amount, :expire_at, :paid_at, :period, to: :member_payment
 
