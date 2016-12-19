@@ -45,9 +45,6 @@ es:
       cash_voucher:
         one: 'Entrega Vale'
         other: 'Entrega Vales'
-      body_template:
-        one: 'Plantilla contenido'
-        other: 'Plantillas contenido'
       card:
         one: 'Tarjeta'
         other: 'Tarjetas'
@@ -214,9 +211,6 @@ es:
         kind: 'Vale'
         owner: 'Asignado a'
         user: 'Cajero'
-      body_template:
-        name: 'Nombre'
-        content: 'Contenido'
       card:
         active: 'Activa'
         name: 'Nombre'
@@ -244,10 +238,11 @@ es:
         tax: 'IVA (%)'
         tax_perception: 'Percepción IVA (%)'
       custom_template:
-        name: 'Nombre'
-        header_template: 'Cabecera'
-        body_template: 'Contenido'
+        content: 'Contenido'
         footer_template: 'Pie de página'
+        header_template: 'Cabecera'
+        kind: 'Tipo'
+        name: 'Nombre'
       customer:
         code: 'Socio'
         created_at: 'Ingreso'

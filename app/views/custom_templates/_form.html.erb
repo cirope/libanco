@@ -1,19 +1,24 @@
 <%= simple_form_for @custom_template do |f| %>
-  <div class="form-inputs row">
-    <div class="col-md-6">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">
-            <%= CustomTemplate.model_name.human count: 1 %>
-          </h3>
+  <div class="form-inputs">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <%= CustomTemplate.model_name.human count: 1 %>
+        </h3>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-6">
+            <%= f.input :name, autofocus: true %>
+          </div>
+          <div class="col-md-6">
+            <%= f.input :kind, collection: custom_templates_kinds, prompt: true %>
+          </div>
         </div>
-        <div class="panel-body">
-          <%= f.input :name, autofocus: true %>
-          <%= f.association :header_template, prompt: true %>
-          <%= render 'custom_body_templates/form', f: f %>
-          <%= f.association :footer_template, prompt: true %>
-          <%= f.input :lock_version, as: :hidden %>
-        </div>
+        <%= f.association :header_template, prompt: true %>
+        <%= f.input :content, as: :ckeditor %>
+        <%= f.association :footer_template, prompt: true %>
+        <%= f.input :lock_version, as: :hidden %>
       </div>
     </div>
   </div>

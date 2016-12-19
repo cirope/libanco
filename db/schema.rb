@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161210121202) do
+ActiveRecord::Schema.define(version: 20161218120232) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,23 +52,14 @@ ActiveRecord::Schema.define(version: 20161210121202) do
     t.index ["name"], name: "index_banks_on_name", unique: true, using: :btree
   end
 
-  create_table "body_templates", force: :cascade do |t|
-    t.string   "name",                     null: false
-    t.text     "content",                  null: false
-    t.integer  "lock_version", default: 0, null: false
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-    t.index ["name"], name: "index_body_templates_on_name", unique: true, using: :btree
-  end
-
   create_table "cards", force: :cascade do |t|
     t.string   "name",                                                  null: false
     t.decimal  "admission_fee", precision: 10, scale: 2,                null: false
     t.decimal  "monthly_fee",   precision: 10, scale: 2,                null: false
-    t.boolean  "active",                                 default: true, null: false
     t.integer  "lock_version",                           default: 0,    null: false
     t.datetime "created_at",                                            null: false
     t.datetime "updated_at",                                            null: false
+    t.boolean  "active",                                 default: true, null: false
     t.index ["active"], name: "index_cards_on_active", using: :btree
     t.index ["name"], name: "index_cards_on_name", unique: true, using: :btree
   end
@@ -220,15 +211,6 @@ ActiveRecord::Schema.define(version: 20161210121202) do
     t.index ["name"], name: "index_credit_lines_on_name", unique: true, using: :btree
   end
 
-  create_table "custom_body_templates", force: :cascade do |t|
-    t.integer  "custom_template_id", null: false
-    t.integer  "body_template_id",   null: false
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.index ["body_template_id"], name: "index_custom_body_templates_on_body_template_id", using: :btree
-    t.index ["custom_template_id"], name: "index_custom_body_templates_on_custom_template_id", using: :btree
-  end
-
   create_table "custom_templates", force: :cascade do |t|
     t.string   "name",                           null: false
     t.integer  "header_template_id"
@@ -236,6 +218,8 @@ ActiveRecord::Schema.define(version: 20161210121202) do
     t.integer  "lock_version",       default: 0, null: false
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
+    t.string   "kind",                           null: false
+    t.text     "content",                        null: false
     t.index ["footer_template_id"], name: "index_custom_templates_on_footer_template_id", using: :btree
     t.index ["header_template_id"], name: "index_custom_templates_on_header_template_id", using: :btree
     t.index ["name"], name: "index_custom_templates_on_name", unique: true, using: :btree
@@ -256,7 +240,6 @@ ActiveRecord::Schema.define(version: 20161210121202) do
     t.string   "work_address"
     t.decimal  "monthly_income",      precision: 10, scale: 2
     t.string   "place_birth"
-    t.integer  "starting_day"
     t.integer  "occupation_id"
     t.integer  "card_id",                                                      null: false
     t.integer  "neighborhood_id"
@@ -270,6 +253,7 @@ ActiveRecord::Schema.define(version: 20161210121202) do
     t.integer  "lock_version",                                 default: 0,     null: false
     t.datetime "created_at",                                                   null: false
     t.datetime "updated_at",                                                   null: false
+    t.integer  "starting_day"
     t.index ["adviser_id"], name: "index_customers_on_adviser_id", using: :btree
     t.index ["card_id"], name: "index_customers_on_card_id", using: :btree
     t.index ["city_id"], name: "index_customers_on_city_id", using: :btree
@@ -423,12 +407,12 @@ ActiveRecord::Schema.define(version: 20161210121202) do
   create_table "member_payments", force: :cascade do |t|
     t.decimal  "amount",      precision: 10, scale: 2, null: false
     t.date     "paid_at"
-    t.date     "period",                               null: false
     t.date     "expire_at",                            null: false
-    t.text     "comment"
     t.integer  "customer_id",                          null: false
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
+    t.date     "period",                               null: false
+    t.text     "comment"
     t.index ["customer_id"], name: "index_member_payments_on_customer_id", using: :btree
     t.index ["expire_at"], name: "index_member_payments_on_expire_at", using: :btree
     t.index ["paid_at"], name: "index_member_payments_on_paid_at", using: :btree
@@ -532,11 +516,11 @@ ActiveRecord::Schema.define(version: 20161210121202) do
     t.boolean  "done",             default: false, null: false
     t.boolean  "remind_me",        default: false, null: false
     t.integer  "user_id",                          null: false
-    t.string   "schedulable_type"
-    t.integer  "schedulable_id"
     t.integer  "lock_version",     default: 0,     null: false
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
+    t.string   "schedulable_type"
+    t.integer  "schedulable_id"
     t.index ["schedulable_type", "schedulable_id"], name: "index_schedules_on_schedulable_type_and_schedulable_id", using: :btree
     t.index ["scheduled_at"], name: "index_schedules_on_scheduled_at", using: :btree
     t.index ["user_id"], name: "index_schedules_on_user_id", using: :btree

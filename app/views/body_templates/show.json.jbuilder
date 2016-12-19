@@ -1,1 +1,0 @@
-json.partial! "body_templates/body_template", body_template: @body_template

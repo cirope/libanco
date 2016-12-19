@@ -14,12 +14,10 @@
 </blockquote>
 
 <p>
-  <strong class="label label-default"><%= CustomTemplate.human_attribute_name 'body_template' %>:</strong>
+  <strong class="label label-default"><%= CustomTemplate.human_attribute_name 'content' %>:</strong>
 </p>
 <blockquote>
-  <% @custom_template.body_templates.each do |bt|%>
-    <%= raw bt.content %>
-  <% end %>
+  <%= raw @custom_template.content %>
 </blockquote>
 
 <p>

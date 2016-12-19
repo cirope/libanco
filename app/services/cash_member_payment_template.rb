@@ -1,8 +1,9 @@
-class CustomerTemplate
+class CashMemberPaymentTemplate
 
-  def initialize customer, content
+  def initialize cmp, content
+    @cmp = cmp
     @content = content
-    @customer = customer
+    @customer = cmp.customer
   end
 
   def render
@@ -28,7 +29,8 @@ class CustomerTemplate
       ingreso_mensual: ingreso_mensual,
       adhiere_tarjeta: adhiere_tarjeta,
       asesor_originante: asesor_originante,
-      fecha: fecha
+      fecha: fecha,
+      monto: monto
     }
   end
 
@@ -108,5 +110,9 @@ class CustomerTemplate
 
     def asesor_originante
       @customer.adviser
+    end
+
+    def monto
+      ActionController::Base.helpers.number_to_currency @cmp.amount
     end
 end

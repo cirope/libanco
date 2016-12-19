@@ -21,7 +21,9 @@ class CustomTemplatesControllerTest < ActionDispatch::IntegrationTest
     assert_difference('CustomTemplate.count') do
       post custom_templates_url, params: {
         custom_template: {
+          kind: 'Customer',
           name: 'Custom name',
+          content: 'Body content',
           footer_template_id: @custom_template.footer_template_id,
           header_template_id: @custom_template.header_template_id,
         }

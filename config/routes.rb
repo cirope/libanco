@@ -24,7 +24,6 @@ Rails.application.routes.draw do
 
     resources :advisers, except: [:show, :destroy]
     resources :banks, except: [:destroy]
-    resources :body_templates, except: [:destroy]
     resources :cards, except: [:show, :destroy]
     resources :cashes do
       scope module: 'cashes' do
@@ -42,18 +41,17 @@ Rails.application.routes.draw do
     resources :consultants, except: [:show, :destroy]
     resources :credit_lines, except: [:show, :destroy]
     resources :custom_templates
-    resources :customers do
-      resources :custom_templates, only: [] do
-        scope module: 'custom_templates' do
-          resource :generate, only: [:show]
-        end
+    resources :custom_templates, only: [] do
+      scope module: 'custom_templates' do
+        resource :generate, only: [:show]
       end
-      resources :loans, only: [:index]
     end
+    resources :customers
     resources :customers, only: [] do
       resources :schedules, only: [:new, :create, :edit, :update]
       resources :member_payments, only: [:index]
       resources :payments, only: [:index]
+      resources :loans, only: [:index]
     end
     resources :education_levels, except: [:show, :destroy]
     resources :employees, except: [:show, :destroy]

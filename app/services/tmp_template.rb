@@ -1,8 +1,8 @@
 class TmpTemplate
 
-  def initialize customer, custom_template
+  def initialize templatable, custom_template
     @renderer = ApplicationController.renderer
-    @customer = customer
+    @templatable = templatable
     @custom_template = custom_template
     @options = { margin: { top: 20 } }
 
@@ -26,12 +26,13 @@ class TmpTemplate
     end
 
     def set_tmp_body
-      if @custom_template.templates.present?
-        body_template = CustomerTemplate.new(@customer, @custom_template.templates).render
-        tmp = create_tmp 'body_tmp_template', body_template
-        @body_string = @renderer.render(file: tmp.path, layout: 'pdf.html.erb')
-        tmp.unlink
+      body_template = case @custom_template.kind
+        when 'Customer' then CustomerTemplate.new(@templatable, @custom_template.content).render
+        when 'CashMemberPayment' then CashMemberPaymentTemplate.new(@templatable, @custom_template.content).render
       end
+      tmp = create_tmp 'body_tmp_template', body_template
+      @body_string = @renderer.render(file: tmp.path, layout: 'pdf.html.erb')
+      tmp.unlink
     end
 
     def set_tmp_header

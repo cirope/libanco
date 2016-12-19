@@ -90,16 +90,16 @@
   </div>
 </div>
 
-<% if CustomTemplate.exists? %>
+<% if CustomTemplate.customers.exists? %>
   <div class="page-header page-header-sm">
     <h5><%= fa_icon 'file-pdf-o', text: t('customers.files') %></h5>
   </div>
 
   <ul>
-    <% CustomTemplate.all.each do |custom_template| %>
+    <% CustomTemplate.customers.each do |custom_template| %>
       <li>
         <%= link_to custom_template.name,
-          customer_custom_template_generate_url(@customer, custom_template, format: :pdf), target: '_blank'  %>
+          custom_template_generate_url(custom_template, format: :pdf, templatable_id: @customer.id), target: '_blank'  %>
       </li>
     <% end %>
   </ul>

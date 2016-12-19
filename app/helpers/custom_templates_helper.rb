@@ -1,6 +1,5 @@
 module CustomTemplatesHelper
-  def custom_body_templates model
-    model.custom_body_templates.new if model.custom_body_templates.blank?
-    model.custom_body_templates
+  def custom_templates_kinds
+    CustomTemplate::KINDS.map { |k| [t("custom_templates.kinds.#{k}"), k] }
   end
 end

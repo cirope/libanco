@@ -61,7 +61,7 @@ class CustomTemplatesController < ApplicationController
     end
 
     def custom_template_params
-      params.require(:custom_template).permit :name, :header_template_id, :footer_template_id, :lock_version,
-        custom_body_templates_attributes: [:id, :body_template_id, :_destroy]
+      params.require(:custom_template).permit :name, :kind, :content, :header_template_id,
+        :footer_template_id, :lock_version
     end
 end

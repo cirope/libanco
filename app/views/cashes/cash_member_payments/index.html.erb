@@ -12,7 +12,7 @@
           <th><%= MemberPayment.human_attribute_name 'amount' %></th>
           <th><%= MemberPayment.human_attribute_name 'paid_at' %></th>
           <th><%= MemberPayment.human_attribute_name 'expire_at' %></th>
-          <th></th>
+          <th colspan="2"></th>
         </tr>
       </thead>
 
@@ -26,6 +26,11 @@
             <td><%= number_to_currency cash_member_payment.amount %></td>
             <td><%= l cash_member_payment.paid_at if cash_member_payment.paid_at %></td>
             <td><%= l cash_member_payment.expire_at %></td>
+            <td>
+              <% CustomTemplate.cash_member_payments.each do |ct| %>
+                <%= link_to_cash_member_template cash_member_payment, ct %>
+              <% end %>
+            </td>
             <td><%= link_to_destroy [@cash, cash_member_payment], remote: true %></td>
           </tr>
         <% end %>

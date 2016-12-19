@@ -1,4 +1,6 @@
 default:
+  kind: Customer
   name: Default
+  content: Default
   header_template: default
   footer_template: default

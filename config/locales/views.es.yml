@@ -85,19 +85,6 @@ es:
     bank_accounts:
       new: 'Agregar cuenta bancaria'
 
-  body_templates:
-    list: 'Listado de variables'
-    edit:
-      title: 'Editar plantilla'
-    index:
-      new: 'Nueva plantilla'
-      title: 'Listado plantillas '
-      empty_html: 'No hay plantillas, puede crear una con el botón <span class="label label-info">Nueva plantilla</span>'
-    new:
-      title: 'Crear plantilla'
-    show:
-      title: 'Ver plantilla'
-
   advisers:
     edit:
       title: 'Editar asesor'
@@ -269,8 +256,12 @@ es:
       title: 'Crear plantilla'
     show:
       title: 'Ver plantilla'
-    custom_body_templates:
-      new: 'Agregar plantilla contenido'
+    kinds:
+      Customer: 'Clientes'
+      CashMemberPayment: 'Cuotas Sociales'
+      CashPayment: 'Cuotas'
+      CashEmployee: 'Liquidaciones'
+      CashVoucher: 'Vales'
 
   customers:
     edit:
