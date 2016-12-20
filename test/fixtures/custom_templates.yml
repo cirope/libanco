@@ -1,5 +1,5 @@
 default:
-  kind: Customer
+  kind: customer
   name: Default
   content: Default
   header_template: default
