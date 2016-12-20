@@ -4,12 +4,12 @@ Ckeditor.setup do |config|
   # Load and configure the ORM. Supports :active_record (default), :mongo_mapper and
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
-  require "ckeditor/orm/active_record"
+  # require "ckeditor/orm/active_record"
 
   # Allowed image file types for upload.
   # Set to nil or [] (empty array) for all file types
   # By default: %w(jpg jpeg png gif tiff)
-  config.image_file_types = %w(jpg jpeg png gif)
+  # config.image_file_types = %w(jpg jpeg png gif)
 
   # Allowed flash file types for upload.
   # Set to nil or [] (empty array) for all file types
@@ -44,7 +44,7 @@ Ckeditor.setup do |config|
   # To reduce the asset precompilation time, you can limit plugins and/or languages to those you need:
   # By default: nil (no limit)
   config.assets_languages = ['es']
-  # config.assets_plugins = %w[a11yhelp clipboard colordialog div link liststyle]
+  config.assets_plugins = %w[a11yhelp clipboard colordialog dialog div link find liststyle pagebreak pastefromword showblocks specialchar table tabletools]
 
   # CKEditor CDN
   # More info here http://cdn.ckeditor.com/
