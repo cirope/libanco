@@ -27,7 +27,7 @@
             <td><%= l cash_member_payment.paid_at if cash_member_payment.paid_at %></td>
             <td><%= l cash_member_payment.expire_at %></td>
             <td>
-              <% CustomTemplate.cash_member_payments.each do |ct| %>
+              <% CustomTemplate.templates_for('cash_member_payment').each do |ct| %>
                 <%= link_to_custom_template cash_member_payment, ct %>
               <% end %>
             </td>

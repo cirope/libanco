@@ -20,7 +20,7 @@ class CustomTemplates::GeneratesController < ApplicationController
     end
 
     def set_templatable
-      @templatable = @custom_template.kind.constantize.find params[:templatable_id]
+      @templatable = CustomTemplate::KINDS[@custom_template.kind.to_sym].constantize.find params[:templatable_id]
     end
 
     def set_tmp_template

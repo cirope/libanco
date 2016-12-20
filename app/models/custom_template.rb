@@ -6,10 +6,6 @@ class CustomTemplate < ApplicationRecord
   include CustomTemplates::Scopes
   include CustomTemplates::Validation
 
-  def model_constant
-    kind.constantize
-  end
-
   strip_fields :name
 
   def to_s

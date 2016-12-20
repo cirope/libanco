@@ -23,7 +23,7 @@
             <td><%= l cash_employee.period, format: :period %></td>
             <td><%= number_to_currency cash_employee.amount %></td>
             <td>
-              <% CustomTemplate.cash_employees.each do |ct| %>
+              <% CustomTemplate.templates_for('cash_employee').each do |ct| %>
                 <%= link_to_custom_template cash_employee, ct %>
               <% end %>
             </td>

@@ -257,11 +257,14 @@ es:
     show:
       title: 'Ver plantilla'
     kinds:
-      Customer: 'Clientes'
-      CashMemberPayment: 'Cuotas Sociales'
-      CashPayment: 'Cuotas'
-      CashEmployee: 'Liquidaciones'
-      CashVoucher: 'Vales'
+      customer: 'Clientes'
+      cash_member_payment: 'Cuotas Sociales'
+      cash_payment: 'Cuotas'
+      cash_employee: 'Liquidaciones'
+      capital_customer: 'Vale - Aporte de capital'
+      cash_outcome: 'Vale - Entrega efectivo'
+      remittance_income: 'Vale - Ingreso remesa'
+      remittance_outcome: 'Vale - Retiro remesa'
 
   customers:
     edit:

@@ -1,6 +1,6 @@
 module CustomTemplatesHelper
   def custom_templates_kinds
-    CustomTemplate::KINDS.map { |k| [t("custom_templates.kinds.#{k}"), k] }
+    CustomTemplate::KINDS.keys.map { |k| [t("custom_templates.kinds.#{k}"), k] }
   end
 
   def link_to_custom_template model, ct

@@ -5,6 +5,7 @@ class CashVoucher < ApplicationRecord
   include Cashes::UpdateBalance
   include CashVouchers::Relations
   include CashVouchers::Scopes
+  include CashVouchers::Templates
   include CashVouchers::Validation
 
   strip_fields :comment

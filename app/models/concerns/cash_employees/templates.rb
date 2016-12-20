@@ -40,7 +40,7 @@ module CashEmployees::Templates
     end
 
     def periodo
-      I18n.l period, format: :period
+      I18n.l period, format: :long_period
     end
 
     def monto

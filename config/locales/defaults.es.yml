@@ -39,6 +39,7 @@ es:
       month: ! '%B %Y'
       payroll: ! '%B_%Y'
       period: ! '%b %Y'
+      long_period: ! '%B %Y'
       emails: ! '%d-%m-%Y'
     month_names:
     -
