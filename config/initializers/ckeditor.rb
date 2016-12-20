@@ -43,8 +43,8 @@ Ckeditor.setup do |config|
 
   # To reduce the asset precompilation time, you can limit plugins and/or languages to those you need:
   # By default: nil (no limit)
-  config.assets_languages = ['es']
-  config.assets_plugins = %w[a11yhelp clipboard colordialog dialog div link find iframe liststyle pagebreak pastefromword showblocks specialchar table tabletools]
+  config.assets_languages = ['en', 'es']
+  #config.assets_plugins = %w[a11yhelp clipboard colordialog dialog div link find iframe liststyle pagebreak pastefromword showblocks specialchar table tabletools]
 
   # CKEditor CDN
   # More info here http://cdn.ckeditor.com/

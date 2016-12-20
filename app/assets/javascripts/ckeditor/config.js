@@ -1,4 +1,5 @@
 CKEDITOR.editorConfig = function (config) {
+  config.language = 'en',
   config.toolbar = [
 		{ name: 'document', groups: [ 'mode', 'document', 'doctools' ], items: [ 'Save', 'DocProps', 'Preview', 'Templates', 'Document' ] },
 		{ name: 'clipboard', groups: [ 'clipboard', 'undo' ], items: [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo' ] },
