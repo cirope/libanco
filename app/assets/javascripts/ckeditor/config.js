@@ -1,5 +1,6 @@
 CKEDITOR.editorConfig = function (config) {
   config.language = "es",
+  config.removePlugins = 'copyformatting',
   config.toolbar = [
 		{ name: 'document', groups: [ 'mode', 'document', 'doctools' ], items: [ 'Save', 'DocProps', 'Preview', 'Templates', 'Document' ] },
 		{ name: 'clipboard', groups: [ 'clipboard', 'undo' ], items: [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo' ] },
