@@ -1,0 +1,2 @@
+module CustomTemplates::VariablesHelper
+end

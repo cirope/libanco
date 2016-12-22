@@ -17,6 +17,11 @@ jQuery ($) ->
     if autocomplete_url
       $.getScript autocomplete_url
 
+  $(document).on 'change', '#custom_template_kind', ->
+    kind = $(this).val()
+    url  = $('#templates-variables').attr 'data-templates-variables-url'
+    $.get url, { kind: kind }, null, 'script'
+
 document.addEventListener 'turbolinks:load', ->
   $('[data-submenu]').submenupicker()
   $('[data-toggle="popover"]').popover({html: true})

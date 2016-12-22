@@ -1,0 +1,33 @@
+<div class="bs-callout bs-callout-info">
+  <div class="page-header page-header-sm">
+    <h4><%= t 'custom_templates.list' %></h4>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <p>
+        <strong><%= Customer.human_attribute_name 'current_date' %>:</strong>
+        <%= '%{fecha}' %>
+      </p>
+      <p>
+        <strong><%= Customer.human_attribute_name 'full_name' %>:</strong>
+        <%= '%{nombre_completo}' %>
+      </p>
+    </div>
+    <div class="col-md-4">
+      <p>
+        <strong><%= Employee.human_attribute_name 'tax_id' %>:</strong>
+        <%= '%{cuil}' %>
+      </p>
+      <p>
+        <strong><%= CashEmployee.human_attribute_name 'period' %>:</strong>
+        <%= '%{periodo}' %>
+      </p>
+    </div>
+    <div class="col-md-4">
+      <p>
+        <strong><%= CashEmployee.human_attribute_name 'amount' %>:</strong>
+        <%= '%{salario}' %>
+      </p>
+    </div>
+  </div>
+</div>

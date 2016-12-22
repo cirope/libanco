@@ -13,7 +13,7 @@ module CashEmployees::Templates
       cuil: cuil,
       periodo: periodo,
       fecha: fecha,
-      monto: monto
+      salario: salario
     }
   end
 
@@ -43,7 +43,7 @@ module CashEmployees::Templates
       I18n.l period, format: :long_period
     end
 
-    def monto
+    def salario
       ActionController::Base.helpers.number_to_currency amount
     end
 end

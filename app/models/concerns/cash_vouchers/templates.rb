@@ -44,11 +44,15 @@ module CashVouchers::Templates
   private
 
     def common_attrs
-      { fecha: fecha, monto: monto, comentario: comentario }
+      { fecha: fecha, cajero: cajero, monto: monto, comentario: comentario }
     end
 
     def fecha
       I18n.l Date.today, format: :long
+    end
+
+    def cajero
+      user
     end
 
     def monto

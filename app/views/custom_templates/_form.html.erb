@@ -16,6 +16,11 @@
           </div>
         </div>
         <%= f.association :header_template, prompt: true %>
+        <div id="templates-variables" data-templates-variables-url="<%= custom_templates_variables_url %>">
+          <% if @custom_template.kind.present? %>
+            <%= render "custom_templates/variables/#{@custom_template.kind}" %>
+          <% end %>
+        </div>
         <%= f.input :content, as: :ckeditor %>
         <%= f.association :footer_template, prompt: true %>
         <%= f.input :lock_version, as: :hidden %>

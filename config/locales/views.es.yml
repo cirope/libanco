@@ -252,6 +252,7 @@ es:
       new: 'Nueva plantilla'
       title: 'Listado de plantillas'
       empty_html: 'No hay plantillas, puede crear una con el botón <span class="label label-info">Nueva plantilla</span>'
+    list: 'Listado de variables'
     new:
       title: 'Crear plantilla'
     show:

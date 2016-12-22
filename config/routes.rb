@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   constraints AccountSubdomain do
     get 'bank_accounts/searches', to: 'bank_accounts/searches#index', as: 'bank_accounts_searches'
     get 'customers/searches', to: 'customers/searches#index', as: 'customers_searches'
+    get 'custom_templates/variables', to: 'custom_templates/variables#index', as: 'custom_templates_variables'
     get 'reports', to: 'reports#index', as: 'reports'
     get '/schedules(/:date)', to: 'schedules#index', as: 'schedules', constraints: { date: /\d{4}\/\d{2}\/\d{2}/ }
     get '/schedules/new(/:date)', to: 'schedules#new', as: 'new_schedule', constraints: { date: /\d{4}-\d{2}-\d{2}/ }

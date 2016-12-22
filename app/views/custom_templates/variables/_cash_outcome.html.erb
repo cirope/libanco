@@ -1,0 +1,37 @@
+<div class="bs-callout bs-callout-info">
+  <div class="page-header page-header-sm">
+    <h4><%= t 'custom_templates.list' %></h4>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <p>
+        <strong><%= Customer.human_attribute_name 'current_date' %>:</strong>
+        <%= '%{fecha}' %>
+      </p>
+      <p>
+        <strong><%= CashVoucher.human_attribute_name 'user' %>:</strong>
+        <%= '%{cajero}' %>
+      </p>
+    </div>
+    <div class="col-md-4">
+      <p>
+        <strong><%= Customer.human_attribute_name 'full_name' %>:</strong>
+        <%= '%{nombre_completo}' %>
+      </p>
+      <p>
+        <strong><%= Employee.human_attribute_name 'tax_id' %>:</strong>
+        <%= '%{cuil}' %>
+      </p>
+    </div>
+    <div class="col-md-4">
+      <p>
+        <strong><%= CashVoucher.human_attribute_name 'amount' %>:</strong>
+        <%= '%{monto}' %>
+      </p>
+      <p>
+        <strong><%= CashVoucher.human_attribute_name 'comment' %>:</strong>
+        <%= '%{comentario}' %>
+      </p>
+    </div>
+  </div>
+</div>
