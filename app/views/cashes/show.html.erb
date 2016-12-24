@@ -1,6 +1,6 @@
 <%= render 'cashes/cash' %>
 
-<%= render template: 'cashes/flows/show', locals: { '@cash': @cash } %>
+<%= render template: 'cashes/flows/show' %>
 
 <% if @cash.opened? %>
   <% if @cash.errors[:status].present? %>
