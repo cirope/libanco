@@ -1,6 +1,6 @@
 default:
   description: Visit on Monday and offer a loan
-  scheduled_at: <%= 1.day.from_now %>
+  scheduled_at: <%= 1.day.from_now.to_s(:db) %>
   done: false
   user: admin
   schedulable: default (Customer)
